@@ -11,12 +11,12 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const LINES = 28;
 const WEDGES = 6;
 const CIRCLE = 160;
-const FINISH_MS = 2300;
+const FINISH_MS = 2100;
 const SAFETY_MS = 2600;
 
 // Timeline (seconds): lines stream 0-0.9, collapse 0.9-1.4; circle grows 0.95-1.4,
-// splits 1.4-1.55, wedges fly out 1.55-1.9; wordmark in 1.5-1.9; backdrop fades 1.9-2.25.
-const T = { collapse: 0.9, gather: 1.4, circleIn: 0.95, split: 1.55, fly: 1.9, word: 1.5, fade: 1.9 };
+// splits 1.4-1.55, wedges land on the first event rows 1.55-2.0; wordmark in 1.5-1.9; backdrop fades 1.65-2.0.
+const T = { collapse: 0.9, gather: 1.4, circleIn: 0.95, split: 1.55, fly: 2.0, word: 1.5, fade: 1.65 };
 
 type Phase = 'pending' | 'play' | 'reduced' | 'done';
 
@@ -40,6 +40,8 @@ export function Intro() {
   const { finish } = useIntro();
   const [phase, setPhase] = useState<Phase>('pending');
   const [view, setView] = useState({ w: 0, h: 0 });
+  // Where each wedge lands: the first visible event rows, measured when the circle splits.
+  const [targets, setTargets] = useState<{ x: number; y: number }[] | null>(null);
   const done = useRef(false);
   // Decided once per mount so StrictMode's double effect doesn't read our own write.
   const played = useRef<boolean | null>(null);
@@ -75,10 +77,26 @@ export function Intro() {
     window.addEventListener('pointerdown', skip);
     window.addEventListener('keydown', skip);
     const t1 = window.setTimeout(skip, reduced ? 200 : FINISH_MS);
+    const t0 = window.setTimeout(function () {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const rows = Array.from(document.querySelectorAll('[data-testid="event-card"]'))
+        .map(function (el) { return el.getBoundingClientRect(); })
+        .filter(function (r) { return r.height > 0 && r.top < h && r.bottom > 0; })
+        .slice(0, WEDGES);
+      const spread = Math.min((w * 0.8) / WEDGES, 140);
+      setTargets(Array.from({ length: WEDGES }, function (_, i) {
+        const r = rows[i % Math.max(rows.length, 1)];
+        // No rows yet (data still loading): fan out toward where the feed starts.
+        if (!r) return { x: (i - (WEDGES - 1) / 2) * spread, y: h * 0.35 };
+        return { x: r.left + 48 - w / 2, y: r.top + r.height / 2 - h / 2 };
+      }));
+    }, T.split * 1000);
     const t2 = window.setTimeout(skip, SAFETY_MS);
     return function () {
       window.removeEventListener('pointerdown', skip);
       window.removeEventListener('keydown', skip);
+      window.clearTimeout(t0);
       window.clearTimeout(t1);
       window.clearTimeout(t2);
     };
@@ -103,7 +121,6 @@ export function Intro() {
 
   const cx = view.w / 2;
   const cy = view.h / 2;
-  const spread = Math.min((view.w * 0.8) / WEDGES, 140);
 
   return (
     <div aria-hidden data-testid="intro" className="fixed inset-0 z-50 overflow-hidden">
@@ -142,7 +159,8 @@ export function Intro() {
         const mid = ((i * 60 + 30) * Math.PI) / 180;
         const sx = 16 * Math.sin(mid);
         const sy = -16 * Math.cos(mid);
-        const dur = T.fly - T.circleIn;
+        const dur = T.split - T.circleIn;
+        const to = targets?.[i];
         return (
           <motion.div
             key={i}
@@ -156,18 +174,12 @@ export function Intro() {
               willChange: 'transform, opacity',
             }}
             initial={{ scale: 0, x: 0, y: 0, opacity: 1 }}
-            animate={{
-              scale: [0, 1, 1, 0.4],
-              x: [0, 0, sx, (i - (WEDGES - 1) / 2) * spread],
-              y: [0, 0, sy, view.h * 0.35],
-              opacity: [1, 1, 1, 0],
-            }}
-            transition={{
-              delay: T.circleIn,
-              duration: dur,
-              times: [0, (T.gather - T.circleIn) / dur, (T.split - T.circleIn) / dur, 1],
-              ease: EASE,
-            }}
+            animate={to
+              ? { x: to.x, y: to.y, scale: 0.22, opacity: 0 }
+              : { scale: [0, 1, 1], x: [0, 0, sx], y: [0, 0, sy], opacity: 1 }}
+            transition={to
+              ? { duration: T.fly - T.split, delay: i * 0.03, ease: EASE, opacity: { duration: 0.2, delay: T.fly - T.split - 0.15 + i * 0.03 } }
+              : { delay: T.circleIn, duration: dur, times: [0, (T.gather - T.circleIn) / dur, 1], ease: EASE }}
           />
         );
       })}
