@@ -51,8 +51,19 @@ function fallbackLine(e: EventCard): string {
   return e.hostName ?? '';
 }
 
+// Labels only when a day has both kinds, so a time that jumps back reads as a new group.
+function groups<T extends { event: EventCard }>(rows: T[]): { label: string | null; rows: T[] }[] {
+  const food = rows.filter((r) => r.event.freeFood);
+  const rest = rows.filter((r) => !r.event.freeFood);
+  if (!food.length || !rest.length) return [{ label: null, rows }];
+  return [
+    { label: 'Free food', rows: food },
+    { label: 'Other events', rows: rest },
+  ];
+}
+
 function render(subject: string, intro: string, picks: { event: EventCard; line: string }[]): { html: string; text: string } {
-  // Group by day; within a day free food first, then by start (design's call).
+  // Group by day; within a day a Free food group, then the rest, each by start (lead + design).
   const sorted = [...picks].sort((a, b) => {
     const da = formatInTimeZone(new Date(a.event.start), TZ, 'yyyy-MM-dd');
     const db = formatInTimeZone(new Date(b.event.start), TZ, 'yyyy-MM-dd');
@@ -68,13 +79,14 @@ function render(subject: string, intro: string, picks: { event: EventCard; line:
 
   const font = "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
   const htmlDays = [...days].map(([day, rows]) => {
-    const items = rows
-      .map((r) => {
-        const sub = r.line ? `<div style="color:#555;font-size:14px;margin-top:2px">${esc(r.line)}</div>` : '';
-        return `<li style="margin:0 0 12px;list-style:none"><div style="font-size:15px;color:#111;font-variant-numeric:tabular-nums">${esc(eventLine(r.event))}</div>${sub}</li>`;
-      })
+    const item = (r: { event: EventCard; line: string }) => {
+      const sub = r.line ? `<div style="color:#555;font-size:14px;margin-top:2px">${esc(r.line)}</div>` : '';
+      return `<li style="margin:0 0 12px;list-style:none"><div style="font-size:15px;color:#111;font-variant-numeric:tabular-nums">${esc(eventLine(r.event))}</div>${sub}</li>`;
+    };
+    const lists = groups(rows)
+      .map((g) => `${g.label ? `<div style="color:${g.label === 'Free food' ? '#1d6b3a' : '#59616c'};font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin:0 0 6px">${g.label}</div>` : ''}<ul style="padding:0;margin:0">${g.rows.map(item).join('')}</ul>`)
       .join('');
-    return `<h2 style="color:${BLUE};font-size:16px;margin:24px 0 8px">${esc(day)}</h2><ul style="padding:0;margin:0">${items}</ul>`;
+    return `<h2 style="color:${BLUE};font-size:16px;margin:24px 0 8px">${esc(day)}</h2>${lists}`;
   });
   const html = `<html><head><meta charset="utf-8"><title>${esc(subject)}</title></head><body style="margin:0;padding:24px;background:#fff;${font}"><div style="max-width:560px;margin:0 auto"><h1 style="color:${BLUE};font-size:20px;margin:0 0 8px">${esc(subject)}</h1><p style="color:#111;font-size:15px;margin:0">${esc(intro)}</p>${htmlDays.join('')}</div></body></html>`;
 
@@ -82,7 +94,14 @@ function render(subject: string, intro: string, picks: { event: EventCard; line:
     subject,
     '',
     intro,
-    ...[...days].flatMap(([day, rows]) => ['', day, ...rows.map((r) => `  ${eventLine(r.event)}${r.line ? `\n    ${r.line}` : ''}`)]),
+    ...[...days].flatMap(([day, rows]) => [
+      '',
+      day,
+      ...groups(rows).flatMap((g) => [
+        ...(g.label ? [`  ${g.label}`] : []),
+        ...g.rows.map((r) => `  ${eventLine(r.event)}${r.line ? `\n    ${r.line}` : ''}`),
+      ]),
+    ]),
   ].join('\n');
   return { html, text };
 }
