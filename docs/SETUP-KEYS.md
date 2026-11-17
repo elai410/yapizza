@@ -19,7 +19,7 @@ Each row works on its own. Do them in this order.
 
 1. Sign in at https://platform.claude.com, open Settings, then API Keys, and create a key. Add credits under Billing if the account has none.
 2. Set `ANTHROPIC_API_KEY=...` in `.env`. Leave `GROK_MODE` blank (live with a key, replay without one).
-3. Optional: `CLAUDE_MODEL` picks the model. The default is `claude-opus-5-5`.
+3. Optional: `CLAUDE_MODEL` picks the model. The default is `claude-haiku-5-5`. If extraction misses times or places, step up to `CLAUDE_MODEL=claude-sonnet-5-5` and rerun `pnpm grok:record`, since replay files are keyed by model.
 4. Restart `pnpm dev`. `/api/integrations/status` shows `"grok":"live"` (the field keeps its old name).
 5. On demo day, run `pnpm grok:record` so every demo input also works offline. Replay files include the date, so record on the day you present.
 
