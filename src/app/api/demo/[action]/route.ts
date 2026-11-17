@@ -6,6 +6,8 @@ import { fixtureEmails, resetSimMail } from '@/lib/adapters/sim/mail';
 import { resetSimCalendar } from '@/lib/adapters/sim/calendar';
 import { ingestEmail } from '@/lib/pipeline/ingest';
 import { notifyFreeFood } from '@/lib/db/alerts';
+import { listEvents } from '@/lib/db';
+import type { EventCard } from '@/lib/contracts';
 
 const TZ = 'America/New_York';
 
@@ -64,11 +66,11 @@ function freeFoodNow(): RawEmail {
   };
 }
 
-async function send(label: string, email: RawEmail) {
+async function send(label: string, email: RawEmail, alsoAlert: () => Promise<EventCard[]> = async () => []) {
   await adapters.mail().inject(email);
   const result = await ingestEmail(email, 'demo');
   // Safe to repeat: notifyFreeFood skips subscribers already alerted for an event.
-  const alerts = isOn('ALERTS') ? await notifyFreeFood([...result.created, ...result.updated]) : 0;
+  const alerts = isOn('ALERTS') ? await notifyFreeFood([...result.created, ...result.updated, ...(await alsoAlert())]) : 0;
   const detail = `${label}: ${result.created.length} created, ${result.updated.length} updated, ${result.inReview} in review${alerts ? `, ${alerts} alerts` : ''}`;
   return NextResponse.json({ ok: true, detail, result });
 }
@@ -100,7 +102,12 @@ export async function POST(req: Request, { params }: { params: Promise<{ action:
       case 'cancel':
         return await send('cancel', fromFixture('40-aacc-politics-purse-canceled.json'));
       case 'free-food-now':
-        return await send('free food now', freeFoodNow());
+        // A repeat press dedups to `same`; still alert anyone who subscribed since on today's Buttery card.
+        return await send('free food now', freeFoodNow(), async () =>
+          (await listEvents({ freeFood: true, from: new Date(Date.now() - 12 * 36e5).toISOString(), q: 'buttery' })).filter(
+            (c) => c.hostName === 'Silliman GA',
+          ),
+        );
       case 'reset':
         resetSimMail();
         resetSimCalendar();
