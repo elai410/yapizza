@@ -2,7 +2,7 @@ import { forwardRef, type InputHTMLAttributes, type ReactNode, type TextareaHTML
 import { cn } from './cn';
 
 const FIELD =
-  'w-full rounded-md border border-line-strong bg-surface px-3 text-[15px] text-ink placeholder:text-faint transition-colors focus:border-accent';
+  'w-full rounded-md border border-line-strong bg-surface px-3 text-[15px] text-ink placeholder:text-faint transition-colors focus:border-accent focus-visible:outline-1 focus-visible:outline-offset-0';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   leading?: ReactNode;
