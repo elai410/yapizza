@@ -1,5 +1,6 @@
 import type { EventCard, Tag } from '@/lib/contracts';
 import { cardInclude, parseJson, prisma, toCard } from '@/lib/db';
+import { refreshSeries } from './series';
 
 export interface ListingItem {
   id: string;
@@ -38,6 +39,8 @@ export interface TraditionItem {
 
 export async function listTraditions(): Promise<TraditionItem[]> {
   const now = new Date();
+  // Series is empty after a fresh seed; build it once on first read.
+  if ((await prisma.series.count()) === 0) await refreshSeries();
   const series = await prisma.series.findMany({ where: { isTradition: true } });
   const upcoming = await prisma.event.findMany({
     where: { status: 'live', start: { gte: now } },

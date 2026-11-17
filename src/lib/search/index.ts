@@ -121,6 +121,12 @@ export async function keywordAsk(q: string, now = new Date()): Promise<AskRespon
   let rows = await searchEvents(p, 8);
   // A query whose only words matched nothing still has its time, food, and college filters worth showing.
   if (!rows.length && p.keywords.length && (p.when || p.freeFood || p.college)) rows = await searchEvents({ ...p, keywords: [], tags: [] }, 8);
+  // Nothing in the asked window: show what comes next rather than an empty answer.
+  let later = false;
+  if (!rows.length && p.when) {
+    rows = await searchEvents({ ...p, from: now, to: null }, 3);
+    later = rows.length > 0;
+  }
   const results = rows.map(({ card, hits }) => {
     const why = [card.freeFood ? 'Free food' : null, p.college && card.college === p.college ? card.college : null, hits.length ? `Mentions ${hits.slice(0, 2).join(', ')}` : null, fmtWhen(card)]
       .filter(Boolean)
@@ -128,7 +134,11 @@ export async function keywordAsk(q: string, now = new Date()): Promise<AskRespon
     return { event: card, why };
   });
   const n = results.length;
-  const answer = n ? `${n} ${n === 1 ? 'event matches' : 'events match'}.` : 'Nothing matches that yet.';
+  const answer = later
+    ? `Nothing ${p.when!.toLowerCase()}. ${n === 1 ? 'This is the next one.' : 'These are the next ones.'}`
+    : n
+      ? `${n} ${n === 1 ? 'event matches' : 'events match'}.`
+      : 'Nothing matches that yet.';
   return { answer, results, mode: 'fallback' };
 }
 
