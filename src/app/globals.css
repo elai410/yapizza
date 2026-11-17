@@ -48,6 +48,19 @@
     0%, 30% { background-color: var(--color-accent-soft); border-color: var(--color-accent); }
     100% { background-color: var(--color-surface); border-color: var(--color-line); }
   }
+  /* Sheet: bottom sheet on mobile, right panel from md. Radix waits for the closed-state animation. */
+  --animate-fade-in: fade-in 180ms var(--ease-out) both;
+  --animate-fade-out: fade-out 140ms var(--ease-in-out) both;
+  --animate-sheet-up: sheet-up 260ms var(--ease-out) both;
+  --animate-sheet-down: sheet-down 180ms var(--ease-in-out) both;
+  --animate-panel-in: panel-in 260ms var(--ease-out) both;
+  --animate-panel-out: panel-out 180ms var(--ease-in-out) both;
+  @keyframes fade-in { from { opacity: 0; } }
+  @keyframes fade-out { to { opacity: 0; } }
+  @keyframes sheet-up { from { transform: translateY(100%); } }
+  @keyframes sheet-down { to { transform: translateY(100%); } }
+  @keyframes panel-in { from { transform: translateX(100%); } }
+  @keyframes panel-out { to { transform: translateX(100%); } }
   @keyframes shimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
