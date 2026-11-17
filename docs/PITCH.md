@@ -37,19 +37,33 @@ Owner: qa-demo. Five slides, then the live demo carries the rest. Plain words, n
 
 ---
 
-## Judge Q&A
+## Judge Q&A (CP5 prep)
+
+Each answer is two or three sentences. Numbers marked TBD have not been measured yet; say so if asked.
 
 **How accurate is it?**
-We measure it with `pnpm eval`, which runs extraction on 12 hand-labeled fixture emails (built from real Yale club and office emails) and reports per-field accuracy for title, start, place, free food, audience, and event versus listing. Current numbers: title TBD, start TBD, place TBD, free food TBD. On top of that, every event cites quotes from its source for time and place, code checks them before the event goes live, and anything that fails or that Grok is unsure of waits in review. Every card links to the original email so a student can check.
+Every event carries short quotes for its time and place, and code checks each quote is really in the source text before the event goes live. A failed check, a missing date, or confidence under 0.7 puts the event in review instead of the feed. `pnpm eval` reports field accuracy on 12 hand-labeled fixture emails: Grok TBD; the rule-based fallback alone scored about 90% in pipeline's last run.
 
 **What about privacy?**
-We store what was sent to Yapizza: the source email's text, subject, list name, and sender address (a list or office address), plus the events read from it. We never connect to a student's inbox; the intake is a club-facing address that clubs add to their own list, plus forwards and uploads people choose to send. Students' own email is never read. Hosts see totals, never names. Email text is sent to xAI to be read, and clubs are told that before they add the address.
+We store only what is sent to Yapizza: the email text, subject, list name, sender address (a list or office address), and the events read from it. We never read a student's inbox; intake is one club-facing address, plus forwards and uploads people choose to send. Email text goes to xAI to be read, and hosts see reach totals, never names.
 
 **Why would clubs adopt it?**
-It costs them one subscriber address and nothing else; they keep sending what they already send. Until they add it, any student can forward an email to fill the feed. Hosts get reach totals they don't have today. First pitch is to YCC and college councils.
+A club adds one address to its mailing list and keeps sending what it already sends. There is no new form, account, or posting step. Until a club adds the address, any member can forward its email, and hosts get reach totals they don't have today.
 
 **Isn't this YaleClubs?**
-YaleClubs is a directory clubs have to post to separately. Yapizza works from email they already send, and links each host to its YaleClubs page. It fills the directory with events that were never posted there. We'd like to work with the Yale Computer Society on it.
+It complements YaleClubs. YaleClubs lists the clubs; Yapizza reads what they send and turns it into events with times and rooms. Each host can link to its YaleClubs page.
 
 **What does each email cost?**
-About 1,500 tokens in and 300 out, roughly $0.005 per email at listed prices, so 1,000 emails a week is about $5. Measured cost from our runs: TBD. The same email sent to several lists shares a Message-ID and is processed once.
+One extraction call per email at low reasoning effort, plus a match call at medium effort only when a similar event already exists nearby. A repeat of the same Message-ID skips Grok entirely. Cost per email: TBD, measured once we run with a key.
+
+**Can an email hijack Grok?**
+The extraction call has no tools, so an instruction inside an email has nothing to act on. The prompt treats the message as data, the reply must match a strict JSON schema, and the evidence check still applies. The worst case is a wrong card that fails its checks and waits in review.
+
+**What happens when Grok is wrong?**
+Low confidence or a failed evidence check sends the event to review, and the drawer shows a Review badge. A follow-up email (a room change or a cancellation) updates the same card instead of adding a new one. At CP5, a host who claims the club can edit or cancel its events.
+
+**Why Grok?**
+Vision reads flyer photos directly. Structured outputs give us strict JSON we validate with the same zod schema. Tool calling lets Ask search the database in up to 3 rounds, and the UI shows only events whose ids exist.
+
+**Does it work beyond Yale?**
+Not as is. It is built on Yale places, Yale lingo, and the 14 residential colleges, which is why it reads "WLH 120" or "JE buttery" correctly. Another school would need its own glossary and places list; the pipeline itself would carry over.
