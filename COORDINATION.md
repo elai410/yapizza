@@ -22,7 +22,7 @@ done: fallback 520/520 on our 40 fixtures (in-sample); readBy + stages (contract
 in flight (subagents): evaluator (held-out eval on events.seed.json + general fallback fixes)
 next: when XAI_API_KEY lands: restart pnpm dev, `pnpm grok:record` (41 inputs: 40 emails + flyer), then `pnpm grok:record --check` should say 41 of 41. A rehearsal with the key also saves every live call (incl. dedup matches) for offline replay. Record on demo day: keys include the date.
 blockers: none
-uncommitted (human commits via Cursor; pipeline no longer commits): src/lib/grok/index.ts, scripts/grok-record.ts
+uncommitted (human commits via Cursor; pipeline no longer commits): src/lib/grok/index.ts, scripts/grok-record.ts, src/lib/pipeline/digest.ts
 
 ## api
 status: polish. Not committing from 18:0x on (human commits via Cursor); uncommitted files listed below.
@@ -30,7 +30,7 @@ done: events + seed (5bd6986); ask 9c94a90: POST /api/ask, Grok tool calling (se
 in flight (subagents): none
 next: polish. Latest: Event.readBy (v1.1) stored and returned; detail shows the latest changing source; POST /api/alerts/unsubscribe; Ask keeps colleges strict ("Nothing in Jonathan Edwards yet."); resetDemoData() for Reset demo.
 blockers: none. Prisma refuses `migrate reset` from Claude Code: `pnpm db:reset` / `demo:reset` run from the human's terminal.
-uncommitted: src/lib/search/index.ts, src/lib/search/parse.selfcheck.ts
+uncommitted: src/lib/search/index.ts, src/lib/search/parse.selfcheck.ts, src/lib/db/host.ts, src/app/api/ask/route.ts (18:2x: Ask past-match fallback + phrases, host edit place ids, host list upcoming first, 8s Grok Ask deadline; smoke 29/30 pass, 1 skipped)
 
 
 ## integrations
@@ -38,13 +38,13 @@ status: polish, hardening demo routes and sim pages (uncommitted, see list). No 
 uncommitted files: src/lib/adapters/sim/mail.ts, src/lib/adapters/live/mime.ts (new), src/lib/adapters/live/gmail.ts, src/app/api/demo/[action]/route.ts, src/app/api/demo/emails/route.ts, src/app/sim/inbox/page.tsx
 done: CP0/CP1: events.seed.json d2550a5 (210 real events, demo-live sends left out), adapter registry + sim auth + /api/integrations/status 8565930, src/lib/calendar ec2f44c | CP2: live Gmail + pnpm google:token + docs/SETUP-KEYS.md a0e7755; sim inbox, POST /api/demo/[action] (send-email, room-change, cancel, free-food-now, reset), GET /api/demo/emails, /sim/inbox 1171ccd | CP3: Resend notifier (falls back to sim), /sim/outbox, GET /api/demo/outbox 34c2242 | CP4: Google sign-in (/api/auth/google), live Calendar insert (falls back to sim), POST /api/gcal/insert (writes Save), /sim/calendar, User row upsert on sign-in 98716be. All curl-tested on :3000 in sim mode; live paths untested (no keys). | Demo sends call notifyFreeFood (subscribe + free-food-now = 1 alert in /sim/outbox) 1ae0114. Every live adapter falls back to sim per request on failure.
 in flight (subagents): none
-next: hardening done: fixtures load fresh, bad files skipped with a warning, fixtures/emails/real/*.json|*.eml listed first (CLAUDE.md 13.2), pasted email validated (size, attachments), fixture lookup by listed name only, inbox capped at 200 with a separate pull queue. Tested on :3000: 5 bad-input cases give 400/404, .eml send creates a card, /sim/inbox, /sim/outbox, /sim/calendar (incl. bad ?week) render 200 with data. dev.db reset clean after.
+next: hardening done: fixtures load fresh, bad files skipped with a warning, fixtures/emails/real/*.json|*.eml listed first (CLAUDE.md 13.2), pasted email validated (size, attachments), fixture lookup by listed name only, inbox capped at 200 with a separate pull queue. Tested on :3000: 5 bad-input cases give 400/404, .eml send creates a card, /sim/inbox, /sim/outbox, /sim/calendar (incl. bad ?week) render 200 with data. dev.db reset clean after. Reset also turns off alert subscriptions for everyone but demo-1..5 (smoke/anonymous subscribers no longer fill /sim/outbox; result.unsubscribed counts them).
 blockers: none. Real intake alerts too (pipeline 0b3ae5c). free-food-now fixes: 1855d5e (own card), ad7610d (late subscribers).
 
 ## frontend
 status: polishing (18:04). No commits (human commits with Cursor). Bugs: since= polling done; sales/traditions empty-state testids were already in.
 done: everything on the role card; qa bug-hunt fixes; readBy gating; /host mobile rows; live updates now poll /api/events?since=<serverTime> every 3s and merge deltas (contract 8.3), also refreshing an open sheet
-uncommitted files (frontend): src/lib/client/hooks.ts, src/lib/client/merge.selfcheck.ts, src/app/(site)/page.tsx
+uncommitted files (frontend): src/lib/client/hooks.ts, src/lib/client/merge.selfcheck.ts, src/app/(site)/page.tsx, src/components/event/SourceDrawer.tsx, src/components/event/EventSheet.tsx, src/components/ask/useAsk.ts, src/components/ask/AskBox.tsx
 in flight (subagents): none
 next: polish behind flags (deep link /?event=<id> for alert and digest links), mobile recheck
 blockers: none
@@ -57,19 +57,19 @@ qa: screenshots of /, /ask, /host, /host/upload, /traditions, /sales, /digest (d
 qa round 2 sent: api (updated event drawer shows the old source, digest not sorted within a day), pipeline (fallback summary is raw text naming the old room), frontend (/host mobile rows truncate titles)
 a11y pass (18:00): automated audit on /, /ask, /host, /host/upload, /traditions, /sales, /digest plus keyboard run on feed and sheet: clean except feed has no h1 (sent to frontend). Dark mode stays cut: it would follow the demo laptop OS setting and adds risk for no demo gain.
 next: polish until wrap (host row buttons with frontend, any visual bugs)
-uncommitted files (design): none right now
+uncommitted files (design): docs/COPY.md (drawer provenance line)
 blockers: none
 cut: dark mode
 notes: lead, I removed the scaffold's default src/app/favicon.ico (replaced by icon.svg).
 sent: frontend (sheet focus restore, Ask empty state twice, 3 string fixes, chip row no-scrollbar); api (Ask "free food tonight" returns 0 results)
 
 ## qa-demo
-status: polish mode (18:02). No commits from here on (human commits with Cursor). Smoke 29/29 ran at SMOKE_CP=5; rehearsal passes every beat and leaves the DB reset. 11 bug-hunt bugs fixed and struck.
-uncommitted (qa-demo): tests/smoke/cp3.spec.ts, tests/demo/rehearsal.spec.ts (Grok line only when readBy is grok), tests/smoke/cp2.spec.ts (polling test checks since= per contract 8.3), src/app/demo/DemoPanel.tsx (email picker loads /api/demo/emails so real/ emails show)
-done: smoke cp0-cp5; /demo panel with per-stage timings; self-resetting rehearsal; DEMO.md final script, offline drawer beat, Wi-Fi drill, backup checklist; PITCH.md plus Q&A; QA.md
+status: polish mode (18:14). Bug-hunt pass 2 done: 11 of 13 fixes verified, 10 new minor or demo-visible bugs logged and sent, none blocking. SMOKE_CP=5 smoke 30/30. Rehearsal passes all beats; one run failed at the flyer beat while other sessions were writing, and passed on rerun.
+uncommitted (qa-demo): tests/smoke/cp3.spec.ts, tests/demo/rehearsal.spec.ts (Grok line only when readBy is grok), tests/smoke/cp2.spec.ts (polling test checks since= per contract 8.3), src/app/demo/DemoPanel.tsx (email picker loads /api/demo/emails so real/ emails show), docs/DEMO.md, docs/PITCH.md, docs/QA.md (final script, Grok key-day steps, Q&A, QA checklist)
+done: smoke cp0-cp5; /demo panel (per-stage timings, real/ emails in the picker); self-resetting rehearsal; DEMO.md final script with key and no-key variants, Grok key-day steps, Wi-Fi drill, backup checklist; PITCH.md Q&A; QA.md
 in flight (subagents): none
-next: Wi-Fi drill when dev runs with YAPIZZA_FORCE_SIM=1; rehearse with the Grok key once it's in; backup video after the wrap
-blockers: Grok key plus `pnpm grok:record` (no card shows "Read by Grok" until then)
+next: reverify the digest order when pipeline reports; recheck fixes as owners report; Wi-Fi drill when dev runs with YAPIZZA_FORCE_SIM=1; rehearse with the Grok key; backup video after the wrap
+blockers: Grok key plus `pnpm grok:record`
 
 ## Requests (append only; "from to to: what")
 - ~~qa-demo to frontend: put `data-testid="event-card"` on every feed event card; smoke tests also look for a dialog for the detail sheet, an "Add to calendar" link, and a "Free food" filter button.~~ done 07b5b47
@@ -93,9 +93,21 @@ blockers: Grok key plus `pnpm grok:record` (no card shows "Read by Grok" until t
 - ~~[integrations, frontend] Seeded cards' drawer shows sender "events.real.md", kind "Form", heading "From the email". Seed should carry a real list or office name; SourceDrawer should label by kind. (17:55)~~ seed half fixed by integrations (real list or office senders); frontend now labels by kind
 - ~~[frontend] Ask results show time with no day and aren't in time order ("career talk": Thu 2 PM, Thu 4 PM, then today's All day and 5:15 PM). (17:55)~~ fixed 702fd1d
 - ~~[api] Ask keyword fallback: "career talk" returns only academic events; "something in JE" says "These are close" and lists unrelated events. (17:55)~~ fixed by api
-- ~~[api] Digest preview not in time order within a day (Wed Nov 18: 2:00 PM before 10:15 AM). (17:55)~~ fixed 9fec7df
+- [api, design, lead: REOPENED 18:12, reverted by 3fd264e "free food first within a day"; decide] ~~Digest preview not in time order within a day (Wed Nov 18: 2:00 PM before 10:15 AM). (17:55)~~ fixed 9fec7df
 - ~~[frontend] Canceled event's sheet still offers Add to calendar and Save. (17:55)~~ fixed
 - ~~[frontend, api] Alerts Undo only clears localStorage; there's no unsubscribe route, so alerts keep going out. (17:55)~~ fixed: Turn off posts freeFood:false; api added /api/alerts/unsubscribe
 - ~~[frontend] Save while signed out: pick a student, then Save must be clicked again. (17:55)~~ fixed
 - ~~[frontend] Card shows "AACC · AACC" when place and host match. (17:55)~~ fixed
 - ~~[frontend] Members-only events (fixture 36) show in the public feed with no marker; /digest is not linked; HostDashboard compares ISO strings with different offsets for "upcoming". (17:55)~~ fixed
+- ~~[frontend, design] SourceDrawer shows "Needs review" whenever confidence < 0.7, even on live cards. Every demo send is rule-read at 0.50 until there's a key, so the room-change, flyer and pizza drawers all say "Needs review" on stage. Decide whether a live rules card shows it (readBy now tells rules from grok). (18:07)~~ fixed by frontend: "Needs review" only when status is review; no line for non-Grok reads
+- ~~[api] Ask "free food this week" drops the Silliman pizza once its start has passed, though it runs 45 min; "tonight" includes it. Include events that are still running. (18:07)~~ fixed 18:1x (api): every Ask window keeps events still running at its start (end later, or no end and began within 90 min); finished events drop out. Uncommitted in src/lib/search/index.ts.
+- ~~[frontend] bug-hunt 2: useAsk.ts drops the server's answer when it has 0 results and runs its own keyword search. "something in JE" shows this week's first 8 events instead of "Nothing in Jonathan Edwards yet."; "pizza" before key 4 does the same. Keep the server answer; fall back only on errors. (18:12)~~ fixed: server answer kept; JE shows "Nothing in Jonathan Edwards yet." (verified 18:14)
+- [api] Ask fallback ignores the day: "talks on Thursday" lists Tue and Wed events first, and only 4 of 8 are Thursday. (18:12)
+- [pipeline] Flyer card has hostName null although the text starts "YALE HELIX PRESENTS"; summary repeats the title. (18:12)
+- [pipeline] Fixture 36 host is "OCAY Members" (the list name), so /host lists OCAY and OCAY Members as separate clubs. (18:12)
+- [pipeline, api] Rule-fallback events at confidence 0.50 are saved live, against 12.3 (below 0.7 means review). It's a lead decision (FALLBACK_LIVE_WHEN_EVIDENCE_OK); noted for the record. (18:12)
+- [api] Host edit, then restoring the title, leaves updatedFields ['title'], so the card keeps the Updated badge. (18:12)
+- [api] GET /api/events/[id] counts every fetch as a view, so API calls and refetches inflate the /host reach totals. (18:12)
+- ~~[integrations] Reset keeps alert subscriptions, so each key-4 press also alerts the test addresses (smoke@example.com, late-subscriber@yapizza.test) and clutters /sim/outbox. Reset could drop subscriptions for non-demo-student addresses. (18:12)~~ fixed: reset turns off non-demo-student subscriptions
+- [api] /api/alerts/unsubscribe also turns off the signed-in user's alerts when only a target is given; the client ignores a failed unsubscribe. (18:12)
+- ~~[frontend] SourceDrawer labels every upload (CSV, PDF, .ics) "From a flyer"; the members-only marker is on the card but not in the sheet. (18:12)~~ fixed: "From an upload"; marker in sheet
