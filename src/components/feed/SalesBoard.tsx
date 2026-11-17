@@ -62,7 +62,7 @@ export function SalesBoard() {
     );
   }
   if (error || !data) return <EmptyState>Couldn&apos;t load the sales board.</EmptyState>;
-  if (data.listings.length === 0) return <EmptyState>Nothing for sale right now.</EmptyState>;
+  if (data.listings.length === 0) return <EmptyState data-testid="empty-state">Nothing for sale right now.</EmptyState>;
 
   return (
     <Card className="mt-6 divide-y divide-line">

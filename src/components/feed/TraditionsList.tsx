@@ -64,7 +64,7 @@ export function TraditionsList() {
     );
   }
   if (error || !data) return <EmptyState>Couldn&apos;t load traditions.</EmptyState>;
-  if (data.traditions.length === 0) return <EmptyState>No traditions yet.</EmptyState>;
+  if (data.traditions.length === 0) return <EmptyState data-testid="empty-state">No traditions yet.</EmptyState>;
 
   // Group by month, Jan to Dec, unknown month last.
   const groups = new Map<number, TraditionItem[]>();
