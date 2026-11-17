@@ -9,3 +9,4 @@ export * from './Skeleton';
 export * from './Toast';
 export * from './EmptyState';
 export { Enter, EnterList, ARRIVE_CLASS } from './Motion';
+export { Highlighted, GrokNote, Disclosure, evidencePattern } from './Evidence';
