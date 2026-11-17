@@ -30,6 +30,11 @@ const Item = z.object({
   evidence: z.array(z.string()).default([]),
   confidence: z.number().min(0).max(1).default(1),
   rawText: z.string().optional(),
+  // Optional source fields, so a seeded sale or email shows its real list instead of events.real.md.
+  sender: z.string().optional(),
+  listName: z.string().optional(),
+  subject: z.string().optional(),
+  sentAt: isoDate.optional(),
 });
 
 export interface SeedResult {
@@ -54,14 +59,22 @@ export async function seedFromFile(file = SEED_FILE): Promise<SeedResult> {
       out.skipped++;
       continue;
     }
-    const { rawText, ...ev } = parsed.data;
+    const { rawText, sender, listName, subject, sentAt, ...ev } = parsed.data;
     if (ev.kind === 'event' && !ev.start) {
       console.warn(`seed: skip #${i}: no start`);
       out.skipped++;
       continue;
     }
     const res = await saveExtraction(
-      { kind: 'form', listName: 'events.real.md', subject: ev.title, rawText: rawText ?? ev.title, messageId: `seed-${i}` },
+      {
+        kind: sender ? 'email' : 'form',
+        sender: sender ?? null,
+        listName: listName ?? 'events.real.md',
+        subject: subject ?? ev.title,
+        rawText: rawText ?? ev.title,
+        messageId: `seed-${i}`,
+        receivedAt: sentAt,
+      },
       { events: [ev], flagged: false, flagReason: null },
     );
     if (res.duplicateSource) out.skipped++;
