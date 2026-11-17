@@ -165,6 +165,14 @@ export function placeName(placeId: string | null): string | null {
   return PLACES.find(function (p) { return p.id === placeId; })?.name ?? null;
 }
 
+// Card label: short name plus the room number from the raw location, e.g. "WLH 309".
+export function displayPlace(placeId: string | null, locationRaw: string | null): string | null {
+  const base = placeName(placeId);
+  if (!base) return locationRaw;
+  const room = locationRaw?.match(/\b(\d{2,4}[A-Za-z]?)\b/)?.[1];
+  return room && !base.includes(room) ? `${base} ${room}` : base;
+}
+
 export const GLOSSARY = `Yale glossary (abbreviations students and clubs use):
 WLH: William L. Harkness Hall, classrooms (e.g. "WLH 309").
 LC: Linsly-Chittenden Hall, classrooms (e.g. "LC 101").

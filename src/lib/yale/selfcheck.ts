@@ -38,3 +38,9 @@ assert.ok(placesContext().includes('wlh: WLH'));
 assert.ok(GLOSSARY.includes('HoC'));
 
 console.log('yale selfcheck ok: ' + PLACES.length + ' places');
+
+import { displayPlace } from './index';
+assert.equal(displayPlace('wlh', 'WLH 309'), 'WLH 309');
+assert.equal(displayPlace('lc', 'LC 102'), 'LC 102');
+assert.equal(displayPlace(null, 'Toad\'s Place'), "Toad's Place");
+assert.equal(displayPlace('silliman-acorn', 'the Acorn'), placeName('silliman-acorn'));
