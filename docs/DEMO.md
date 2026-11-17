@@ -142,6 +142,7 @@ Inputs: `fixtures/emails/37-ocay-gear-sale.json`, `fixtures/emails/36-ocay-trip-
 - A card doesn't appear within 10 seconds: reload tab 1 once. If still missing, check the `/demo` log for the failed stage and move to the next beat. Don't retry live more than once.
 - Grok is slow or erroring: set `YAPIZZA_FORCE_SIM=1`, restart `pnpm dev`, and continue in replay. Every input below has a recording.
 - Wrong state after a rehearsal (duplicate cards, panel already moved): `pnpm demo:reset`, reload both tabs.
+- Only these fixtures make new cards against the seed (pipeline, 17:30): 34 (three YUMS cards), 31 (Helix Langer flyer email), 09 (AGPC Kickoff), 36 (members-only planning meeting). Backup email beat: send 09. Every other fixture matches a seeded card as `same` and adds nothing. 39 needs 34 sent first; 40 cancels the seeded Politics of the Purse.
 - Feed empty: `pnpm db:reset`, reload. Last resort: `NEXT_PUBLIC_DATA=fixtures`, restart `pnpm dev`.
 - Calendar insert fails: use the Add to calendar link (always works, no sign-in) or show `/sim/calendar`.
 - Anything else: skip to the next beat and say what it does in one sentence. If two beats fail, play the backup recording.
