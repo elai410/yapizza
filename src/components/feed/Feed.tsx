@@ -52,7 +52,7 @@ export function Feed() {
 
   let body: React.ReactNode;
   if (error && !events) {
-    body = <EmptyState action={<Button onClick={function () { void retry(); }}>Try again</Button>}>Couldn&apos;t load events. Try again.</EmptyState>;
+    body = <EmptyState action={<Button onClick={function () { void retry(); }}>Try again</Button>}>Couldn&apos;t load events.</EmptyState>;
   } else if (!events) {
     body = (
       <Card aria-busy="true" aria-label="Loading events" className="divide-y divide-line">
@@ -72,7 +72,7 @@ export function Feed() {
   } else if (events.length === 0) {
     const msg = filtered
       ? 'No events match these filters.'
-      : filters.range === 'today' ? 'Nothing posted for today yet.' : 'Nothing posted for this week yet.';
+      : filters.range === 'today' ? 'Nothing on the calendar today.' : 'Nothing on the calendar this week.';
     body = <EmptyState data-testid="empty-state">{msg}</EmptyState>;
   } else {
     body = groupByDay(events).map(function ([key, group]) {

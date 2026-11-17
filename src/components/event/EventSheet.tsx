@@ -38,7 +38,7 @@ export function EventSheet({ id, onClose }: { id: string | null; onClose: () => 
         {event ? (
           <Body event={event} />
         ) : error && !isLoading ? (
-          <p className="text-sm text-muted">This event could not be loaded.</p>
+          <p className="text-sm text-muted">Couldn&apos;t load this event.</p>
         ) : (
           <div className="space-y-3" aria-hidden>
             <Skeleton className="h-4 w-1/3" />

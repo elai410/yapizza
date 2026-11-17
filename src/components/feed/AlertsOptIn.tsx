@@ -73,7 +73,7 @@ export function AlertsOptIn() {
         </div>
       ) : (
         <form onSubmit={submit} noValidate className="mt-1">
-          <p className="text-sm text-muted">Get an email when free food is posted near you.</p>
+          <p className="text-sm text-muted">Get an email when free food is posted.</p>
           <label htmlFor={id} className="mt-3 block text-xs font-medium text-muted">
             Email
           </label>
