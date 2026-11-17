@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { EventCard as EventCardData } from '@/lib/contracts';
 import { dayKey, dayLabel, DEFAULT_FILTERS, useEvents, type FeedFilters } from '@/lib/client';
 import { EventSheet } from '@/components/event/EventSheet';
-import { Card, EmptyState, Skeleton } from '@/components/ui';
+import { Card, EmptyState, Enter, EnterList, Skeleton } from '@/components/ui';
 import { EventCard } from './EventCard';
 import { FilterBar } from './FilterBar';
 
@@ -17,10 +17,31 @@ function groupByDay(events: EventCardData[]): [string, EventCardData[]][] {
   return [...groups];
 }
 
+// Ids of cards that are new or changed since the last poll for the same filters. Each stays marked ~1.8s.
+function useArrivals(events: EventCardData[] | undefined, key: string): Set<string> {
+  const prev = useRef<{ key: string; sigs: Map<string, string> } | null>(null);
+  const [fresh, setFresh] = useState<Set<string>>(new Set());
+  useEffect(function () {
+    if (!events) return;
+    const sigs = new Map(events.map(function (e) { return [e.id, JSON.stringify(e)] as const; }));
+    const p = prev.current;
+    prev.current = { key, sigs };
+    if (!p || p.key !== key) return;
+    const changed = events.filter(function (e) { return p.sigs.get(e.id) !== sigs.get(e.id); }).map(function (e) { return e.id; });
+    if (!changed.length) return;
+    setFresh(function (s) { return new Set([...s, ...changed]); });
+    setTimeout(function () {
+      setFresh(function (s) { const n = new Set(s); changed.forEach(function (id) { n.delete(id); }); return n; });
+    }, 1800);
+  }, [events, key]);
+  return fresh;
+}
+
 export function Feed() {
   const [filters, setFilters] = useState<FeedFilters>(DEFAULT_FILTERS);
   const [openId, setOpenId] = useState<string | null>(null);
   const { events, error } = useEvents(filters);
+  const arrived = useArrivals(events, JSON.stringify(filters));
   const filtered = filters.freeFood || filters.tags.length > 0 || filters.college !== null || Boolean(filters.q);
 
   let body: React.ReactNode;
@@ -52,12 +73,12 @@ export function Feed() {
       return (
         <section key={key} className="mt-6 first:mt-0">
           <h2 className="pb-2 text-xs font-semibold uppercase tracking-wide text-muted">{dayLabel(key)}</h2>
-          <Card className="overflow-hidden">
-            <ul className="divide-y divide-line">
-              {group.map(function (e) {
-                return <li key={e.id}><EventCard event={e} onOpen={setOpenId} /></li>;
+          <Card className="divide-y divide-line overflow-hidden">
+            <EnterList>
+              {group.map(function (e, i) {
+                return <Enter key={e.id} index={i}><EventCard event={e} onOpen={setOpenId} arrived={arrived.has(e.id)} /></Enter>;
               })}
-            </ul>
+            </EnterList>
           </Card>
         </section>
       );

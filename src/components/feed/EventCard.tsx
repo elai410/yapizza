@@ -1,8 +1,8 @@
 import type { EventCard as EventCardData } from '@/lib/contracts';
 import { formatTime } from '@/lib/client';
-import { StatusBadge, TagChip, cn } from '@/components/ui';
+import { ARRIVE_CLASS, StatusBadge, TagChip, cn } from '@/components/ui';
 
-export function EventCard({ event, onOpen }: { event: EventCardData; onOpen: (id: string) => void }) {
+export function EventCard({ event, onOpen, arrived = false }: { event: EventCardData; onOpen: (id: string) => void; arrived?: boolean }) {
   const canceled = event.status === 'canceled';
   const meta = [event.placeName, event.hostName].filter(Boolean).join(' · ');
   const chips = event.tags.filter(function (t) { return t !== 'free_food'; }).slice(0, 2);
@@ -13,7 +13,7 @@ export function EventCard({ event, onOpen }: { event: EventCardData; onOpen: (id
       data-testid="event-card"
       data-event-id={event.id}
       onClick={function () { onOpen(event.id); }}
-      className="flex w-full gap-4 px-4 py-3 text-left transition-colors hover:bg-sunken"
+      className={cn('flex w-full gap-4 px-4 py-3 text-left transition-colors hover:bg-sunken', arrived && ARRIVE_CLASS)}
     >
       <span className="tnum w-28 shrink-0 pt-px text-sm text-muted">
         {formatTime(event.start, event.end, event.allDay)}
