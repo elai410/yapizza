@@ -1,5 +1,6 @@
 'use client';
 
+import { LayoutGroup } from 'motion/react';
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
 type IntroState = { playing: boolean; finish: () => void };
@@ -12,7 +13,7 @@ export function IntroProvider({ children }: { children: ReactNode }) {
   const [playing, setPlaying] = useState(true);
   return (
     <IntroContext.Provider value={{ playing, finish: function () { setPlaying(false); } }}>
-      {children}
+      <LayoutGroup>{children}</LayoutGroup>
     </IntroContext.Provider>
   );
 }
