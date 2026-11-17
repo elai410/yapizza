@@ -5,7 +5,7 @@ import { writeDigest } from '@/lib/pipeline/digest';
 import { listEvents, prisma } from '.';
 
 const TZ = 'America/New_York';
-const MAX = 8; // writeDigest shows at most 8; passing more inflates its subject count
+const MAX = 8; // pre-ranked top 8, so writeDigest's start-ordered fallback still leads with the reader's college and free food
 
 /** Now through the coming Sunday 23:59 in New York; at least the next 7 days so a Saturday digest is not empty. */
 export function digestWindow(now = new Date()): { from: Date; to: Date } {

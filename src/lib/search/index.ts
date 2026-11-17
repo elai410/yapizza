@@ -90,7 +90,7 @@ export interface EventQuery {
   freeFood?: boolean;
 }
 
-export async function searchEvents(f: EventQuery, limit = 15): Promise<{ card: EventCard; score: number; hits: string[] }[]> {
+export async function searchEvents(f: EventQuery, limit = 15): Promise<{ card: EventCard; score: number; hits: string[]; tagHits: Tag[] }[]> {
   const cards = await listEvents({
     from: (f.from ?? new Date()).toISOString(),
     to: f.to ? f.to.toISOString() : undefined,
@@ -99,7 +99,7 @@ export async function searchEvents(f: EventQuery, limit = 15): Promise<{ card: E
   });
   const words = (f.keywords ?? []).map((w) => w.toLowerCase()).filter(Boolean);
   const tags = f.tags ?? [];
-  if (!words.length && !tags.length) return cards.filter((c) => c.status === 'live').slice(0, limit).map((card) => ({ card, score: 0, hits: [] }));
+  if (!words.length && !tags.length) return cards.filter((c) => c.status === 'live').slice(0, limit).map((card) => ({ card, score: 0, hits: [], tagHits: [] }));
 
   return cards
     .filter((c) => c.status === 'live')
@@ -107,14 +107,13 @@ export async function searchEvents(f: EventQuery, limit = 15): Promise<{ card: E
       const hay = [card.title, card.placeName, card.hostName, card.food].join(' ').toLowerCase();
       const hits = words.filter((w) => hay.includes(w));
       const tagHits = tags.filter((t) => card.tags.includes(t));
-      return { card, score: hits.length * 2 + tagHits.length, hits };
+      return { card, score: hits.length * 2 + tagHits.length, hits, tagHits };
     })
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score || a.card.start.localeCompare(b.card.start))
     .slice(0, limit);
 }
 
-const fmtWhen = (c: EventCard) => formatInTimeZone(new Date(c.start), TZ, c.allDay ? 'EEE, MMM d' : 'EEE, MMM d · h:mm a');
 
 export async function keywordAsk(q: string, now = new Date()): Promise<AskResponse> {
   const p = parseQuery(q, now);
@@ -127,11 +126,19 @@ export async function keywordAsk(q: string, now = new Date()): Promise<AskRespon
     rows = await searchEvents({ ...p, from: now, to: null }, 3);
     later = rows.length > 0;
   }
-  const results = rows.map(({ card, hits }) => {
-    const why = [card.freeFood ? 'Free food' : null, p.college && card.college === p.college ? card.college : null, hits.length ? `Mentions ${hits.slice(0, 2).join(', ')}` : null, fmtWhen(card)]
+  // The card already shows the time, so the why says only what matched.
+  const results = rows.map(({ card, hits, tagHits }) => {
+    const food = card.food ? `Free food: ${card.food.split(/\s+/).slice(0, 4).join(' ')}` : 'Free food';
+    const matched = [...hits.filter((h) => !(card.freeFood && card.food?.toLowerCase().includes(h))), ...tagHits.map((t) => t.replace('_', ' '))];
+    const why = [
+      card.freeFood ? food : null,
+      p.college && card.college === p.college ? card.college : null,
+      matched.length ? `Matches ${matched.slice(0, 2).join(', ')}` : null,
+      p.when && !later ? p.when : null,
+    ]
       .filter(Boolean)
       .join(' · ');
-    return { event: card, why };
+    return { event: card, why: why || 'Coming up' };
   });
   const n = results.length;
   const answer = later
