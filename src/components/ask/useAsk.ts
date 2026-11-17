@@ -18,7 +18,7 @@ async function askApi(q: string): Promise<AskResponse> {
 const STOP = new Set(['a', 'an', 'the', 'any', 'anything', 'something', 'events', 'event', 'in', 'at', 'on', 'for', 'this', 'week', 'is', 'there', 'what', 'whats', "what's", 'me', 'show', 'find', 'near', 'with', 'and', 'or', 'of', 'to', 'tonight', 'today', 'talks', 'talk']);
 
 // Turns a plain question into /api/events filters: "free food tonight" -> freeFood + today.
-// shortcut: English keywords only; /api/ask with Grok handles real questions.
+// shortcut: English keywords only; /api/ask with the model handles real questions.
 export function fallbackParams(question: string): URLSearchParams {
   let text = ' ' + question.toLowerCase() + ' ';
   const p = new URLSearchParams(rangeFor(/\b(tonight|today)\b/.test(text) ? 'today' : 'week'));

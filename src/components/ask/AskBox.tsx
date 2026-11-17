@@ -69,7 +69,7 @@ export function AskBox({ onOpen, autoFocus = false, initialQuery, examples = tru
           {data.results.length > 0 && (
             <div className="space-y-1">
               {data.answer && <p className="text-[15px] text-ink">{data.answer}</p>}
-              <p className="text-xs text-faint">{data.mode === 'grok' ? 'Read by Grok' : 'Showing keyword matches.'}</p>
+              <p className="text-xs text-faint">{data.mode === 'grok' ? 'Read by Claude' : 'Showing keyword matches.'}</p>
             </div>
           )}
           {data.results.length === 0 ? (

@@ -72,7 +72,7 @@ export function SourceDrawer({ event }: { event: EventDetail }) {
 
           {event.readBy === 'grok' ? (
             <p className="text-xs text-faint">
-              Read by Grok · confidence <span className="tnum">{event.confidence.toFixed(2)}</span>
+              Read by Claude · confidence <span className="tnum">{event.confidence.toFixed(2)}</span>
             </p>
           ) : event.evidence.length > 0 ? (
             <p className="text-xs text-faint">Quotes checked against the {src.kind === 'upload' ? 'file' : src.kind === 'form' ? 'listing' : 'email'}</p>
