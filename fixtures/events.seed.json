@@ -5414,5 +5414,23 @@
     ],
     "confidence": 0.95,
     "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+  },
+  {
+    "kind": "listing",
+    "title": "OCAY gear sale",
+    "price": "$10 to $40",
+    "summary": "Crash pads $40 each (3 available), harnesses $15 each, climbing shoes $10 a pair in assorted sizes. Reply to the OCAY list email to claim. Pickup at the OCAY shed through Nov 20.",
+    "hostName": "OCAY",
+    "tags": [],
+    "evidence": [
+      "Crash pads, $40 each",
+      "Pickup at the OCAY shed through Nov 20"
+    ],
+    "confidence": 1,
+    "rawText": "Clearing out the gear closet before break. Selling:\n\n- Crash pads, $40 each (3 available)\n- Harnesses, $15 each\n- Climbing shoes, assorted sizes, $10 a pair\n\nReply to this email to claim. First come, first served. Pickup at the OCAY shed through Nov 20.\n\n--\nYou are receiving this because you subscribed to OCAY Members.\nTo unsubscribe, reply with UNSUBSCRIBE in the subject line.",
+    "sender": "OCAY Members <ocay@lists.yale.test>",
+    "listName": "OCAY Members",
+    "subject": "[OCAY] gear sale before break",
+    "sentAt": "2026-11-16T19:30:00-05:00"
   }
 ]
