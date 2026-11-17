@@ -6,6 +6,7 @@ import { isOn, type EventDetail } from '@/lib/contracts';
 import { formatTime, formatWhen, useEvent } from '@/lib/client';
 import { Sheet, SheetContent, Skeleton, StatusBadge, TagChip, buttonClasses } from '@/components/ui';
 import { AddToCalendar } from './AddToCalendar';
+import { SaveButton } from './SaveButton';
 import { SourceDrawer } from './SourceDrawer';
 
 const FIELD_WORDS: Record<string, string> = {
@@ -77,6 +78,7 @@ function Body({ event: e }: { event: EventDetail }) {
 
       <div className="flex flex-wrap items-center gap-2">
         <AddToCalendar event={e} />
+        <SaveButton eventId={e.id} />
         {e.rsvpUrl && (
           <a href={e.rsvpUrl} target="_blank" rel="noopener noreferrer" className={buttonClasses()}>
             RSVP
