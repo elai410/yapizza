@@ -20,3 +20,7 @@ export const simCalendar: CalendarSink = {
     return { externalId, link: '/sim/calendar' };
   },
 };
+
+export function resetSimCalendar() {
+  entries.length = 0;
+}
