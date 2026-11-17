@@ -1,14 +1,16 @@
-// Usage: pnpm grok:record
+// Usage: pnpm grok:record            record every demo input (needs XAI_API_KEY)
+//        pnpm grok:record --check    no key needed: replay each input and report which ones would hit
 // Runs every demo input through Grok in record mode so replay answers them offline.
 // Dedup 'match' calls are not recorded here: they get recorded when the demo flow runs through ingest in record mode.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import type { RawEmail } from '@/lib/contracts';
 
-process.env.GROK_MODE = 'record';
+const CHECK = process.argv.includes('--check');
+process.env.GROK_MODE = CHECK ? 'replay' : 'record';
 
 async function main() {
-  if (!process.env.XAI_API_KEY) {
+  if (!CHECK && !process.env.XAI_API_KEY) {
     console.error('XAI_API_KEY not set; nothing recorded');
     process.exit(1);
   }
@@ -16,7 +18,7 @@ async function main() {
   const { extractEvents, rawEmailToInput } = await import('@/lib/pipeline/extract');
   const { readFile } = await import('@/lib/pipeline/files');
   const { grokMode } = await import('@/lib/grok');
-  if (grokMode() !== 'record') {
+  if (!CHECK && grokMode() !== 'record') {
     console.error(`grok mode is ${grokMode()} (YAPIZZA_FORCE_SIM=1?); nothing recorded`);
     process.exit(1);
   }
@@ -59,7 +61,7 @@ async function main() {
         const r = await job.run();
         if (!r) console.log(`${job.name}  skipped (no Grok call)`);
         else {
-          if (r.mode === 'grok') written++;
+          if (r.mode === (CHECK ? 'replay' : 'grok')) written++;
           console.log(`${job.name}  mode=${r.mode}  events=${r.events}  ms=${Date.now() - t0}`);
         }
       } catch (err) {
@@ -68,7 +70,7 @@ async function main() {
     }
   }
   await Promise.all(Array.from({ length: 4 }, worker));
-  console.log(`\n${written} of ${jobs.length} inputs recorded to fixtures/grok-replay`);
+  console.log(CHECK ? `\n${written} of ${jobs.length} inputs replay offline today` : `\n${written} of ${jobs.length} inputs recorded to fixtures/grok-replay`);
 }
 
 main().catch((err) => {

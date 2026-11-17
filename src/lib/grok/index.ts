@@ -101,7 +101,8 @@ export async function grokJson<T>(opts: {
   const response: unknown = JSON.parse(content);
   const data = opts.schema.parse(response);
 
-  if (mode === 'record') {
+  // Live calls are saved too: a rehearsal with the key leaves every demo input (and dedup match) replayable offline.
+  if (mode === 'record' || mode === 'live') {
     const file = replayPath(key);
     await mkdir(path.dirname(file), { recursive: true });
     await writeFile(
