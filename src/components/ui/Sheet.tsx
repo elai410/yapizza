@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { cn } from './cn';
@@ -9,19 +9,20 @@ export const Sheet = Dialog.Root;
 export const SheetTrigger = Dialog.Trigger;
 export const SheetClose = Dialog.Close;
 
-export interface SheetContentProps {
+export interface SheetContentProps extends Omit<ComponentPropsWithoutRef<typeof Dialog.Content>, 'title'> {
   title: ReactNode;
   description?: ReactNode;
   children?: ReactNode;
   className?: string;
 }
 
-export function SheetContent({ title, description, children, className }: SheetContentProps) {
+export function SheetContent({ title, description, children, className, ...props }: SheetContentProps) {
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="fixed inset-0 z-40 bg-ink/30 data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out" />
       <Dialog.Content
         {...(description ? {} : { 'aria-describedby': undefined })}
+        {...props}
         className={cn(
           'fixed inset-x-0 bottom-0 z-50 max-h-[88dvh] overflow-y-auto rounded-t-lg bg-surface p-5 shadow-sheet',
           'data-[state=open]:animate-sheet-up data-[state=closed]:animate-sheet-down md:data-[state=open]:animate-panel-in md:data-[state=closed]:animate-panel-out',
