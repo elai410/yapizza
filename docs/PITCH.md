@@ -18,9 +18,9 @@ Owner: qa-demo. Five slides, then the live demo carries the rest. Plain words, n
 
 - **Context, not guessing.** Every extraction call carries today's date in New York, the email's sent date, a Yale glossary (WLH, LC, DL, Commons, Dport, JE, teas), and the Yale places list with aliases (WLH, LC, AKW, Sudler, Commons, each college dining hall and buttery). "Thursday 11/19, 4:00-5:30pm, WLH 120" resolves to a real time and a known room.
 - **Structured output, checked twice.** Grok answers in strict JSON schema mode. The schema is written once in zod, sent to xAI with `z.toJSONSchema`, and every reply is parsed with the same zod schema before we use it.
-- **Evidence, checked in code.** Each event carries short verbatim quotes for its time and place. Code confirms every quote is in the source text, ignoring case and whitespace. A failed check, a missing date, or confidence under 0.7 sends the event to review, not the feed. The "How this was read" drawer shows the email with those quotes highlighted.
+- **Evidence, checked in code.** Each event carries short verbatim quotes for its time and place. Code confirms every quote is in the source text, ignoring case and whitespace. A failed check, a missing date, or Grok confidence under 0.7 sends the event to review, not the feed. The "How this was read" drawer shows the source with those quotes highlighted, and says "Read by Grok" only when Grok read it.
 - **Email is data.** The extraction call has no tools, and the prompt says to ignore instructions in the message. The worst a hostile email can do is produce a wrong card that fails its checks.
-- **Updates, not duplicates.** Each new event is compared with up to 5 existing events within 3 days that share a host, a similar title, or the same start and place. Grok returns a MatchDecision (new, same, update, cancel) with the changed fields, and only a candidate's real id is accepted. An update writes a version row and the card shows Updated.
+- **Updates, not duplicates.** Each new event is compared with up to 5 existing events within 3 days that share a host, a similar title, or the same start and place. Grok returns a MatchDecision (new, same, update, cancel) with the changed fields, and only a candidate's real id is accepted. An update writes a version row, the card shows Updated, and an older email arriving later never undoes it.
 - **Works offline.** Record mode saves every Grok reply under a hash of model, prompt version, and input; replay mode answers from those files with no network. Prompts carry a version line, so changing a prompt invalidates its recordings. If Grok is unreachable or a recording is missing, a rule-based extractor and matcher take over, and their events go through the same evidence check.
 
 ## Slide 4: Why only at Yale
@@ -42,10 +42,13 @@ Owner: qa-demo. Five slides, then the live demo carries the rest. Plain words, n
 Each answer is two or three sentences. Numbers marked TBD have not been measured yet; say so if asked.
 
 **How accurate is it?**
-Every event carries short quotes for its time and place, and code checks each quote is really in the source text before the event goes live. A failed check, a missing date, or confidence under 0.7 puts the event in review instead of the feed. `pnpm eval` reports field accuracy on 12 hand-labeled fixture emails: Grok TBD; the rule-based fallback alone scored about 90% in pipeline's last run.
+Every event carries short quotes for its time and place, and code checks each quote is really in the source text before the event goes live. A failed check, a missing date, or Grok confidence under 0.7 puts the event in review instead of the feed. `pnpm eval` reports field accuracy on 12 hand-labeled fixture emails: Grok TBD; the rule-based fallback alone scored about 90% in pipeline's last run.
+
+**How do I know Grok read a card?**
+Each event stores who read it: Grok or the rule-based fallback. The "How this was read" drawer says "Read by Grok" with its confidence only when Grok did; a card read by the rules shows no Grok line. We would rather under-claim than show a Grok label on a card Grok never saw.
 
 **What about privacy?**
-We store only what is sent to Yapizza: the email text, subject, list name, sender address (a list or office address), and the events read from it. We never read a student's inbox; intake is one club-facing address, plus forwards and uploads people choose to send. Email text goes to xAI to be read, and hosts see reach totals, never names.
+We store only what is sent to Yapizza: the email text, subject, list name, sender address (a list or office address), and the events read from it. We never read a student's inbox; intake is one club-facing address, plus forwards and uploads people choose to send. Email text goes to xAI to be read, hosts see reach totals, never names, and a student who turns off free food alerts is unsubscribed on the server.
 
 **Why would clubs adopt it?**
 A club adds one address to its mailing list and keeps sending what it already sends. There is no new form, account, or posting step. Until a club adds the address, any member can forward its email, and hosts get reach totals they don't have today.
@@ -59,8 +62,11 @@ One extraction call per email at low reasoning effort, plus a match call at medi
 **Can an email hijack Grok?**
 The extraction call has no tools, so an instruction inside an email has nothing to act on. The prompt treats the message as data, the reply must match a strict JSON schema, and the evidence check still applies. The worst case is a wrong card that fails its checks and waits in review.
 
+**What happens when plans change?**
+A room change or a cancellation updates the same card instead of adding a new one: the card shows Updated or Canceled, and the drawer shows the newest source, so the room-change email is what you see with the new room highlighted. If an older email about the same event arrives after the update, dedup ignores it, so the room never flips back. At CP5, a host who claims the club can edit or cancel its events.
+
 **What happens when Grok is wrong?**
-Low confidence or a failed evidence check sends the event to review, and the drawer shows a Review badge. A follow-up email (a room change or a cancellation) updates the same card instead of adding a new one. At CP5, a host who claims the club can edit or cancel its events.
+Low confidence or a failed evidence check sends the event to review, and the drawer shows Needs review. The source email is one click away on every card, so a student can check it themselves.
 
 **Why Grok?**
 Vision reads flyer photos directly. Structured outputs give us strict JSON we validate with the same zod schema. Tool calling lets Ask search the database in up to 3 rounds, and the UI shows only events whose ids exist.
