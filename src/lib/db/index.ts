@@ -8,6 +8,7 @@ import type {
   ExtractedEvent,
   Tag,
 } from '@/lib/contracts';
+import { gcalTemplateUrl } from '@/lib/calendar';
 
 // One client across Next.js hot reloads.
 const g = globalThis as unknown as { prisma?: PrismaClient };
@@ -54,23 +55,6 @@ function toCard(e: EventRow): EventCard {
     updatedFields: parseJson<string[]>(e.versions[0]?.changedFields, []),
     createdAt: e.createdAt.toISOString(),
   };
-}
-
-// shortcut: local copy of the Google Calendar template link; swap for src/lib/calendar's builder when integrations ships it.
-export function gcalTemplateUrl(c: { title: string; start: Date; end: Date | null; allDay: boolean; summary: string; location: string | null }): string {
-  const fmt = c.allDay
-    ? (d: Date) => formatInTimeZone(d, TZ, 'yyyyMMdd')
-    : (d: Date) => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-  const end = c.end ?? new Date(c.start.getTime() + (c.allDay ? 864e5 : 36e5));
-  const p = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: c.title,
-    dates: `${fmt(c.start)}/${fmt(end)}`,
-    details: c.summary,
-    ctz: TZ,
-  });
-  if (c.location) p.set('location', c.location);
-  return `https://calendar.google.com/calendar/render?${p.toString()}`;
 }
 
 export interface EventFilters {
@@ -120,21 +104,15 @@ export async function listEvents(f: EventFilters = {}): Promise<EventCard[]> {
 export async function getEvent(id: string): Promise<EventDetail | null> {
   const e = await prisma.event.findUnique({ where: { id }, include: { ...cardInclude, source: true } });
   if (!e) return null;
+  const card = toCard(e);
   return {
-    ...toCard(e),
+    ...card,
     summary: e.summary,
     locationRaw: e.locationRaw,
     rsvpUrl: e.rsvpUrl,
     confidence: e.confidence,
     evidence: parseJson<string[]>(e.evidence, []),
-    gcalTemplateUrl: gcalTemplateUrl({
-      title: e.title,
-      start: e.start,
-      end: e.end,
-      allDay: e.allDay,
-      summary: e.summary,
-      location: e.locationRaw ?? e.placeId,
-    }),
+    gcalTemplateUrl: gcalTemplateUrl({ ...card, summary: e.summary, locationRaw: e.locationRaw, rsvpUrl: e.rsvpUrl }),
     source: {
       id: e.source.id,
       kind: e.source.kind as EventDetail['source']['kind'],
