@@ -62,7 +62,8 @@ export function Intro() {
         // storage blocked: play once for this page load
       }
     }
-    if (played.current || !isOn('INTRO')) {
+    // A 0-size viewport (hidden tab, opening pane) can't center the circle: skip.
+    if (played.current || !isOn('INTRO') || window.innerWidth === 0) {
       end.current();
       return;
     }
