@@ -1,0 +1,5418 @@
+[
+  {
+    "kind": "event",
+    "title": "Fall Fest",
+    "start": "2026-10-17T11:00:00-04:00",
+    "end": "2026-10-17T13:30:00-04:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": null,
+    "summary": "Fall Fest, Saturday late morning into early afternoon.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "2026-10-17T11:00:00-04:00 - 13:30"
+    ],
+    "confidence": 0.95,
+    "rawText": "Fall Fest | 2026-10-17T11:00:00-04:00 - 13:30 | [Primary]"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Impact Expo (IMPEX) Info Session",
+    "start": "2026-10-17T13:00:00-04:00",
+    "end": "2026-10-17T14:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "WLH 211",
+    "placeId": "WLH 211",
+    "hostName": "Yale Impact Expo",
+    "summary": "Info session for Impact Expo team applications, due Oct 19.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Oct 17, 1-2pm, WLH 211"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Impact Expo (IMPEX) info sessions - Sat Oct 17, 1-2pm, WLH 211 and Sun Oct 18, 4-5pm, WLH 207 (team applications due Oct 19, 11:59pm)"
+  },
+  {
+    "kind": "event",
+    "title": "Goat Yoga",
+    "start": "2026-10-17T13:30:00-04:00",
+    "end": "2026-10-17T15:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "HoC Patio (Silliman)",
+    "placeId": "Silliman HoC Patio",
+    "hostName": "Silliman Head of College",
+    "summary": "Yoga with goats on the Silliman Head of College patio; bring your own mat.",
+    "tags": [
+      "athletics",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Oct 17, 1:30-3:30pm",
+      "HoC Patio (Silliman)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Goat Yoga - Sat Oct 17, 1:30-3:30pm, HoC Patio (Silliman); bring your own mat"
+  },
+  {
+    "kind": "event",
+    "title": "YMC Problem Review Session",
+    "start": "2026-10-17T19:00:00-04:00",
+    "end": "2026-10-17T22:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "WLH 203",
+    "placeId": "WLH 203",
+    "hostName": "YMC",
+    "summary": "YMC problem review session.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Oct 17, 7-10pm",
+      "WLH 203"
+    ],
+    "confidence": 0.95,
+    "rawText": "YMC problem review sessions - Sat Oct 17, 7-10pm and Tue Oct 20, 6-9pm, WLH 203"
+  },
+  {
+    "kind": "event",
+    "title": "YCC Senate Meeting",
+    "start": "2026-10-18T12:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "YCC",
+    "summary": "Weekly YCC Senate meeting, open to all interested students.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Sundays 12:30pm, Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+  },
+  {
+    "kind": "event",
+    "title": "Bulldog Block Party",
+    "start": "2026-10-18T16:00:00-04:00",
+    "end": "2026-10-18T19:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Old Campus",
+    "placeId": "Old Campus",
+    "hostName": "YCC",
+    "summary": "YCC block party on Old Campus with free food, tote bag painting, and live performances.",
+    "tags": [
+      "free_food",
+      "social",
+      "arts"
+    ],
+    "freeFood": true,
+    "food": "Food",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Oct 18, 4-7pm, Old Campus",
+      "free food"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Bulldog Block Party - Sun Oct 18, 4-7pm, Old Campus; free food, fall tote bag painting, live performances"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Impact Expo (IMPEX) Info Session",
+    "start": "2026-10-18T16:00:00-04:00",
+    "end": "2026-10-18T17:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "WLH 207",
+    "placeId": "WLH 207",
+    "hostName": "Yale Impact Expo",
+    "summary": "Info session for Impact Expo team applications, due Oct 19.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Oct 18, 4-5pm, WLH 207"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Impact Expo (IMPEX) info sessions - Sat Oct 17, 1-2pm, WLH 211 and Sun Oct 18, 4-5pm, WLH 207 (team applications due Oct 19, 11:59pm)"
+  },
+  {
+    "kind": "event",
+    "title": "YASSS Stargazing",
+    "start": "2026-10-18T20:00:00-04:00",
+    "end": "2026-10-18T21:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Cross Campus in front of Sterling",
+    "placeId": "Cross Campus",
+    "hostName": "YASSS",
+    "summary": "Stargazing on Cross Campus in front of Sterling.",
+    "tags": [
+      "academic",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Oct 18, 8-9pm",
+      "Cross Campus in front of Sterling"
+    ],
+    "confidence": 0.95,
+    "rawText": "YASSS Stargazing - Sun Oct 18, 8-9pm, Cross Campus in front of Sterling"
+  },
+  {
+    "kind": "event",
+    "title": "Accountability Cafe",
+    "start": "2026-10-19T10:00:00-04:00",
+    "end": "2026-10-19T16:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Silliman Acorn",
+    "placeId": "Silliman Acorn",
+    "hostName": "Good Life Center",
+    "summary": "Drop-in coworking before break, run by YC3.",
+    "tags": [
+      "academic",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Oct 19, 10am-4pm, Silliman Acorn"
+    ],
+    "confidence": 0.95,
+    "rawText": "Accountability Cafe - Mon Oct 19, 10am-4pm, Silliman Acorn (YC3); pre-break coworking"
+  },
+  {
+    "kind": "event",
+    "title": "Craft et Veritas: Visual Roadmap",
+    "start": "2026-10-19T15:00:00-04:00",
+    "end": "2026-10-19T16:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "YSC Offline Oasis",
+    "placeId": "YSC Offline Oasis",
+    "hostName": "Good Life Center",
+    "summary": "Weekly craft drop-in; this week is visual roadmap.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mondays 3-4pm, YSC Offline Oasis",
+      "Oct 19 (visual roadmap)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+  },
+  {
+    "kind": "event",
+    "title": "Putnam Investments Career Exploration Event",
+    "start": "2026-10-19T17:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "virtual",
+    "placeId": null,
+    "hostName": "CPI",
+    "summary": "Virtual career exploration session with Putnam Investments.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Oct 19, 5:00pm ET",
+      "(virtual)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Putnam Investments Career Exploration Event (virtual) - Mon Oct 19, 5:00pm ET (CPI)"
+  },
+  {
+    "kind": "event",
+    "title": "Dana White Fireside Chat",
+    "start": "2026-10-19T17:00:00-04:00",
+    "end": "2026-10-19T18:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "SOM Room 2210",
+    "placeId": "SOM 2210",
+    "hostName": null,
+    "summary": "Fireside chat with Dana White at SOM.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "2026-10-19T17:00:00-04:00 - 18:00",
+      "SOM Room 2210"
+    ],
+    "confidence": 0.95,
+    "rawText": "DANA WHITE FIRE SIDE CHAT | 2026-10-19T17:00:00-04:00 - 18:00 | SOM Room 2210 | [Primary]"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS PSET Night",
+    "start": "2026-10-19T19:00:00-04:00",
+    "end": "2026-10-19T21:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "WLH 001",
+    "placeId": "WLH 001",
+    "hostName": "YUMS",
+    "summary": "Weekly problem set night hosted by YUMS.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Mondays 7-9pm",
+      "Oct 19 held in WLH 001"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+  },
+  {
+    "kind": "event",
+    "title": "Twirl Student Discount Night",
+    "start": "2026-10-20T17:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Twirl (New Haven)",
+    "placeId": null,
+    "hostName": "YCC",
+    "summary": "20% off pasta bowls at Twirl for Yale students; sign-up required and seats are limited.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Oct 20, 5pm or 7pm slots, Twirl"
+    ],
+    "confidence": 0.95,
+    "rawText": "Twirl Student Discount Night (YCC) - Tue Oct 20, 5pm or 7pm slots, Twirl (New Haven); 20% off pasta bowls for Yale students, sign-up required, seats limited"
+  },
+  {
+    "kind": "event",
+    "title": "Beacon Hill Staffing Group Overview",
+    "start": "2026-10-20T17:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "virtual",
+    "placeId": null,
+    "hostName": "CPI",
+    "summary": "Virtual overview of Beacon Hill Staffing Group, with a recording shared after.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Oct 20, 5:00pm ET",
+      "(virtual)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Beacon Hill Staffing Group overview (virtual) - Tue Oct 20, 5:00pm ET (CPI; recording shared after)"
+  },
+  {
+    "kind": "event",
+    "title": "Central Asian Cultural Night",
+    "start": "2026-10-20T18:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": null,
+    "summary": "Cultural night with live dombra music, traditional food, and games.",
+    "tags": [
+      "cultural",
+      "free_food"
+    ],
+    "freeFood": true,
+    "food": "Traditional Central Asian food",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Oct 20, 6pm",
+      "traditional food"
+    ],
+    "confidence": 0.95,
+    "rawText": "Central Asian Cultural Night - Tue Oct 20, 6pm (live dombra music, traditional food and games)"
+  },
+  {
+    "kind": "event",
+    "title": "YMC Problem Review Session",
+    "start": "2026-10-20T18:00:00-04:00",
+    "end": "2026-10-20T21:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "WLH 203",
+    "placeId": "WLH 203",
+    "hostName": "YMC",
+    "summary": "YMC problem review session.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Oct 20, 6-9pm",
+      "WLH 203"
+    ],
+    "confidence": 0.95,
+    "rawText": "YMC problem review sessions - Sat Oct 17, 7-10pm and Tue Oct 20, 6-9pm, WLH 203"
+  },
+  {
+    "kind": "event",
+    "title": "Fall Undergrad Retreat",
+    "start": "2026-10-21T09:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "departing campus",
+    "placeId": null,
+    "hostName": "Chaplain's Office",
+    "summary": "The Chaplain's Office fall retreat for undergraduates, departing from campus in the morning.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Oct 21, departing campus 9:00am"
+    ],
+    "confidence": 0.95,
+    "rawText": "Chaplain's Office Fall Undergrad Retreat - Wed Oct 21, departing campus 9:00am"
+  },
+  {
+    "kind": "event",
+    "title": "AACC Game Night",
+    "start": "2026-10-21T18:00:00-04:00",
+    "end": "2026-10-21T19:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "AACC Game Room",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Weekly game night in the AACC Game Room.",
+    "tags": [
+      "social",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Wednesdays 6-7pm, AACC Game Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+  },
+  {
+    "kind": "event",
+    "title": "FGLI Thrive Pre-Shopping Bagel Brunch",
+    "start": "2026-10-22T10:00:00-04:00",
+    "end": "2026-10-22T11:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Poorvu Center CTL 120A & B",
+    "placeId": "Poorvu 120A",
+    "hostName": "FGLI Thrive",
+    "summary": "Bagel brunch before the FGLI Thrive fall break shopping trip.",
+    "tags": [
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Bagels",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Oct 22, 10:00-11:00am, Poorvu Center CTL 120A & B"
+    ],
+    "confidence": 0.95,
+    "rawText": "FGLI Thrive Pre-Shopping Bagel Brunch - Thu Oct 22, 10:00-11:00am, Poorvu Center CTL 120A & B"
+  },
+  {
+    "kind": "event",
+    "title": "FGLI Thrive Fall Break Shopping Trip",
+    "start": "2026-10-22T11:00:00-04:00",
+    "end": "2026-10-22T16:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Phelps Gate",
+    "placeId": "Phelps Gate",
+    "hostName": "FGLI Thrive",
+    "summary": "Shuttles from Phelps Gate to CT Post Mall and Savers.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Oct 22, 11:00am-4:00pm, shuttles from Phelps Gate"
+    ],
+    "confidence": 0.95,
+    "rawText": "FGLI Thrive Fall Break Shopping Trip - Thu Oct 22, 11:00am-4:00pm, shuttles from Phelps Gate to CT Post Mall / Savers"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Philharmonia: Bartok, Dvorak, Bresnick",
+    "start": "2026-10-23T19:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Woolsey Hall",
+    "placeId": "Woolsey Hall",
+    "hostName": "Yale Philharmonia",
+    "summary": "Yale Philharmonia plays Bartok, Dvorak, and Bresnick under Peter Oundjian.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "Tickets from $17",
+    "evidence": [
+      "Fri Oct 23, 7:30pm, Woolsey Hall"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Philharmonia: Bartok, Dvorak, Bresnick - Fri Oct 23, 7:30pm, Woolsey Hall (Peter Oundjian; tickets from $17)"
+  },
+  {
+    "kind": "event",
+    "title": "AACC 45th Anniversary Gala Dinner",
+    "start": "2026-10-24T18:00:00-04:00",
+    "end": "2026-10-24T20:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Omni New Haven Hotel",
+    "placeId": null,
+    "hostName": "AACC",
+    "summary": "Gala dinner for the 45th anniversary of the Asian American Cultural Center.",
+    "tags": [
+      "cultural",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Oct 24, 6-8pm, Omni New Haven Hotel"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC 45th Anniversary Gala Dinner - Sat Oct 24, 6-8pm, Omni New Haven Hotel"
+  },
+  {
+    "kind": "event",
+    "title": "FGLI Thrive Professional Headshots",
+    "start": "2026-10-25T09:00:00-04:00",
+    "end": "2026-10-25T17:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Beinecke Plaza Columns",
+    "placeId": "Beinecke Plaza",
+    "hostName": "FGLI Thrive",
+    "summary": "Free professional headshots at the Beinecke Plaza columns.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Oct 25, 9:00am-5:00pm, Beinecke Plaza Columns"
+    ],
+    "confidence": 0.95,
+    "rawText": "FGLI Thrive Professional Headshots - Sun Oct 25, 9:00am-5:00pm, Beinecke Plaza Columns"
+  },
+  {
+    "kind": "event",
+    "title": "YCC Senate Meeting",
+    "start": "2026-10-25T12:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "YCC",
+    "summary": "Weekly YCC Senate meeting, open to all interested students.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Sundays 12:30pm, Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+  },
+  {
+    "kind": "event",
+    "title": "Intercultural Fall Festival Week",
+    "start": "2026-10-26T00:00:00-04:00",
+    "end": "2026-10-29T23:59:00-04:00",
+    "allDay": true,
+    "locationRaw": "NACC / the House / AACC / La Casa / MENACC",
+    "placeId": null,
+    "hostName": null,
+    "summary": "A week of movies, treats, a haunted house, and pumpkin painting across the cultural centers.",
+    "tags": [
+      "cultural",
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Treats",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Oct 26-29",
+      "NACC / the House / AACC / La Casa / MENACC"
+    ],
+    "confidence": 0.95,
+    "rawText": "Intercultural Fall Festival Week - Oct 26-29, NACC / the House / AACC / La Casa / MENACC (movies, treats, haunted house, pumpkin painting)"
+  },
+  {
+    "kind": "event",
+    "title": "Craft et Veritas: Spooky Lego",
+    "start": "2026-10-26T15:00:00-04:00",
+    "end": "2026-10-26T16:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "YSC Offline Oasis",
+    "placeId": "YSC Offline Oasis",
+    "hostName": "Good Life Center",
+    "summary": "Weekly craft drop-in; this week is spooky lego.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mondays 3-4pm, YSC Offline Oasis",
+      "Oct 26 (spooky lego)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+  },
+  {
+    "kind": "event",
+    "title": "Gentle Yoga",
+    "start": "2026-10-26T17:00:00-04:00",
+    "end": "2026-10-26T18:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Gentle Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Gentle Yoga Mon 5-6pm",
+      "Oct 26"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "Painting Plant Pots",
+    "start": "2026-10-26T18:30:00-04:00",
+    "end": "2026-10-26T19:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "Silliman Acorn",
+    "placeId": "Silliman Acorn",
+    "hostName": "Silliman GA",
+    "summary": "Silliman GA event to paint plant pots.",
+    "tags": [
+      "arts",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "college_only",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Oct 26, 6:30-7:30pm, Silliman Acorn"
+    ],
+    "confidence": 0.95,
+    "rawText": "Painting Plant Pots (GA event) - Mon Oct 26, 6:30-7:30pm, Silliman Acorn"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS PSET Night",
+    "start": "2026-10-26T19:00:00-04:00",
+    "end": "2026-10-26T21:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "WLH 011",
+    "placeId": "WLH 011",
+    "hostName": "YUMS",
+    "summary": "Weekly problem set night hosted by YUMS.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Mondays 7-9pm",
+      "WLH 011"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+  },
+  {
+    "kind": "event",
+    "title": "Explore Summer Internships with NTT DATA",
+    "start": "2026-10-27T00:00:00-04:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "NTT DATA",
+    "summary": "Information about summer internships at NTT DATA.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Oct 27"
+    ],
+    "confidence": 0.95,
+    "rawText": "Explore Summer Internships with NTT DATA - Tue Oct 27"
+  },
+  {
+    "kind": "event",
+    "title": "Collective Breath",
+    "start": "2026-10-27T11:00:00-04:00",
+    "end": "2026-10-27T13:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Battell Chapel",
+    "placeId": "Battell Chapel",
+    "hostName": "Chaplain's Office",
+    "summary": "Come-and-go breathing session open to all students, staff, and faculty.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Oct 27, 11am-1pm, Battell Chapel"
+    ],
+    "confidence": 0.95,
+    "rawText": "Collective Breath (Chaplain's Office) - Tue Oct 27, 11am-1pm, Battell Chapel; open to all students, staff and faculty, come and go as you please"
+  },
+  {
+    "kind": "event",
+    "title": "Hatha Yoga",
+    "start": "2026-10-27T17:30:00-04:00",
+    "end": "2026-10-27T18:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "GLC Lounge",
+    "placeId": "YSC GLC Lounge",
+    "hostName": "Good Life Center",
+    "summary": "Hatha Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Hatha Yoga Tue 5:30-6:30pm",
+      "Oct 27 in GLC Lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "CT Governor's Debate Watch Party",
+    "start": "2026-10-27T19:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Davenport Common Room",
+    "placeId": "Davenport Common Room",
+    "hostName": null,
+    "summary": "Watch party for the Lamont vs. Fazio governor's debate.",
+    "tags": [
+      "social",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Davenport",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Oct 27, 7:00pm, Davenport Common Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "CT Governor's Debate watch party (Lamont vs. Fazio) - Tue Oct 27, 7:00pm, Davenport Common Room"
+  },
+  {
+    "kind": "event",
+    "title": "AACC Halloween Movie Night",
+    "start": "2026-10-28T00:00:00-04:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": "AACC",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Scary movie night at the AACC hosted by the first-year coordinators.",
+    "tags": [
+      "social",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Oct 28, AACC"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC Halloween (\"Scary\") Movie Night - Wed Oct 28, AACC (first-year coordinators)"
+  },
+  {
+    "kind": "event",
+    "title": "College Tea: Geoff Chatas",
+    "start": "2026-10-28T17:00:00-04:00",
+    "end": "2026-10-28T18:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "Head of College House, 71 Wall St (Silliman)",
+    "placeId": "Silliman HoC House",
+    "hostName": "Silliman Head of College",
+    "summary": "College Tea with Yale COO Geoff Chatas at the Silliman Head of College House.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Oct 28, 5:00-6:30pm",
+      "Head of College House, 71 Wall St"
+    ],
+    "confidence": 0.95,
+    "rawText": "College Tea: Geoff Chatas (Yale COO) - Wed Oct 28, 5:00-6:30pm, Head of College House, 71 Wall St (Silliman)"
+  },
+  {
+    "kind": "event",
+    "title": "AGPC Kickoff",
+    "start": "2026-10-28T18:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "AGPC",
+    "summary": "Kickoff for the Asian graduate and professional student community.",
+    "tags": [
+      "cultural",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Oct 28, 6pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "AGPC (Asian Grad/Professional community) Kickoff - Wed Oct 28, 6pm"
+  },
+  {
+    "kind": "event",
+    "title": "AACC Game Night",
+    "start": "2026-10-28T18:00:00-04:00",
+    "end": "2026-10-28T19:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "AACC Game Room",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Weekly game night in the AACC Game Room.",
+    "tags": [
+      "social",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Wednesdays 6-7pm, AACC Game Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+  },
+  {
+    "kind": "event",
+    "title": "Link New Haven Info Session",
+    "start": "2026-10-28T19:00:00-04:00",
+    "end": "2026-10-28T20:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "LC 103",
+    "placeId": "LC 103",
+    "hostName": "Link New Haven",
+    "summary": "Info session for Link New Haven; project registration is due Nov 1.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Oct 28, 7-8pm, LC 103"
+    ],
+    "confidence": 0.95,
+    "rawText": "Link New Haven info session - Wed Oct 28, 7-8pm, LC 103 (project registration due Nov 1)"
+  },
+  {
+    "kind": "event",
+    "title": "HALLOWOADS",
+    "start": "2026-10-28T22:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Toad's Place of New Haven",
+    "placeId": "Toad's Place",
+    "hostName": "Toad's Place",
+    "summary": "Halloween night at Toad's Place; Yale ID required.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "GA $18.75 + fees",
+    "evidence": [
+      "Wed Oct 28, 10:00pm",
+      "Toad's Place of New Haven"
+    ],
+    "confidence": 0.95,
+    "rawText": "HALLOWOADS at Toad's Place - Wed Oct 28, 10:00pm, Toad's Place of New Haven (Yale ID required; GA $18.75 + fees)"
+  },
+  {
+    "kind": "event",
+    "title": "Thursday Tea Time",
+    "start": "2026-10-29T14:00:00-04:00",
+    "end": "2026-10-29T16:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "YSC Tea Room 208",
+    "placeId": "YSC 208",
+    "hostName": "Good Life Center",
+    "summary": "Weekly tea time with Gamelatron listening.",
+    "tags": [
+      "social",
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thursdays 2-4pm, YSC Tea Room 208"
+    ],
+    "confidence": 0.95,
+    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)"
+  },
+  {
+    "kind": "event",
+    "title": "Imagining Your Summer",
+    "start": "2026-10-29T16:00:00-04:00",
+    "end": "2026-10-29T17:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "Office of Fellowships",
+    "summary": "Office of Fellowships session on planning your summer.",
+    "tags": [
+      "professional",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Oct 29, 4:00-5:00pm Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+  },
+  {
+    "kind": "event",
+    "title": "Power Yoga",
+    "start": "2026-10-29T18:30:00-04:00",
+    "end": "2026-10-29T19:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Power Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Power Yoga Thu 6:30-7:30pm",
+      "Oct 29"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS Pizza Seminar: Gluing Polygons, Topology, and Gaussian Integrals",
+    "start": "2026-10-29T19:00:00-04:00",
+    "end": "2026-10-29T20:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Watson Center A53",
+    "placeId": "Watson A53",
+    "hostName": "YUMS",
+    "summary": "Prof. Catherine Wolfram speaks on gluing polygons, topology, and Gaussian integrals.",
+    "tags": [
+      "free_food",
+      "academic"
+    ],
+    "freeFood": true,
+    "food": "Pizza",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Oct 29, 7-8pm",
+      "Watson Center A53"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS Pizza Seminar: Prof. Catherine Wolfram, \"Gluing Polygons, Topology, and Gaussian Integrals\" - Thu Oct 29, 7-8pm, Watson Center A53"
+  },
+  {
+    "kind": "event",
+    "title": "YASSS Stargazing",
+    "start": "2026-10-29T20:00:00-04:00",
+    "end": "2026-10-29T21:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Cross Campus",
+    "placeId": "Cross Campus",
+    "hostName": "YASSS",
+    "summary": "Stargazing on Cross Campus.",
+    "tags": [
+      "academic",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Oct 29, 8-9pm, Cross Campus"
+    ],
+    "confidence": 0.95,
+    "rawText": "YASSS Stargazing - Thu Oct 29, 8-9pm, Cross Campus"
+  },
+  {
+    "kind": "event",
+    "title": "STEM Summer Fellowships: Research Abroad Info Session",
+    "start": "2026-10-29T20:00:00-04:00",
+    "end": "2026-10-29T21:00:00-04:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Office of Fellowships",
+    "summary": "Info session on STEM summer research abroad fellowships.",
+    "tags": [
+      "academic",
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Oct 29, 8:00-9:00pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "STEM Summer Fellowships: Research Abroad info session - Thu Oct 29, 8:00-9:00pm"
+  },
+  {
+    "kind": "event",
+    "title": "HALLOWBDEEN",
+    "start": "2026-10-29T22:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "373 Crown St",
+    "placeId": "373 Crown St",
+    "hostName": "Baker's Dozen",
+    "summary": "Baker's Dozen Halloween party; costumes.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Oct 29, 10:30pm, 373 Crown St"
+    ],
+    "confidence": 0.95,
+    "rawText": "HALLOWBDEEN (Baker's Dozen) - Thu Oct 29, 10:30pm, 373 Crown St (costumes)"
+  },
+  {
+    "kind": "event",
+    "title": "Ask Cliffe",
+    "start": "2026-10-30T12:00:00-04:00",
+    "end": "2026-10-30T17:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Beinecke Plaza",
+    "placeId": "Beinecke Plaza",
+    "hostName": "Christian Union",
+    "summary": "Open Q&A with Pastor Cliffe Knechtle on Beinecke Plaza.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 12:00-5:00pm, Beinecke Plaza"
+    ],
+    "confidence": 0.95,
+    "rawText": "Ask Cliffe (Pastor Cliffe Knechtle Q&A) - Fri Oct 30, 12:00-5:00pm, Beinecke Plaza (Christian Union)"
+  },
+  {
+    "kind": "event",
+    "title": "Friday Yoga",
+    "start": "2026-10-30T17:00:00-04:00",
+    "end": "2026-10-30T18:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Friday Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Friday yoga 5-6pm",
+      "Oct 30"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "Jenn Colella Master Class and Reception",
+    "start": "2026-10-30T17:00:00-04:00",
+    "end": "2026-10-30T19:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "The Ballroom at 220 York St",
+    "placeId": "The Ballroom",
+    "hostName": null,
+    "summary": "Master class and reception with Tony nominee Jenn Colella; free and open to all.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 5:00-7:30pm, The Ballroom at 220 York St"
+    ],
+    "confidence": 0.95,
+    "rawText": "Jenn Colella (Tony nominee, \"Come From Away\") master class + reception - Fri Oct 30, 5:00-7:30pm, The Ballroom at 220 York St (free, open to all)"
+  },
+  {
+    "kind": "event",
+    "title": "YASSS x SPS x WIP Astro + Physics Halloween Mixer",
+    "start": "2026-10-30T18:00:00-04:00",
+    "end": "2026-10-30T19:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "SPL 3rd floor lounge",
+    "placeId": "SPL",
+    "hostName": "YASSS",
+    "summary": "Halloween mixer for astronomy and physics students.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 6-7pm, SPL 3rd floor lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "YASSS x SPS x WIP Astro + Physics Halloween Mixer - Fri Oct 30, 6-7pm, SPL 3rd floor lounge"
+  },
+  {
+    "kind": "event",
+    "title": "Yale School of Art Undergraduate Exhibition Reception",
+    "start": "2026-10-30T18:00:00-04:00",
+    "end": "2026-10-30T20:00:00-04:00",
+    "allDay": false,
+    "locationRaw": "Green Gallery, 1156 Chapel St",
+    "placeId": "Green Gallery",
+    "hostName": "Yale School of Art",
+    "summary": "Reception for the undergraduate exhibition, on view through Nov 1.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Green Gallery, 1156 Chapel St",
+      "reception Fri Oct 30, 6-8pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale School of Art undergraduate exhibition - Green Gallery, 1156 Chapel St, through Sun Nov 1 (M-F 12-6pm, Sa/Su 12-4pm); reception Fri Oct 30, 6-8pm"
+  },
+  {
+    "kind": "event",
+    "title": "MMATHS Test-Solving Session",
+    "start": "2026-10-30T18:30:00-04:00",
+    "end": "2026-10-30T21:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "DL 220",
+    "placeId": "DL 220",
+    "hostName": "YUMS",
+    "summary": "Test-solving session for the MMATHS competition.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 6:30-9:30pm, DL 220"
+    ],
+    "confidence": 0.95,
+    "rawText": "MMATHS test-solving session - Fri Oct 30, 6:30-9:30pm, DL 220"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Artists Cabaret Fall Mainstage: Deadly Sins",
+    "start": "2026-10-30T19:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Yale Artists Cabaret",
+    "summary": "Yale Artists Cabaret fall mainstage; registration is sold out.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 7:30pm and 9:30pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Artists Cabaret Fall Mainstage: \"Deadly Sins\" - Fri Oct 30, 7:30pm and 9:30pm (registration sold out)"
+  },
+  {
+    "kind": "event",
+    "title": "Good Show Sketch Comedy",
+    "start": "2026-10-30T20:00:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Good Show",
+    "summary": "Sketch comedy show featuring an original sketch by YCT's Polly.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 8:00pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Good Show sketch comedy (original sketch by YCT's Polly) - Fri Oct 30, 8:00pm"
+  },
+  {
+    "kind": "event",
+    "title": "Monster Mash 2026: Camp Crystal Queer",
+    "start": "2026-10-30T21:00:00-04:00",
+    "end": "2026-10-30T23:30:00-04:00",
+    "allDay": false,
+    "locationRaw": "135 Prospect St",
+    "placeId": "LGBTQ Center",
+    "hostName": "Yale LGBTQ Center",
+    "summary": "Halloween party from the LGBTQ Center with a costume contest.",
+    "tags": [
+      "social",
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 9:00-11:30pm, 135 Prospect St"
+    ],
+    "confidence": 0.95,
+    "rawText": "Monster Mash 2026: Camp Crystal Queer (Yale LGBTQ Center) - Fri Oct 30, 9:00-11:30pm, 135 Prospect St (GLC newsletter also lists YSC Tea Room 208); costume contest, volunteers wanted"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Artists Cabaret Fall Mainstage: Deadly Sins",
+    "start": "2026-10-30T21:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Yale Artists Cabaret",
+    "summary": "Yale Artists Cabaret fall mainstage; registration is sold out.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Oct 30, 7:30pm and 9:30pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Artists Cabaret Fall Mainstage: \"Deadly Sins\" - Fri Oct 30, 7:30pm and 9:30pm (registration sold out)"
+  },
+  {
+    "kind": "event",
+    "title": "YSO Halloween Show",
+    "start": "2026-10-31T23:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Woolsey Hall",
+    "placeId": "Woolsey Hall",
+    "hostName": "YSO",
+    "summary": "YSO Halloween show at midnight, with a pre-show by student band Flannel at 11:30pm.",
+    "tags": [
+      "arts",
+      "traditions"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Oct 31: pre-show by student band Flannel 11:30pm",
+      "main show at midnight (Woolsey Hall)"
+    ],
+    "confidence": 0.95,
+    "rawText": "YSO Halloween Show - Sat Oct 31: pre-show by student band Flannel 11:30pm, main show at midnight (Woolsey Hall)"
+  },
+  {
+    "kind": "event",
+    "title": "AEPi Challah-ween",
+    "start": "2026-10-31T23:30:00-04:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "397 Crown St",
+    "placeId": "397 Crown St",
+    "hostName": "AEPi",
+    "summary": "AEPi Halloween party at 397 Crown St.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Oct 31, 11:30pm, 397 Crown St"
+    ],
+    "confidence": 0.95,
+    "rawText": "AEPi CHALLAH-WEEN - Sat Oct 31, 11:30pm, 397 Crown St"
+  },
+  {
+    "kind": "event",
+    "title": "New Haven Restaurant Week",
+    "start": "2026-11-01T00:00:00-05:00",
+    "end": "2026-11-14T23:59:00-05:00",
+    "allDay": true,
+    "locationRaw": "New Haven restaurants",
+    "placeId": null,
+    "hostName": "YCC",
+    "summary": "About two dozen New Haven restaurants offer discounted lunches and dinners, with student deals highlighted by YCC.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Nov 1-14"
+    ],
+    "confidence": 0.95,
+    "rawText": "New Haven Restaurant Week - Nov 1-14; about two dozen New Haven restaurants with discounted lunches/dinners, student deals highlighted by YCC"
+  },
+  {
+    "kind": "event",
+    "title": "Harvard-Yale Donation Drive",
+    "start": "2026-11-01T00:00:00-05:00",
+    "end": "2026-11-20T23:59:00-05:00",
+    "allDay": true,
+    "locationRaw": "Dwight Hall or Silliman College",
+    "placeId": "Dwight Hall",
+    "hostName": "Dwight Hall and YCC",
+    "summary": "Drop off warm clothing and non-perishable food for the Women of the Village Food Pantry.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Nov 1-20",
+      "Dwight Hall or Silliman College"
+    ],
+    "confidence": 0.95,
+    "rawText": "Harvard-Yale Donation Drive (Dwight Hall + YCC) - Nov 1-20; drop off warm clothing and non-perishable food at Dwight Hall or Silliman College for the Women of the Village Food Pantry"
+  },
+  {
+    "kind": "event",
+    "title": "YCC Senate Meeting",
+    "start": "2026-11-01T12:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "YCC",
+    "summary": "Weekly YCC Senate meeting, open to all interested students.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Sundays 12:30pm, Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+  },
+  {
+    "kind": "event",
+    "title": "SASsy Sunday: Faux Pumpkin Painting",
+    "start": "2026-11-01T16:00:00-05:00",
+    "end": "2026-11-01T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Student Accessibility Services, 35 Broadway rm 222",
+    "placeId": "35 Broadway 222",
+    "hostName": "Good Life Center",
+    "summary": "Good Life Center craft hour at Student Accessibility Services: faux pumpkin painting.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "4-5pm open to all",
+      "Nov 1 (faux pumpkin painting)"
+    ],
+    "confidence": 0.95,
+    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)"
+  },
+  {
+    "kind": "event",
+    "title": "Current Works in Human Neuroscience: Janice Chen",
+    "start": "2026-11-02T00:00:00-05:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Wu Tsai Institute",
+    "summary": "Janice Chen speaks on studying memory for natural events across multiple timescales.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 2"
+    ],
+    "confidence": 0.95,
+    "rawText": "Wu Tsai Institute: Current Works in Human Neuroscience: Janice Chen, \"Studying memory for natural events across multiple timescales\" - Mon Nov 2"
+  },
+  {
+    "kind": "event",
+    "title": "YSS Florence Painting Exhibit",
+    "start": "2026-11-02T00:00:00-05:00",
+    "end": "2026-11-06T23:59:00-05:00",
+    "allDay": true,
+    "locationRaw": "Art Gallery at 32 Edgewood Ave",
+    "placeId": "32 Edgewood Gallery",
+    "hostName": "Yale Summer Session",
+    "summary": "Exhibit of paintings from Yale Summer Session in Florence, open 4:00-6:00pm daily.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave"
+    ],
+    "confidence": 0.95,
+    "rawText": "YSS Florence painting exhibit - Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave; info session Fri Nov 6, 10:00-11:00am"
+  },
+  {
+    "kind": "event",
+    "title": "Craft et Veritas: Bookmarks",
+    "start": "2026-11-02T15:00:00-05:00",
+    "end": "2026-11-02T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Offline Oasis",
+    "placeId": "YSC Offline Oasis",
+    "hostName": "Good Life Center",
+    "summary": "Weekly craft drop-in; this week is bookmarks.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mondays 3-4pm, YSC Offline Oasis",
+      "Nov 2 (bookmarks)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+  },
+  {
+    "kind": "event",
+    "title": "Music as Medicine with Jamie Pabst",
+    "start": "2026-11-02T15:30:00-05:00",
+    "end": "2026-11-02T16:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Good Life Center Lounge",
+    "placeId": "YSC GLC Lounge",
+    "hostName": "Good Life Center",
+    "summary": "Session on music and wellbeing with Jamie Pabst of Spiritune.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 2, 3:30-4:30pm, YSC Good Life Center Lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "Music as Medicine with Jamie Pabst (Spiritune) - Mon Nov 2, 3:30-4:30pm, YSC Good Life Center Lounge"
+  },
+  {
+    "kind": "event",
+    "title": "Hatha Yoga",
+    "start": "2026-11-02T17:00:00-05:00",
+    "end": "2026-11-02T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Hatha Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Hatha Yoga Mon Nov 2 5-6pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "Monsoon Table: Water and Cuisine with Chef Asma Khan",
+    "start": "2026-11-02T17:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Luce Hall 101",
+    "placeId": "Luce 101",
+    "hostName": "South Asian Studies Council",
+    "summary": "Talk on water and cuisine by Chef Asma Khan, the Fall 2026 Yale Global Table Fellow; registration required.",
+    "tags": [
+      "academic",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 2, 5:00pm, Luce Hall 101"
+    ],
+    "confidence": 0.95,
+    "rawText": "Monsoon Table: Water and Cuisine with Chef Asma Khan (South Asian Studies Council) - Mon Nov 2, 5:00pm, Luce Hall 101 (registration required; reception follows); Asma Khan on campus Oct 28 - Nov 6 as Fall 2026 Yale Global Table Fellow"
+  },
+  {
+    "kind": "event",
+    "title": "Studying Abroad as a STEM Student",
+    "start": "2026-11-02T17:00:00-05:00",
+    "end": "2026-11-02T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Poorvu Center 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "Study Abroad",
+    "summary": "Study Abroad and STEM Navigators session on studying abroad as a STEM student.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 2, 5:00-6:00pm, Poorvu Center 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "Study Abroad x STEM Navigators: Studying Abroad as a STEM Student - Mon Nov 2, 5:00-6:00pm, Poorvu Center 120A"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS PSET Night",
+    "start": "2026-11-02T19:00:00-05:00",
+    "end": "2026-11-02T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "WLH 011",
+    "placeId": "WLH 011",
+    "hostName": "YUMS",
+    "summary": "Weekly problem set night hosted by YUMS.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Mondays 7-9pm",
+      "WLH 011"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+  },
+  {
+    "kind": "event",
+    "title": "Walks to the Polls with Handsome Dan",
+    "start": "2026-11-03T00:00:00-05:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": null,
+    "summary": "Walk to the polls with Handsome Dan on Election Day.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Election Day, Tue Nov 3"
+    ],
+    "confidence": 0.95,
+    "rawText": "Walks to the polls with Handsome Dan - Election Day, Tue Nov 3"
+  },
+  {
+    "kind": "event",
+    "title": "Richard U. Light Fellowship Info Session #5",
+    "start": "2026-11-03T12:00:00-05:00",
+    "end": "2026-11-03T13:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "55 Whitney Ave 3rd Floor Rm 369",
+    "placeId": "55 Whitney 369",
+    "hostName": "Office of Fellowships",
+    "summary": "Info session on the Richard U. Light Fellowship.",
+    "tags": [
+      "professional",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 3, 12:00-1:00pm, 55 Whitney Ave 3rd Floor Rm 369"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Richard U. Light Fellowship Info Session #5 - Tue Nov 3, 12:00-1:00pm, 55 Whitney Ave 3rd Floor Rm 369"
+  },
+  {
+    "kind": "event",
+    "title": "Study Abroad in Germany Information Session",
+    "start": "2026-11-03T13:00:00-05:00",
+    "end": "2026-11-03T14:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Study Abroad",
+    "summary": "Information session on studying abroad in Germany.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 3, 1:00-2:00pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Study Abroad in Germany Information Session - Tue Nov 3, 1:00-2:00pm"
+  },
+  {
+    "kind": "event",
+    "title": "YQI Seminar: Advanced Finite Element Methods and Multiphysics Modeling of Superconducting Quantum Devices",
+    "start": "2026-11-03T14:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "HLH17 Room 402 (+Zoom)",
+    "placeId": "HLH17 402",
+    "hostName": "YQI",
+    "summary": "Thomas E. Roth of Purdue speaks on modeling superconducting quantum devices.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 3, 2:00pm, HLH17 Room 402"
+    ],
+    "confidence": 0.95,
+    "rawText": "YQI Seminar: Thomas E. Roth (Purdue), \"Advanced Finite Element Methods and Multiphysics Modeling of Superconducting Quantum Devices\" - Tue Nov 3, 2:00pm, HLH17 Room 402 (+Zoom)"
+  },
+  {
+    "kind": "event",
+    "title": "Goldman Sachs Recruiting Overview, Summer 2028 Program",
+    "start": "2026-11-03T16:00:00-05:00",
+    "end": "2026-11-03T16:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "virtual",
+    "placeId": null,
+    "hostName": "CPI",
+    "summary": "Virtual recruiting overview for the Goldman Sachs Summer 2028 program.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 3, 4:00-4:30pm EST",
+      "(virtual)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Goldman Sachs Recruiting Overview, Summer 2028 Program (virtual) - Tue Nov 3, 4:00-4:30pm EST (CPI)"
+  },
+  {
+    "kind": "event",
+    "title": "Y-DUSCR x YFPI: Tong Zhao on Chinese Nuclear Security",
+    "start": "2026-11-03T19:00:00-05:00",
+    "end": "2026-11-03T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Zoom",
+    "placeId": null,
+    "hostName": "Y-DUSCR",
+    "summary": "Virtual talk by Tong Zhao of the Carnegie Endowment on Chinese nuclear security.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 3, 7:00-8:00pm ET, Zoom"
+    ],
+    "confidence": 0.95,
+    "rawText": "Y-DUSCR x YFPI virtual event: Tong Zhao (Carnegie Endowment) on Chinese nuclear security - Tue Nov 3, 7:00-8:00pm ET, Zoom (RSVP)"
+  },
+  {
+    "kind": "event",
+    "title": "Purple Crayon Murder Mystery Show",
+    "start": "2026-11-03T20:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Hopper Cabaret (Grace Hopper College)",
+    "placeId": "Hopper Cabaret",
+    "hostName": "Purple Crayon",
+    "summary": "Improv murder mystery show by Purple Crayon.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Grace Hopper",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 3, 8:00pm, Hopper Cabaret"
+    ],
+    "confidence": 0.95,
+    "rawText": "Purple Crayon Murder Mystery Show - Tue Nov 3, 8:00pm, Hopper Cabaret (Grace Hopper College)"
+  },
+  {
+    "kind": "event",
+    "title": "Talk STEM with Dean Alexia Belperron",
+    "start": "2026-11-04T12:00:00-05:00",
+    "end": "2026-11-04T13:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Commons, Schwarzman Center",
+    "placeId": "Commons",
+    "hostName": null,
+    "summary": "Monthly conversation about STEM with Dean Alexia Belperron.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "12-1pm, Commons, Schwarzman Center",
+      "Nov 4"
+    ],
+    "confidence": 0.95,
+    "rawText": "\"Talk STEM\" with Dean Alexia Belperron - first Wednesday of each month, 12-1pm, Commons, Schwarzman Center (Nov 4; next Dec 2)"
+  },
+  {
+    "kind": "event",
+    "title": "Wellness Wednesday",
+    "start": "2026-11-04T14:00:00-05:00",
+    "end": "2026-11-04T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC GLC Lounge",
+    "placeId": "YSC GLC Lounge",
+    "hostName": "Good Life Center",
+    "summary": "Physical wellness month drop-in at the Good Life Center.",
+    "tags": [
+      "athletics",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 4, 2-4pm",
+      "YSC GLC Lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "Wellness Wednesday (physical wellness month) - Wed Nov 4, 2-4pm and Wed Nov 11, 2-3pm, YSC GLC Lounge"
+  },
+  {
+    "kind": "event",
+    "title": "Presidential Lecture: Marilynne Robinson",
+    "start": "2026-11-04T16:00:00-05:00",
+    "end": "2026-11-04T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Office of the President",
+    "summary": "Marilynne Robinson gives the Presidential Lecture \"What Now? Finding an American Future\".",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 4, 4:00-5:00pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Presidential Lecture: Marilynne Robinson, \"What Now? Finding an American Future\" - Wed Nov 4, 4:00-5:00pm"
+  },
+  {
+    "kind": "event",
+    "title": "Dinner & Dialogue with Dr. Asma Khan",
+    "start": "2026-11-04T17:00:00-05:00",
+    "end": "2026-11-04T18:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Dinner and conversation with Asma Khan, catered by Sanctuary Kitchen; pre-registration required.",
+    "tags": [
+      "free_food",
+      "cultural",
+      "academic"
+    ],
+    "freeFood": true,
+    "food": "Sanctuary Kitchen catering",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 4, 5-6:30pm, AACC",
+      "Sanctuary Kitchen catering"
+    ],
+    "confidence": 0.95,
+    "rawText": "Dinner & Dialogue with Dr. Asma Khan - Wed Nov 4, 5-6:30pm, AACC (Sanctuary Kitchen catering; pre-registration)"
+  },
+  {
+    "kind": "event",
+    "title": "YBDIC PhD Candidate Seminar",
+    "start": "2026-11-04T17:00:00-05:00",
+    "end": "2026-11-04T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Zoom",
+    "placeId": null,
+    "hostName": "YBDIC",
+    "summary": "PhD candidate seminar series on Zoom.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wednesdays 5-6pm, Zoom",
+      "session Nov 4"
+    ],
+    "confidence": 0.95,
+    "rawText": "YBDIC PhD candidate seminar series - Wednesdays 5-6pm, Zoom (session Nov 4)"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Psychology Research/Academia Panel: How to Get into Graduate School",
+    "start": "2026-11-04T17:00:00-05:00",
+    "end": "2026-11-04T18:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "100 College St, Room 180",
+    "placeId": "100 College 180",
+    "hostName": "Yale Psychology",
+    "summary": "Panel on getting into graduate school in psychology, with dinner after.",
+    "tags": [
+      "free_food",
+      "academic",
+      "professional"
+    ],
+    "freeFood": true,
+    "food": "Dinner",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 4, 5-6:30pm, 100 College St, Room 180",
+      "dinner to follow"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Psychology Research/Academia Panel: How to Get into Graduate School - Wed Nov 4, 5-6:30pm, 100 College St, Room 180 (dinner to follow)"
+  },
+  {
+    "kind": "event",
+    "title": "AACC Game Night",
+    "start": "2026-11-04T18:00:00-05:00",
+    "end": "2026-11-04T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC Game Room",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Weekly game night in the AACC Game Room.",
+    "tags": [
+      "social",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Wednesdays 6-7pm, AACC Game Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+  },
+  {
+    "kind": "event",
+    "title": "Stitch & Sip",
+    "start": "2026-11-04T19:00:00-05:00",
+    "end": "2026-11-04T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Silliman Acorn",
+    "placeId": "Silliman Acorn",
+    "hostName": "Silliman GA",
+    "summary": "Silliman GA stitching night.",
+    "tags": [
+      "arts",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "college_only",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 4, 7-8pm, Silliman Acorn"
+    ],
+    "confidence": 0.95,
+    "rawText": "Stitch & Sip (GA event) - Wed Nov 4, 7-8pm, Silliman Acorn"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS Putnam Problem Session",
+    "start": "2026-11-04T19:00:00-05:00",
+    "end": "2026-11-04T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "DL 220",
+    "placeId": "DL 220",
+    "hostName": "YUMS",
+    "summary": "Putnam problem session ahead of the Putnam exam on Sat Dec 5.",
+    "tags": [
+      "free_food",
+      "academic"
+    ],
+    "freeFood": true,
+    "food": "Pizza and snacks",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wednesdays 7-9pm",
+      "Nov 4 DL 220"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS Putnam problem sessions - Wednesdays 7-9pm: Nov 4 DL 220, Nov 11 LC 211, Nov 18 DL 220 (pizza/snacks; Putnam exam Sat Dec 5)"
+  },
+  {
+    "kind": "event",
+    "title": "Thursday Tea Time",
+    "start": "2026-11-05T14:00:00-05:00",
+    "end": "2026-11-05T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Tea Room 208",
+    "placeId": "YSC 208",
+    "hostName": "Good Life Center",
+    "summary": "Weekly tea time with Gamelatron listening.",
+    "tags": [
+      "social",
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thursdays 2-4pm, YSC Tea Room 208"
+    ],
+    "confidence": 0.95,
+    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)"
+  },
+  {
+    "kind": "event",
+    "title": "Sally's Apizza Tour",
+    "start": "2026-11-05T14:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Sally's Apizza",
+    "placeId": null,
+    "hostName": "Yale Undergraduate Pizza Society",
+    "summary": "Tour of Sally's Apizza by lottery; meet at 1:45, form due Wed Nov 4 at 11am.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 5, 2:00pm (meet 1:45), Sally's Apizza"
+    ],
+    "confidence": 0.95,
+    "rawText": "Sally's Apizza x Yale Undergraduate Pizza Society tour - Thu Nov 5, 2:00pm (meet 1:45), Sally's Apizza (lottery; form due Wed Nov 4, 11am)"
+  },
+  {
+    "kind": "event",
+    "title": "YSS Lima Information Session",
+    "start": "2026-11-05T14:00:00-05:00",
+    "end": "2026-11-05T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "HQ 107",
+    "placeId": "HQ 107",
+    "hostName": "Yale Summer Session",
+    "summary": "Information session on Yale Summer Session in Lima.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 5, 2:00-3:00pm, HQ 107"
+    ],
+    "confidence": 0.95,
+    "rawText": "YSS Lima Information Session - Thu Nov 5, 2:00-3:00pm, HQ 107"
+  },
+  {
+    "kind": "event",
+    "title": "Research in Motion Seminar: Open Problems in AI Safety and How to Help",
+    "start": "2026-11-05T16:15:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "87 Trumbull St Room B120",
+    "placeId": "87 Trumbull B120",
+    "hostName": null,
+    "summary": "Cecilia Wood of Principles of Intelligence speaks on open problems in AI safety.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 5, 4:15pm, 87 Trumbull St Room B120"
+    ],
+    "confidence": 0.95,
+    "rawText": "Research in Motion Seminar: Cecilia Wood (Principles of Intelligence), \"Open Problems in AI Safety and How to Help\" - Thu Nov 5, 4:15pm, 87 Trumbull St Room B120"
+  },
+  {
+    "kind": "event",
+    "title": "Princeton in Beijing Info Session",
+    "start": "2026-11-05T17:00:00-05:00",
+    "end": "2026-11-05T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "55 Whitney Ave Fl 3 Rm 305",
+    "placeId": "55 Whitney 305",
+    "hostName": "Study Abroad",
+    "summary": "Info session on the Princeton in Beijing language program.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 5, 5:00-6:00pm, 55 Whitney Ave Fl 3 Rm 305"
+    ],
+    "confidence": 0.95,
+    "rawText": "Princeton in Beijing info session - Thu Nov 5, 5:00-6:00pm, 55 Whitney Ave Fl 3 Rm 305"
+  },
+  {
+    "kind": "event",
+    "title": "Unmasking Bollywood Stereotypes",
+    "start": "2026-11-05T18:00:00-05:00",
+    "end": "2026-11-05T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC MPR",
+    "placeId": "AACC MPR",
+    "hostName": "AACC",
+    "summary": "Movie screening and discussion with Prof. Rohit De.",
+    "tags": [
+      "cultural",
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 5, 6-8pm, AACC MPR"
+    ],
+    "confidence": 0.95,
+    "rawText": "Unmasking Bollywood Stereotypes movie + discussion w/ Prof. Rohit De (AACC PAE) - Thu Nov 5, 6-8pm, AACC MPR"
+  },
+  {
+    "kind": "event",
+    "title": "YUHA: A Conversation with Bloomberg's Matt Levine",
+    "start": "2026-11-05T18:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "LC 101",
+    "placeId": "LC 101",
+    "hostName": "YUHA",
+    "summary": "Conversation with Bloomberg columnist Matt Levine; registration required, first-come.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 5, 6:00pm, LC 101"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUHA: A Conversation with Bloomberg's Matt Levine - Thu Nov 5, 6:00pm, LC 101 (registration required, first-come)"
+  },
+  {
+    "kind": "event",
+    "title": "Power Yoga",
+    "start": "2026-11-05T18:30:00-05:00",
+    "end": "2026-11-05T19:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Power Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Power Yoga Thu 6:30-7:30pm",
+      "Nov 5 also listed"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "STEM Summer Fellowships: General Q&A",
+    "start": "2026-11-05T19:00:00-05:00",
+    "end": "2026-11-05T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Zoom",
+    "placeId": null,
+    "hostName": "Office of Fellowships",
+    "summary": "Q&A on STEM summer fellowships over Zoom.",
+    "tags": [
+      "academic",
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 5, 7:00-8:00pm (Zoom)"
+    ],
+    "confidence": 0.95,
+    "rawText": "STEM Summer Fellowships: General Q&A - Thu Nov 5, 7:00-8:00pm (Zoom)"
+  },
+  {
+    "kind": "event",
+    "title": "The Veritas Search III",
+    "start": "2026-11-06T00:00:00-05:00",
+    "end": "2026-11-17T22:00:00-05:00",
+    "allDay": true,
+    "locationRaw": "across campus",
+    "placeId": null,
+    "hostName": null,
+    "summary": "Campus-wide hunt for 13 hidden capsules with prizes for finders, open to all students.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 6 - Tue Nov 17, 10:00pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "The Veritas Search III - campus-wide capsule hunt, Fri Nov 6 - Tue Nov 17, 10:00pm; 13 capsules hidden across campus with prizes for finders; open to all students"
+  },
+  {
+    "kind": "event",
+    "title": "HP College Tour",
+    "start": "2026-11-06T00:00:00-05:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": null,
+    "summary": "HP College Tour visits campus.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "HP College Tour - Fri Nov 6"
+    ],
+    "confidence": 0.95,
+    "rawText": "Jen Wong (Reddit COO), Dean's Invited Speaker Series - Fri Nov 13; HP College Tour - Fri Nov 6"
+  },
+  {
+    "kind": "event",
+    "title": "YSS Florence Information Session",
+    "start": "2026-11-06T10:00:00-05:00",
+    "end": "2026-11-06T11:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Yale Summer Session",
+    "summary": "Information session on Yale Summer Session in Florence.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "info session Fri Nov 6, 10:00-11:00am"
+    ],
+    "confidence": 0.95,
+    "rawText": "YSS Florence painting exhibit - Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave; info session Fri Nov 6, 10:00-11:00am"
+  },
+  {
+    "kind": "event",
+    "title": "The Art of Public Speaking with Robert Russell",
+    "start": "2026-11-06T12:30:00-05:00",
+    "end": "2026-11-06T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Rose Alumni House, 232 York St",
+    "placeId": "Rose Alumni House",
+    "hostName": null,
+    "summary": "Public speaking workshop with Robert Russell '89.",
+    "tags": [
+      "free_food",
+      "professional"
+    ],
+    "freeFood": true,
+    "food": "Pizza and salad",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 6, 12:30-3:00pm",
+      "Rose Alumni House, 232 York St"
+    ],
+    "confidence": 0.95,
+    "rawText": "\"The Art of Public Speaking\" w/ Robert Russell '89 - Fri Nov 6, 12:30-3:00pm (check-in 12:30, pizza/salad), Rose Alumni House, 232 York St"
+  },
+  {
+    "kind": "event",
+    "title": "Imagining Your Summer",
+    "start": "2026-11-06T14:00:00-05:00",
+    "end": "2026-11-06T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "Office of Fellowships",
+    "summary": "Office of Fellowships session on planning your summer.",
+    "tags": [
+      "professional",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 6, 2:00-3:00pm Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+  },
+  {
+    "kind": "event",
+    "title": "YSS Quito (Ecuador) Information Session",
+    "start": "2026-11-06T17:00:00-05:00",
+    "end": "2026-11-06T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "HQ 133",
+    "placeId": "HQ 133",
+    "hostName": "Yale Summer Session",
+    "summary": "Information session on Yale Summer Session in Quito.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 6, 5:00-7:00pm, HQ 133"
+    ],
+    "confidence": 0.95,
+    "rawText": "YSS Quito (Ecuador) Information Session - Fri Nov 6, 5:00-7:00pm, HQ 133"
+  },
+  {
+    "kind": "event",
+    "title": "National FGLI Week Dinner Extravaganza",
+    "start": "2026-11-06T18:00:00-05:00",
+    "end": "2026-11-06T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Afro-American Cultural Center",
+    "placeId": "Af-Am House",
+    "hostName": "OEO",
+    "summary": "Dinner for National FGLI Week with Popeyes, Shah's Halal, and Basil.",
+    "tags": [
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Popeyes, Shah's Halal, Basil",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 6, 6-8pm, Afro-American Cultural Center",
+      "Popeyes, Shah's Halal, Basil"
+    ],
+    "confidence": 0.95,
+    "rawText": "National FGLI Week Dinner Extravaganza (OEO) - Fri Nov 6, 6-8pm, Afro-American Cultural Center (Popeyes, Shah's Halal, Basil)"
+  },
+  {
+    "kind": "event",
+    "title": "Roshni",
+    "start": "2026-11-06T19:00:00-05:00",
+    "end": "2026-11-06T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Woolsey Hall",
+    "placeId": "Woolsey Hall",
+    "hostName": null,
+    "summary": "Yale's largest South Asian cultural showcase.",
+    "tags": [
+      "cultural",
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 6, 7-9pm, Woolsey Hall"
+    ],
+    "confidence": 0.95,
+    "rawText": "Roshni (Yale's largest South Asian cultural showcase) - Fri Nov 6, 7-9pm, Woolsey Hall"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS Pizza Seminar: The Weil Conjectures",
+    "start": "2026-11-06T19:00:00-05:00",
+    "end": "2026-11-06T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "WLH 113",
+    "placeId": "WLH 113",
+    "hostName": "YUMS",
+    "summary": "Prof. Alexander Petrov speaks on the Weil Conjectures.",
+    "tags": [
+      "free_food",
+      "academic"
+    ],
+    "freeFood": true,
+    "food": "Pizza",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 6, 7-8pm",
+      "WLH 113"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS Pizza Seminar: Prof. Alexander Petrov, \"The Weil Conjectures\" - Fri Nov 6, 7-8pm, WLH 113"
+  },
+  {
+    "kind": "event",
+    "title": "OCAY West Rock Weekend Trip",
+    "start": "2026-11-07T11:00:00-05:00",
+    "end": "2026-11-07T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "West Rock State Park",
+    "placeId": null,
+    "hostName": "OCAY",
+    "summary": "OCAY day trip to West Rock State Park; sign up by Wed Nov 4 at midnight.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Nov 7, 11:00am-3:00pm, West Rock State Park"
+    ],
+    "confidence": 0.95,
+    "rawText": "OCAY West Rock weekend trip - Sat Nov 7, 11:00am-3:00pm, West Rock State Park (sign-up deadline Wed Nov 4 midnight)"
+  },
+  {
+    "kind": "event",
+    "title": "Schwarzman Center x AACC 45th Anniversary Student Showcase",
+    "start": "2026-11-07T19:00:00-05:00",
+    "end": "2026-11-07T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "The Underground (Lower Level, 168 Grove St)",
+    "placeId": "Commons Underground",
+    "hostName": "AACC",
+    "summary": "Student showcase for the AACC 45th anniversary at the Schwarzman Center.",
+    "tags": [
+      "cultural",
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Nov 7, 7-9pm, The Underground"
+    ],
+    "confidence": 0.95,
+    "rawText": "Schwarzman Center x AACC 45th Anniversary Student Showcase - Sat Nov 7, 7-9pm, The Underground (Lower Level, 168 Grove St)"
+  },
+  {
+    "kind": "event",
+    "title": "WORD Show",
+    "start": "2026-11-07T20:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "53 Wall Street Auditorium",
+    "placeId": "53 Wall St Auditorium",
+    "hostName": "WORD",
+    "summary": "Spoken word and poetry show.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "$7.18",
+    "evidence": [
+      "Sat Nov 7, 8:30pm, 53 Wall Street Auditorium"
+    ],
+    "confidence": 0.95,
+    "rawText": "WORD (spoken word/poetry) show - Sat Nov 7, 8:30pm, 53 Wall Street Auditorium (tickets $7.18)"
+  },
+  {
+    "kind": "event",
+    "title": "PPP: Pancakes, Prayer, Pizza",
+    "start": "2026-11-07T21:00:00-05:00",
+    "end": "2026-11-07T23:59:00-05:00",
+    "allDay": false,
+    "locationRaw": "Grace Hopper Buttery",
+    "placeId": "Grace Hopper Buttery",
+    "hostName": "Christian Union",
+    "summary": "Christian Union Lux night of pancakes, prayer, and pizza.",
+    "tags": [
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Pancakes and pizza",
+    "audience": "open_to_all",
+    "college": "Grace Hopper",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Nov 7, 9:00pm-11:59pm, Grace Hopper Buttery"
+    ],
+    "confidence": 0.95,
+    "rawText": "Christian Union Lux \"PPP: Pancakes, Prayer, Pizza\" - Sat Nov 7, 9:00pm-11:59pm, Grace Hopper Buttery"
+  },
+  {
+    "kind": "event",
+    "title": "YCC Senate Meeting",
+    "start": "2026-11-08T12:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "YCC",
+    "summary": "Weekly YCC Senate meeting, open to all interested students.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Sundays 12:30pm, Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+  },
+  {
+    "kind": "event",
+    "title": "SASsy Sunday: Sewing Handwarmers",
+    "start": "2026-11-08T16:00:00-05:00",
+    "end": "2026-11-08T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Student Accessibility Services, 35 Broadway rm 222",
+    "placeId": "35 Broadway 222",
+    "hostName": "Good Life Center",
+    "summary": "Good Life Center craft hour at Student Accessibility Services: sewing handwarmers.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "4-5pm open to all",
+      "Nov 8 (sewing handwarmers)"
+    ],
+    "confidence": 0.95,
+    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)"
+  },
+  {
+    "kind": "event",
+    "title": "AACC Spring Break Externship Info Session",
+    "start": "2026-11-08T16:30:00-05:00",
+    "end": "2026-11-08T17:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC rm 210, 295 Crown St",
+    "placeId": "AACC 210",
+    "hostName": "AACC",
+    "summary": "Info session on the spring break externship; applications are due Jan 17, 2027.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 8, 4:30-5:30pm, AACC rm 210"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC Spring Break Externship Info Session - Sun Nov 8, 4:30-5:30pm, AACC rm 210, 295 Crown St (application deadline Jan 17, 2027)"
+  },
+  {
+    "kind": "event",
+    "title": "AASA Night Market",
+    "start": "2026-11-08T19:00:00-05:00",
+    "end": "2026-11-08T22:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Dwight Hall + surrounding outdoor area",
+    "placeId": "Dwight Hall",
+    "hostName": "AASA",
+    "summary": "Night market at Dwight Hall with proceeds going to a local charity.",
+    "tags": [
+      "cultural",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 8, 7-10pm, Dwight Hall"
+    ],
+    "confidence": 0.95,
+    "rawText": "AASA Night Market - Sun Nov 8, 7-10pm, Dwight Hall + surrounding outdoor area (org registration was due Oct 23; proceeds to local charity)"
+  },
+  {
+    "kind": "event",
+    "title": "FOKE Fuel Your Study Night",
+    "start": "2026-11-08T20:00:00-05:00",
+    "end": "2026-11-08T22:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Bass Cafe",
+    "placeId": "Bass Cafe",
+    "hostName": "FOKE",
+    "summary": "Study night fundraiser with drinks, cookies, and a raffle.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 8, 8-10pm, Bass Cafe"
+    ],
+    "confidence": 0.95,
+    "rawText": "FOKE \"Fuel Your Study Night\" fundraiser - Sun Nov 8, 8-10pm, Bass Cafe (drinks, cookies, raffle)"
+  },
+  {
+    "kind": "event",
+    "title": "Oxford Colleges Virtual Info Session",
+    "start": "2026-11-09T09:00:00-05:00",
+    "end": "2026-11-09T10:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "MS Teams",
+    "placeId": null,
+    "hostName": "Study Abroad",
+    "summary": "Virtual info session on 2027-28 study at St Anne's, Hertford, LMH, and Worcester.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 9, 9:00-10:00am EST"
+    ],
+    "confidence": 0.95,
+    "rawText": "Oxford colleges (St Anne's, Hertford, LMH, Worcester) virtual info session for 2027-28 - Mon Nov 9, 9:00-10:00am EST (MS Teams link to registrants)"
+  },
+  {
+    "kind": "event",
+    "title": "YCRC Training: Intermediate HPC",
+    "start": "2026-11-09T13:00:00-05:00",
+    "end": "2026-11-09T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YCRC Auditorium, 160 St Ronan St",
+    "placeId": "YCRC Auditorium",
+    "hostName": "YCRC",
+    "summary": "Intermediate high performance computing training.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Intermediate HPC - Mon Nov 9, 1-4pm",
+      "YCRC Auditorium, 160 St Ronan St"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+  },
+  {
+    "kind": "event",
+    "title": "Craft et Veritas: Zines",
+    "start": "2026-11-09T15:00:00-05:00",
+    "end": "2026-11-09T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Offline Oasis",
+    "placeId": "YSC Offline Oasis",
+    "hostName": "Good Life Center",
+    "summary": "Weekly craft drop-in; this week is zines.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mondays 3-4pm, YSC Offline Oasis",
+      "Nov 9 (zines)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+  },
+  {
+    "kind": "event",
+    "title": "K9 Kickback: Therapy Dogs",
+    "start": "2026-11-09T16:00:00-05:00",
+    "end": "2026-11-09T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Susman Hall (Purple Couch Room), Slifka Center",
+    "placeId": "Slifka Center",
+    "hostName": "Good Life Center",
+    "summary": "Therapy dogs with chicken and waffles at the Slifka Center.",
+    "tags": [
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Chicken and waffles",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 9, 4-6pm, Susman Hall",
+      "Chicken and Waffles"
+    ],
+    "confidence": 0.95,
+    "rawText": "K9 Kickback: Therapy Dogs (+ Chicken and Waffles) - Mon Nov 9, 4-6pm, Susman Hall (Purple Couch Room), Slifka Center"
+  },
+  {
+    "kind": "event",
+    "title": "Gentle Yoga",
+    "start": "2026-11-09T17:00:00-05:00",
+    "end": "2026-11-09T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Gentle Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Gentle Yoga Mon 5-6pm",
+      "Nov 9"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS PSET Night",
+    "start": "2026-11-09T19:00:00-05:00",
+    "end": "2026-11-09T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "WLH 011",
+    "placeId": "WLH 011",
+    "hostName": "YUMS",
+    "summary": "Weekly problem set night hosted by YUMS.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Mondays 7-9pm",
+      "WLH 011"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+  },
+  {
+    "kind": "event",
+    "title": "Liman Undergraduate Summer Fellowships Info Session",
+    "start": "2026-11-09T19:30:00-05:00",
+    "end": "2026-11-09T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Davenport College Common Room",
+    "placeId": "Davenport Common Room",
+    "hostName": "Office of Fellowships",
+    "summary": "Info session on Liman undergraduate summer fellowships.",
+    "tags": [
+      "professional",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Davenport",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 9, 7:30-9:00pm, Davenport College Common Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Liman Undergraduate Summer Fellowships info session - Mon Nov 9, 7:30-9:00pm, Davenport College Common Room"
+  },
+  {
+    "kind": "event",
+    "title": "Dinner & Dialogue with Michelle Phuong Ho",
+    "start": "2026-11-10T17:00:00-05:00",
+    "end": "2026-11-10T18:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Dinner and conversation with Michelle Phuong Ho on \"Bone Symphony\" with Prof. Quan Tran.",
+    "tags": [
+      "free_food",
+      "cultural",
+      "arts"
+    ],
+    "freeFood": true,
+    "food": "Dinner",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 10, 5-6:30pm, AACC"
+    ],
+    "confidence": 0.95,
+    "rawText": "Dinner & Dialogue with Michelle Phuong Ho '11 (\"Bone Symphony\", w/ Prof. Quan Tran) - Tue Nov 10, 5-6:30pm, AACC"
+  },
+  {
+    "kind": "event",
+    "title": "Hatha Yoga",
+    "start": "2026-11-10T17:30:00-05:00",
+    "end": "2026-11-10T18:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Hatha Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Hatha Yoga Tue 5:30-6:30pm",
+      "Nov 10"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "YASSS Stargazing",
+    "start": "2026-11-10T20:00:00-05:00",
+    "end": "2026-11-10T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Cross Campus",
+    "placeId": "Cross Campus",
+    "hostName": "YASSS",
+    "summary": "Stargazing on Cross Campus.",
+    "tags": [
+      "free_food",
+      "academic",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Pizza",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 10, 8-9pm, Cross Campus",
+      "pizza provided"
+    ],
+    "confidence": 0.95,
+    "rawText": "YASSS Stargazing - Tue Nov 10, 8-9pm, Cross Campus (pizza provided)"
+  },
+  {
+    "kind": "event",
+    "title": "Introduction to Python",
+    "start": "2026-11-11T09:00:00-05:00",
+    "end": "2026-11-11T11:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Virtual",
+    "placeId": null,
+    "hostName": "Medical Library",
+    "summary": "Virtual introduction to Python from the Medical Library.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+  },
+  {
+    "kind": "event",
+    "title": "YCRC Training: Biomedical Imaging and AI with Matlab",
+    "start": "2026-11-11T10:00:00-05:00",
+    "end": "2026-11-11T12:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Sterling Hall of Medicine C-103",
+    "placeId": "SHM C-103",
+    "hostName": "YCRC",
+    "summary": "Training on biomedical imaging and AI with Matlab.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+  },
+  {
+    "kind": "event",
+    "title": "Veterans Day Ceremony",
+    "start": "2026-11-11T12:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Hewitt Quadrangle",
+    "placeId": "Hewitt Quad",
+    "hostName": null,
+    "summary": "Veterans Day ceremony on Hewitt Quadrangle.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 12:00pm, Hewitt Quadrangle"
+    ],
+    "confidence": 0.95,
+    "rawText": "Veterans Day Ceremony - Wed Nov 11, 12:00pm, Hewitt Quadrangle"
+  },
+  {
+    "kind": "event",
+    "title": "Projects for Peace Info Session",
+    "start": "2026-11-11T13:00:00-05:00",
+    "end": "2026-11-11T14:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Office of Fellowships",
+    "summary": "Info session on Projects for Peace, which funds $10,000 per project.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 1:00-2:00pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Projects for Peace Info Session - Wed Nov 11, 1:00-2:00pm (campus deadline Fri Jan 8, 1pm ET; $10,000 per project)"
+  },
+  {
+    "kind": "event",
+    "title": "Wellness Wednesday",
+    "start": "2026-11-11T14:00:00-05:00",
+    "end": "2026-11-11T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC GLC Lounge",
+    "placeId": "YSC GLC Lounge",
+    "hostName": "Good Life Center",
+    "summary": "Physical wellness month drop-in at the Good Life Center.",
+    "tags": [
+      "athletics",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 2-3pm",
+      "YSC GLC Lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "Wellness Wednesday (physical wellness month) - Wed Nov 4, 2-4pm and Wed Nov 11, 2-3pm, YSC GLC Lounge"
+  },
+  {
+    "kind": "event",
+    "title": "Dim Sum Teahouse with Former Yale-China Fellows",
+    "start": "2026-11-11T16:00:00-05:00",
+    "end": "2026-11-11T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Yale-China",
+    "summary": "Dim sum and conversation with former Yale-China Fellows; RSVP by email.",
+    "tags": [
+      "free_food",
+      "cultural"
+    ],
+    "freeFood": true,
+    "food": "Dim sum",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 4-6pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Dim Sum Teahouse with Former Yale-China Fellows - Wed Nov 11, 4-6pm (RSVP education@yalechina.org)"
+  },
+  {
+    "kind": "event",
+    "title": "Live in Theater Interactive Production",
+    "start": "2026-11-11T17:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Silliman Common Room",
+    "placeId": "Silliman Common Room",
+    "hostName": null,
+    "summary": "Interactive theater production with about 30 spots; walk-ins welcome.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 5:00pm, Silliman Common Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "Live in Theater interactive production - Wed Nov 11, 5:00pm, Silliman Common Room; ~30 spots, walk-ins welcome"
+  },
+  {
+    "kind": "event",
+    "title": "AACC Game Night",
+    "start": "2026-11-11T18:00:00-05:00",
+    "end": "2026-11-11T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC Game Room",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Weekly game night in the AACC Game Room.",
+    "tags": [
+      "social",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Wednesdays 6-7pm, AACC Game Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+  },
+  {
+    "kind": "event",
+    "title": "Career Networking Mixer",
+    "start": "2026-11-11T18:00:00-05:00",
+    "end": "2026-11-11T20:30:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": null,
+    "summary": "Eleventh annual networking mixer for students and alumni.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 6-8:30pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Career Networking Mixer (11th annual, alumni-students) - Wed Nov 11, 6-8:30pm"
+  },
+  {
+    "kind": "event",
+    "title": "Wednesday Wisdom: Interactive Storytelling with Theresa Loong",
+    "start": "2026-11-11T18:30:00-05:00",
+    "end": "2026-11-11T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "CCAM",
+    "placeId": "CCAM",
+    "hostName": "CCAM",
+    "summary": "Interactive storytelling talk with Theresa Loong, free and open to the public, with pizza at 6pm.",
+    "tags": [
+      "free_food",
+      "arts"
+    ],
+    "freeFood": true,
+    "food": "Pizza",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 6:30-8pm",
+      "pizza at 6pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "CCAM Wednesday Wisdom: Interactive Storytelling with Theresa Loong - Wed Nov 11, 6:30-8pm (pizza at 6pm), CCAM; free, open to public"
+  },
+  {
+    "kind": "event",
+    "title": "YUMS Putnam Problem Session",
+    "start": "2026-11-11T19:00:00-05:00",
+    "end": "2026-11-11T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "LC 211",
+    "placeId": "LC 211",
+    "hostName": "YUMS",
+    "summary": "Putnam problem session ahead of the Putnam exam on Sat Dec 5.",
+    "tags": [
+      "free_food",
+      "academic"
+    ],
+    "freeFood": true,
+    "food": "Pizza and snacks",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wednesdays 7-9pm",
+      "Nov 11 LC 211"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUMS Putnam problem sessions - Wednesdays 7-9pm: Nov 4 DL 220, Nov 11 LC 211, Nov 18 DL 220 (pizza/snacks; Putnam exam Sat Dec 5)"
+  },
+  {
+    "kind": "event",
+    "title": "Advance Screening: Paper Tiger",
+    "start": "2026-11-11T19:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "HQ L02",
+    "placeId": "HQ L02",
+    "hostName": null,
+    "summary": "Advance screening of Paper Tiger, directed by James Gray; doors at 6:30, no reservation.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 7:00pm (doors 6:30), HQ L02"
+    ],
+    "confidence": 0.95,
+    "rawText": "Advance screening of \"Paper Tiger\" (Adam Driver, Scarlett Johansson, Miles Teller; dir. James Gray) - Wed Nov 11, 7:00pm (doors 6:30), HQ L02 (NEON Advance Screening Series, Oct 7-Nov 19; no reservation)"
+  },
+  {
+    "kind": "event",
+    "title": "Sweet Treat Study Break & Admissions Advising",
+    "start": "2026-11-11T19:30:00-05:00",
+    "end": "2026-11-11T20:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Silliman Buttery",
+    "placeId": "Silliman Buttery",
+    "hostName": "Silliman GA",
+    "summary": "Study break with sweet treats and law and grad school admissions advising.",
+    "tags": [
+      "free_food",
+      "professional"
+    ],
+    "freeFood": true,
+    "food": "Sweet treats",
+    "audience": "college_only",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 11, 7:30-8:30pm, Silliman Buttery"
+    ],
+    "confidence": 0.95,
+    "rawText": "Sweet Treat Study Break & Admissions Advising (GA event, law/grad school) - Wed Nov 11, 7:30-8:30pm, Silliman Buttery"
+  },
+  {
+    "kind": "event",
+    "title": "Thursday Tea Time",
+    "start": "2026-11-12T14:00:00-05:00",
+    "end": "2026-11-12T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Tea Room 208",
+    "placeId": "YSC 208",
+    "hostName": "Good Life Center",
+    "summary": "Weekly tea time with Gamelatron listening.",
+    "tags": [
+      "social",
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thursdays 2-4pm, YSC Tea Room 208"
+    ],
+    "confidence": 0.95,
+    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)"
+  },
+  {
+    "kind": "event",
+    "title": "For God, for Country, and for Consulting? Citizens' Assembly",
+    "start": "2026-11-12T16:00:00-05:00",
+    "end": "2026-11-12T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Politics of the Common Good",
+    "summary": "Citizens' assembly on consulting careers hosted by Politics of the Common Good.",
+    "tags": [
+      "academic",
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 12, 4-6pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "\"For God, for Country, and for Consulting?\" citizens' assembly (Politics of the Common Good) - Thu Nov 12, 4-6pm"
+  },
+  {
+    "kind": "event",
+    "title": "Imagining Your Summer",
+    "start": "2026-11-12T16:00:00-05:00",
+    "end": "2026-11-12T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Poorvu 120B",
+    "placeId": "Poorvu 120B",
+    "hostName": "Office of Fellowships",
+    "summary": "Office of Fellowships session on planning your summer.",
+    "tags": [
+      "professional",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 12, 4:00-5:00pm Poorvu 120B"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+  },
+  {
+    "kind": "event",
+    "title": "Beinecke Exhibition Opening: Beauty Unadorned: 'Fire!!' and the Harlem Renaissance",
+    "start": "2026-11-12T16:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Beinecke Library",
+    "placeId": "Beinecke",
+    "hostName": "Beinecke Library",
+    "summary": "Opening reception for an exhibition on Fire!! and the Harlem Renaissance, on view through May 30, 2027.",
+    "tags": [
+      "arts",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Beinecke Library exhibition opening",
+      "opening reception Thu Nov 12, 4:30pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "Beinecke Library exhibition opening: \"Beauty Unadorned: 'Fire!!' and the Harlem Renaissance\" - opening reception Thu Nov 12, 4:30pm; on view through May 30, 2027"
+  },
+  {
+    "kind": "event",
+    "title": "Power Yoga",
+    "start": "2026-11-12T18:30:00-05:00",
+    "end": "2026-11-12T19:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Power Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Power Yoga Thu 6:30-7:30pm",
+      "Nov 12"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Dramat Fall Mainstage: Come From Away",
+    "start": "2026-11-12T19:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "University Theatre",
+    "placeId": "University Theatre",
+    "hostName": "Yale Dramat",
+    "summary": "Yale Dramat fall mainstage production of Come From Away.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "$15 general / $7 college students / $3 HS and younger",
+    "evidence": [
+      "Thu Nov 12 and Fri Nov 13 at 7:30pm",
+      "University Theatre"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+  },
+  {
+    "kind": "event",
+    "title": "International Chinese Language Program Alumni Panel",
+    "start": "2026-11-12T20:00:00-05:00",
+    "end": "2026-11-12T21:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Zoom",
+    "placeId": null,
+    "hostName": "Study Abroad",
+    "summary": "Alumni panel on the International Chinese Language Program.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 12, 8:00-9:00pm, Zoom"
+    ],
+    "confidence": 0.95,
+    "rawText": "International Chinese Language Program Alumni Panel - Thu Nov 12, 8:00-9:00pm, Zoom"
+  },
+  {
+    "kind": "event",
+    "title": "Students and Alumni Pizza Mixer",
+    "start": "2026-11-12T21:00:00-05:00",
+    "end": "2026-11-12T22:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Yung Wing Living Room, AACC",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Pizza mixer for students and alumni with AAAYA.",
+    "tags": [
+      "free_food",
+      "social",
+      "cultural"
+    ],
+    "freeFood": true,
+    "food": "Pizza",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 12, 9-10:30pm, Yung Wing Living Room, AACC"
+    ],
+    "confidence": 0.95,
+    "rawText": "Students and Alumni Pizza Mixer (AACC x AAAYA) - Thu Nov 12, 9-10:30pm, Yung Wing Living Room, AACC"
+  },
+  {
+    "kind": "event",
+    "title": "Jen Wong (Reddit COO), Dean's Invited Speaker Series",
+    "start": "2026-11-13T00:00:00-05:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": null,
+    "summary": "Reddit COO Jen Wong speaks in the Dean's Invited Speaker Series.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 13"
+    ],
+    "confidence": 0.95,
+    "rawText": "Jen Wong (Reddit COO), Dean's Invited Speaker Series - Fri Nov 13; HP College Tour - Fri Nov 6"
+  },
+  {
+    "kind": "event",
+    "title": "Feel Good Friday: Mindful Movement",
+    "start": "2026-11-13T11:00:00-05:00",
+    "end": "2026-11-13T11:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC GLC Lounge",
+    "placeId": "YSC GLC Lounge",
+    "hostName": "Good Life Center",
+    "summary": "Half-hour mindful movement session.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 13, 11-11:30am, YSC GLC Lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "Feel Good Friday: Mindful Movement - Fri Nov 13, 11-11:30am, YSC GLC Lounge"
+  },
+  {
+    "kind": "event",
+    "title": "MacMillan Center: AY and Summer Funding Info Session",
+    "start": "2026-11-13T13:30:00-05:00",
+    "end": "2026-11-13T14:30:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "MacMillan Center",
+    "summary": "Info session on academic year and summer funding from the MacMillan Center.",
+    "tags": [
+      "academic",
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 13, 1:30-2:30pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "MacMillan Center: AY and Summer Funding info session - Fri Nov 13, 1:30-2:30pm"
+  },
+  {
+    "kind": "event",
+    "title": "YSS Batumi Information Session",
+    "start": "2026-11-13T14:00:00-05:00",
+    "end": "2026-11-13T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "WLH 207",
+    "placeId": "WLH 207",
+    "hostName": "Yale Summer Session",
+    "summary": "Information session on Yale Summer Session in Batumi.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 13, 2:00-3:00pm, WLH 207"
+    ],
+    "confidence": 0.95,
+    "rawText": "YSS Batumi Information Session - Fri Nov 13, 2:00-3:00pm, WLH 207"
+  },
+  {
+    "kind": "event",
+    "title": "YUQC Speaker Event: Prof. Puri on Quantum Error Correction",
+    "start": "2026-11-13T15:30:00-05:00",
+    "end": "2026-11-13T16:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "YQI (17 Hillhouse Ave), 4th Floor",
+    "placeId": "YQI",
+    "hostName": "YUQC",
+    "summary": "Prof. Puri speaks on quantum error correction.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 13, 3:30-4:30pm",
+      "YQI (17 Hillhouse Ave), 4th Floor"
+    ],
+    "confidence": 0.95,
+    "rawText": "YUQC speaker event: Prof. Puri on quantum error correction - Fri Nov 13, 3:30-4:30pm, YQI (17 Hillhouse Ave), 4th Floor"
+  },
+  {
+    "kind": "event",
+    "title": "Friday Yoga",
+    "start": "2026-11-13T17:00:00-05:00",
+    "end": "2026-11-13T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Friday Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Friday yoga 5-6pm",
+      "Nov 13"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "AACC x MENACC Multilingual Mukbang",
+    "start": "2026-11-13T18:00:00-05:00",
+    "end": "2026-11-13T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "AACC",
+    "summary": "Multilingual mukbang with AACC and MENACC; register on Yale Connect.",
+    "tags": [
+      "cultural",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 13, 6-8pm"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC x MENACC Multilingual Mukbang - Fri Nov 13, 6-8pm (register on Yale Connect)"
+  },
+  {
+    "kind": "event",
+    "title": "Ascent Annual Bonfire Boulder Bash",
+    "start": "2026-11-13T18:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Ascent, New Haven",
+    "placeId": "Ascent",
+    "hostName": "Ascent",
+    "summary": "Annual bouldering competition with a bonfire, taco truck, and raffle.",
+    "tags": [
+      "athletics",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "$35 presale / $40 door",
+    "evidence": [
+      "Fri Nov 13, 6:00pm, Ascent, New Haven"
+    ],
+    "confidence": 0.95,
+    "rawText": "Ascent Annual Bonfire Boulder Bash comp - Fri Nov 13, 6:00pm, Ascent, New Haven ($35 presale / $40 door; bonfire, taco truck, raffle)"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Dramat Fall Mainstage: Come From Away",
+    "start": "2026-11-13T19:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "University Theatre",
+    "placeId": "University Theatre",
+    "hostName": "Yale Dramat",
+    "summary": "Yale Dramat fall mainstage production of Come From Away.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "$15 general / $7 college students / $3 HS and younger",
+    "evidence": [
+      "Thu Nov 12 and Fri Nov 13 at 7:30pm",
+      "University Theatre"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+  },
+  {
+    "kind": "event",
+    "title": "CPA Show: Marin Korenaga EP Performance and String Quartet",
+    "start": "2026-11-13T20:00:00-05:00",
+    "end": "2026-11-13T20:45:00-05:00",
+    "allDay": false,
+    "locationRaw": "Nick Chapel Theatre, Trumbull College",
+    "placeId": "Nick Chapel Theatre",
+    "hostName": "CPA",
+    "summary": "Marin Korenaga performs an EP with a string quartet; free with RSVP, limited seating.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Trumbull",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 13, 8:00-8:45pm, Nick Chapel Theatre, Trumbull College"
+    ],
+    "confidence": 0.95,
+    "rawText": "CPA Show: Marin Korenaga EP performance + string quartet - Fri Nov 13, 8:00-8:45pm, Nick Chapel Theatre, Trumbull College (free, RSVP; limited seating)"
+  },
+  {
+    "kind": "event",
+    "title": "295 Magazine Interest Event",
+    "start": "2026-11-14T13:00:00-05:00",
+    "end": "2026-11-14T14:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC Wellness Lounge",
+    "placeId": "AACC",
+    "hostName": "295 Magazine",
+    "summary": "Interest meeting for 295 Magazine.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Nov 14, 1-2pm, AACC Wellness Lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "295 Magazine Interest Event - Sat Nov 14, 1-2pm, AACC Wellness Lounge"
+  },
+  {
+    "kind": "event",
+    "title": "30 Years of CASA: CASA Alumni & Careers Panel",
+    "start": "2026-11-14T13:00:00-05:00",
+    "end": "2026-11-14T14:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC Multipurpose Room (MPR)",
+    "placeId": "AACC MPR",
+    "hostName": "CASA",
+    "summary": "CASA alumni panel on careers, marking 30 years of CASA.",
+    "tags": [
+      "cultural",
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "2026-11-14T13:00:00-05:00 - 14:30",
+      "AACC Multipurpose Room (MPR)"
+    ],
+    "confidence": 0.95,
+    "rawText": "30 Years of CASA: CASA Alumni & Careers Panel | 2026-11-14T13:00:00-05:00 - 14:30 | AACC Multipurpose Room (MPR) | [Yale CASA Community]"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Dramat Fall Mainstage: Come From Away",
+    "start": "2026-11-14T13:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "University Theatre",
+    "placeId": "University Theatre",
+    "hostName": "Yale Dramat",
+    "summary": "Yale Dramat fall mainstage production of Come From Away.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "Pay what you can",
+    "evidence": [
+      "Sat Nov 14 at 1:30pm (pay what you can)",
+      "University Theatre"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Community Town Hall",
+    "start": "2026-11-14T16:00:00-05:00",
+    "end": "2026-11-14T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "HQ L01 or Zoom",
+    "placeId": "HQ L01",
+    "hostName": "YCC",
+    "summary": "Q&A with Democratize Yale panelists plus open testimony; students, staff, faculty, and alumni invited.",
+    "tags": [
+      "academic",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Nov 14, 4-6pm, HQ L01 or Zoom"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Community Town Hall (YCC) - Sat Nov 14, 4-6pm, HQ L01 or Zoom; Q&A with Democratize Yale panelists plus open testimony; students, staff, faculty and alumni invited"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Dramat Fall Mainstage: Come From Away",
+    "start": "2026-11-14T19:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "University Theatre",
+    "placeId": "University Theatre",
+    "hostName": "Yale Dramat",
+    "summary": "Yale Dramat fall mainstage production of Come From Away.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": "$15 general / $7 college students / $3 HS and younger",
+    "evidence": [
+      "Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm",
+      "University Theatre"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+  },
+  {
+    "kind": "event",
+    "title": "MMATHS 2026 Competition",
+    "start": "2026-11-15T00:00:00-05:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "YUMS",
+    "summary": "MMATHS math competition with about 500 participants and volunteer shifts all day.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 15 (volunteer shifts all day"
+    ],
+    "confidence": 0.95,
+    "rawText": "MMATHS 2026 competition - Sun Nov 15 (volunteer shifts all day; ~500 participants)"
+  },
+  {
+    "kind": "event",
+    "title": "MMATHS Volunteering",
+    "start": "2026-11-15T00:00:00-05:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "MMATHS",
+    "summary": "Volunteer at MMATHS; boba, a t-shirt, and lunch provided.",
+    "tags": [
+      "free_food",
+      "academic"
+    ],
+    "freeFood": true,
+    "food": "Boba and lunch",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 15",
+      "free boba + tshirt + lunch"
+    ],
+    "confidence": 0.95,
+    "rawText": "MMATHS volunteering - Sun Nov 15 (free boba + tshirt + lunch)"
+  },
+  {
+    "kind": "event",
+    "title": "Tastes of Taiwan",
+    "start": "2026-11-15T12:00:00-05:00",
+    "end": "2026-11-15T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC first floor",
+    "placeId": "AACC",
+    "hostName": "TAS",
+    "summary": "Annual TAS event with student-made Taiwanese food; pre-order for reduced pricing.",
+    "tags": [
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 15, 12-3pm, AACC first floor"
+    ],
+    "confidence": 0.95,
+    "rawText": "Tastes of Taiwan (TAS annual event; student-made food) - Sun Nov 15, 12-3pm, AACC first floor (pre-order form for reduced pricing)"
+  },
+  {
+    "kind": "event",
+    "title": "YCC Senate Meeting",
+    "start": "2026-11-15T12:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "YCC",
+    "summary": "Weekly YCC Senate meeting, open to all interested students.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Sundays 12:30pm, Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+  },
+  {
+    "kind": "event",
+    "title": "Afternoon Tea & Mini Treats",
+    "start": "2026-11-15T14:30:00-05:00",
+    "end": "2026-11-15T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "HoC House",
+    "placeId": "Silliman HoC House",
+    "hostName": "Silliman Head of College",
+    "summary": "Afternoon tea and mini treats at the Head of College House.",
+    "tags": [
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Tea and mini treats",
+    "audience": "college_only",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 15, 2:30-4:00pm",
+      "HoC House"
+    ],
+    "confidence": 0.95,
+    "rawText": "Afternoon Tea & Mini Treats at the HoC House - Sun Nov 15, 2:30-4:00pm"
+  },
+  {
+    "kind": "event",
+    "title": "UCW Interministry Soccer Game",
+    "start": "2026-11-15T14:30:00-05:00",
+    "end": "2026-11-15T16:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Scantlebury Park",
+    "placeId": null,
+    "hostName": "UCW",
+    "summary": "Interministry soccer game followed by dinner.",
+    "tags": [
+      "athletics",
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Dinner",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 15, 2:30-4:30pm, Scantlebury Park",
+      "dinner"
+    ],
+    "confidence": 0.95,
+    "rawText": "UCW Interministry Soccer Game + dinner - Sun Nov 15, 2:30-4:30pm, Scantlebury Park"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Wind Ensemble Sunday Matinee featuring Eighth Blackbird",
+    "start": "2026-11-15T15:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Woolsey Hall",
+    "placeId": "Woolsey Hall",
+    "hostName": "Yale Wind Ensemble",
+    "summary": "Sunday matinee with guest ensemble Eighth Blackbird.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sun Nov 15, 3:00pm, Woolsey Hall"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Wind Ensemble Sunday Matinee featuring Eighth Blackbird - Sun Nov 15, 3:00pm, Woolsey Hall"
+  },
+  {
+    "kind": "event",
+    "title": "Drop-in Fellowship Advising with Dr. Fisher",
+    "start": "2026-11-16T12:00:00-05:00",
+    "end": "2026-11-16T13:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Steep Cafe, Kline Tower",
+    "placeId": "Steep Cafe",
+    "hostName": "Office of Fellowships",
+    "summary": "Drop-in fellowship advising with Dr. Fisher.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 16, 12:00-1:30pm, Steep Cafe, Kline Tower"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Drop-in Fellowship Advising with Dr. Fisher - Mon Nov 16, 12:00-1:30pm, Steep Cafe, Kline Tower"
+  },
+  {
+    "kind": "event",
+    "title": "Materials Science Seminar: Frances Ross",
+    "start": "2026-11-16T14:30:00-05:00",
+    "end": "2026-11-16T15:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Rosenfeld Hall Lecture Hall, Room 101",
+    "placeId": "Rosenfeld Hall 101",
+    "hostName": null,
+    "summary": "Materials science seminar by Frances Ross of MIT.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 16, 2:30-3:30pm, Rosenfeld Hall Lecture Hall, Room 101"
+    ],
+    "confidence": 0.95,
+    "rawText": "Materials Science Seminar: Frances Ross (MIT) - Mon Nov 16, 2:30-3:30pm, Rosenfeld Hall Lecture Hall, Room 101"
+  },
+  {
+    "kind": "event",
+    "title": "Craft et Veritas: Collages",
+    "start": "2026-11-16T15:00:00-05:00",
+    "end": "2026-11-16T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Offline Oasis",
+    "placeId": "YSC Offline Oasis",
+    "hostName": "Good Life Center",
+    "summary": "Weekly craft drop-in; this week is collages.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mondays 3-4pm, YSC Offline Oasis",
+      "Nov 16 (collages)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+  },
+  {
+    "kind": "event",
+    "title": "Gentle Yoga",
+    "start": "2026-11-16T17:00:00-05:00",
+    "end": "2026-11-16T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Dance Studio",
+    "placeId": "YSC Dance Studio",
+    "hostName": "Good Life Center",
+    "summary": "Gentle Yoga class from the Good Life Center.",
+    "tags": [
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Gentle Yoga Mon 5-6pm",
+      "Nov 16"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+  },
+  {
+    "kind": "event",
+    "title": "Applied Math DSAC Bluebooking Session",
+    "start": "2026-11-16T17:00:00-05:00",
+    "end": "2026-11-16T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "HQ 132",
+    "placeId": "HQ 132",
+    "hostName": "Applied Math DSAC",
+    "summary": "Course planning session for applied math students.",
+    "tags": [
+      "free_food",
+      "academic"
+    ],
+    "freeFood": true,
+    "food": "Nice Day Chinese catering",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 16, 5-6pm, HQ 132",
+      "Nice Day Chinese catering"
+    ],
+    "confidence": 0.95,
+    "rawText": "Applied Math DSAC Bluebooking Session - Mon Nov 16, 5-6pm, HQ 132 (Nice Day Chinese catering)"
+  },
+  {
+    "kind": "event",
+    "title": "Yale Office of Strategic Analysis Info Session",
+    "start": "2026-11-17T00:00:00-05:00",
+    "end": null,
+    "allDay": true,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Office of Strategic Analysis",
+    "summary": "Info session on the Swensen Fellowship, full-time analyst roles, and the 2027 summer internship.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Office of Strategic Analysis info session (Swensen Fellowship, full-time analyst roles Aug 2027 + 2027 summer internship) - Tue Nov 17"
+  },
+  {
+    "kind": "event",
+    "title": "YSS Application Webinar",
+    "start": "2026-11-17T11:00:00-05:00",
+    "end": "2026-11-17T12:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "Yale Summer Session",
+    "summary": "Webinar with application tips and live Q&A for Yale Summer Session.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 11:00am-12:00pm EST"
+    ],
+    "confidence": 0.95,
+    "rawText": "YSS application webinar (tips + live Q&A) - Tue Nov 17, 11:00am-12:00pm EST (YSS application deadline Nov 16; programs deadline in January)"
+  },
+  {
+    "kind": "event",
+    "title": "Take it Easy Tuesday",
+    "start": "2026-11-17T14:00:00-05:00",
+    "end": "2026-11-17T16:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Good Life Center Lounge",
+    "placeId": "YSC GLC Lounge",
+    "hostName": "Good Life Center",
+    "summary": "YC3 drop-in afternoon at the Good Life Center Lounge.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 2-4pm, YSC Good Life Center Lounge"
+    ],
+    "confidence": 0.95,
+    "rawText": "Take it Easy Tuesday (YC3) - Tue Nov 17, 2-4pm, YSC Good Life Center Lounge"
+  },
+  {
+    "kind": "event",
+    "title": "NIH Summer Internship Program Webinar",
+    "start": "2026-11-17T16:00:00-05:00",
+    "end": "2026-11-17T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "virtual",
+    "placeId": null,
+    "hostName": "NIH",
+    "summary": "Virtual webinar on the NIH Summer Internship Program.",
+    "tags": [
+      "professional",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 4:00-5:00pm, virtual"
+    ],
+    "confidence": 0.95,
+    "rawText": "NIH Summer Internship Program (SIP) webinar - Tue Nov 17, 4:00-5:00pm, virtual"
+  },
+  {
+    "kind": "event",
+    "title": "Senior Story: Kelly Dai and Jen Chen",
+    "start": "2026-11-17T17:00:00-05:00",
+    "end": "2026-11-17T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC MPR",
+    "placeId": "AACC MPR",
+    "hostName": "AACC",
+    "summary": "Seniors Kelly Dai and Jen Chen share their stories.",
+    "tags": [
+      "cultural",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 5-6pm, AACC MPR"
+    ],
+    "confidence": 0.95,
+    "rawText": "Senior Story: Kelly Dai and Jen Chen - Tue Nov 17, 5-6pm, AACC MPR"
+  },
+  {
+    "kind": "event",
+    "title": "YASSS Dinner with Dr. Frank van den Bosch",
+    "start": "2026-11-17T17:15:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Pauli Murray Dining Hall",
+    "placeId": "Pauli Murray Dining Hall",
+    "hostName": "YASSS",
+    "summary": "Dinner with astronomer Dr. Frank van den Bosch.",
+    "tags": [
+      "academic",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Pauli Murray",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 5:15pm, Pauli Murray Dining Hall"
+    ],
+    "confidence": 0.95,
+    "rawText": "YASSS Dinner with Dr. Frank van den Bosch - Tue Nov 17, 5:15pm, Pauli Murray Dining Hall"
+  },
+  {
+    "kind": "event",
+    "title": "Kitchen Table Talks",
+    "start": "2026-11-17T18:00:00-05:00",
+    "end": "2026-11-17T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "MENA Cultural Community, 305 Crown St",
+    "placeId": "MENACC",
+    "hostName": "YC3",
+    "summary": "First session of a new YC3 conversation series based on the Living Room Conversations model.",
+    "tags": [
+      "social",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 6-7pm, MENA Cultural Community"
+    ],
+    "confidence": 0.95,
+    "rawText": "Kitchen Table Talks (new YC3 series, Living Room Conversations model) - first session Tue Nov 17, 6-7pm, MENA Cultural Community, 305 Crown St"
+  },
+  {
+    "kind": "event",
+    "title": "Jane Street Guide to Recruiting Effectively",
+    "start": "2026-11-17T18:00:00-05:00",
+    "end": "2026-11-17T19:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Zoom",
+    "placeId": null,
+    "hostName": "Jane Street",
+    "summary": "Jane Street Streetology session on recruiting, held on Zoom with registration by Nov 13.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 6:00-7:30pm, Zoom"
+    ],
+    "confidence": 0.95,
+    "rawText": "Jane Street \"Guide to Recruiting Effectively\" (Streetology) - Tue Nov 17, 6:00-7:30pm, Zoom (register by Fri Nov 13); Jane Street 2027 Summer Quantitative Trader Internship application deadline was Oct 28"
+  },
+  {
+    "kind": "event",
+    "title": "Grave of the Fireflies Screening & Discussion",
+    "start": "2026-11-17T19:30:00-05:00",
+    "end": "2026-11-17T21:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Davenport Auditorium",
+    "placeId": "Davenport Auditorium",
+    "hostName": null,
+    "summary": "Screening of Grave of the Fireflies followed by a discussion.",
+    "tags": [
+      "arts",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": "Davenport",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 7:30-9:30pm, Davenport Auditorium"
+    ],
+    "confidence": 0.95,
+    "rawText": "Grave of the Fireflies screening & discussion - Tue Nov 17, 7:30-9:30pm, Davenport Auditorium"
+  },
+  {
+    "kind": "event",
+    "title": "Ceremonial Weighing of Handsome Dan",
+    "start": "2026-11-17T20:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Beinecke Plaza",
+    "placeId": "Beinecke Plaza",
+    "hostName": "The Veritas Search",
+    "summary": "Guess Handsome Dan's weight; the closest guess wins a capsule and you must be present.",
+    "tags": [
+      "traditions",
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Tue Nov 17, 8:30pm, Beinecke Plaza"
+    ],
+    "confidence": 0.95,
+    "rawText": "Ceremonial Weighing of Handsome Dan (The Veritas Search) - Tue Nov 17, 8:30pm, Beinecke Plaza; guess his weight, closest guess wins a capsule (entry form closes 8:10pm, must be present)"
+  },
+  {
+    "kind": "event",
+    "title": "GLC 10-Minute Wellness Appointments",
+    "start": "2026-11-18T10:15:00-05:00",
+    "end": "2026-11-18T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "YSC Offline Oasis",
+    "placeId": "YSC Offline Oasis",
+    "hostName": "Good Life Center",
+    "summary": "Short wellness appointments with in-person sign-up from 10:15am.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 18, 10:15am-5pm, YSC Offline Oasis"
+    ],
+    "confidence": 0.95,
+    "rawText": "GLC 10-minute wellness appointments - Wed Nov 18, 10:15am-5pm, YSC Offline Oasis (in-person sign-up from 10:15am)"
+  },
+  {
+    "kind": "event",
+    "title": "Seminar: Many-body effects and nonlinear optical properties of quantum 2D materials",
+    "start": "2026-11-18T13:00:00-05:00",
+    "end": "2026-11-18T14:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Dunham 501",
+    "placeId": "Dunham 501",
+    "hostName": null,
+    "summary": "Seminar on many-body effects and nonlinear optics in quantum 2D materials.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 18, 1-2pm, Dunham 501"
+    ],
+    "confidence": 0.95,
+    "rawText": "Seminar: Many-body effects and nonlinear optical properties of quantum 2D materials - Wed Nov 18, 1-2pm, Dunham 501"
+  },
+  {
+    "kind": "event",
+    "title": "One Last Sweet Treat Before Thanksgiving Break",
+    "start": "2026-11-18T14:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "College St Gate",
+    "placeId": null,
+    "hostName": "Silliman GA",
+    "summary": "Silliman GA outing for a sweet treat before Thanksgiving break, meeting at the College St Gate.",
+    "tags": [
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Sweet treat",
+    "audience": "college_only",
+    "college": "Silliman",
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 18, 2:00pm, meet at College St Gate"
+    ],
+    "confidence": 0.95,
+    "rawText": "One Last Sweet Treat Before Thanksgiving Break (GA event) - Wed Nov 18, 2:00pm, meet at College St Gate"
+  },
+  {
+    "kind": "event",
+    "title": "ME Seminar Series: Jacob Notbohm",
+    "start": "2026-11-18T14:30:00-05:00",
+    "end": "2026-11-18T15:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "Rosenfeld Hall, Room 101",
+    "placeId": "Rosenfeld Hall 101",
+    "hostName": null,
+    "summary": "Mechanical engineering seminar by Jacob Notbohm.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 18, 2:30-3:30pm, Rosenfeld Hall, Room 101"
+    ],
+    "confidence": 0.95,
+    "rawText": "ME Seminar Series: Jacob Notbohm - Wed Nov 18, 2:30-3:30pm, Rosenfeld Hall, Room 101"
+  },
+  {
+    "kind": "event",
+    "title": "AACC Game Night",
+    "start": "2026-11-18T18:00:00-05:00",
+    "end": "2026-11-18T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC Game Room",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Weekly game night in the AACC Game Room.",
+    "tags": [
+      "social",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "weekly Wednesdays 6-7pm, AACC Game Room"
+    ],
+    "confidence": 0.95,
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+  },
+  {
+    "kind": "event",
+    "title": "Politics of the Purse",
+    "start": "2026-11-18T19:00:00-05:00",
+    "end": "2026-11-18T20:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC MPR",
+    "placeId": "AACC MPR",
+    "hostName": "AACC",
+    "summary": "Fiscal policy simulation.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Wed Nov 18, 7-8pm, AACC MPR"
+    ],
+    "confidence": 0.95,
+    "rawText": "Politics of the Purse (fiscal policy simulation) - Wed Nov 18, 7-8pm, AACC MPR"
+  },
+  {
+    "kind": "event",
+    "title": "YMUN China 2027 Secretariat Info Session",
+    "start": "2026-11-18T20:30:00-05:00",
+    "end": "2026-11-18T21:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "WTS A51",
+    "placeId": "WTS A51",
+    "hostName": "YMUN China",
+    "summary": "Info session for the YMUN China 2027 Secretariat; applications due Nov 29.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "info session Wed Nov 18, 8:30-9:30pm, WTS A51"
+    ],
+    "confidence": 0.95,
+    "rawText": "YMUN China 2027 Secretariat (Class of 2028; 3-day conference in Shenzhen, flights/hotels covered) - info session Wed Nov 18, 8:30-9:30pm, WTS A51; application deadline Nov 29, 11:59pm"
+  },
+  {
+    "kind": "event",
+    "title": "Grammars of Possibility: Poetry Workshop with Michelle Phuong Ho",
+    "start": "2026-11-19T12:00:00-05:00",
+    "end": "2026-11-19T13:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC MPR",
+    "placeId": "AACC MPR",
+    "hostName": "AACC",
+    "summary": "Poetry workshop led by Michelle Phuong Ho.",
+    "tags": [
+      "arts",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 19, 12-1:30pm, AACC MPR"
+    ],
+    "confidence": 0.95,
+    "rawText": "Grammars of Possibility: Poetry Workshop with Michelle Phuong Ho - Thu Nov 19, 12-1:30pm, AACC MPR (time per AACC newsletter ordering)"
+  },
+  {
+    "kind": "event",
+    "title": "Arcadia Abroad STEM Summer Research Info Session",
+    "start": "2026-11-19T12:00:00-05:00",
+    "end": "2026-11-19T13:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Virtual",
+    "placeId": null,
+    "hostName": "Study Abroad",
+    "summary": "Virtual info session on Arcadia Abroad 2027 STEM summer research projects.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 19, 12:00-1:00pm EST (virtual"
+    ],
+    "confidence": 0.95,
+    "rawText": "Arcadia Abroad STEM Summer Research info session - Thu Nov 19, 12:00-1:00pm EST (virtual, 2027 projects)"
+  },
+  {
+    "kind": "event",
+    "title": "Jenna Wiens: Careers in Machine Learning and Healthcare",
+    "start": "2026-11-19T14:00:00-05:00",
+    "end": "2026-11-19T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Kline Tower, 13th Floor, Room 1327, New Haven, CT 06511",
+    "placeId": "Kline Tower 1327",
+    "hostName": null,
+    "summary": "Jenna Wiens talks about careers in machine learning and healthcare.",
+    "tags": [
+      "academic",
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "2026-11-19T14:00:00-05:00 - 15:00",
+      "Kline Tower, 13th Floor, Room 1327"
+    ],
+    "confidence": 0.95,
+    "rawText": "Jenna Wiens: Careers in Machine Learning and Healthcare | 2026-11-19T14:00:00-05:00 - 15:00 | Kline Tower, 13th Floor, Room 1327, New Haven, CT 06511 | [Primary]"
+  },
+  {
+    "kind": "event",
+    "title": "Jenna Wiens: Career Chat",
+    "start": "2026-11-19T14:00:00-05:00",
+    "end": "2026-11-19T15:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "virtual (Zoom)",
+    "placeId": null,
+    "hostName": null,
+    "summary": "Virtual career chat with Jenna Wiens on Zoom.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "2026-11-19T14:00:00-05:00 - 15:00",
+      "virtual (Zoom)"
+    ],
+    "confidence": 0.95,
+    "rawText": "Jenna Wiens: Career Chat | 2026-11-19T14:00:00-05:00 - 15:00 | virtual (Zoom) | [Primary]"
+  },
+  {
+    "kind": "event",
+    "title": "Imagining Your Summer",
+    "start": "2026-11-19T16:00:00-05:00",
+    "end": "2026-11-19T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Poorvu 120A",
+    "placeId": "Poorvu 120A",
+    "hostName": "Office of Fellowships",
+    "summary": "Office of Fellowships session on planning your summer.",
+    "tags": [
+      "professional",
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+    ],
+    "confidence": 0.95,
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+  },
+  {
+    "kind": "event",
+    "title": "WaMH Talk: Culture, Consent, and Care",
+    "start": "2026-11-19T16:30:00-05:00",
+    "end": "2026-11-19T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC MPR",
+    "placeId": "AACC MPR",
+    "hostName": "YC3",
+    "summary": "Student-led affinity space conversation with Hot Murga catering.",
+    "tags": [
+      "free_food",
+      "cultural",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Hot Murga",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 19, 4:30-6pm, AACC MPR",
+      "Hot Murga catering"
+    ],
+    "confidence": 0.95,
+    "rawText": "WaMH Talk: Culture, Consent, and Care (YC3 student-led affinity space) - Thu Nov 19, 4:30-6pm, AACC MPR (Hot Murga catering)"
+  },
+  {
+    "kind": "event",
+    "title": "Introduction to R",
+    "start": "2026-11-20T10:00:00-05:00",
+    "end": "2026-11-20T12:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Sterling Hall of Medicine",
+    "placeId": "SHM",
+    "hostName": "Medical Library",
+    "summary": "Introduction to R from the Medical Library.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+  },
+  {
+    "kind": "event",
+    "title": "The Game: Yale vs. Harvard",
+    "start": "2026-11-21T15:30:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": "Fenway Park, Boston",
+    "placeId": null,
+    "hostName": "Yale College",
+    "summary": "Yale plays Harvard at Fenway Park, with Yale College buses and a return bus at 8:30pm.",
+    "tags": [
+      "traditions",
+      "athletics"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Sat Nov 21, 3:30pm, Fenway Park"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale/Harvard Game (\"The Game\") - Sat Nov 21, 3:30pm, Fenway Park, Boston (televised ESPNU); Yale College buses, luggage storage at Sever Hall (25 Harvard Yard), return bus 8:30pm; overnight housing Fri Nov 20 via Harvard sister houses (Silliman students: Pforzheimer House sign-up, free dining hall swipes with Yale ID)"
+  },
+  {
+    "kind": "event",
+    "title": "AACC November Recess Family Dinner",
+    "start": "2026-11-23T16:00:00-05:00",
+    "end": "2026-11-23T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "AACC",
+    "placeId": "AACC",
+    "hostName": "AACC",
+    "summary": "Annual family dinner at the AACC over November recess.",
+    "tags": [
+      "free_food",
+      "cultural",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Dinner",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Nov 23, 4-6pm, AACC"
+    ],
+    "confidence": 0.95,
+    "rawText": "Annual AACC November Recess Family Dinner - Mon Nov 23, 4-6pm, AACC"
+  },
+  {
+    "kind": "event",
+    "title": "Yale College Thanksgiving Dinner",
+    "start": "2026-11-26T12:00:00-05:00",
+    "end": "2026-11-26T14:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "the Omni",
+    "placeId": null,
+    "hostName": "Yale College",
+    "summary": "Thanksgiving buffet at the Omni, free for enrolled Yale College students with registration.",
+    "tags": [
+      "free_food",
+      "traditions"
+    ],
+    "freeFood": true,
+    "food": "Thanksgiving buffet",
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Thu Nov 26, 12:00-2:00pm buffet",
+      "free for enrolled Yale College students"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale College Thanksgiving Dinner at the Omni - Thu Nov 26, 12:00-2:00pm buffet, free for enrolled Yale College students; registration extended to midnight Nov 16, then space-available until noon Nov 23"
+  },
+  {
+    "kind": "event",
+    "title": "SASsy Sunday: Take-home Facial Masks",
+    "start": "2026-11-29T16:00:00-05:00",
+    "end": "2026-11-29T17:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Student Accessibility Services, 35 Broadway rm 222",
+    "placeId": "35 Broadway 222",
+    "hostName": "Good Life Center",
+    "summary": "Good Life Center craft hour at Student Accessibility Services: take-home facial masks.",
+    "tags": [
+      "arts"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "4-5pm open to all",
+      "Nov 29 (take-home facial masks)"
+    ],
+    "confidence": 0.95,
+    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)"
+  },
+  {
+    "kind": "event",
+    "title": "Talk STEM with Dean Alexia Belperron",
+    "start": "2026-12-02T12:00:00-05:00",
+    "end": "2026-12-02T13:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Commons, Schwarzman Center",
+    "placeId": "Commons",
+    "hostName": null,
+    "summary": "Monthly conversation about STEM with Dean Alexia Belperron.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "12-1pm, Commons, Schwarzman Center",
+      "next Dec 2"
+    ],
+    "confidence": 0.95,
+    "rawText": "\"Talk STEM\" with Dean Alexia Belperron - first Wednesday of each month, 12-1pm, Commons, Schwarzman Center (Nov 4; next Dec 2)"
+  },
+  {
+    "kind": "event",
+    "title": "Season of Giving Drive: Gift Drop-off",
+    "start": "2026-12-03T17:00:00-05:00",
+    "end": "2026-12-03T22:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "YCC",
+    "summary": "Drop off gifts for students at Augusta Lewis Troup School; location to be announced.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Dec 3 5-10pm",
+      "location TBA"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+  },
+  {
+    "kind": "event",
+    "title": "Introduction to R",
+    "start": "2026-12-04T10:00:00-05:00",
+    "end": "2026-12-04T12:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "Sterling Hall of Medicine",
+    "placeId": "SHM",
+    "hostName": "Medical Library",
+    "summary": "Introduction to R from the Medical Library.",
+    "tags": [
+      "academic"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+    ],
+    "confidence": 0.95,
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+  },
+  {
+    "kind": "event",
+    "title": "FroCo Information Session",
+    "start": "2026-12-04T11:00:00-05:00",
+    "end": null,
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": null,
+    "summary": "Information session on FroCo applications for AY 27-28.",
+    "tags": [
+      "professional"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Dec 4, 11:00am ET"
+    ],
+    "confidence": 0.95,
+    "rawText": "FroCo Information Session (AY 27-28 applications) - Fri Dec 4, 11:00am ET"
+  },
+  {
+    "kind": "event",
+    "title": "Season of Giving Drive: Gift Drop-off",
+    "start": "2026-12-04T14:00:00-05:00",
+    "end": "2026-12-04T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "YCC",
+    "summary": "Drop off gifts for students at Augusta Lewis Troup School; location to be announced.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Dec 4 2-7pm",
+      "location TBA"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+  },
+  {
+    "kind": "event",
+    "title": "Holiday Dinner",
+    "start": "2026-12-04T17:00:00-05:00",
+    "end": "2026-12-04T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "residential college dining halls",
+    "placeId": null,
+    "hostName": "Yale Hospitality",
+    "summary": "Holiday dinner for sophomores, juniors, and seniors in the residential college dining halls.",
+    "tags": [
+      "free_food",
+      "social"
+    ],
+    "freeFood": true,
+    "food": "Holiday dinner",
+    "audience": "college_only",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Fri Dec 4, 5:00-7:00pm, residential college dining halls"
+    ],
+    "confidence": 0.95,
+    "rawText": "Holiday Dinner (Yale Hospitality, Sophomores/Juniors/Seniors) - Fri Dec 4, 5:00-7:00pm, residential college dining halls"
+  },
+  {
+    "kind": "event",
+    "title": "Chinese Diaspora and U.S.-China Relations: CASA & YFPI x Yaqiu Wang",
+    "start": "2026-12-04T17:00:00-05:00",
+    "end": "2026-12-04T18:30:00-05:00",
+    "allDay": false,
+    "locationRaw": "LC Room 317",
+    "placeId": "LC 317",
+    "hostName": "CASA",
+    "summary": "CASA and YFPI host Yaqiu Wang on the Chinese diaspora and U.S.-China relations.",
+    "tags": [
+      "academic",
+      "cultural"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "2026-12-04T17:00:00-05:00 - 18:30",
+      "LC Room 317"
+    ],
+    "confidence": 0.95,
+    "rawText": "Chinese Diaspora and U.S.-China Relations: CASA & YFPI x Yaqiu Wang | 2026-12-04T17:00:00-05:00 - 18:30 | LC Room 317 | [Yale CASA Community]"
+  },
+  {
+    "kind": "event",
+    "title": "Retirement Celebration for Jackie Tanaka",
+    "start": "2026-12-07T16:00:00-05:00",
+    "end": "2026-12-07T18:00:00-05:00",
+    "allDay": false,
+    "locationRaw": "SSS 410",
+    "placeId": "SSS 410",
+    "hostName": null,
+    "summary": "Retirement celebration for Jackie Tanaka.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Mon Dec 7, 4:00-6:00pm, SSS 410"
+    ],
+    "confidence": 0.95,
+    "rawText": "Retirement Celebration for Jackie Tanaka - Mon Dec 7, 4:00-6:00pm, SSS 410"
+  },
+  {
+    "kind": "event",
+    "title": "Season of Giving Drive: Gift Drop-off",
+    "start": "2026-12-10T17:00:00-05:00",
+    "end": "2026-12-10T22:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "YCC",
+    "summary": "Drop off gifts for students at Augusta Lewis Troup School; location to be announced.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Dec 10 5-10pm",
+      "location TBA"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+  },
+  {
+    "kind": "event",
+    "title": "Season of Giving Drive: Gift Drop-off",
+    "start": "2026-12-11T14:00:00-05:00",
+    "end": "2026-12-11T19:00:00-05:00",
+    "allDay": false,
+    "locationRaw": null,
+    "placeId": null,
+    "hostName": "YCC",
+    "summary": "Drop off gifts for students at Augusta Lewis Troup School; location to be announced.",
+    "tags": [
+      "social"
+    ],
+    "freeFood": false,
+    "food": null,
+    "audience": "open_to_all",
+    "college": null,
+    "rsvpUrl": null,
+    "price": null,
+    "evidence": [
+      "Dec 11 2-7pm",
+      "location TBA"
+    ],
+    "confidence": 0.95,
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+  }
+]
