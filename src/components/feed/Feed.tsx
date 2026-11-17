@@ -45,7 +45,7 @@ export function Feed() {
     const msg = filtered
       ? 'No events match these filters.'
       : filters.range === 'today' ? 'Nothing on the calendar today.' : 'Nothing on the calendar this week.';
-    body = <p className="py-10 text-sm text-zinc-500">{msg}</p>;
+    body = <p data-testid="empty-state" className="py-10 text-sm text-zinc-500">{msg}</p>;
   } else {
     body = groupByDay(events).map(function ([key, group]) {
       return (
