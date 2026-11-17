@@ -1,6 +1,6 @@
 // CP4 smoke: calendar feeds, Google Calendar insert, saves, free food alerts and the digest.
 // The GCAL_INSERT and ALERTS tests WRITE demo data (sim calendar entries, saves, an alert subscriber,
-// a free-food-now email and its outbox message). Run `pnpm demo:reset` (human, plain terminal) before a live demo.
+// a free-food-now email and its outbox message). Press Reset demo (/demo key 5) before a live demo.
 import { test, expect, type APIRequestContext } from '@playwright/test';
 import type { EventCard, IntegrationStatus } from '../../src/lib/contracts/types';
 import { forCp, gotoApp } from './helpers';

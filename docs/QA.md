@@ -27,7 +27,7 @@ Owners: keep these stable. Changing one breaks the gate.
 
 ## Manual checklist
 
-Run in a fresh window with `pnpm dev` up and after `pnpm demo:reset`. Check each at desktop width and at 390px.
+Run in a fresh window with `pnpm dev` up and after Reset demo (/demo key 5). Check each at desktop width and at 390px.
 
 ### CP0
 - [ ] `/` loads with no console errors.

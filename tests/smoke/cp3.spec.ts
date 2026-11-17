@@ -1,6 +1,6 @@
 // CP3 smoke: Ask, dedup and the "How this was read" drawer.
-// The DEDUP tests WRITE demo data (a YUMS email and its room change). Run `pnpm demo:reset`
-// (human, plain terminal) before a live demo so the demo send-ins start fresh.
+// The DEDUP tests WRITE demo data (a YUMS email and its room change). Press Reset demo
+// (/demo key 5) before a live demo so the demo send-ins start fresh.
 import { test, expect, type APIRequestContext, type Page } from '@playwright/test';
 import type { AskResponse, EventCard, EventDetail, IngestResult } from '../../src/lib/contracts/types';
 import { forCp, gotoApp } from './helpers';

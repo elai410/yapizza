@@ -1,9 +1,8 @@
 // Demo rehearsal: walks the 3-minute story in docs/DEMO.md, CP1 through CP4, the way the presenter runs it,
 // with tab 1 on the feed and tab 2 on /demo, and prints a timing table with each beat against its budget.
 //
-// Run only right after `pnpm demo:reset` (human, plain terminal, with `pnpm dev` up): it depends on a fresh DB.
-// It WRITES demo data (YUMS email, flyer, room change, free food now, a sim calendar entry) and leaves it behind,
-// so run `pnpm demo:reset` again before the real demo.
+// Needs a fresh DB, so it calls POST /api/demo/reset (the /demo Reset button) before the first beat and
+// again at the end, leaving the seed clean for the real demo.
 //
 //   pnpm exec playwright test tests/demo/rehearsal.spec.ts
 //
@@ -22,6 +21,8 @@ const WAIT = 30_000;
 
 test('rehearsal: the 3-minute story, CP1 to CP4', async ({ context }) => {
   test.setTimeout(300_000);
+  const reset = async () => expect((await context.request.post('/api/demo/reset', { data: {} })).status()).toBe(200);
+  await reset();
   const timings: { beat: string; ms: number; budget: number }[] = [];
 
   async function beat(name: string, budget: number, fn: () => Promise<void>) {
@@ -197,5 +198,6 @@ test('rehearsal: the 3-minute story, CP1 to CP4', async ({ context }) => {
       (t) => `${t.ms > t.budget ? 'OVER' : 'ok  '}  ${String(t.ms).padStart(6)} ms / ${String(t.budget).padStart(6)} ms  ${t.beat}`,
     );
     console.log(['', 'Rehearsal timings (soft budgets):', ...rows, ''].join('\n'));
+    await reset();
   }
 });

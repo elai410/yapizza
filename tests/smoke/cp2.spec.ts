@@ -1,5 +1,5 @@
 // CP2 smoke: live intake. These tests WRITE demo data (an ingested email, an uploaded flyer).
-// Run `pnpm demo:reset` before a live demo so the demo send-ins start fresh.
+// Press Reset demo (/demo key 5) before a live demo so the demo send-ins start fresh.
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { test, expect } from '@playwright/test';

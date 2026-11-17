@@ -5,7 +5,7 @@ Owner: qa-demo. One script per checkpoint. Whatever checkpoint we wrap at, run t
 ## Setup checklist (5 minutes before)
 
 - [ ] `pnpm dev` running on port 3000 in its own terminal. If .env changed since it started, restart it.
-- [ ] The human runs `pnpm demo:reset` in a plain terminal (database back to the seed, sim inbox and outbox cleared), with `pnpm dev` up so the sim reset reaches the app. Never from a Claude session: Prisma refuses `migrate reset` when Claude Code invokes it.
+- [ ] Reset: on `/demo` press 5 (Reset demo). It reseeds the 210 events in under a second and clears the sim inbox and calendar; users and alert subscriptions are kept. If the app is down or the schema changed, run `pnpm demo:reset` in a plain terminal instead (Prisma refuses `migrate reset` from a Claude session).
 - [ ] Browser tab 1: `http://localhost:3000/` in a fresh window, so the intro plays once.
 - [ ] Browser tab 2: `http://localhost:3000/demo` (CP2 and later). Check the status row: which services are live, which are sim.
 - [ ] CP4 and later: after the reset and before the run, opt the demo student in to free food alerts. An alert goes out only when key 4 makes or changes a card, and only the first press of the day does. So the opt-in has to come before CP3's press of 4.
@@ -164,7 +164,7 @@ Inputs: `fixtures/emails/37-ocay-gear-sale.json`, `fixtures/emails/36-ocay-trip-
 
 - A card doesn't appear within 10 seconds: reload tab 1 once. If still missing, check the `/demo` log for the failed stage and move to the next beat. Don't retry live more than once.
 - Grok is slow or erroring: set `YAPIZZA_FORCE_SIM=1`, restart `pnpm dev`, and continue in replay (see the Wi-Fi failure drill). Inputs recorded with `pnpm grok:record` replay exactly; the rest use the rule extractor.
-- Wrong state after a rehearsal (duplicate cards, panel already moved): `pnpm demo:reset`, reload both tabs.
+- Wrong state after a rehearsal (duplicate cards, panel already moved): `/demo` key 5 (Reset demo), reload both tabs.
 - Only these fixtures make new cards against a fresh seed (pipeline, 17:35): 34 (three YUMS cards), 31 (Helix Langer flyer email; matches the flyer if it was already uploaded), 36 ("Winter break trip meeting", members only). Backup email beat: send 36. 09 matches the seeded AGPC Kickoff. Every other fixture matches a seeded card as `same` and adds nothing. 39 needs 34 sent first; 40 cancels the seeded Politics of the Purse.
 - Feed empty: `pnpm db:reset`, reload. Last resort: `NEXT_PUBLIC_DATA=fixtures`, restart `pnpm dev`.
 - Calendar insert fails: use the Add to calendar link (always works, no sign-in) or show `/sim/calendar`.
@@ -198,7 +198,7 @@ Switch back: set `YAPIZZA_FORCE_SIM=0`, restart `pnpm dev`, and confirm `/demo` 
 
 Record right after the wrap, before anything else changes.
 
-- [ ] The human runs `pnpm demo:reset` in a plain terminal, then redoes setup (alert opt-in included).
+- [ ] Press 5 on `/demo` (Reset demo), then redo setup (alert opt-in included).
 - [ ] Browser zoom 125%. Close other tabs, mute notifications (Do Not Disturb).
 - [ ] macOS Cmd+Shift+5, Record Entire Screen, Options: microphone on. Display at 1440p, or the projector resolution if we know it.
 - [ ] Record the final script beats in order: problem slide, feed and Free food, key 1 (34), key 3 (flyer), key 2 (room change), key 4 (free food now), Ask "free food tonight", How this was read, Add to calendar (show `/sim/calendar` if the phone is not on screen), host page if CP5 landed, close.
