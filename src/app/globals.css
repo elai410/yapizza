@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Yapizza tokens. One accent (Yale Blue). Other colors only carry meaning:
+  food (free food), cancel (canceled), update (room or time changed).
+  Use these through Tailwind: bg-bg, bg-surface, text-ink, text-muted, border-line,
+  bg-accent, text-accent, bg-accent-soft, bg-food-soft text-food, etc.
+*/
+@theme {
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-sunken: #f0f0ed;
+  --color-ink: #14171c;
+  --color-muted: #59616c;
+  --color-faint: #8b929b;
+  --color-line: #e4e4e0;
+  --color-line-strong: #cfcfca;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-accent: #00356b;
+  --color-accent-hover: #00284f;
+  --color-accent-soft: #e6edf5;
+  --color-accent-ink: #ffffff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-food: #1d6b3a;
+  --color-food-soft: #e5f2e9;
+  --color-cancel: #a8231a;
+  --color-cancel-soft: #fbeae8;
+  --color-update: #7a4f00;
+  --color-update-soft: #fdf1d6;
+
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --shadow-card: 0 1px 2px rgb(20 23 28 / 0.04);
+  --shadow-raised: 0 2px 6px rgb(20 23 28 / 0.06), 0 1px 2px rgb(20 23 28 / 0.04);
+  --shadow-sheet: 0 -8px 32px rgb(20 23 28 / 0.12);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --animate-shimmer: shimmer 1.4s linear infinite;
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 }
 
+:root {
+  --header-h: 56px;
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Times and counts line up. Apply to any element showing a time or number. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
