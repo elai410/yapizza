@@ -43,7 +43,7 @@ Inputs: seeded events only. No sends.
    - YASSS Dinner with Dr. Frank van den Bosch. Tue, Nov 17 · 5:15 PM. Pauli Murray Dining Hall. Free food marker.
    - WaMH Talk: Culture, Consent, and Care. Thu, Nov 19 · 4:30 PM. AACC MPR. Free food marker (Hot Murga catering).
 3. (0:20) Click Today. Only Nov 17 events remain (Take it Easy Tuesday, Senior Story, Kitchen Table Talks, Grave of the Fireflies, the Weighing). Click This week again.
-4. (0:25) Click the Free food chip. The feed narrows to events whose email mentions food: YASSS Dinner, WaMH Talk, the Putnam problem session (Wed, Nov 18 · 7:00 PM, DL 220, pizza). Say: "Free food is the first filter students asked for."
+4. (0:25) Click the Free food chip. The feed narrows to events whose email mentions food: YASSS Dinner and WaMH Talk, plus any other seeded free food this week. Say: "Free food is the first filter students asked for."
 5. (0:35) Click the WaMH Talk card. The detail sheet opens: summary, AACC MPR, the catering note, Add to calendar.
 6. (0:45) Click Add to calendar. A new tab opens Google Calendar with the title, Thu Nov 19 4:30 to 6:00 PM, and AACC MPR filled in. Say: "One tap, and it's in the calendar Yale students already use." Close the Google tab without saving.
 7. (0:55) Press Escape. The sheet closes and focus returns to the card.
