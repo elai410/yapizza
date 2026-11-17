@@ -31,6 +31,7 @@ export interface EventDetail extends EventCard {
   confidence: number;
   evidence: string[];         // quotes found in the source
   gcalTemplateUrl: string;
+  readBy?: ReadBy;            // v1.1: absent means not read by Grok
   source: {
     id: string;
     kind: 'email' | 'forward' | 'upload' | 'form' | 'demo';
@@ -79,7 +80,10 @@ export interface ExtractionResult {
   events: ExtractedEvent[];
   flagged: boolean;           // harassment or spam
   flagReason: string | null;
+  readBy?: ReadBy;            // v1.1: 'grok' for a live or replayed Grok reply, 'rules' for the fallback
 }
+
+export type ReadBy = 'grok' | 'rules';
 
 export interface MatchDecision {
   action: 'new' | 'same' | 'update' | 'cancel';
@@ -94,6 +98,7 @@ export interface IngestResult {
   listings: number;
   inReview: number;
   ms: number;
+  stages?: Record<string, number>; // v1.1: ms per stage: received, extracted, checked, matched, saved
 }
 
 export interface AskResponse {
