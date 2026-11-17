@@ -24,7 +24,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-30 h-[var(--header-h)] border-b border-line bg-bg">
-      <div className="mx-auto flex h-full max-w-5xl items-center gap-3 px-4 sm:gap-6 sm:px-6">
+      <div className="mx-auto flex h-full max-w-5xl items-center gap-2 px-4 sm:gap-6 sm:px-6">
         <Link href="/" aria-label="Yapizza home" className="-mx-1 rounded-sm px-1">
           {playing ? (
             <span className={cn(WORDMARK, 'invisible')}>Yapizza</span>
@@ -41,7 +41,7 @@ export function Header() {
                 href={n.href}
                 aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'inline-flex h-8 shrink-0 items-center whitespace-nowrap rounded-md px-2 text-sm transition-colors sm:px-2.5',
+                  'inline-flex h-8 shrink-0 items-center whitespace-nowrap rounded-md px-1.5 text-sm transition-colors sm:px-2.5',
                   active ? 'font-medium text-ink' : 'text-muted hover:bg-sunken hover:text-ink',
                 )}
               >
