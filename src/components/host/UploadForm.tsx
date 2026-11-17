@@ -87,7 +87,7 @@ export function UploadForm() {
     return (
       <div data-testid="upload-result" className="mt-6 space-y-4">
         {cards.length === 0 && r.listings === 0 ? (
-          <p className="text-sm text-ink">No events found in this file.</p>
+          <p className="text-sm text-ink">No new events in this file.</p>
         ) : (
           <p className="tnum text-sm text-ink">Added to Yapizza. {summary(r)}</p>
         )}

@@ -96,7 +96,7 @@ export function Feed() {
       <div className="mb-6"><AskBox onOpen={setOpenId} examples={false} /></div>
       <FilterBar filters={filters} onChange={setFilters} />
       <div className="mt-6">{body}</div>
-      <div className="mt-8"><AlertsOptIn /></div>
+      <div className="mt-8"><AlertsOptIn onOpen={setOpenId} /></div>
       <EventSheet id={openId} onClose={function () { setOpenId(null); }} />
     </>
   );

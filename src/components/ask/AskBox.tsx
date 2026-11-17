@@ -66,10 +66,12 @@ export function AskBox({ onOpen, autoFocus = false, initialQuery, examples = tru
         <EmptyState>Ask is not available right now.</EmptyState>
       ) : data ? (
         <div data-testid="ask-result" className="space-y-3">
-          <div className="space-y-1">
-            {data.answer && <p className="text-[15px] text-ink">{data.answer}</p>}
-            <p className="text-xs text-muted">{data.mode === 'grok' ? 'Read by Grok' : 'Showing keyword matches.'}</p>
-          </div>
+          {data.results.length > 0 && (
+            <div className="space-y-1">
+              {data.answer && <p className="text-[15px] text-ink">{data.answer}</p>}
+              <p className="text-xs text-faint">{data.mode === 'grok' ? 'Read by Grok' : 'Showing keyword matches.'}</p>
+            </div>
+          )}
           {data.results.length === 0 ? (
             <EmptyState>No events match that.</EmptyState>
           ) : (

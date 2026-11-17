@@ -36,7 +36,7 @@ export function FilterBar({ filters, onChange }: { filters: FeedFilters; onChang
       </div>
 
       {isOn('FILTERS') && (
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
+        <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
           <Chip selected={filters.freeFood} onClick={function () { onChange({ ...filters, freeFood: !filters.freeFood }); }}>
             Free food
           </Chip>

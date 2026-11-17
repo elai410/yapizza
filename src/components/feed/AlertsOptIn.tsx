@@ -1,13 +1,35 @@
 'use client';
 
-import { useEffect, useId, useState, type FormEvent } from 'react';
+import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
+import useSWR from 'swr';
 import { isOn, type AlertsSubscribeRequest, type OkResponse } from '@/lib/contracts';
-import { Button, Card, Input } from '@/components/ui';
+import { Button, Card, Input, toast } from '@/components/ui';
 
 const KEY = 'yapizza.alerts';
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export function AlertsOptIn() {
+type Outbox = { notifications: { id: string; to: string; subject: string; eventId: string | null; sentAt: string }[] };
+
+// In-app copy of alert emails: poll the outbox (integrations) and toast new rows sent to this student's address.
+function useAlertToasts(onFor: string | null, onOpen?: (id: string) => void) {
+  const since = useRef(Date.now());
+  const seen = useRef(new Set<string>());
+  const { data } = useSWR<Outbox>(onFor && isOn('ALERTS') ? '/api/demo/outbox' : null, async function (url: string) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(String(res.status));
+    return res.json();
+  }, { refreshInterval: 3000 });
+  useEffect(function () {
+    for (const n of data?.notifications ?? []) {
+      if (seen.current.has(n.id) || n.to !== onFor || new Date(n.sentAt).getTime() < since.current) continue;
+      seen.current.add(n.id);
+      const eventId = n.eventId;
+      toast(n.subject, eventId && onOpen ? { action: { label: 'View', onClick: function () { onOpen(eventId); } } } : undefined);
+    }
+  }, [data, onFor, onOpen]);
+}
+
+export function AlertsOptIn({ onOpen }: { onOpen?: (id: string) => void } = {}) {
   const id = useId();
   const [email, setEmail] = useState('');
   const [onFor, setOnFor] = useState<string | null>(null);
@@ -19,6 +41,7 @@ export function AlertsOptIn() {
       setOnFor(localStorage.getItem(KEY));
     } catch {}
   }, []);
+  useAlertToasts(onFor, onOpen);
 
   if (!isOn('ALERTS')) return null;
 
