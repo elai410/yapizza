@@ -4,6 +4,7 @@ import { useState } from 'react';
 import type { EventCard as EventCardData } from '@/lib/contracts';
 import { dayKey, dayLabel, DEFAULT_FILTERS, useEvents, type FeedFilters } from '@/lib/client';
 import { EventSheet } from '@/components/event/EventSheet';
+import { Card, EmptyState, Skeleton } from '@/components/ui';
 import { EventCard } from './EventCard';
 import { FilterBar } from './FilterBar';
 
@@ -24,38 +25,40 @@ export function Feed() {
 
   let body: React.ReactNode;
   if (error && !events) {
-    body = <p className="py-10 text-sm text-zinc-500">Events could not be loaded.</p>;
+    body = <EmptyState>Events could not be loaded.</EmptyState>;
   } else if (!events) {
     body = (
-      <ul aria-busy="true" aria-label="Loading events" className="divide-y divide-zinc-100">
+      <Card aria-busy="true" aria-label="Loading events" className="divide-y divide-line">
         {Array.from({ length: 6 }, function (_, i) {
           return (
-            <li key={i} className="flex gap-4 px-2 py-3 animate-pulse motion-reduce:animate-none">
-              <span className="h-4 w-28 shrink-0 rounded bg-zinc-100" />
+            <div key={i} className="flex gap-4 px-4 py-3">
+              <Skeleton className="h-4 w-28 shrink-0" />
               <span className="flex-1 space-y-2">
-                <span className="block h-4 w-2/3 rounded bg-zinc-100" />
-                <span className="block h-3 w-1/3 rounded bg-zinc-100" />
+                <Skeleton className="h-4 w-2/3" />
+                <Skeleton className="h-3 w-1/3" />
               </span>
-            </li>
+            </div>
           );
         })}
-      </ul>
+      </Card>
     );
   } else if (events.length === 0) {
     const msg = filtered
       ? 'No events match these filters.'
       : filters.range === 'today' ? 'Nothing on the calendar today.' : 'Nothing on the calendar this week.';
-    body = <p data-testid="empty-state" className="py-10 text-sm text-zinc-500">{msg}</p>;
+    body = <div data-testid="empty-state"><EmptyState>{msg}</EmptyState></div>;
   } else {
     body = groupByDay(events).map(function ([key, group]) {
       return (
         <section key={key} className="mt-6 first:mt-0">
-          <h2 className="px-2 pb-1 text-xs font-semibold uppercase tracking-wide text-zinc-500">{dayLabel(key)}</h2>
-          <ul className="divide-y divide-zinc-100">
-            {group.map(function (e) {
-              return <li key={e.id}><EventCard event={e} onOpen={setOpenId} /></li>;
-            })}
-          </ul>
+          <h2 className="pb-2 text-xs font-semibold uppercase tracking-wide text-muted">{dayLabel(key)}</h2>
+          <Card className="overflow-hidden">
+            <ul className="divide-y divide-line">
+              {group.map(function (e) {
+                return <li key={e.id}><EventCard event={e} onOpen={setOpenId} /></li>;
+              })}
+            </ul>
+          </Card>
         </section>
       );
     });
