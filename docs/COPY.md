@@ -48,10 +48,10 @@ A calm list of what is happening at Yale this week. It reads like CourseTable or
 | Upload done | Added to Yapizza. |
 | Live toast | New event: {title} |
 | Update toast | Updated: {title} |
-| Empty feed (week) | Nothing posted for this week yet. |
+| Empty feed | Nothing on the calendar today. · Nothing on the calendar this week. |
 | Empty feed (filters) | No events match these filters. |
 | Empty Ask | No events match that. |
-| Error | Couldn't load events. Try again. |
+| Error | Couldn't load events. · Couldn't load this event. |
 | Retry button | Try again |
 | Calendar feeds | Subscribe · Copy link |
 | Alerts | Free food alerts · Turn on · Turn off |
