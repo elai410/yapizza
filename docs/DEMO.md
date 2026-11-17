@@ -52,14 +52,14 @@ If the feed is empty: the seed has not loaded. Run `pnpm db:reset` and reload. I
 
 ---
 
-## CP2: Live intake (draft until CP2 passes)
+## CP2: Live intake (runnable; the flyer beat needs Grok live or a recorded replay)
 
 Story: a real club email becomes cards in seconds, and so does a flyer. Adds 1:00 to CP1.
 
 Inputs: `fixtures/emails/34-yums-weekly-nov-16.json`, `fixtures/flyers/helix-langer-flyer.png`.
 
 1. (0:00) Start on tab 1, This week. Say: "Here's a YUMS email from Sunday night, written the way club emails are."
-2. (0:05) Tab 2, `/demo`. Press 1 (Send club email), pick `34-yums-weekly-nov-16`. The live log shows received, extracted, checked, matched, saved, with timings.
+2. (0:05) Tab 2, `/demo`. Press 1 (Send club email), the fixture select defaults to `34`. The log row shows server ms, counts (new, updated, review) and the card titles.
 3. (0:15) Back to tab 1. Within a few seconds three new cards appear with a highlight, no reload:
    - Pset night. Mon, Nov 16 · 7:00 PM. WLH 011.
    - Putnam problem session. Wed, Nov 18 · 7:00 PM. DL 220.
@@ -68,6 +68,8 @@ Inputs: `fixtures/emails/34-yums-weekly-nov-16.json`, `fixtures/flyers/helix-lan
 4. (0:30) Tab 2, press 3 (Upload flyer), pick `helix-langer-flyer.png`. Or show the host path: `/host/upload`, choose the file, watch the processing state.
 5. (0:45) Tab 1. New card: Fireside Chat with Robert Langer. Fri, Nov 20 · 1:15 PM. LC 101. Yale Helix. Say: "That was a photo of a flyer. Grok read it."
 6. (0:55) Open the Langer card and show the summary matches the flyer.
+
+Known at CP2: in replay mode with no recording, the flyer returns no events (logged for pipeline). If it hasn't been fixed, skip beats 4 to 6. Don't press 2 (room change) at CP2: until DEDUP lands at CP3 it creates a second card instead of updating the first.
 
 ---
 
