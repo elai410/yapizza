@@ -1,6 +1,8 @@
 import { cookies } from 'next/headers';
 import { adapters } from '@/lib/adapters';
 import { DEMO_STUDENTS } from '@/lib/adapters/demo-students';
+import { forcedSim, googleConfigured } from '@/lib/adapters/env';
+import { upsertUserRow } from '@/lib/adapters/live/google-users';
 import { SESSION_COOKIE } from '@/lib/adapters/sim/auth';
 
 export const dynamic = 'force-dynamic';
@@ -9,8 +11,9 @@ export async function GET() {
   const auth = adapters.auth();
   return Response.json({
     user: await auth.currentUser(),
-    students: auth.mode === 'sim' ? DEMO_STUDENTS : [],
+    students: DEMO_STUDENTS, // liveAuth accepts demo students too
     mode: auth.mode,
+    googleAvailable: googleConfigured() && !forcedSim(),
   });
 }
 
@@ -19,6 +22,7 @@ export async function POST(req: Request) {
   const userId = body && typeof body === 'object' && 'userId' in body ? body.userId : null;
   const user = DEMO_STUDENTS.find((s) => s.id === userId);
   if (!user) return Response.json({ error: 'unknown userId' }, { status: 400 });
+  await upsertUserRow(user);
   (await cookies()).set(SESSION_COOKIE, user.id, {
     httpOnly: true,
     sameSite: 'lax',
