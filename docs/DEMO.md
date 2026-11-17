@@ -86,7 +86,7 @@ Inputs: `fixtures/emails/34-yums-weekly-nov-16.json`, `fixtures/flyers/helix-lan
 3. (0:15) Back to tab 1. Within a few seconds three new cards appear with a highlight, no reload:
    - Pset night. Mon, Nov 16 · 7:00 PM. WLH 011.
    - Putnam problem session. Wed, Nov 18 · 7:00 PM. DL 220.
-   - Math Research Panel with Prof. Ian Adelstein. Thu, Nov 19 · 4:00 PM. WLH 120.
+   - Math Research Panel: Thinking About REUs. Thu, Nov 19 · 4:00 PM. WLH 120.
    Say: "One messy email, three events, tagged academic."
 4. (0:30) Tab 2, press 3 (Upload flyer), pick `helix-langer-flyer.png`. Or show the host path: `/host/upload`, choose the file, watch the processing state.
 5. (0:45) Tab 1. New card: Fireside Chat with Robert Langer. Fri, Nov 20 · 1:15 PM. LC 101. Yale Helix. Say: "That was a photo of a flyer. Grok read it."
@@ -117,7 +117,7 @@ Fallbacks:
 - Ask returns nothing for "free food tonight" (the clock or the parser read "tonight" narrowly): ask "free food this week". Expect the Silliman pizza plus seeded free food: One Last Sweet Treat Before Thanksgiving Break (Wed, Nov 18 · 2:00 PM) and WaMH Talk: Culture, Consent, and Care (Thu, Nov 19 · 4:30 PM, AACC MPR, Hot Murga).
 - Ask shows no "Read by Grok" line: it answered in keyword fallback (`mode: 'fallback'`). The cards are still right; keep going.
 - Grok in replay (no key, or `YAPIZZA_FORCE_SIM=1`): the free food now email can never hit a recording, because its text carries the current time. It runs through the rule-based extractor, gets confidence 0.50, and the drawer shows a Review badge. For beat 5, open Putnam problem session (Wed, Nov 18 · 7:00 PM, DL 220) from the feed instead; it comes from the recorded 34. Avoid the Math Research Panel drawer: it shows the original email 34 with WLH 120 highlighted, since the update keeps the first source.
-- Replay with no recording of 34: the rule-based extractor titles the panel "MATH RESEARCH PANEL: thinking about REUs". The room change still matches it (same host, same day). Record 34 before the final run so the title reads Math Research Panel.
+- Replay with no recording of 34: the rule-based extractor titles the panel "Math Research Panel: Thinking About REUs" (pipeline, 17:35). The room change still matches it.
 
 Checks before calling CP3 passed (qa-demo):
 - Free food now comes from Silliman GA, which has nothing seeded on Nov 17, so it always makes a new card (integrations verified 17:30).
@@ -165,7 +165,7 @@ Inputs: `fixtures/emails/37-ocay-gear-sale.json`, `fixtures/emails/36-ocay-trip-
 - A card doesn't appear within 10 seconds: reload tab 1 once. If still missing, check the `/demo` log for the failed stage and move to the next beat. Don't retry live more than once.
 - Grok is slow or erroring: set `YAPIZZA_FORCE_SIM=1`, restart `pnpm dev`, and continue in replay (see the Wi-Fi failure drill). Inputs recorded with `pnpm grok:record` replay exactly; the rest use the rule extractor.
 - Wrong state after a rehearsal (duplicate cards, panel already moved): `pnpm demo:reset`, reload both tabs.
-- Only these fixtures make new cards against the seed (pipeline, 17:30): 34 (three YUMS cards), 31 (Helix Langer flyer email), 09 (AGPC Kickoff), 36 (members-only planning meeting). Backup email beat: send 09. Every other fixture matches a seeded card as `same` and adds nothing. 39 needs 34 sent first; 40 cancels the seeded Politics of the Purse.
+- Only these fixtures make new cards against a fresh seed (pipeline, 17:35): 34 (three YUMS cards), 31 (Helix Langer flyer email; matches the flyer if it was already uploaded), 36 ("Winter break trip meeting", members only). Backup email beat: send 36. 09 matches the seeded AGPC Kickoff. Every other fixture matches a seeded card as `same` and adds nothing. 39 needs 34 sent first; 40 cancels the seeded Politics of the Purse.
 - Feed empty: `pnpm db:reset`, reload. Last resort: `NEXT_PUBLIC_DATA=fixtures`, restart `pnpm dev`.
 - Calendar insert fails: use the Add to calendar link (always works, no sign-in) or show `/sim/calendar`.
 - Anything else: skip to the next beat and say what it does in one sentence. If two beats fail, play the backup recording.
