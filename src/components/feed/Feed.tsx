@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { EventCard as EventCardData } from '@/lib/contracts';
 import { dayKey, dayLabel, DEFAULT_FILTERS, useEvents, type FeedFilters } from '@/lib/client';
 import { EventSheet } from '@/components/event/EventSheet';
-import { Card, EmptyState, Enter, EnterList, Skeleton } from '@/components/ui';
+import { Button, Card, EmptyState, Enter, EnterList, Skeleton, toast } from '@/components/ui';
 import { EventCard } from './EventCard';
 import { FilterBar } from './FilterBar';
 
@@ -27,8 +27,12 @@ function useArrivals(events: EventCardData[] | undefined, key: string): Set<stri
     const p = prev.current;
     prev.current = { key, sigs };
     if (!p || p.key !== key) return;
-    const changed = events.filter(function (e) { return p.sigs.get(e.id) !== sigs.get(e.id); }).map(function (e) { return e.id; });
+    const changedEvents = events.filter(function (e) { return p.sigs.get(e.id) !== sigs.get(e.id); });
+    const changed = changedEvents.map(function (e) { return e.id; });
     if (!changed.length) return;
+    changedEvents.slice(0, 3).forEach(function (e) {
+      toast((p.sigs.has(e.id) ? 'Updated: ' : 'New event: ') + e.title);
+    });
     setFresh(function (s) { return new Set([...s, ...changed]); });
     setTimeout(function () {
       setFresh(function (s) { const n = new Set(s); changed.forEach(function (id) { n.delete(id); }); return n; });
@@ -40,13 +44,13 @@ function useArrivals(events: EventCardData[] | undefined, key: string): Set<stri
 export function Feed() {
   const [filters, setFilters] = useState<FeedFilters>(DEFAULT_FILTERS);
   const [openId, setOpenId] = useState<string | null>(null);
-  const { events, error } = useEvents(filters);
+  const { events, error, retry } = useEvents(filters);
   const arrived = useArrivals(events, JSON.stringify(filters));
   const filtered = filters.freeFood || filters.tags.length > 0 || filters.college !== null || Boolean(filters.q);
 
   let body: React.ReactNode;
   if (error && !events) {
-    body = <EmptyState>Events could not be loaded.</EmptyState>;
+    body = <EmptyState action={<Button onClick={function () { void retry(); }}>Try again</Button>}>Couldn&apos;t load events. Try again.</EmptyState>;
   } else if (!events) {
     body = (
       <Card aria-busy="true" aria-label="Loading events" className="divide-y divide-line">
@@ -66,7 +70,7 @@ export function Feed() {
   } else if (events.length === 0) {
     const msg = filtered
       ? 'No events match these filters.'
-      : filters.range === 'today' ? 'Nothing on the calendar today.' : 'Nothing on the calendar this week.';
+      : filters.range === 'today' ? 'Nothing posted for today yet.' : 'Nothing posted for this week yet.';
     body = <EmptyState data-testid="empty-state">{msg}</EmptyState>;
   } else {
     body = groupByDay(events).map(function ([key, group]) {

@@ -51,7 +51,7 @@ export function useEvents(filters: FeedFilters) {
   const now = new Date(Math.floor(Date.now() / 60_000) * 60_000);
   const query = toQuery(filters, now);
   const key = '/api/events?' + new URLSearchParams(query as Record<string, string>);
-  const { data, error, isLoading } = useSWR<EventsListResponse>(key, function () {
+  const { data, error, isLoading, mutate } = useSWR<EventsListResponse>(key, function () {
     return USE_FIXTURES
       ? Promise.resolve({ events: filterEvents(FIXTURE_EVENTS, query), serverTime: new Date().toISOString() })
       : getJson<EventsListResponse>(key);
@@ -60,7 +60,7 @@ export function useEvents(filters: FeedFilters) {
     // shortcut: refetches the whole range every 3s instead of merging ?since= deltas; fine for one laptop, switch if the feed grows large.
     refreshInterval: isOn('LIVE_UPDATES') && !USE_FIXTURES ? 3000 : 0,
   });
-  return { events: data?.events, serverTime: data?.serverTime, error, isLoading };
+  return { events: data?.events, serverTime: data?.serverTime, error, isLoading, retry: function () { return mutate(); } };
 }
 
 export function useEvent(id: string | null) {

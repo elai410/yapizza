@@ -6,7 +6,7 @@ export default function UploadPage() {
   if (!isOn('UPLOAD')) notFound();
   return (
     <div className="mx-auto w-full max-w-3xl">
-      <h1 className="text-xl font-semibold text-ink">Upload flyer</h1>
+      <h1 className="text-xl font-semibold text-ink">Upload a flyer</h1>
       <p className="mt-1 text-sm text-muted">Images, PDFs, CSV, or .ics.</p>
       <UploadForm />
     </div>

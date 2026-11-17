@@ -27,7 +27,11 @@ export function EventCard({ event, onOpen, arrived = false }: { event: EventCard
         {meta && <span className="mt-0.5 block truncate text-sm text-muted">{meta}</span>}
         {(chips.length > 0 || event.freeFood) && (
           <span className="mt-1.5 flex flex-wrap items-center gap-1.5">
-            {event.freeFood && <TagChip tag="free_food" />}
+            {event.freeFood && (
+              <span className="inline-flex h-6 items-center whitespace-nowrap rounded-sm bg-food-soft px-2 text-xs font-medium text-food">
+                {event.food ? `Free food · ${event.food}` : 'Free food'}
+              </span>
+            )}
             {chips.map(function (t) { return <TagChip key={t} tag={t} />; })}
           </span>
         )}

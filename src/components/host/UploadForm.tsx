@@ -89,7 +89,7 @@ export function UploadForm() {
         {cards.length === 0 && r.listings === 0 ? (
           <p className="text-sm text-ink">No events found in this file.</p>
         ) : (
-          <p className="tnum text-sm text-ink">{summary(r)}</p>
+          <p className="tnum text-sm text-ink">Added to Yapizza. {summary(r)}</p>
         )}
         {cards.length > 0 && (
           <Card className="overflow-hidden">
@@ -156,7 +156,7 @@ export function UploadForm() {
 
       {processing && (
         <div role="status" className="space-y-2">
-          <p className="tnum text-sm text-muted">Reading flyer · {elapsed}s</p>
+          <p className="tnum text-sm text-muted">Reading the flyer · {elapsed}s</p>
           <Skeleton className="h-12 w-full" />
         </div>
       )}
