@@ -6,6 +6,7 @@ import type {
   EventDetail,
   EventStatus,
   ExtractedEvent,
+  ReadBy,
   Tag,
 } from '@/lib/contracts';
 import { gcalTemplateUrl } from '@/lib/calendar';
@@ -106,6 +107,8 @@ export async function getEvent(id: string): Promise<EventDetail | null> {
   const e = await prisma.event.findUnique({ where: { id }, include: { ...cardInclude, source: true } });
   if (!e) return null;
   const card = toCard(e);
+  // Raw read for the same reason as the raw write in saveExtraction.
+  const [rb] = await prisma.$queryRaw<{ readBy: string }[]>`SELECT "readBy" FROM "Event" WHERE "id" = ${id}`;
   // The drawer shows the email that last changed the event (a room change), not the first announcement.
   const latestId = e.versions[0]?.fromSourceId;
   const src = (latestId && latestId !== e.sourceId && (await prisma.source.findUnique({ where: { id: latestId } }))) || e.source;
@@ -119,6 +122,7 @@ export async function getEvent(id: string): Promise<EventDetail | null> {
     rsvpUrl: e.rsvpUrl,
     confidence: e.confidence,
     evidence,
+    readBy: rb?.readBy === 'grok' ? 'grok' : 'rules',
     gcalTemplateUrl: gcalTemplateUrl({ ...card, summary: e.summary, locationRaw: e.locationRaw, rsvpUrl: e.rsvpUrl }),
     source: {
       id: src.id,
@@ -166,7 +170,7 @@ export interface SaveResult {
 
 export async function saveExtraction(
   source: SourceInput,
-  result: { events: SaveEvent[]; flagged: boolean; flagReason: string | null },
+  result: { events: SaveEvent[]; flagged: boolean; flagReason: string | null; readBy?: ReadBy },
 ): Promise<SaveResult> {
   if (source.messageId) {
     const existing = await prisma.source.findUnique({ where: { messageId: source.messageId } });
@@ -230,6 +234,8 @@ export async function saveExtraction(
         },
         include: cardInclude,
       });
+      // Raw SQL so a dev server still running the pre-v1.1 Prisma client keeps working without a restart.
+      if (result.readBy) await tx.$executeRaw`UPDATE "Event" SET "readBy" = ${result.readBy} WHERE "id" = ${row.id}`;
       created.push(toCard(row));
     }
     return { sourceId: src.id, created, listings, inReview, duplicateSource: false };

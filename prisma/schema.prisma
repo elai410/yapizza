@@ -54,6 +54,7 @@ model Event {
   rsvpUrl     String?
   confidence  Float
   evidence    String         // JSON string[]
+  readBy      String         @default("rules") // v1.1: grok | rules
   status      String         @default("live") // live | review | canceled
   seriesId    String?
   views       Int            @default(0)
