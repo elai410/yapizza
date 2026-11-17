@@ -1,14 +1,46 @@
-import type { IngestResult, RawEmail } from '@/lib/contracts';
+import { isOn, type EventCard, type IngestResult, type MatchDecision, type RawEmail } from '@/lib/contracts';
 import { prisma, saveExtraction, type SaveResult } from '@/lib/db';
+import { applyMatch, decideMatch, findCandidates } from './dedup';
 import { extractEvents, rawEmailToInput } from './extract';
 import { readFile } from './files';
-import type { CheckedExtraction } from './types';
+import type { CheckedEvent, CheckedExtraction } from './types';
 
-function toResult(saved: SaveResult, t0: number): IngestResult {
+type Matched = { ev: CheckedEvent; d: MatchDecision };
+
+// Before save: events matching an existing one leave the save list; 'same' just drops.
+async function match(x: CheckedExtraction, sourceText: string): Promise<{ save: CheckedExtraction; matched: Matched[] }> {
+  if (!isOn('DEDUP') || x.flagged) return { save: x, matched: [] };
+  const keep: CheckedEvent[] = [];
+  const matched: Matched[] = [];
+  for (const ev of x.events) {
+    if (ev.kind !== 'event' || !ev.start) {
+      keep.push(ev);
+      continue;
+    }
+    const d = await decideMatch(ev, await findCandidates(ev), sourceText);
+    console.log(`[dedup] ${ev.title} -> ${d.action}${d.matchId ? ` ${d.matchId}` : ''}${d.changedFields.length ? ` [${d.changedFields.join(',')}]` : ''}`);
+    if (d.action === 'new') keep.push(ev);
+    else matched.push({ ev, d });
+  }
+  return { save: { ...x, events: keep }, matched };
+}
+
+// After save, so EventVersion.fromSourceId points at a real Source.
+async function applyAll(matched: Matched[], saved: SaveResult): Promise<EventCard[]> {
+  if (saved.duplicateSource) return [];
+  const cards: EventCard[] = [];
+  for (const m of matched) {
+    const card = await applyMatch(m.ev, m.d, saved.sourceId);
+    if (card) cards.push(card);
+  }
+  return cards;
+}
+
+function toResult(saved: SaveResult, updated: EventCard[], t0: number): IngestResult {
   return {
     sourceId: saved.sourceId,
     created: saved.created,
-    updated: [], // CP3: filled by dedup/match
+    updated,
     listings: saved.listings,
     inReview: saved.inReview,
     ms: Date.now() - t0,
@@ -25,8 +57,9 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
   // Skip Grok for a message we already have; saveExtraction would discard the result anyway.
   const seen = await prisma.source.findUnique({ where: { messageId: email.messageId }, select: { id: true } });
   if (seen) return { sourceId: seen.id, created: [], updated: [], listings: 0, inReview: 0, ms: Date.now() - t0 };
-  const extraction = await extractEvents(rawEmailToInput(email));
-  // CP3: dedup/match goes here (MatchDecision per event before save; fills `updated`)
+  const input = rawEmailToInput(email);
+  const extraction = await extractEvents(input);
+  const { save, matched } = await match(extraction, `${email.subject}\n${input.text}`);
   const saved = await saveExtraction(
     {
       kind,
@@ -37,9 +70,9 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
       rawText: email.text,
       receivedAt: email.sentAt,
     },
-    extraction,
+    save,
   );
-  const result = toResult(saved, t0); // duplicateSource: created is [] already, so the call is idempotent
+  const result = toResult(saved, await applyAll(matched, saved), t0); // duplicateSource: created is [] already, so the call is idempotent
   log(email.subject, extraction, result, saved.duplicateSource);
   return result;
 }
@@ -60,18 +93,19 @@ export async function ingestFile(
       ? await extractEvents(read.input)
       : { events: read.events.map((e) => ({ ...e, status: 'live' as const })), flagged: false, flagReason: null, mode: 'grok', ms: 0 }; // ICS is already structured
   if (hostName) for (const e of extraction.events) e.hostName ??= hostName;
-  // CP3: dedup/match goes here (MatchDecision per event before save; fills `updated`)
+  const rawText = read.kind === 'input' && read.input.text.trim() ? read.input.text : `[${file.mimeType.startsWith('image/') ? 'image' : 'file'}] ${file.filename}`;
+  const { save, matched } = await match(extraction, `${file.filename}\n${rawText}`);
   const saved = await saveExtraction(
     {
       kind: 'upload',
       sender: null,
       listName: hostName ?? null,
       subject: file.filename,
-      rawText: read.kind === 'input' && read.input.text.trim() ? read.input.text : `[${file.mimeType.startsWith('image/') ? 'image' : 'file'}] ${file.filename}`,
+      rawText,
     },
-    extraction,
+    save,
   );
-  const result = toResult(saved, t0);
+  const result = toResult(saved, await applyAll(matched, saved), t0);
   log(file.filename, extraction, result);
   return result;
 }
