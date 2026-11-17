@@ -9,6 +9,7 @@ import type {
   Tag,
 } from '@/lib/contracts';
 import { gcalTemplateUrl } from '@/lib/calendar';
+import { placeName } from '@/lib/yale';
 
 // One client across Next.js hot reloads.
 const g = globalThis as unknown as { prisma?: PrismaClient };
@@ -43,8 +44,8 @@ function toCard(e: EventRow): EventCard {
     end: e.end ? toNyIso(e.end) : null,
     allDay: e.allDay,
     placeId: e.placeId,
-    // shortcut: placeId doubles as the short name; switch to the yale places lookup if ids diverge from names.
-    placeName: e.placeId ?? e.locationRaw,
+    // Pipeline stores place slugs ('lc'); the seed stores short names ('WLH 211') that aren't in the list.
+    placeName: placeName(e.placeId) ?? e.placeId ?? e.locationRaw,
     hostName: e.host?.name ?? null,
     tags: parseJson<Tag[]>(e.tags, []),
     freeFood: e.freeFood,
