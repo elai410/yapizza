@@ -123,7 +123,7 @@ function ClaimClub({ onClaimed }: { onClaimed: () => void }) {
           {data.hosts.map((h) => (
             <div key={h.id} className="flex items-center justify-between gap-3 px-4 py-2.5">
               <span className="truncate text-[15px] text-ink">{h.name}</span>
-              <Button size="sm" onClick={() => claim(h.id)}>
+              <Button variant="ghost" size="sm" onClick={() => claim(h.id)}>
                 Claim club
               </Button>
             </div>
