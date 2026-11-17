@@ -1,5 +1,6 @@
 import { isOn, type EventCard, type IngestResult, type MatchDecision, type RawEmail } from '@/lib/contracts';
 import { prisma, saveExtraction, type SaveResult } from '@/lib/db';
+import { notifyFreeFood } from '@/lib/db/alerts';
 import { applyMatch, decideMatch, findCandidates } from './dedup';
 import { extractEvents, rawEmailToInput } from './extract';
 import { readFile } from './files';
@@ -34,6 +35,12 @@ async function applyAll(matched: Matched[], saved: SaveResult): Promise<EventCar
     if (card) cards.push(card);
   }
   return cards;
+}
+
+// An alert failure must never fail the ingest.
+async function alertFreeFood(r: IngestResult) {
+  if (!isOn('ALERTS')) return;
+  await notifyFreeFood(r.created).catch((err) => console.error('[ingest] free food alert failed:', err));
 }
 
 function toResult(saved: SaveResult, updated: EventCard[], t0: number): IngestResult {
@@ -73,6 +80,7 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
     save,
   );
   const result = toResult(saved, await applyAll(matched, saved), t0); // duplicateSource: created is [] already, so the call is idempotent
+  await alertFreeFood(result);
   log(email.subject, extraction, result, saved.duplicateSource);
   return result;
 }
@@ -106,6 +114,7 @@ export async function ingestFile(
     save,
   );
   const result = toResult(saved, await applyAll(matched, saved), t0);
+  await alertFreeFood(result);
   log(file.filename, extraction, result);
   return result;
 }
