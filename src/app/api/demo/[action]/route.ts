@@ -7,6 +7,7 @@ import { resetSimCalendar } from '@/lib/adapters/sim/calendar';
 import { ingestEmail } from '@/lib/pipeline/ingest';
 import { notifyFreeFood } from '@/lib/db/alerts';
 import { listEvents } from '@/lib/db';
+import { resetDemoData } from '@/lib/db/seed';
 import type { EventCard } from '@/lib/contracts';
 
 const TZ = 'America/New_York';
@@ -108,10 +109,12 @@ export async function POST(req: Request, { params }: { params: Promise<{ action:
             (c) => c.hostName === 'Silliman GA',
           ),
         );
-      case 'reset':
+      case 'reset': {
+        const seeded = await resetDemoData();
         resetSimMail();
         resetSimCalendar();
-        return NextResponse.json({ ok: true, detail: 'sim inbox and calendar cleared' });
+        return NextResponse.json({ ok: true, detail: 'demo data reseeded', result: seeded });
+      }
       default:
         return new NextResponse('Not found', { status: 404 });
     }
