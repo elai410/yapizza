@@ -105,7 +105,7 @@ export const PLACES: Place[] = [
   { id: 'poorvu', name: 'Poorvu', aliases: ['poorvu', 'poorvu center', 'ctl'] },
   { id: 'dl', name: 'DL', aliases: ['dl', 'dunham', 'dunham lab', 'dunham laboratory'] },
   { id: 'watson-center', name: 'Watson Center', aliases: ['watson center', 'wts'] },
-  { id: 'luce-hall', name: 'Luce Hall', aliases: ['luce hall'] },
+  { id: 'luce-hall', name: 'Luce Hall', aliases: ['luce hall', 'luce'] },
   { id: 'spl', name: 'SPL', aliases: ['spl', 'sloane physics lab', 'sloane physics laboratory'] },
   { id: 'yqi', name: 'YQI', aliases: ['yqi', '17 hillhouse ave'] },
   { id: 'rosenfeld-hall', name: 'Rosenfeld Hall', aliases: ['rosenfeld hall'] },

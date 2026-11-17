@@ -63,9 +63,10 @@ const nyDay = (iso: string) => toNyIso(new Date(iso)).slice(0, 10);
 const sameInstant = (a: string, b: string) => new Date(a).getTime() === new Date(b).getTime();
 
 // Seed rows store short names ("Dwight Hall"), the pipeline stores slugs ("dwight-hall"): compare on the slug.
+// An unknown place gives null, so free-text spellings ("Luce 101" vs "Luce Hall 101") never count as a move.
 function placeKey(p: string | null): string | null {
   if (!p) return null;
-  return placeName(p) ? p : (findPlace(p)?.id ?? p.trim().toLowerCase());
+  return placeName(p) ? p : (findPlace(p)?.id ?? null);
 }
 const room = (loc: string | null) => loc?.match(/\b(\d{2,4}[A-Za-z]?)\b/)?.[1] ?? null;
 
@@ -114,7 +115,7 @@ function diff(ev: CheckedEvent, c: Candidate): Field[] {
   if (ev.end && (!c.end || !sameInstant(ev.end, c.end))) out.push('end');
   const np = placeKey(ev.placeId ?? ev.locationRaw);
   const op = placeKey(c.placeId ?? c.locationRaw);
-  if (np && np !== op) out.push('placeId', 'locationRaw');
+  if (np && op && np !== op) out.push('placeId', 'locationRaw');
   else if (room(ev.locationRaw) && room(c.locationRaw) && room(ev.locationRaw) !== room(c.locationRaw)) out.push('locationRaw');
   return out;
 }
