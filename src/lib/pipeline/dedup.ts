@@ -195,7 +195,9 @@ export async function applyMatch(ev: CheckedEvent, d: MatchDecision, sourceId: s
     await prisma.event.update({ where: { id }, data: { status: 'canceled' } });
   } else {
     const f = new Set(d.changedFields);
-    const cur = await prisma.event.findUniqueOrThrow({ where: { id }, select: { status: true } });
+    const cur = await prisma.event.findUniqueOrThrow({ where: { id }, select: { status: true, summary: true, locationRaw: true } });
+    // Keep the summary from naming the old room ("... WLH 120" after a move to LC 102).
+    const moved = f.has('locationRaw') && cur.locationRaw && ev.locationRaw && cur.summary.includes(cur.locationRaw);
     await prisma.event.update({
       where: { id },
       data: {
@@ -204,6 +206,7 @@ export async function applyMatch(ev: CheckedEvent, d: MatchDecision, sourceId: s
         ...(f.has('placeId') ? { placeId: ev.placeId } : {}),
         ...(f.has('locationRaw') ? { locationRaw: ev.locationRaw } : {}),
         ...(f.has('title') ? { title: ev.title } : {}),
+        ...(moved ? { summary: cur.summary.split(cur.locationRaw!).join(ev.locationRaw!) } : {}),
         // A low-confidence update changes the details but doesn't pull a live card off the feed.
         status: ev.status === 'review' ? cur.status : 'live',
       },
