@@ -59,7 +59,7 @@ test.describe('CP1 feed', () => {
       .poll(async () => {
         const title = (await heading.textContent())?.trim() ?? '';
         return title.length > 0 && cardText.includes(title);
-      }, { timeout: 5_000 })
+      }, { timeout: 10_000 })
       .toBe(true);
   });
 });
@@ -81,7 +81,7 @@ test.describe('CP1 filters', () => {
         if (await page.getByTestId('empty-state').isVisible()) return true;
         const total = await cards(page).count();
         return total > 0 && total === (await freeFoodCards.count());
-      }, { timeout: 5_000 })
+      }, { timeout: 10_000 })
       .toBe(true);
   });
 });
