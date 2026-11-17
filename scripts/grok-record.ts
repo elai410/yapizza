@@ -1,4 +1,4 @@
-// Usage: pnpm grok:record            record every demo input (needs XAI_API_KEY)
+// Usage: pnpm grok:record            record every demo input (needs ANTHROPIC_API_KEY)
 //        pnpm grok:record --check    no key needed: replay each input and report which ones would hit
 // Runs every demo input through Grok in record mode so replay answers them offline.
 // Dedup 'match' calls are not recorded here: they get recorded when the demo flow runs through ingest in record mode.
@@ -10,8 +10,8 @@ const CHECK = process.argv.includes('--check');
 process.env.GROK_MODE = CHECK ? 'replay' : 'record';
 
 async function main() {
-  if (!CHECK && !process.env.XAI_API_KEY) {
-    console.error('XAI_API_KEY not set; nothing recorded');
+  if (!CHECK && !process.env.ANTHROPIC_API_KEY) {
+    console.error('ANTHROPIC_API_KEY not set; nothing recorded');
     process.exit(1);
   }
   // Imported after GROK_MODE is set: the grok module reads env at load.

@@ -12,7 +12,7 @@ A calm list of what is happening at Yale this week. It reads like CourseTable or
 - **Type:** Geist, one family. Times use `.tnum` (tabular numerals). Sizes: 13 (meta), 15 (body), 17 (card title), 24 (page title). Weights 400, 500, 600 only.
 - **Wordmark:** "Yapizza" set in Geist 600 with tight tracking. The one place for personality is the intro, where the inbox becomes the pizza.
 - **Motion:** short and functional. Cards enter with a 6px rise and fade (180 ms). A new card from live intake gets a brief accent-soft wash that fades over 1.5 s. Filters crossfade the list. Everything respects reduced motion.
-- **Grok shows only where it does the work:** one small "Read by Grok" line in the Ask box and in the "How this was read" drawer. Nowhere else.
+- **Claude shows only where it does the work:** one small "Read by Claude" line in the Ask box and in the "How this was read" drawer. Nowhere else.
 
 ## Rules
 
@@ -37,7 +37,7 @@ A calm list of what is happening at Yale this week. It reads like CourseTable or
 | Card marker | Free food (with the food, e.g. "Free food · Pizza") |
 | Badges | Updated · Canceled · Needs review |
 | Detail actions | Add to calendar · Save · Saved · RSVP |
-| Source drawer | How this was read · "Read by Grok · confidence 0.xx" when readBy is grok · otherwise "Quotes checked against the email / flyer / listing" (noun follows the source), shown only when the event has evidence quotes |
+| Source drawer | How this was read · "Read by Claude · confidence 0.xx" when readBy is grok · otherwise "Quotes checked against the email / flyer / listing" (noun follows the source), shown only when the event has evidence quotes |
 | Evidence label | From the email |
 | Ask placeholder | Free food tonight, career talks this week |
 | Ask button | Ask |

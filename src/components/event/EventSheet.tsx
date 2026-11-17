@@ -1,9 +1,9 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { isOn, type EventDetail } from '@/lib/contracts';
-import { formatTime, formatWhen, useEvent } from '@/lib/client';
+import { formatRange, useEvent } from '@/lib/client';
 import { Sheet, SheetContent, Skeleton, StatusBadge, TagChip, buttonClasses } from '@/components/ui';
 import { AddToCalendar } from './AddToCalendar';
 import { SaveButton } from './SaveButton';
@@ -21,6 +21,14 @@ export function EventSheet({ id, onClose }: { id: string | null; onClose: () => 
   const { event, error, isLoading } = useEvent(id);
   // The sheet is controlled with no Trigger, so remember what opened it and hand focus back on close.
   const returnTo = useRef<HTMLElement | null>(null);
+  // One view per open (api counts reach from this), not per SWR refetch or dev double effect.
+  const counted = useRef<string | null>(null);
+  useEffect(function () {
+    if (!id) { counted.current = null; return; }
+    if (counted.current === id) return;
+    counted.current = id;
+    void fetch(`/api/events/${encodeURIComponent(id)}/view`, { method: 'POST' }).catch(function () {});
+  }, [id]);
   if (id && !returnTo.current && typeof document !== 'undefined' && document.activeElement instanceof HTMLElement) {
     returnTo.current = document.activeElement;
   }
@@ -53,7 +61,7 @@ export function EventSheet({ id, onClose }: { id: string | null; onClose: () => 
 
 function Body({ event: e }: { event: EventDetail }) {
   const place = e.placeName ?? e.locationRaw;
-  const when = formatWhen(e.start, e.allDay).split(' · ')[0] + ' · ' + formatTime(e.start, e.end, e.allDay);
+  const when = formatRange(e.start, e.end, e.allDay);
 
   return (
     <div className="space-y-5">

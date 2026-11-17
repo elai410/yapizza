@@ -40,3 +40,12 @@ export function rangeFor(range: Range, now = new Date()): { from: string; to: st
   const days = range === 'today' ? 1 : 7;
   return { from: startOfToday.toISOString(), to: addDays(startOfToday, days).toISOString() };
 }
+
+// Sheet time line. Same day: "Tue, Nov 17 · 2:00 to 4:00 PM" or "Tue, Nov 17 · All day".
+// Across days: "Mon, Nov 2 to Fri, Nov 6 · All day" or "Mon, Nov 2 · 10:00 AM to Fri, Nov 6 · 5:00 PM".
+export function formatRange(start: string, end: string | null, allDay = false): string {
+  const day = function (iso: string) { return formatInTimeZone(iso, TZ, 'EEE, MMM d'); };
+  if (!end || dayKey(end) === dayKey(start)) return `${day(start)} · ${formatTime(start, end, allDay)}`;
+  if (allDay) return `${day(start)} to ${day(end)} · All day`;
+  return `${formatWhen(start)} to ${formatWhen(end)}`;
+}

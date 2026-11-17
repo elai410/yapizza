@@ -36,7 +36,7 @@ async function main() {
   const file = readdirSync(dir).find((f) => f.startsWith('01-'))!;
   const email = JSON.parse(readFileSync(path.join(dir, file), 'utf8')) as RawEmail;
   const r = await extractEvents(rawEmailToInput(email), new Date('2026-10-14T20:00:00Z'));
-  if (!process.env.XAI_API_KEY) {
+  if (!process.env.ANTHROPIC_API_KEY) {
     assert.equal(r.mode, 'fallback', 'no key and no replay -> fallback');
     assert.ok(r.events.length >= 1, 'fallback finds at least one event');
     assert.ok(r.events.every((e) => e.kind === 'listing' || e.status === (FALLBACK_LIVE_WHEN_EVIDENCE_OK ? 'live' : 'review')), 'fallback status follows FALLBACK_LIVE_WHEN_EVIDENCE_OK');

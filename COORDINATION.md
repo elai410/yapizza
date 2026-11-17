@@ -17,12 +17,12 @@ next: polish and anything cut. Before the demo: Reset demo (key 5), XAI_API_KEY 
 blockers: none
 
 ## pipeline
-status: polish (18:25). Live Grok path untested (no key).
-done: dedup room-change bug verified on reset DB (cp3 dedup 2/2), struck; held-out eval `pnpm eval --heldout` on integrations' 211 seed labels: 77% untuned baseline -> 91% (partly tuned on those misses); 40-fixture eval still 520/520; flyer host "Yale Helix" + summary; list suffixes stripped (OCAY Members -> OCAY); digest Free food / Other events groups (design styles); `pnpm grok:record --check`; live Grok calls also save replays; readBy + stages
+status: Claude API switch done in pipeline (18:40), untested live (no ANTHROPIC_API_KEY in .env yet).
+done: src/lib/grok/index.ts now calls the Claude API (@anthropic-ai/sdk, beta messages, claude-opus-5-5 via CLAUDE_MODEL, output_config.format json_schema via the SDK's transformJSONSchema + zod validation, effort low for extract/digest and medium for dedup/series, server-side fallbacks "default", stop_reason checked, 25s timeout + 1 retry then rule fallback, ms + tokens logged per call). Same exports; new `llmClient(): Anthropic | null`; `grokClient()` now returns null (api's Ask falls back until it moves to llmClient). Image parts are Anthropic base64 image blocks. All selfchecks, 520/520 eval, demo paths pass in fallback mode.
 in flight (subagents): none
-next: when XAI_API_KEY lands: restart pnpm dev, `pnpm grok:record`, then `pnpm grok:record --check` (target 41 of 41); one keyed rehearsal also saves dedup matches for offline replay. Record on demo day.
+next: when ANTHROPIC_API_KEY lands: restart pnpm dev, `pnpm extract 34` for one live check (watch the [llm] ms line), then `pnpm grok:record` and `pnpm grok:record --check` (target 41 of 41). Old replay files no longer match (model is in the key).
 blockers: none
-uncommitted (human commits via Cursor; pipeline no longer commits): none (all pipeline files committed by the human as of 18:17)
+uncommitted (human commits via Cursor; pipeline no longer commits): src/lib/grok/index.ts, src/lib/grok/selfcheck.ts, src/lib/pipeline/extract.ts, src/lib/pipeline/extract.selfcheck.ts, src/lib/pipeline/digest.selfcheck.ts, scripts/grok-record.ts, fixtures/grok-replay/*.json (replays saved by live test calls)
 
 ## api
 status: polish. Not committing from 18:24 on (human commits via Cursor); uncommitted files listed below.
@@ -30,7 +30,7 @@ done: events + seed (5bd6986); ask 9c94a90: POST /api/ask, Grok tool calling (se
 in flight (subagents): none
 next: polish. Latest: Event.readBy (v1.1) stored and returned; detail shows the latest changing source; POST /api/alerts/unsubscribe; Ask keeps colleges strict ("Nothing in Jonathan Edwards yet."); resetDemoData() for Reset demo.
 blockers: none. Prisma refuses `migrate reset` from Claude Code: `pnpm db:reset` / `demo:reset` run from the human's terminal.
-uncommitted: src/lib/search/index.ts, src/lib/search/parse.selfcheck.ts, src/lib/db/host.ts, src/app/api/ask/route.ts, src/app/api/alerts/unsubscribe/route.ts, src/app/api/events/[id]/route.ts, src/app/api/events/[id]/view/route.ts (new), prisma/schema.prisma, prisma/migrations/20261117231427_event_host_original/ (new). Smoke 30/30.
+uncommitted: src/lib/search/grok-ask.ts (Ask on Claude Messages tool loop; uses a local client until pipeline exports one), src/lib/search/index.ts, src/lib/search/parse.selfcheck.ts, src/lib/db/host.ts, src/app/api/ask/route.ts, src/app/api/alerts/unsubscribe/route.ts, src/app/api/events/[id]/route.ts, src/app/api/events/[id]/view/route.ts (new), prisma/schema.prisma, prisma/migrations/20261117231427_event_host_original/ (new). Smoke 30/30.
 
 
 ## integrations
@@ -64,12 +64,12 @@ notes: lead, I removed the scaffold's default src/app/favicon.ico (replaced by i
 sent: frontend (sheet focus restore, Ask empty state twice, 3 string fixes, chip row no-scrollbar); api (Ask "free food tonight" returns 0 results)
 
 ## qa-demo
-status: polish mode (18:14). Bug-hunt pass 2 done: 11 of 13 fixes verified, 10 new minor or demo-visible bugs logged and sent, none blocking. SMOKE_CP=5 smoke 30/30. Rehearsal passes all beats; one run failed at the flyer beat while other sessions were writing, and passed on rerun.
-uncommitted (qa-demo): tests/smoke/cp3.spec.ts, tests/demo/rehearsal.spec.ts (Grok line only when readBy is grok), tests/smoke/cp2.spec.ts (polling test checks since= per contract 8.3), src/app/demo/DemoPanel.tsx (email picker loads /api/demo/emails so real/ emails show), docs/DEMO.md, docs/PITCH.md, docs/QA.md (final script, Grok key-day steps, Q&A, QA checklist)
+status: switched to Claude (18:25): docs say Claude, /demo labels say Claude, tests match "Read by Claude" and still catch any stale "Read by Grok". SMOKE_CP=5 smoke 30/30; DB reset.
+uncommitted (qa-demo): docs/DEMO.md, docs/PITCH.md, docs/QA.md (Claude story, final script, key-day steps, Q&A); src/app/demo/DemoPanel.tsx (Claude labels, real/ emails in picker); tests/smoke/cp2.spec.ts, cp3.spec.ts, cp4.spec.ts, cp5.spec.ts, tests/demo/rehearsal.spec.ts (since= polling, Claude line follows readBy, Claude wording)
 done: smoke cp0-cp5; /demo panel (per-stage timings, real/ emails in the picker); self-resetting rehearsal; DEMO.md final script with key and no-key variants, Grok key-day steps, Wi-Fi drill, backup checklist; PITCH.md Q&A; QA.md
 in flight (subagents): none
 next: reverify the digest order when pipeline reports; recheck fixes as owners report; Wi-Fi drill when dev runs with YAPIZZA_FORCE_SIM=1; rehearse with the Grok key; backup video after the wrap
-blockers: Grok key plus `pnpm grok:record`
+blockers: ANTHROPIC_API_KEY plus `pnpm grok:record`; typecheck currently fails in pipeline's src/lib/pipeline/extract.ts (mid-migration)
 
 ## Requests (append only; "from to to: what")
 - ~~qa-demo to frontend: put `data-testid="event-card"` on every feed event card; smoke tests also look for a dialog for the detail sheet, an "Add to calendar" link, and a "Free food" filter button.~~ done 07b5b47

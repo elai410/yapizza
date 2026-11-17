@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
-import type OpenAI from 'openai';
+import type { GrokContent } from '@/lib/grok';
 import { formatInTimeZone } from 'date-fns-tz';
 import type { ExtractionResult, RawEmail } from '@/lib/contracts';
 import { grokJson, GrokReplayMiss } from '@/lib/grok';
@@ -55,7 +55,7 @@ export function rawEmailToInput(e: RawEmail): ExtractInput {
   };
 }
 
-function buildUser(input: ExtractInput, now: Date): string | OpenAI.Chat.Completions.ChatCompletionContentPart[] {
+function buildUser(input: ExtractInput, now: Date): GrokContent {
   // Date only, never minutes: the replay key hashes this text.
   const header = [
     `Today: ${formatInTimeZone(now, TZ, 'EEE, MMM d, yyyy')} (America/New_York)`,
@@ -66,12 +66,13 @@ function buildUser(input: ExtractInput, now: Date): string | OpenAI.Chat.Complet
   ].join('\n');
   const text = `${header}\n\n---\n${input.text}`;
   if (!input.images?.length) return text;
+  // Images before the text, as the Messages API recommends.
   return [
-    { type: 'text', text },
     ...input.images.map((img) => ({
-      type: 'image_url' as const,
-      image_url: { url: `data:${img.mimeType};base64,${img.dataBase64}` },
+      type: 'image' as const,
+      source: { type: 'base64' as const, media_type: img.mimeType as 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp', data: img.dataBase64 },
     })),
+    { type: 'text' as const, text },
   ];
 }
 
@@ -118,13 +119,14 @@ export async function extractEvents(input: ExtractInput, now = new Date()): Prom
 
   const tCheck = Date.now();
   const sourceText = `${input.subject ?? ''}\n${input.text}`;
-  const imageOnly = !input.text.trim() && Boolean(input.images?.length);
+  // Quotes the model read off an image can't be found in the text, so with images it rides on confidence alone.
+  const readImages = mode !== 'fallback' && Boolean(input.images?.length);
 
   const events: CheckedEvent[] = result.events.map((e) => {
     let { placeId } = e;
     if (!placeId && e.locationRaw) placeId = findPlace(e.locationRaw)?.id ?? null;
     const college = e.college ? normalizeCollege(e.college) : null;
-    const evidenceFine = imageOnly || evidenceOk(e.evidence, sourceText);
+    const evidenceFine = readImages || evidenceOk(e.evidence, sourceText);
     const review =
       e.kind === 'event' &&
       (!evidenceFine || !e.start ||
