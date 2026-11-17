@@ -1,0 +1,11 @@
+{
+  "messageId": "<registrar-spring-registration@lists.yale.test>",
+  "from": "Yale College Registrar <registrar@lists.yale.test>",
+  "to": [
+    "yapizza@intake.test"
+  ],
+  "subject": "Spring 2027 registration opens next week",
+  "text": "Dear Yale College students,\n\nSpring 2027 course registration opens at 8:00am on these dates:\n\nClass of 2027: Monday, November 16\nClass of 2028: Tuesday, November 17\nClass of 2029: Wednesday, November 18\nClass of 2030: Thursday, November 19\n\nRegistration closes for all students on December 22 at 5:00pm.\n\nToday, November 12, is the last day to withdraw from a second-half-term course without a transcript notation.\n\nOffice of the Registrar",
+  "listName": "Yale College Registrar",
+  "sentAt": "2026-11-12T08:00:00-05:00"
+}

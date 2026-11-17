@@ -1,0 +1,11 @@
+{
+  "messageId": "<yums-panel-room-change@lists.yale.test>",
+  "from": "YUMS <yums@lists.yale.test>",
+  "to": [
+    "yapizza@intake.test"
+  ],
+  "subject": "ROOM CHANGE: Math Research Panel now in LC 102",
+  "text": "quick update: the Math Research Panel on Thursday 11/19 (4:00-5:30pm) has moved from WLH 120 to LC 102. same time, same panel.\n\n- YUMS\n\n--\nYou are receiving this because you subscribed to YUMS.\nTo unsubscribe, reply with UNSUBSCRIBE in the subject line.",
+  "listName": "YUMS",
+  "sentAt": "2026-11-17T10:00:00-05:00"
+}

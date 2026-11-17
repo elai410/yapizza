@@ -1,0 +1,11 @@
+{
+  "messageId": "<aacc-politics-purse-canceled@lists.yale.test>",
+  "from": "AACC Newsletter <aacc@lists.yale.test>",
+  "to": [
+    "yapizza@intake.test"
+  ],
+  "subject": "CANCELED: Politics of the Purse (Wed 11/18)",
+  "text": "Hi all,\n\nUnfortunately, Politics of the Purse (Wed Nov 18, 7-8pm, AACC MPR) is canceled. We hope to reschedule in the spring.\n\nAACC\n\n--\nYou are receiving this because you subscribed to AACC Newsletter.\nTo unsubscribe, reply with UNSUBSCRIBE in the subject line.",
+  "listName": "AACC Newsletter",
+  "sentAt": "2026-11-17T11:30:00-05:00"
+}

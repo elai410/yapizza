@@ -1,0 +1,11 @@
+{
+  "messageId": "<yums-pizza-weil@lists.yale.test>",
+  "from": "YUMS <yums@lists.yale.test>",
+  "to": [
+    "yapizza@intake.test"
+  ],
+  "subject": "[YUMS] Pizza Seminar Friday: The Weil Conjectures",
+  "text": "hi all,\n\nnext pizza seminar is this FRIDAY (not thursday!):\n\nProf. Alexander Petrov\n\"The Weil Conjectures\"\nFri 11/6, 7-8pm, WLH 113\n\nalso putnam problem sessions are wednesdays 7-9pm, tonight in DL 220. pizza and snacks. putnam exam is sat dec 5.\n\n- YUMS\n\n--\nYou are receiving this because you subscribed to YUMS.\nTo unsubscribe, reply with UNSUBSCRIBE in the subject line.",
+  "listName": "YUMS",
+  "sentAt": "2026-11-04T12:00:00-05:00"
+}

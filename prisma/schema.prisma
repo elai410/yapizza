@@ -1,0 +1,129 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Source {
+  id         String    @id @default(cuid())
+  kind       String    // email | forward | upload | form | demo
+  messageId  String?   @unique
+  sender     String?
+  listName   String?
+  subject    String?
+  rawText    String
+  fileUrl    String?
+  receivedAt DateTime  @default(now())
+  status     String    @default("pending") // pending | processed | failed | skipped
+  error      String?
+  events     Event[]
+  listings   Listing[]
+}
+
+model Host {
+  id           String  @id @default(cuid())
+  name         String  @unique
+  kind         String  @default("club") // club | college | office
+  yaleclubsUrl String?
+  verified     Boolean @default(false)
+  officerNetid String?
+  events       Event[]
+}
+
+model Event {
+  id          String         @id @default(cuid())
+  sourceId    String
+  source      Source         @relation(fields: [sourceId], references: [id])
+  hostId      String?
+  host        Host?          @relation(fields: [hostId], references: [id])
+  title       String
+  start       DateTime
+  end         DateTime?
+  allDay      Boolean        @default(false)
+  placeId     String?
+  locationRaw String?
+  summary     String
+  tags        String         // JSON Tag[]
+  freeFood    Boolean        @default(false)
+  food        String?
+  audience    String         @default("open_to_all")
+  college     String?
+  rsvpUrl     String?
+  confidence  Float
+  evidence    String         // JSON string[]
+  status      String         @default("live") // live | review | canceled
+  seriesId    String?
+  views       Int            @default(0)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  versions    EventVersion[]
+  saves       Save[]
+  @@index([start])
+}
+
+model EventVersion {
+  id            String   @id @default(cuid())
+  eventId       String
+  event         Event    @relation(fields: [eventId], references: [id])
+  changedFields String   // JSON string[]
+  fromSourceId  String?
+  changedAt     DateTime @default(now())
+}
+
+model Listing {
+  id        String    @id @default(cuid())
+  sourceId  String
+  source    Source    @relation(fields: [sourceId], references: [id])
+  title     String
+  price     String?
+  details   String
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model Series {
+  id           String  @id @default(cuid())
+  title        String
+  hostName     String?
+  typicalMonth Int?
+  yearsSeen    String  // JSON number[]
+  isTradition  Boolean @default(false)
+  notes        String?
+}
+
+model User {
+  id            String  @id @default(cuid())
+  netid         String  @unique
+  name          String
+  college       String?
+  alertEmail    String?
+  alertFreeFood Boolean @default(false)
+  digestOn      Boolean @default(true)
+  gcalConnected Boolean @default(false)
+  saves         Save[]
+}
+
+model Save {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  eventId     String
+  event       Event    @relation(fields: [eventId], references: [id])
+  gcalEventId String?
+  createdAt   DateTime @default(now())
+  @@unique([userId, eventId])
+}
+
+model Notification {
+  id      String   @id @default(cuid())
+  channel String   // email | sms | toast
+  mode    String   // live | sim
+  to      String
+  subject String
+  body    String
+  eventId String?
+  sentAt  DateTime @default(now())
+}
