@@ -1,0 +1,159 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:10.671Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Craft et Veritas: Zines",
+        "start": "2026-11-09T15:00:00-05:00",
+        "end": "2026-11-09T16:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC Offline Oasis",
+        "placeId": null,
+        "hostName": "Good Life Center",
+        "summary": "A zine-making session at the YSC Offline Oasis. Part of the Good Life Center's weekly programming.",
+        "tags": [
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Craft et Veritas: zines. 3-4pm, YSC Offline Oasis"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "K9 Kickback: Therapy Dogs",
+        "start": "2026-11-09T16:00:00-05:00",
+        "end": "2026-11-09T18:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "Susman Hall (Purple Couch Room), Slifka Center",
+        "placeId": "slifka-center",
+        "hostName": "Good Life Center",
+        "summary": "Students can meet therapy dogs in the Purple Couch Room in Susman Hall, with chicken and waffles served.",
+        "tags": [
+          "free_food",
+          "social"
+        ],
+        "freeFood": true,
+        "food": "Chicken and Waffles",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "K9 Kickback: Therapy Dogs (+ Chicken and Waffles!). 4-6pm, Susman Hall (Purple Couch Room), Slifka Center"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Gentle Yoga",
+        "start": "2026-11-09T17:00:00-05:00",
+        "end": "2026-11-09T18:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC Dance Studio",
+        "placeId": null,
+        "hostName": "Good Life Center",
+        "summary": "A gentle yoga session in the YSC Dance Studio.",
+        "tags": [
+          "athletics"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Gentle Yoga. 5-6pm, YSC Dance Studio"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Wellness Wednesday",
+        "start": "2026-11-11T14:00:00-05:00",
+        "end": "2026-11-11T15:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC GLC Lounge",
+        "placeId": "good-life-center",
+        "hostName": "Good Life Center",
+        "summary": "A wellness session in the Good Life Center lounge.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Wellness Wednesday. 2-3pm, YSC GLC Lounge"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Thursday Tea Time with Gamelatron Listening",
+        "start": "2026-11-12T14:00:00-05:00",
+        "end": "2026-11-12T16:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC Tea Room 208",
+        "placeId": null,
+        "hostName": "Good Life Center",
+        "summary": "A tea-time listening session featuring the Gamelatron in YSC Tea Room 208.",
+        "tags": [
+          "arts",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Thursday Tea Time with Gamelatron listening. 2-4pm, YSC Tea Room 208"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Feel Good Friday: Mindful Movement",
+        "start": "2026-11-13T11:00:00-05:00",
+        "end": "2026-11-13T11:30:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC GLC Lounge",
+        "placeId": "good-life-center",
+        "hostName": "Good Life Center",
+        "summary": "A short mindful movement session in the Good Life Center lounge.",
+        "tags": [
+          "athletics"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Feel Good Friday: Mindful Movement. 11-11:30am, YSC GLC Lounge"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

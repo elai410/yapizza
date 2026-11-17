@@ -1,0 +1,136 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:19.836Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Craft et Veritas: collages",
+        "start": "2026-11-16T15:00:00-05:00",
+        "end": "2026-11-16T16:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC Offline Oasis",
+        "placeId": "commons",
+        "hostName": "Good Life Center",
+        "summary": "Collage-making session at the Good Life Center's Offline Oasis in the Schwarzman Center.",
+        "tags": [
+          "arts",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Craft et Veritas: collages. 3-4pm, YSC Offline Oasis"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "kind": "event",
+        "title": "Gentle Yoga",
+        "start": "2026-11-16T17:00:00-05:00",
+        "end": "2026-11-16T18:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC Dance Studio",
+        "placeId": "commons",
+        "hostName": "Good Life Center",
+        "summary": "Gentle yoga session in the Dance Studio at the Schwarzman Center.",
+        "tags": [
+          "athletics",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Gentle Yoga. 5-6pm, YSC Dance Studio"
+        ],
+        "confidence": 0.85
+      },
+      {
+        "kind": "event",
+        "title": "Take it Easy Tuesday",
+        "start": "2026-11-17T14:00:00-05:00",
+        "end": "2026-11-17T16:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC Good Life Center Lounge",
+        "placeId": "good-life-center",
+        "hostName": "Good Life Center",
+        "summary": "Drop-in relaxation and wellness time run by YC3 in the Good Life Center Lounge.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Take it Easy Tuesday (YC3). 2-4pm, YSC Good Life Center Lounge"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Kitchen Table Talks: first session",
+        "start": "2026-11-17T18:00:00-05:00",
+        "end": "2026-11-17T19:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "MENA Cultural Community, 305 Crown St",
+        "placeId": "menacc",
+        "hostName": "YC3",
+        "summary": "First session of a YC3 conversation series modeled on Living Room Conversations, held at the MENA Cultural Community space.",
+        "tags": [
+          "cultural",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "First session 6-7pm, MENA Cultural Community, 305 Crown St"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "10-minute wellness appointments",
+        "start": "2026-11-18T10:15:00-05:00",
+        "end": "2026-11-18T17:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "YSC Offline Oasis",
+        "placeId": "commons",
+        "hostName": "Good Life Center",
+        "summary": "Short wellness appointments at the Offline Oasis; sign up in person starting at 10:15am.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "10-minute wellness appointments. 10:15am-5pm, YSC Offline Oasis"
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

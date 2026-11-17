@@ -1,0 +1,113 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:08.051Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Come From Away",
+        "start": "2026-11-12T19:30:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "University Theatre",
+        "placeId": "university-theatre",
+        "hostName": "Yale Dramat",
+        "summary": "Yale Dramat's Fall Mainstage production of Come From Away. Tickets are $15 general, $7 for college students, and $3 for high school and younger.",
+        "tags": [
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Thu Nov 12, 7:30pm",
+          "University Theatre"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Come From Away",
+        "start": "2026-11-13T19:30:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "University Theatre",
+        "placeId": "university-theatre",
+        "hostName": "Yale Dramat",
+        "summary": "Yale Dramat's Fall Mainstage production of Come From Away. Tickets are $15 general, $7 for college students, and $3 for high school and younger.",
+        "tags": [
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Fri Nov 13, 7:30pm",
+          "University Theatre"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Come From Away (matinee)",
+        "start": "2026-11-14T13:30:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "University Theatre",
+        "placeId": "university-theatre",
+        "hostName": "Yale Dramat",
+        "summary": "Yale Dramat's Fall Mainstage matinee of Come From Away, pay what you can. Evening tickets are $15 general, $7 for college students, and $3 for high school and younger.",
+        "tags": [
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Sat Nov 14, 1:30pm (pay what you can)",
+          "University Theatre"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Come From Away",
+        "start": "2026-11-14T19:30:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "University Theatre",
+        "placeId": "university-theatre",
+        "hostName": "Yale Dramat",
+        "summary": "Yale Dramat's Fall Mainstage production of Come From Away. Tickets are $15 general, $7 for college students, and $3 for high school and younger.",
+        "tags": [
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Sat Nov 14, 1:30pm (pay what you can) and 7:30pm",
+          "University Theatre"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

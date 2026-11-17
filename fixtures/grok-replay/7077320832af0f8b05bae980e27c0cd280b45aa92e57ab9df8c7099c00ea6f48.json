@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:43.412Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Goat Yoga",
+        "start": "2026-10-17T13:30:00-04:00",
+        "end": "2026-10-17T15:30:00-04:00",
+        "allDay": false,
+        "locationRaw": "HoC Patio",
+        "placeId": "silliman-hoc-house",
+        "hostName": "Silliman GA",
+        "summary": "Yoga session with real goats on the HoC Patio. Attendees should bring their own mat.",
+        "tags": [
+          "athletics",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": "Silliman",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "GOAT YOGA. Yes, real goats.",
+          "Saturday 10/17, 1:30-3:30pm on the HoC Patio",
+          "Bring your own mat, we will not have extras."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Painting Plant Pots",
+        "start": "2026-10-26T18:30:00-04:00",
+        "end": "2026-10-26T19:30:00-04:00",
+        "allDay": false,
+        "locationRaw": "the Acorn",
+        "placeId": "silliman-acorn",
+        "hostName": "Silliman GA",
+        "summary": "Plant pot painting session in the Acorn, held after October break.",
+        "tags": [
+          "arts",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": "Silliman",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "After October break: Painting Plant Pots, Monday 10/26, 6:30-7:30pm in the Acorn."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

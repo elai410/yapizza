@@ -1,0 +1,38 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:49.179Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Governor's Debate Watch Party",
+        "start": "2026-10-27T19:00:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Davenport Common Room",
+        "placeId": "davenport-common-room",
+        "hostName": "Davenport GA",
+        "summary": "Davenport GA is hosting a watch party for the CT Governor's Debate between Lamont and Fazio. All Yalies are welcome.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": "Davenport",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "watch party for the CT Governor's Debate (Lamont vs. Fazio) tonight, Tuesday 10/27, at 7:00pm",
+          "in the Davenport Common Room. All Yalies welcome."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

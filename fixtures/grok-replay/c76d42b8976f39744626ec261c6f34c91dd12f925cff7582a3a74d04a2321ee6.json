@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:41.461Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Central Asian Cultural Night",
+        "start": "2026-10-20T18:00:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": null,
+        "placeId": null,
+        "hostName": "Central Asian Students Association",
+        "summary": "An evening of live dombra music, traditional food, and games. Open to everyone, no Central Asian connection required.",
+        "tags": [
+          "cultural",
+          "free_food",
+          "social"
+        ],
+        "freeFood": true,
+        "food": "traditional food",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Central Asian Cultural Night on Tuesday, October 20 at 6pm",
+          "Live dombra music, traditional food, and games.",
+          "Everyone is welcome, no Central Asian connection required."
+        ],
+        "confidence": 0.8
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

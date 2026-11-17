@@ -1,0 +1,40 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:14.722Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Ceremonial Weighing of Handsome Dan",
+        "start": "2026-11-17T20:30:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Beinecke Plaza",
+        "placeId": "beinecke-plaza",
+        "hostName": "Yale College Council",
+        "summary": "Guess Handsome Dan's weight in the Veritas Search finale; the closest guess wins a capsule. The entry form closes at 8:10pm and you must be present to win.",
+        "tags": [
+          "social",
+          "traditions"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "CEREMONIAL WEIGHING OF HANDSOME DAN",
+          "Tuesday, November 17, 8:30pm, Beinecke Plaza",
+          "The entry form closes at 8:10pm and you must be present to win."
+        ],
+        "confidence": 0.93
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

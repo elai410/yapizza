@@ -1,0 +1,90 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:55.878Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Yale School of Art undergraduate exhibition",
+        "start": "2026-10-30T18:00:00-04:00",
+        "end": "2026-10-30T20:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "Green Gallery, 1156 Chapel St",
+        "placeId": "green-gallery",
+        "hostName": "Yale School of Art",
+        "summary": "Undergraduate exhibition at Green Gallery, running through Sun Nov 1, with a reception on Fri Oct 30. Gallery hours are M-F 12-6pm and Sa/Su 12-4pm.",
+        "tags": [
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Reception Fri Oct 30, 6-8pm.",
+          "Green Gallery, 1156 Chapel St, through Sun Nov 1"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Jenn Colella master class and reception",
+        "start": "2026-10-30T17:00:00-04:00",
+        "end": "2026-10-30T19:30:00-04:00",
+        "allDay": false,
+        "locationRaw": "The Ballroom at 220 York St",
+        "placeId": null,
+        "hostName": "Yale Arts Weekly",
+        "summary": "A master class with Tony nominee Jenn Colella, followed by a reception. Free and open to all.",
+        "tags": [
+          "arts",
+          "professional"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Fri Oct 30, 5:00-7:30pm, The Ballroom at 220 York St.",
+          "Free, open to all."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "YSO Halloween Show",
+        "start": "2026-10-31T23:30:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Woolsey Hall",
+        "placeId": "woolsey-hall",
+        "hostName": "YSO",
+        "summary": "Halloween concert at Woolsey Hall with a pre-show by student band Flannel at 11:30pm and the main show at midnight. Costumes are encouraged.",
+        "tags": [
+          "arts",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Sat Oct 31 at Woolsey Hall.",
+          "main show at midnight."
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

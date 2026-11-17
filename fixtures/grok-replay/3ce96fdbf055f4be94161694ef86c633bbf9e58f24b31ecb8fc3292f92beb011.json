@@ -1,0 +1,90 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:49.287Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Pset Night",
+        "start": "2026-10-26T19:00:00-04:00",
+        "end": "2026-10-26T21:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "WLH 011",
+        "placeId": "wlh",
+        "hostName": "YUMS",
+        "summary": "A weekly evening for working on problem sets together with math students.",
+        "tags": [
+          "academic",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "PSET NIGHT is back Monday 7-9pm in WLH 011."
+        ],
+        "confidence": 0.85
+      },
+      {
+        "kind": "event",
+        "title": "Gluing Polygons, Topology, and Gaussian Integrals",
+        "start": "2026-10-29T19:00:00-04:00",
+        "end": "2026-10-29T20:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "Watson Center A53",
+        "placeId": "watson-center",
+        "hostName": "YUMS",
+        "summary": "Prof. Catherine Wolfram gives a talk on gluing polygons, topology, and Gaussian integrals. No background needed, and pizza is provided.",
+        "tags": [
+          "academic",
+          "free_food"
+        ],
+        "freeFood": true,
+        "food": "pizza",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "PIZZA SEMINAR: Prof. Catherine Wolfram",
+          "Thursday 10/29, 7-8pm, Watson Center A53.",
+          "there will be pizza (obviously)"
+        ],
+        "confidence": 0.93
+      },
+      {
+        "kind": "event",
+        "title": "MMATHS 2026 Test-Solving",
+        "start": "2026-10-30T18:30:00-04:00",
+        "end": "2026-10-30T21:30:00-04:00",
+        "allDay": false,
+        "locationRaw": "DL 220",
+        "placeId": "dl",
+        "hostName": "YUMS",
+        "summary": "Students help test-solve the MMATHS 2026 problems.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "MMATHS TEST-SOLVING: help us test-solve the MMATHS 2026 problems",
+          "Friday 10/30, 6:30-9:30pm in DL 220"
+        ],
+        "confidence": 0.93
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

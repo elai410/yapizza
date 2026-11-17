@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:45.232Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Collective Breath",
+        "start": "2026-10-27T11:00:00-04:00",
+        "end": "2026-10-27T13:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "Battell Chapel",
+        "placeId": "battell-chapel",
+        "hostName": "Chaplain's Office",
+        "summary": "A quiet space to breathe together. Open to all students, staff, and faculty; attendees can come and go as they please.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Tuesday, October 27, 11am-1pm",
+          "Battell Chapel",
+          "Open to all students, staff, and faculty. Come and go as you please."
+        ],
+        "confidence": 0.95
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

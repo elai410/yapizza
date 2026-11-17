@@ -1,0 +1,85 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:55.561Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Richard U. Light Fellowship Info Session #5",
+        "start": "2026-11-03T12:00:00-05:00",
+        "end": "2026-11-03T13:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "55 Whitney Ave 3rd Floor Rm 369",
+        "placeId": null,
+        "hostName": "Office of Fellowships",
+        "summary": "An information session about the Richard U. Light Fellowship. The Office of Fellowships sent the notice on Nov 1, 2026.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Richard U. Light Fellowship Info Session #5: Tue Nov 3, 12:00-1:00pm, 55 Whitney Ave 3rd Floor Rm 369"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "kind": "event",
+        "title": "STEM Summer Fellowships General Q&A",
+        "start": "2026-11-05T19:00:00-05:00",
+        "end": "2026-11-05T20:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "Zoom",
+        "placeId": null,
+        "hostName": "Office of Fellowships",
+        "summary": "A general question-and-answer session about STEM summer fellowships, held on Zoom.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "STEM Summer Fellowships General Q&A: Thu Nov 5, 7:00-8:00pm (Zoom)"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Imagining Your Summer",
+        "start": "2026-11-06T14:00:00-05:00",
+        "end": "2026-11-06T15:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "Poorvu 120A",
+        "placeId": "poorvu",
+        "hostName": "Office of Fellowships",
+        "summary": "A session on planning your summer, held in Poorvu 120A.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Imagining Your Summer: Fri Nov 6, 2:00-3:00pm, Poorvu 120A"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

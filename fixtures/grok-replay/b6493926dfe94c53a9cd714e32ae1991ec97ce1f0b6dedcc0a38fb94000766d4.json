@@ -1,0 +1,115 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:59.212Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Monsoon Table: Water and Cuisine with Chef Asma Khan",
+        "start": "2026-11-02T17:00:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Luce Hall 101",
+        "placeId": "luce-hall",
+        "hostName": "South Asian Studies Council",
+        "summary": "A talk and cooking discussion with Chef Asma Khan on water and cuisine, followed by a reception. Registration is required.",
+        "tags": [
+          "cultural",
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Mon Nov 2, 5:00pm, Luce Hall 101",
+          "Registration required; reception follows."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Dinner & Dialogue with Dr. Asma Khan",
+        "start": "2026-11-04T17:00:00-05:00",
+        "end": "2026-11-04T18:30:00-05:00",
+        "allDay": false,
+        "locationRaw": "AACC",
+        "placeId": "aacc",
+        "hostName": "Asian American Cultural Center",
+        "summary": "A catered dinner and conversation with Dr. Asma Khan at the AACC, catered by Sanctuary Kitchen. Pre-registration is required.",
+        "tags": [
+          "free_food",
+          "cultural"
+        ],
+        "freeFood": true,
+        "food": "catered dinner by Sanctuary Kitchen",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Wed Nov 4, 5-6:30pm at the AACC.",
+          "Catered by Sanctuary Kitchen. Pre-registration required."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Unmasking Bollywood Stereotypes",
+        "start": "2026-11-05T18:00:00-05:00",
+        "end": "2026-11-05T20:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "AACC MPR",
+        "placeId": "aacc",
+        "hostName": "Asian American Cultural Center",
+        "summary": "A movie screening followed by a discussion with Prof. Rohit De on Bollywood stereotypes.",
+        "tags": [
+          "cultural",
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Thu Nov 5, 6-8pm, AACC MPR."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Yale Navarasa at Roshni 2026",
+        "start": "2026-11-06T00:00:00-05:00",
+        "end": null,
+        "allDay": true,
+        "locationRaw": null,
+        "placeId": null,
+        "hostName": "Asian American Cultural Center",
+        "summary": "Yale Navarasa performs at Roshni 2026 on Friday, Nov 6. No time or location is given in the newsletter.",
+        "tags": [
+          "arts",
+          "cultural"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Yale Navarasa at Roshni 2026, Fri Nov 6."
+        ],
+        "confidence": 0.75
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:05.782Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Stargazing",
+        "start": "2026-11-10T20:00:00-05:00",
+        "end": "2026-11-10T21:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "Cross Campus",
+        "placeId": "cross-campus",
+        "hostName": "YASSS",
+        "summary": "Stargazing on Cross Campus with pizza provided.",
+        "tags": [
+          "free_food",
+          "academic"
+        ],
+        "freeFood": true,
+        "food": "pizza",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Stargazing is back: Tuesday 11/10, 8-9pm on Cross Campus.",
+          "Pizza provided."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Dinner with Dr. Frank van den Bosch",
+        "start": "2026-11-17T17:15:00-05:00",
+        "end": "2026-11-17T17:15:00-05:00",
+        "allDay": false,
+        "locationRaw": "Pauli Murray Dining Hall",
+        "placeId": "pauli-murray-dining-hall",
+        "hostName": "YASSS",
+        "summary": "Dinner with Dr. Frank van den Bosch at Pauli Murray Dining Hall. More details to follow next week.",
+        "tags": [
+          "social",
+          "academic"
+        ],
+        "freeFood": true,
+        "food": "dinner",
+        "audience": "open_to_all",
+        "college": "Pauli Murray",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "dinner with Dr. Frank van den Bosch on Tue 11/17, 5:15pm, Pauli Murray Dining Hall"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

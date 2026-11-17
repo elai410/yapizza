@@ -1,0 +1,12 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:09.400Z",
+  "response": {
+    "events": [],
+    "flagged": false,
+    "flagReason": null
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:48.023Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Stargazing",
+        "start": "2026-10-29T20:00:00-04:00",
+        "end": "2026-10-29T21:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "Cross Campus",
+        "placeId": "cross-campus",
+        "hostName": "YASSS",
+        "summary": "Stargazing on Cross Campus with telescopes, weather permitting.",
+        "tags": [
+          "social",
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "STARGAZING: Thursday 10/29, 8-9pm on Cross Campus.",
+          "Weather permitting, we'll have telescopes out."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "YASSS x SPS x WIP Astro + Physics Halloween Mixer",
+        "start": "2026-10-30T18:00:00-04:00",
+        "end": "2026-10-30T19:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "SPL 3rd floor lounge",
+        "placeId": "spl",
+        "hostName": "YASSS",
+        "summary": "A Halloween mixer co-hosted by YASSS, SPS, and WIP Astro + Physics in the SPL 3rd floor lounge. Costumes encouraged.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "HALLOWEEN MIXER: YASSS x SPS x WIP Astro + Physics Halloween Mixer, Friday 10/30, 6-7pm, SPL 3rd floor lounge.",
+          "Costumes encouraged."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

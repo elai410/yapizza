@@ -17,15 +17,15 @@ next: polish and anything cut. Before the demo: Reset demo (key 5), XAI_API_KEY 
 blockers: none
 
 ## pipeline
-status: Claude API switch done in pipeline (18:40), untested live (no ANTHROPIC_API_KEY in .env yet).
-done: src/lib/grok/index.ts now calls the Claude API (@anthropic-ai/sdk, beta messages, claude-opus-5-5 via CLAUDE_MODEL, output_config.format json_schema via the SDK's transformJSONSchema + zod validation, effort low for extract/digest and medium for dedup/series, server-side fallbacks "default", stop_reason checked, 25s timeout + 1 retry then rule fallback, ms + tokens logged per call). Same exports; new `llmClient(): Anthropic | null`; `grokClient()` now returns null (api's Ask falls back until it moves to llmClient). Image parts are Anthropic base64 image blocks. All selfchecks, 520/520 eval, demo paths pass in fallback mode.
+status: Claude live on claude-haiku-5-5 (18:40). Replays recorded: `pnpm grok:record --check` = 41 of 41 offline.
+done: Claude API client (same exports, llmClient for api); Haiku default, server fallbacks only off Haiku; image evidence fix (flyer goes live); prompt extract-v3 (audience: open_to_all unless restricted; concrete confidence rubric so clear events stop landing in review). Live Haiku on the 41 demo inputs: median 2.8s, p90 6.9s, max 9.4s per extraction; ~$0.05 per full pass. Eval on the recorded replays 511/520 (98%), 0 events in review; demo inputs 34/39/40/flyer all live with correct rooms.
 in flight (subagents): none
-next: when ANTHROPIC_API_KEY lands: restart pnpm dev, `pnpm extract 34` for one live check (watch the [llm] ms line), then `pnpm grok:record` and `pnpm grok:record --check` (target 41 of 41). Old replay files no longer match (model is in the key).
+next: rehearsal with the key live also saves dedup match replays automatically
 blockers: none
-uncommitted (human commits via Cursor; pipeline no longer commits): src/lib/grok/index.ts, src/lib/grok/selfcheck.ts, src/lib/pipeline/extract.ts, src/lib/pipeline/extract.selfcheck.ts, src/lib/pipeline/digest.selfcheck.ts, scripts/grok-record.ts, fixtures/grok-replay/*.json (replays saved by live test calls)
+uncommitted (human commits via Cursor; pipeline no longer commits): src/lib/grok/index.ts, src/lib/grok/selfcheck.ts, src/lib/pipeline/extract.ts, src/lib/pipeline/prompts/extract.md, src/lib/pipeline/extract.selfcheck.ts, src/lib/pipeline/digest.selfcheck.ts, scripts/grok-record.ts, fixtures/grok-replay/*.json (41 extract-v3 Haiku replays + match/digest/series replays saved by live app calls)
 
 ## api
-status: polish. Not committing from 18:24 on (human commits via Cursor); uncommitted files listed below.
+status: Ask live on Claude Haiku 5.5 (CLAUDE_MODEL overrides), 3.1-6.1 s on demo queries; route deadline 12 s then keyword fallback. Smoke CP3 5/5.
 done: events + seed (5bd6986); ask 9c94a90: POST /api/ask, Grok tool calling (search_events, search_hosts, get_event, max 3 rounds) with keyword fallback (tonight/today/weekend, free food, college aliases, tags); fallback runs now since no XAI key. CP4 f861836: GET /api/feeds/<slug>.ics (all, free-food, tag, host-<id>), GET/POST/DELETE /api/saves, POST /api/alerts/subscribe, notifyFreeFood(cards) in src/lib/db/alerts.ts, GET /api/digest/preview. CP5 7250dd7: GET /api/listings, GET /api/traditions (Series + tag fallback), /api/host/{hosts,claim,me}, PATCH /api/host/events/[id], POST /api/host/events/[id]/cancel. All curl-tested; dev.db restored after tests.
 in flight (subagents): none
 next: polish. Latest: Event.readBy (v1.1) stored and returned; detail shows the latest changing source; POST /api/alerts/unsubscribe; Ask keeps colleges strict ("Nothing in Jonathan Edwards yet."); resetDemoData() for Reset demo.

@@ -1,0 +1,63 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:44.139Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Craft et Veritas",
+        "start": "2026-10-19T15:00:00-04:00",
+        "end": "2026-10-19T16:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "YSC Offline Oasis",
+        "placeId": "good-life-center",
+        "hostName": "Good Life Center",
+        "summary": "Weekly session on visual roadmaps for the rest of the semester.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Mondays 3-4pm, YSC Offline Oasis.",
+          "This week (10/19): visual roadmaps for the rest of the semester."
+        ],
+        "confidence": 0.8
+      },
+      {
+        "kind": "event",
+        "title": "Accountability Cafe",
+        "start": "2026-10-19T10:00:00-04:00",
+        "end": "2026-10-19T16:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "Silliman Acorn",
+        "placeId": "silliman-acorn",
+        "hostName": "Good Life Center",
+        "summary": "Drop-in pre-break coworking session with YC3; stay for an hour or all day.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": "Silliman",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Mon Oct 19, 10am-4pm, Silliman Acorn.",
+          "Drop in for an hour or stay all day."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

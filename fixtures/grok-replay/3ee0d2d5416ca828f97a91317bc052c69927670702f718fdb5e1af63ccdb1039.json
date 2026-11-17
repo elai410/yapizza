@@ -1,0 +1,40 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:06.422Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Advance screening: Paper Tiger",
+        "start": "2026-11-11T19:00:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "HQ L02",
+        "placeId": "hq",
+        "hostName": "Yale Film Society",
+        "summary": "Advance screening of Paper Tiger, directed by James Gray, as part of the NEON Advance Screening Series. Doors open at 6:30pm; seating is first-come.",
+        "tags": [
+          "arts",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Wednesday, November 11, 7:00pm (doors 6:30)",
+          "HQ L02",
+          "Free. No reservation needed; seating is first-come."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

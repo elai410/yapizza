@@ -1,0 +1,63 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:41.993Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Putnam Investments Career Exploration Event",
+        "start": "2026-10-19T17:00:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "virtual",
+        "placeId": null,
+        "hostName": "Career Pathways Initiative",
+        "summary": "Virtual session about Putnam's analyst programs. Zoom link is sent after registration in Handshake.",
+        "tags": [
+          "professional"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Mon Oct 19, 5:00pm ET.",
+          "Zoom link sent after registration in Handshake."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Beacon Hill Staffing Group Overview",
+        "start": "2026-10-20T17:00:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "virtual",
+        "placeId": null,
+        "hostName": "Career Pathways Initiative",
+        "summary": "Virtual overview of Beacon Hill Staffing Group. A recording will be shared afterward for those who cannot attend.",
+        "tags": [
+          "professional"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Tue Oct 20, 5:00pm ET.",
+          "A recording will be shared after"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

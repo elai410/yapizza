@@ -1,0 +1,109 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:59.623Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Studying Abroad as a STEM Student (with STEM Navigators)",
+        "start": "2026-11-02T17:00:00-05:00",
+        "end": "2026-11-02T18:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "Poorvu Center 120A",
+        "placeId": "poorvu",
+        "hostName": "Yale Study Abroad",
+        "summary": "An information session on studying abroad for STEM students, led by STEM Navigators.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Mon Nov 2, 5:00-6:00pm, Poorvu Center 120A"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Study Abroad in Germany Information Session",
+        "start": "2026-11-03T13:00:00-05:00",
+        "end": "2026-11-03T14:00:00-05:00",
+        "allDay": false,
+        "locationRaw": null,
+        "placeId": null,
+        "hostName": "Yale Study Abroad",
+        "summary": "An information session about studying abroad in Germany. No location is listed in the message.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Tue Nov 3, 1:00-2:00pm"
+        ],
+        "confidence": 0.75
+      },
+      {
+        "kind": "event",
+        "title": "YSS Lima Information Session",
+        "start": "2026-11-05T14:00:00-05:00",
+        "end": "2026-11-05T15:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "HQ 107",
+        "placeId": "hq",
+        "hostName": "Yale Study Abroad",
+        "summary": "An information session about the YSS Lima study abroad program.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Thu Nov 5, 2:00-3:00pm, HQ 107"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "YSS Quito (Ecuador) Information Session",
+        "start": "2026-11-06T17:00:00-05:00",
+        "end": "2026-11-06T19:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "HQ 133",
+        "placeId": "hq",
+        "hostName": "Yale Study Abroad",
+        "summary": "An information session about the YSS Quito program in Ecuador.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Fri Nov 6, 5:00-7:00pm, HQ 133"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

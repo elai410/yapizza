@@ -27,13 +27,13 @@ async function main() {
   const jsonIn = (dir: string) =>
     existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.json')).sort().map((f) => path.join(dir, f)) : [];
 
-  const jobs: { name: string; run: () => Promise<{ mode: string; events: number } | null> }[] = [];
+  const jobs: { name: string; run: () => Promise<{ mode: string; events: number; review: string[] } | null> }[] = [];
   for (const file of [...jsonIn(path.join(root, 'fixtures/emails')), ...jsonIn(path.join(root, 'fixtures/emails/real'))]) {
     jobs.push({
       name: path.relative(root, file),
       run: async () => {
         const r = await extractEvents(rawEmailToInput(JSON.parse(readFileSync(file, 'utf8')) as RawEmail));
-        return { mode: r.mode, events: r.events.length };
+        return { mode: r.mode, events: r.events.length, review: r.events.filter((e) => e.status === 'review').map((e) => e.title) };
       },
     });
   }
@@ -46,7 +46,7 @@ async function main() {
         const read = await readFile({ filename: f, mimeType: '', data: readFileSync(path.join(flyerDir, f)) }, null);
         if (read.kind !== 'input') return null; // ICS: parsed without Grok
         const r = await extractEvents(read.input);
-        return { mode: r.mode, events: r.events.length };
+        return { mode: r.mode, events: r.events.length, review: r.events.filter((e) => e.status === 'review').map((e) => e.title) };
       },
     });
   }
@@ -62,7 +62,7 @@ async function main() {
         if (!r) console.log(`${job.name}  skipped (no Grok call)`);
         else {
           if (r.mode === (CHECK ? 'replay' : 'grok')) written++;
-          console.log(`${job.name}  mode=${r.mode}  events=${r.events}  ms=${Date.now() - t0}`);
+          console.log(`${job.name}  mode=${r.mode}  events=${r.events}  ms=${Date.now() - t0}${r.review.length ? `  REVIEW: ${r.review.join(' | ')}` : ''}`);
         }
       } catch (err) {
         console.log(`${job.name}  FAILED  ${err instanceof Error ? err.message : String(err)}`);

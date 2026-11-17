@@ -1,0 +1,38 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:08.275Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Jane Street: Guide to Recruiting Effectively",
+        "start": "2026-11-17T18:00:00-05:00",
+        "end": "2026-11-17T19:30:00-05:00",
+        "allDay": false,
+        "locationRaw": "Zoom",
+        "placeId": null,
+        "hostName": "Career Pathways Initiative",
+        "summary": "Jane Street presents how it thinks about interviews and how to prepare for them. Held on Zoom.",
+        "tags": [
+          "professional"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Tuesday, November 17, 6:00-7:30pm, Zoom",
+          "Register by Friday, November 13."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

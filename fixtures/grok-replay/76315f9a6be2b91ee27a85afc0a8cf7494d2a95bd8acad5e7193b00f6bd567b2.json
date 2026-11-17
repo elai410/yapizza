@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-5-5",
+  "servedBy": "claude-opus-5-5",
+  "promptVersion": "digest-v1",
+  "name": "digest",
+  "createdAt": "2026-11-17T23:30:05.032Z",
+  "response": {
+    "subject": "This week at Yale: Handsome Dan, Ghibli, AACC dinner",
+    "intro": "A short week before break, with free dinner, a Ghibli screening, and Handsome Dan on a scale.",
+    "picks": [
+      {
+        "id": "cmwlbm5qs0pm31fhubtkgmqcy",
+        "line": "Talk on consent and care across cultures, with hot food."
+      },
+      {
+        "id": "cmwlbm5r70pmf1fhuidktqnmt",
+        "line": "Free family-style dinner for anyone sticking around over recess."
+      },
+      {
+        "id": "cmwlbm5pa0pkr1fhuc3ze9hy4",
+        "line": "The bulldog gets weighed before The Game. Very Yale."
+      },
+      {
+        "id": "cmwlbm5p60pkn1fhu8sl8c5u6",
+        "line": "Ghibli classic in Dport, then a conversation. Bring tissues."
+      },
+      {
+        "id": "cmwlbm5pd0pkv1fhuboewff42",
+        "line": "Quick check-in with the Good Life Center if midterms hit hard."
+      },
+      {
+        "id": "cmwlbm5pg0pky1fhue22j3hii",
+        "line": "Physics talk on how 2D materials interact with light."
+      },
+      {
+        "id": "cmwlbm5pn0pl51fhup56416sq",
+        "line": "Mechanical engineering talk, good if you're curious about the department."
+      }
+    ]
+  }
+}

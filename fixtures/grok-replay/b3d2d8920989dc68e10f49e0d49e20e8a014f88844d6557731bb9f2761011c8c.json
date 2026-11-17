@@ -1,0 +1,90 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:12.516Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Live in Theater interactive production",
+        "start": "2026-11-11T17:00:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Silliman Common Room",
+        "placeId": "silliman-common-room",
+        "hostName": "Silliman GA",
+        "summary": "An interactive live theater production held in the Silliman Common Room. About 30 spots, with walk-ins welcome.",
+        "tags": [
+          "arts",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": "Silliman",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Live in Theater interactive production, 5:00pm, Silliman Common Room.",
+          "About 30 spots, walk-ins welcome."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Study Break & Admissions Advising",
+        "start": "2026-11-11T19:30:00-05:00",
+        "end": "2026-11-11T20:30:00-05:00",
+        "allDay": false,
+        "locationRaw": "Silliman Buttery",
+        "placeId": "silliman-buttery",
+        "hostName": "Silliman GA",
+        "summary": "A sweet treat study break paired with admissions advising for law and grad school. Attendees get sweet treats.",
+        "tags": [
+          "free_food",
+          "academic",
+          "professional"
+        ],
+        "freeFood": true,
+        "food": "sweet treats",
+        "audience": "open_to_all",
+        "college": "Silliman",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Sweet Treat Study Break & Admissions Advising (law/grad school), 7:30-8:30pm, Silliman Buttery."
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Afternoon Tea & Mini Treats",
+        "start": "2026-11-15T14:30:00-05:00",
+        "end": "2026-11-15T16:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "HoC House",
+        "placeId": "silliman-hoc-house",
+        "hostName": "Silliman GA",
+        "summary": "An afternoon tea with mini treats at the Head of College's house in Silliman.",
+        "tags": [
+          "free_food",
+          "social"
+        ],
+        "freeFood": true,
+        "food": "mini treats",
+        "audience": "open_to_all",
+        "college": "Silliman",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Afternoon Tea & Mini Treats at the HoC House, 2:30-4:00pm."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

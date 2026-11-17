@@ -1,0 +1,114 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:52.143Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Intercultural Fall Festival Week",
+        "start": "2026-10-26T00:00:00-04:00",
+        "end": null,
+        "allDay": true,
+        "locationRaw": "NACC, the House, AACC, La Casa, and MENACC",
+        "placeId": "aacc",
+        "hostName": "AACC",
+        "summary": "A week of events across NACC, the House, AACC, La Casa, and MENACC, including movies, treats, a haunted house, and pumpkin painting.",
+        "tags": [
+          "cultural",
+          "social",
+          "free_food"
+        ],
+        "freeFood": true,
+        "food": "treats",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Intercultural Fall Festival Week, Oct 26-29.",
+          "movies, treats, a haunted house, and pumpkin painting."
+        ],
+        "confidence": 0.7
+      },
+      {
+        "kind": "event",
+        "title": "AACC Halloween Scary Movie Night",
+        "start": "2026-10-28T00:00:00-04:00",
+        "end": null,
+        "allDay": true,
+        "locationRaw": "AACC",
+        "placeId": "aacc",
+        "hostName": "AACC first-year coordinators",
+        "summary": "A Halloween movie night at the AACC hosted by the first-year coordinators.",
+        "tags": [
+          "social",
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "AACC Halloween (\"Scary\") Movie Night, Wed Oct 28 at the AACC."
+        ],
+        "confidence": 0.8
+      },
+      {
+        "kind": "event",
+        "title": "AGPC Kickoff",
+        "start": "2026-10-28T18:00:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": null,
+        "placeId": null,
+        "hostName": "AGPC",
+        "summary": "Kickoff event for the Asian Grad/Professional community.",
+        "tags": [
+          "cultural",
+          "professional"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "AGPC (Asian Grad/Professional community) Kickoff, Wed Oct 28 at 6pm."
+        ],
+        "confidence": 0.8
+      },
+      {
+        "kind": "event",
+        "title": "AACC Game Night",
+        "start": "2026-10-28T18:00:00-04:00",
+        "end": "2026-10-28T19:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "AACC Game Room",
+        "placeId": "aacc",
+        "hostName": "AACC",
+        "summary": "A weekly game night in the AACC Game Room, held Wednesdays from 6 to 7pm. This entry is the first session on or after the sent date.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "AACC Game Night, Wednesdays 6-7pm in the AACC Game Room."
+        ],
+        "confidence": 0.75
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

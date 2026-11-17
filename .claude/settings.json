@@ -2,13 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(pnpm *)", "Bash(npx *)", "Bash(node *)", "Bash(date*)",
-      "Bash(git status*)", "Bash(git add *)", "Bash(git commit *)",
-      "Bash(git diff*)", "Bash(git log*)", "Bash(git tag *)",
+      "Bash(git status*)", "Bash(git add *)",
+      "Bash(git diff*)", "Bash(git log*)",
       "Bash(curl http://localhost:3000/*)"
     ],
     "deny": [
       "Bash(git push --force*)", "Bash(git reset --hard*)",
-      "Bash(git checkout -- .*)", "Bash(git stash*)", "Bash(rm -rf /*)"
+      "Bash(git checkout -- .*)", "Bash(git stash*)", "Bash(rm -rf /*)",
+      "Bash(git commit*)", "Bash(git tag*)", "Bash(git rebase*)"
     ]
   }
 }

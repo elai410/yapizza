@@ -1,0 +1,38 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:16.813Z",
+  "response": {
+    "events": [
+      {
+        "kind": "listing",
+        "title": "OCAY gear sale: crash pads, harnesses, climbing shoes",
+        "start": null,
+        "end": null,
+        "allDay": false,
+        "locationRaw": "OCAY shed",
+        "placeId": null,
+        "hostName": "OCAY",
+        "summary": "OCAY is selling leftover climbing gear before break: crash pads at $40 each (3 available), harnesses at $15 each, and climbing shoes in assorted sizes at $10 a pair. Claim by replying to the email; pickup at the OCAY shed through Nov 20.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": "$40 crash pads, $15 harnesses, $10 climbing shoes",
+        "evidence": [
+          "Crash pads, $40 each (3 available)",
+          "Pickup at the OCAY shed through Nov 20."
+        ],
+        "confidence": 0.5
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

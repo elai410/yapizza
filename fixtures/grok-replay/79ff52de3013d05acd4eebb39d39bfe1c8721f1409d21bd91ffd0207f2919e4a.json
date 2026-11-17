@@ -1,0 +1,40 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:04.510Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Annual Bonfire Boulder Bash",
+        "start": "2026-11-13T18:00:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Ascent, New Haven",
+        "placeId": null,
+        "hostName": "Climbing at Yale",
+        "summary": "An annual bouldering competition at Ascent in New Haven, with a bonfire, taco truck, and raffle. Tickets are $35 presale or $40 at the door.",
+        "tags": [
+          "athletics",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Friday, November 13 at 6:00pm at Ascent, New Haven",
+          "Bonfire, taco truck, and raffle.",
+          "$35 presale / $40 at the door."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

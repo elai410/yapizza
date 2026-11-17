@@ -1,0 +1,38 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:01.136Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Asian American Students Alliance Night Market",
+        "start": "2026-11-08T19:00:00-05:00",
+        "end": "2026-11-08T22:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "Dwight Hall and the courtyard",
+        "placeId": "dwight-hall",
+        "hostName": "Asian American Students Alliance",
+        "summary": "A night market held at Dwight Hall and its courtyard, with proceeds benefiting a local charity.",
+        "tags": [
+          "cultural",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "takes over Dwight Hall and the courtyard on Sun 11/8 from 7 to 10pm"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

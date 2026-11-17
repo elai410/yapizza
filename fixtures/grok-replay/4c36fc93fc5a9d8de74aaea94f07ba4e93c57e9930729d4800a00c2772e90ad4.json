@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:03.077Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "The Weil Conjectures (YUMS Pizza Seminar)",
+        "start": "2026-11-06T19:00:00-05:00",
+        "end": "2026-11-06T20:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "WLH 113",
+        "placeId": "wlh",
+        "hostName": "YUMS",
+        "summary": "Prof. Alexander Petrov gives a talk titled \"The Weil Conjectures\" as part of the YUMS pizza seminar series.",
+        "tags": [
+          "free_food",
+          "academic"
+        ],
+        "freeFood": true,
+        "food": "pizza",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "next pizza seminar is this FRIDAY",
+          "Fri 11/6, 7-8pm, WLH 113"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Putnam Problem Session",
+        "start": "2026-11-04T19:00:00-05:00",
+        "end": "2026-11-04T21:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "DL 220",
+        "placeId": "dl",
+        "hostName": "YUMS",
+        "summary": "A Putnam math competition problem session with pizza and snacks. The Putnam exam is Sat Dec 5.",
+        "tags": [
+          "free_food",
+          "academic"
+        ],
+        "freeFood": true,
+        "food": "pizza and snacks",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "putnam problem sessions are wednesdays 7-9pm, tonight in DL 220",
+          "pizza and snacks"
+        ],
+        "confidence": 0.85
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

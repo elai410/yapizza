@@ -1,0 +1,89 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:47.185Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Bulldog Block Party",
+        "start": "2026-10-18T16:00:00-04:00",
+        "end": "2026-10-18T19:00:00-04:00",
+        "allDay": false,
+        "locationRaw": "Old Campus",
+        "placeId": "old-campus",
+        "hostName": "YCC Weekly (Yale College Council)",
+        "summary": "An outdoor fall block party on Old Campus with free food, fall tote bag painting, and live performances from student groups.",
+        "tags": [
+          "free_food",
+          "social"
+        ],
+        "freeFood": true,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Sunday, October 18, 4-7pm on Old Campus",
+          "Free food, fall tote bag painting"
+        ],
+        "confidence": 0.95
+      },
+      {
+        "kind": "event",
+        "title": "Twirl Student Discount Night",
+        "start": "2026-10-20T17:00:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Twirl (New Haven)",
+        "placeId": null,
+        "hostName": "YCC Weekly (Yale College Council)",
+        "summary": "A student discount night at Twirl in New Haven with 20% off pasta bowls for Yale students. Two seatings, at 5pm or 7pm; sign-up is required and seats are limited.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Tuesday, October 20 at Twirl (New Haven)",
+          "Two seatings, 5pm or 7pm"
+        ],
+        "confidence": 0.8
+      },
+      {
+        "kind": "event",
+        "title": "YCC Senate",
+        "start": "2026-10-18T12:30:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Poorvu 120A",
+        "placeId": "poorvu",
+        "hostName": "Yale College Council",
+        "summary": "The Yale College Council Senate meets every Sunday at 12:30pm in Poorvu 120A. All interested students are welcome to attend.",
+        "tags": [
+          "professional"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Senate meets every Sunday at 12:30pm in Poorvu 120A",
+          "All interested students are welcome to attend."
+        ],
+        "confidence": 0.7
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

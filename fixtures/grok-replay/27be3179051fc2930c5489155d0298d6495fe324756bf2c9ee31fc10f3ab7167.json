@@ -1,0 +1,40 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:57.715Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "ROSHNI 2026",
+        "start": "2026-11-06T19:00:00-05:00",
+        "end": "2026-11-06T21:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "Woolsey Hall",
+        "placeId": "woolsey-hall",
+        "hostName": "South Asian Society",
+        "summary": "A South Asian cultural showcase with dance, music, and spoken word from groups across campus, including Yale Navarasa.",
+        "tags": [
+          "cultural",
+          "arts"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Friday, November 6",
+          "7-9pm",
+          "Woolsey Hall"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

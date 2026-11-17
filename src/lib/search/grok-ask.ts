@@ -10,7 +10,7 @@ import { GLOSSARY } from '@/lib/yale';
 import { toolGetEvent, toolSearchEvents, toolSearchHosts } from './index';
 
 const MAX_TOOL_ROUNDS = 3;
-// Haiku keeps Ask well under the route's 8 s deadline; CLAUDE_MODEL (shared with pipeline) overrides it.
+// Haiku keeps Ask well under the route deadline; CLAUDE_MODEL (shared with pipeline) overrides it.
 const MODEL = process.env.CLAUDE_MODEL || 'claude-haiku-5-5';
 // Haiku has no server-side refusal fallback (sending one is a 400); larger models get it.
 const FALLBACK = MODEL.startsWith('claude-haiku') ? {} : { betas: ['server-side-fallback-2026-07-01'], fallbacks: 'default' as const };
@@ -115,8 +115,10 @@ Current time in New Haven: ${formatInTimeZone(now, 'America/New_York', 'EEEE, yy
 "Tonight" means from now until midnight. Only include events that have not ended.
 Tags: ${TAGS.join(', ')}. Free food is the freeFood filter, not a keyword.
 ${GLOSSARY}
-Reply with JSON only: "answer" is at most 2 short sentences in plain words, no exclamation marks, no em dashes, no emoji.
-"results" lists up to 8 event ids from tool results, most relevant first, each with a "why" of 12 words or fewer.`;
+Reply with JSON only. "answer" is at most 2 short sentences in plain words about the events, never about your searches or tools; no exclamation marks, no em dashes, no emoji.
+"results" lists up to 8 event ids from tool results that match the question, most relevant first, and leaves out events that don't.
+If nothing matches exactly, say so in "answer" and list up to 3 of the closest upcoming events (for example the next free food), so the student has something to open.
+Each "why" is 12 words or fewer and says what matched (topic, host, free food), never what an event lacks. The card already shows date, time and place, so don't repeat them.`;
 }
 
 export async function grokAsk(q: string, now = new Date()): Promise<AskResponse> {

@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:36:52.928Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Goldman Sachs Recruiting Overview: Summer 2028 Program",
+        "start": "2026-11-03T16:00:00-05:00",
+        "end": "2026-11-03T16:30:00-05:00",
+        "allDay": false,
+        "locationRaw": "virtual",
+        "placeId": null,
+        "hostName": "Career Pathways Initiative",
+        "summary": "Goldman Sachs recruiters cover the Summer 2028 internship program, divisions, and application timeline, with time for questions. Registration is through Handshake to get the link.",
+        "tags": [
+          "professional"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Tuesday, November 3, 4:00-4:30pm EST",
+          "Virtual",
+          "Register in Handshake to get the link."
+        ],
+        "confidence": 0.92
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:10.313Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Fireside Chat with Robert Langer",
+        "start": "2026-11-20T13:15:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "LC 101",
+        "placeId": "lc",
+        "hostName": "Yale Helix",
+        "summary": "Yale Helix hosts a fireside chat with Robert Langer, Moderna co-founder. Attendees hear from him in LC 101.",
+        "tags": [
+          "academic"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "FRIDAY, NOV 20",
+          "1:15 PM",
+          "LC 101"
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

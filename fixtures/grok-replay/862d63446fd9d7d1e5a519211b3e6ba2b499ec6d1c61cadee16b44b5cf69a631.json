@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v3",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:37:14.733Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "The Game: Harvard-Yale",
+        "start": "2026-11-21T15:30:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Fenway Park, Boston",
+        "placeId": null,
+        "hostName": "Yale College Council",
+        "summary": "Harvard-Yale football game at Fenway Park in Boston, broadcast on ESPNU. Yale College buses run from campus, with luggage storage at Sever Hall and a return bus at 8:30pm.",
+        "tags": [
+          "athletics",
+          "traditions"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Sat Nov 21, 3:30pm, Fenway Park, Boston",
+          "Yale College buses run from campus"
+        ],
+        "confidence": 0.9
+      },
+      {
+        "kind": "event",
+        "title": "Yale College Thanksgiving Dinner",
+        "start": "2026-11-26T12:00:00-05:00",
+        "end": "2026-11-26T14:00:00-05:00",
+        "allDay": false,
+        "locationRaw": "THE OMNI",
+        "placeId": "omni",
+        "hostName": "Yale College Council",
+        "summary": "Thanksgiving buffet at the Omni New Haven, free for enrolled Yale College students. Registration closed at midnight on Nov 16.",
+        "tags": [
+          "free_food",
+          "traditions"
+        ],
+        "freeFood": true,
+        "food": "buffet",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Thu Nov 26, 12:00-2:00pm buffet",
+          "Free for enrolled Yale College students."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

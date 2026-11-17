@@ -23,7 +23,7 @@ Yapizza is one place to see everything happening at Yale, built from the emails 
 5. **Parallelize.** Split each checkpoint into independent units with disjoint files and run them as subagents at the same time (Section 7.1).
 6. **Watch the clock.** Run `date` at the start of each unit and compare it with CLOCK START in COORDINATION.md. Work on the current checkpoint only.
 7. **Report.** Update your section of COORDINATION.md after every finished unit and at least every 15 minutes.
-8. **Typecheck before commit.** `pnpm typecheck` must pass. Commit only your own paths.
+8. **No commits from Claude.** The human commits with Cursor. Never run `git commit` or `git tag`, and never add a Co-Authored-By line anywhere. Wherever this file says commit or tag, instead run `pnpm typecheck` (it must pass) and list the files you changed in your COORDINATION.md section.
 9. **No slop.** No filler UI copy, no marketing words, no emoji, no "AI-powered" labels. Match the restraint of Yale Computer Society apps like CourseTable and Yalies (Section 11).
 10. **Senior bar.** Every role is senior. Make decisions inside your lane without asking, write code you'd defend in review, and say plainly when something gets cut.
 
