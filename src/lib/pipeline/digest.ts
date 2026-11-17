@@ -52,14 +52,8 @@ function fallbackLine(e: EventCard): string {
 }
 
 function render(subject: string, intro: string, picks: { event: EventCard; line: string }[]): { html: string; text: string } {
-  // Group by day; within a day free food first, then by start.
-  const sorted = [...picks].sort((a, b) => {
-    const da = formatInTimeZone(new Date(a.event.start), TZ, 'yyyy-MM-dd');
-    const db = formatInTimeZone(new Date(b.event.start), TZ, 'yyyy-MM-dd');
-    if (da !== db) return da < db ? -1 : 1;
-    if (a.event.freeFood !== b.event.freeFood) return a.event.freeFood ? -1 : 1;
-    return a.event.start < b.event.start ? -1 : a.event.start > b.event.start ? 1 : 0;
-  });
+  // Plain time order; grouping by day follows from it.
+  const sorted = [...picks].sort((a, b) => new Date(a.event.start).getTime() - new Date(b.event.start).getTime());
   const days = new Map<string, { event: EventCard; line: string }[]>();
   for (const p of sorted) {
     const day = formatInTimeZone(new Date(p.event.start), TZ, 'EEE, MMM d');

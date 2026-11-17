@@ -206,6 +206,8 @@ export async function applyMatch(ev: CheckedEvent, d: MatchDecision, sourceId: s
         ...(f.has('placeId') ? { placeId: ev.placeId } : {}),
         ...(f.has('locationRaw') ? { locationRaw: ev.locationRaw } : {}),
         ...(f.has('title') ? { title: ev.title } : {}),
+        // The source drawer highlights these quotes in the update email, so they must come from it.
+        ...(ev.evidence.length ? { evidence: JSON.stringify(ev.evidence) } : {}),
         ...(moved ? { summary: cur.summary.split(cur.locationRaw!).join(ev.locationRaw!) } : {}),
         // A low-confidence update changes the details but doesn't pull a live card off the feed.
         status: ev.status === 'review' ? cur.status : 'live',
