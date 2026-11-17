@@ -6,6 +6,8 @@ import { grokAsk } from '@/lib/search/grok-ask';
 
 export const dynamic = 'force-dynamic';
 
+const ASK_DEADLINE_MS = 8_000;
+
 const Body = z.object({ q: z.string().trim().min(1).max(300) });
 
 export async function POST(req: Request) {
@@ -15,7 +17,11 @@ export async function POST(req: Request) {
 
   let res: AskResponse;
   try {
-    res = await grokAsk(parsed.data.q);
+    // On stage, a slow network must not hold the answer: after 8 s the keyword fallback answers instead.
+    res = await Promise.race([
+      grokAsk(parsed.data.q),
+      new Promise<never>((_, reject) => setTimeout(() => reject(new Error('grok ask timed out after 8s')), ASK_DEADLINE_MS)),
+    ]);
   } catch (err) {
     if (!(err instanceof Error && err.message === 'grok unavailable')) console.error('[ask] grok failed, using keyword fallback', err);
     res = await keywordAsk(parsed.data.q);

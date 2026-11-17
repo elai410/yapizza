@@ -7,7 +7,7 @@ const now = new Date('2026-11-17T17:30:00-05:00'); // Tue
 let p = parseQuery('free food tonight', now);
 assert.equal(p.freeFood, true);
 assert.equal(p.when, 'Tonight');
-assert.equal(p.from.toISOString(), '2026-11-17T21:00:00.000Z'); // now minus 90 min
+assert.equal(p.from.toISOString(), now.toISOString()); // windows start now; running events are kept in searchEvents
 assert.equal(p.to?.toISOString(), '2026-11-18T05:00:00.000Z');
 assert.deepEqual(p.keywords, []);
 
@@ -27,7 +27,7 @@ p = parseQuery('Silliman college tea', now);
 assert.equal(p.college, 'Silliman');
 assert.deepEqual(p.keywords, ['tea']);
 assert.equal(p.to, null);
-assert.equal(p.from.toISOString(), '2026-11-17T21:00:00.000Z'); // default: from 90 min ago
+assert.equal(p.from.toISOString(), now.toISOString()); // default window starts now
 
 p = parseQuery('open to all info session on consulting', now);
 assert.deepEqual(p.keywords, ['consulting']); // generic words dropped
@@ -35,5 +35,21 @@ assert.deepEqual(p.keywords, ['consulting']); // generic words dropped
 p = parseQuery("What's on for mental health?", now);
 assert.deepEqual(p.keywords, ['wellness']);
 assert.equal(p.labels.wellness, 'mental health');
+
+p = parseQuery('talks on Thursday', now);
+assert.equal(p.from.toISOString(), '2026-11-19T05:00:00.000Z'); // Thu 00:00 NY
+assert.equal(p.to?.toISOString(), '2026-11-20T05:00:00.000Z');
+assert.equal(p.when, 'Thu, Nov 19');
+assert.deepEqual(p.tags, ['academic']);
+
+p = parseQuery('free food tuesday', now); // today is Tuesday: from now
+assert.equal(p.from.toISOString(), now.toISOString());
+p = parseQuery('next tuesday', now);
+assert.equal(p.from.toISOString(), '2026-11-24T05:00:00.000Z');
+p = parseQuery('events on 11/20', now);
+assert.equal(p.from.toISOString(), '2026-11-20T05:00:00.000Z');
+p = parseQuery('dec 4 dinner', now);
+assert.equal(p.when, 'Fri, Dec 4');
+assert.deepEqual(p.keywords, ['dinner']);
 
 console.log('search parse selfcheck ok');

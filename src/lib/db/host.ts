@@ -1,5 +1,6 @@
 import type { EventCard } from '@/lib/contracts';
 import { cardInclude, prisma, toCard } from '@/lib/db';
+import { findPlace } from '@/lib/yale';
 
 export interface HostSummary {
   id: string;
@@ -58,7 +59,17 @@ export async function myHosts(netid: string): Promise<MyHost[]> {
   });
   return hosts.map((h) => {
     // Totals only: never which students saved.
-    const events = h.events.map((e) => ({ event: toCard(e), reach: { views: e.views, saves: e._count.saves } }));
+    const now = Date.now();
+    const events = h.events
+      .map((e) => ({ event: toCard(e), reach: { views: e.views, saves: e._count.saves } }))
+      // Upcoming first, soonest on top; past events after, most recent first.
+      .sort((a, b) => {
+        const ta = Date.parse(a.event.start);
+        const tb = Date.parse(b.event.start);
+        const pa = ta < now;
+        const pb = tb < now;
+        return pa !== pb ? (pa ? 1 : -1) : pa ? tb - ta : ta - tb;
+      });
     return {
       ...summary(h),
       events,
@@ -105,34 +116,48 @@ const FIELD_LABEL: Record<keyof EventPatch, string> = {
   food: 'food',
 };
 
+const EDITABLE = Object.keys(FIELD_LABEL) as (keyof EventPatch)[];
+// Comparable form of a field value: dates by instant, everything else by JSON.
+const norm = (v: unknown) => JSON.stringify(v instanceof Date ? v.toISOString() : (v ?? null));
+
 export async function editEvent(id: string, netid: string, patch: EventPatch): Promise<OwnedResult<EventCard>> {
   const owned = await ownedEvent(id, netid);
   if (!owned.event) return { ok: false, status: owned.status };
   const e = owned.event;
 
+  // Updated badge = fields that differ from before the host's first edit, so restoring a value clears it.
+  // Raw SQL for hostOriginal so a dev server on the pre-migration Prisma client keeps working.
+  const [snap] = await prisma.$queryRaw<{ hostOriginal: string | null }[]>`SELECT "hostOriginal" FROM "Event" WHERE "id" = ${id}`;
+  const original: Record<string, string> = snap?.hostOriginal
+    ? JSON.parse(snap.hostOriginal)
+    : Object.fromEntries(EDITABLE.map((k) => [k, norm(e[k])]));
+
+  // Typed place text resolves to the Yale place id pipeline uses ("WLH 309" -> wlh), so dedup sees the same room.
+  // Text set back to the original location gets the original id back, so a restore is exact.
+  if (patch.locationRaw !== undefined && norm(patch.locationRaw) === original.locationRaw) {
+    patch = { ...patch, placeId: JSON.parse(original.placeId) };
+  } else if (patch.locationRaw) {
+    const place = findPlace(patch.locationRaw);
+    // Only when the text names that place: "Steep Cafe" resolves to KT, and the card should keep "Steep Cafe".
+    if (place && patch.locationRaw.toLowerCase().includes(place.name.toLowerCase())) patch = { ...patch, placeId: place.id };
+  }
+
   const data: Record<string, unknown> = {};
-  const changed = new Set<string>();
   for (const key of Object.keys(patch) as (keyof EventPatch)[]) {
     const raw = patch[key];
     if (raw === undefined) continue;
     const next = (key === 'start' || key === 'end') && raw !== null ? new Date(raw as string) : raw;
-    const prev = e[key];
-    const same =
-      next instanceof Date || prev instanceof Date
-        ? (prev as Date | null)?.getTime() === (next as Date | null)?.getTime()
-        : prev === next;
-    if (same) continue;
-    data[key] = next;
-    changed.add(FIELD_LABEL[key]);
+    if (norm(next) !== norm(e[key])) data[key] = next;
   }
   if (e.status === 'review') data.status = 'live'; // a host edit is a human check
 
   if (Object.keys(data).length) {
+    const after = { ...e, ...data } as Record<string, unknown>;
+    const changed = [...new Set(EDITABLE.filter((k) => norm(after[k]) !== original[k]).map((k) => FIELD_LABEL[k]))];
     await prisma.$transaction([
       prisma.event.update({ where: { id }, data }),
-      ...(changed.size
-        ? [prisma.eventVersion.create({ data: { eventId: id, changedFields: JSON.stringify([...changed]) } })]
-        : []),
+      prisma.eventVersion.create({ data: { eventId: id, changedFields: JSON.stringify(changed) } }),
+      ...(snap?.hostOriginal ? [] : [prisma.$executeRaw`UPDATE "Event" SET "hostOriginal" = ${JSON.stringify(original)} WHERE "id" = ${id}`]),
     ]);
   }
   const row = await prisma.event.findUniqueOrThrow({ where: { id }, include: cardInclude });
