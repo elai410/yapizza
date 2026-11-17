@@ -147,10 +147,10 @@ Inputs: free food alert opt-in for a demo student, `/demo` key 4 (Free food now)
 
 Story: clubs get something back for adding one address. In the final script this is the optional 0:10 host beat (step 1). Steps 2 and 3 are extras, only if a beat ran short; otherwise cut to the close.
 
-Inputs: `fixtures/emails/37-ocay-gear-sale.json`, `fixtures/emails/36-ocay-trip-leaders-members-only.json`.
+Inputs: `fixtures/emails/36-ocay-trip-leaders-members-only.json`. The OCAY gear sale (email 37) is already in the seed as a listing.
 
 1. `/host`: Yale Helix's events with reach totals (views, saves, calendar adds). Totals only, no names.
-2. `/sales`: send 37 first; the OCAY gear sale shows as a listing (crash pads $40, harnesses $15, shoes $10), not an event.
+2. `/sales`: open it. The OCAY gear sale (seeded from email 37) shows as a listing (crash pads $40, harnesses $15, shoes $10), not an event. Don't send 37 live: listings aren't deduped, so it would add a second copy.
 3. `/traditions`: The Game (Sat, Nov 21 · 3:30 PM, Fenway Park) and the Weighing of Handsome Dan as recurring Yale events.
 4. Check, not a beat: after sending 36, the OCAY winter break trip meeting is members only and does not appear in the open feed.
 
@@ -223,5 +223,5 @@ Run `pnpm grok:record` on every one of these before the final run. Each one is a
 - Free food now email (key 4, CP3 and CP4). It cannot be replayed: its text holds the current time, so the replay key changes on every press. Offline it always uses the rule-based extractor.
 - Ask queries: "free food tonight", "free food this week" (CP3). Answers depend on the database, so a recording only helps if the state matches the run.
 - `fixtures/emails/21-aasa-night-market-aacc.json`, `22-aasa-night-market-dwight.json` (same event, two lists, CP3 backup beat)
-- `fixtures/emails/37-ocay-gear-sale.json` (listing, CP5)
+- `fixtures/emails/37-ocay-gear-sale.json` (listing, CP5; seeded, so record only for completeness)
 - `fixtures/emails/36-ocay-trip-leaders-members-only.json` (members only, CP5)
