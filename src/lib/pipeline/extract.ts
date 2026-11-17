@@ -116,6 +116,7 @@ export async function extractEvents(input: ExtractInput, now = new Date()): Prom
     mode = 'fallback';
   }
 
+  const tCheck = Date.now();
   const sourceText = `${input.subject ?? ''}\n${input.text}`;
   const imageOnly = !input.text.trim() && Boolean(input.images?.length);
 
@@ -131,5 +132,15 @@ export async function extractEvents(input: ExtractInput, now = new Date()): Prom
     return { ...e, placeId, college, status: review ? 'review' : 'live' };
   });
 
-  return { events, flagged: result.flagged, flagReason: result.flagReason, mode, ms: Date.now() - t0, readText: input.text };
+  const end = Date.now();
+  return {
+    events,
+    flagged: result.flagged,
+    flagReason: result.flagReason,
+    mode,
+    readBy: mode === 'fallback' ? 'rules' : 'grok',
+    ms: end - t0,
+    stages: { extracted: tCheck - t0, checked: end - tCheck },
+    readText: input.text,
+  };
 }

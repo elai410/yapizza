@@ -54,14 +54,20 @@ async function alertFreeFood(r: IngestResult) {
   await notifyFreeFood(r.created).catch((err) => console.error('[ingest] free food alert failed:', err));
 }
 
-function toResult(saved: SaveResult, updated: EventCard[], t0: number): IngestResult {
+type Marks = { received: number; extracted: number; matched: number };
+
+function toResult(saved: SaveResult, updated: EventCard[], t0: number, x?: CheckedExtraction, m?: Marks): IngestResult {
+  const now = Date.now();
   return {
+    ...(m && x?.stages
+      ? { stages: { received: m.received - t0, extracted: x.stages.extracted, checked: x.stages.checked, matched: m.matched - m.extracted, saved: now - m.matched } }
+      : {}),
     sourceId: saved.sourceId,
     created: saved.created,
     updated,
     listings: saved.listings,
     inReview: saved.inReview,
-    ms: Date.now() - t0,
+    ms: now - t0,
   };
 }
 
@@ -76,8 +82,11 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
   const seen = await prisma.source.findUnique({ where: { messageId: email.messageId }, select: { id: true } });
   if (seen) return { sourceId: seen.id, created: [], updated: [], listings: 0, inReview: 0, ms: Date.now() - t0 };
   const input = rawEmailToInput(email);
+  const received = Date.now();
   const extraction = await extractEvents(input);
+  const extracted = Date.now();
   const { save, matched } = await match(extraction, `${email.subject}\n${extraction.readText ?? input.text}`, email.sentAt);
+  const matchedAt = Date.now();
   const saved = await saveExtraction(
     {
       kind,
@@ -90,7 +99,7 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
     },
     save,
   );
-  const result = toResult(saved, await applyAll(matched, saved), t0); // duplicateSource: created is [] already, so the call is idempotent
+  const result = toResult(saved, await applyAll(matched, saved), t0, extraction, { received, extracted, matched: matchedAt }); // duplicateSource: created is [] already, so the call is idempotent
   await alertFreeFood(result);
   log(email.subject, extraction, result, saved.duplicateSource);
   return result;
@@ -107,13 +116,16 @@ export async function ingestFile(
   const read = await readFile(file, hostName).catch((err: unknown) => {
     throw new FileReadError(err instanceof Error ? err.message : String(err));
   });
+  const received = Date.now();
   const extraction: CheckedExtraction =
     read.kind === 'input'
       ? await extractEvents(read.input)
-      : { events: read.events.map((e) => ({ ...e, status: 'live' as const })), flagged: false, flagReason: null, mode: 'grok', ms: 0 }; // ICS is already structured
+      : { events: read.events.map((e) => ({ ...e, status: 'live' as const })), flagged: false, flagReason: null, mode: 'grok', readBy: 'rules', ms: 0 }; // ICS is already structured, Grok never reads it
   if (hostName) for (const e of extraction.events) e.hostName ??= hostName;
   const rawText = extraction.readText?.trim() ? extraction.readText : read.kind === 'input' && read.input.text.trim() ? read.input.text : `[${file.mimeType.startsWith('image/') ? 'image' : 'file'}] ${file.filename}`;
+  const extracted = Date.now();
   const { save, matched } = await match(extraction, `${file.filename}\n${rawText}`);
+  const matchedAt = Date.now();
   const saved = await saveExtraction(
     {
       kind: 'upload',
@@ -124,7 +136,7 @@ export async function ingestFile(
     },
     save,
   );
-  const result = toResult(saved, await applyAll(matched, saved), t0);
+  const result = toResult(saved, await applyAll(matched, saved), t0, extraction, { received, extracted, matched: matchedAt });
   await alertFreeFood(result);
   log(file.filename, extraction, result);
   return result;

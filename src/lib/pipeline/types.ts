@@ -1,4 +1,4 @@
-import type { EventStatus, ExtractedEvent } from '@/lib/contracts';
+import type { EventStatus, ExtractedEvent, ReadBy } from '@/lib/contracts';
 
 // One message or file to read. RawEmail maps onto this; uploads fill text and/or images.
 export interface ExtractInput {
@@ -18,5 +18,7 @@ export interface CheckedExtraction {
   flagReason: string | null;
   mode: 'grok' | 'replay' | 'fallback';
   ms: number;
+  readBy: ReadBy;                  // contracts v1.1; saveExtraction stores it
+  stages?: { extracted: number; checked: number };
   readText?: string;               // text the extraction read, incl. a known flyer's transcription
 }
