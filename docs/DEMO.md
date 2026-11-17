@@ -14,6 +14,8 @@ Owner: qa-demo. One script per checkpoint. Whatever checkpoint we wrap at, run t
 - [ ] Before the final run: `pnpm grok:record` has been run on every input in "Grok replay inputs" below, so replay mode answers them all.
 - [ ] Zoom the browser to 125% for the room.
 
+**Last step before going on stage:** on `/demo` press 5 (Reset demo) and check that the log row reads "demo data reseeded". Then reload tab 1 in a new window so the intro plays. Alert opt-ins survive the reset, so the opt-in doesn't need redoing. Do this after every rehearsal and after anyone runs `pnpm test:smoke`, since tests leave demo data behind.
+
 Seed requirement (integrations, api): `fixtures/events.seed.json` must not already contain the events the demo sends in (the three events in `34-yums-weekly-nov-16.json` and the Helix Langer chat). Otherwise dedup marks them `same` and no card appears. The room change and cancellation targets come from the send step and the seed respectively.
 
 ---
