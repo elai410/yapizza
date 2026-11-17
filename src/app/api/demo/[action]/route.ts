@@ -6,7 +6,7 @@ import { fixtureEmails, resetSimMail } from '@/lib/adapters/sim/mail';
 import { resetSimCalendar } from '@/lib/adapters/sim/calendar';
 import { ingestEmail } from '@/lib/pipeline/ingest';
 import { notifyFreeFood } from '@/lib/db/alerts';
-import { listEvents } from '@/lib/db';
+import { listEvents, prisma } from '@/lib/db';
 import { resetDemoData } from '@/lib/db/seed';
 import type { EventCard } from '@/lib/contracts';
 
@@ -130,9 +130,14 @@ export async function POST(req: Request, { params }: { params: Promise<{ action:
         );
       case 'reset': {
         const seeded = await resetDemoData();
+        // Smoke runs and anonymous opt-ins leave subscribers behind; keep only the 5 demo students' alerts.
+        const { count: unsubscribed } = await prisma.user.updateMany({
+          where: { NOT: { id: { startsWith: 'demo-' } }, OR: [{ alertFreeFood: true }, { alertEmail: { not: null } }] },
+          data: { alertFreeFood: false, alertEmail: null },
+        });
         resetSimMail();
         resetSimCalendar();
-        return NextResponse.json({ ok: true, detail: 'demo data reseeded', result: seeded });
+        return NextResponse.json({ ok: true, detail: 'demo data reseeded', result: { ...seeded, unsubscribed } });
       }
       default:
         return new NextResponse('Not found', { status: 404 });
