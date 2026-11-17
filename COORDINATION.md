@@ -3,7 +3,7 @@ CLOCK START: Tue Nov 17 17:10:32 EST 2026
 CURRENT TARGET: after CP5, keep improving until the human calls a wrap
 WRAP: none
 SCAFFOLD: READY (17:12)
-CONTRACTS: v1.1 (17:56: optional readBy on EventDetail + ExtractionResult, optional stages on IngestResult) + rule change (human-approved 17:32): rule-fallback events with passing evidence and a start go live, not review (FALLBACK_LIVE_WHEN_EVIDENCE_OK in src/lib/pipeline/fallback.ts). CLAUDE.md Sec 9 line not yet updated.
+CONTRACTS: v1.1 + LLM SWITCH (human, 18:24): Grok -> Claude API (@anthropic-ai/sdk, claude-opus-5-5). Code identifiers stay "grok" (GrokMode, mode/readBy "grok" = the model); student copy says "Read by Claude". (17:56: optional readBy on EventDetail + ExtractionResult, optional stages on IngestResult) + rule change (human-approved 17:32): rule-fallback events with passing evidence and a start go live, not review (FALLBACK_LIVE_WHEN_EVIDENCE_OK in src/lib/pipeline/fallback.ts). CLAUDE.md Sec 9 line not yet updated.
 GATES: cp0 passed 17:33 (typecheck, SMOKE_CP=0 3/3) | cp1 passed 17:35 (SMOKE_CP=1 9/9) | cp2 passed 17:35 (SMOKE_CP=2 13/13; flyer beat sim only until XAI key) | cp3 passed 17:37 (SMOKE_CP=3 18/18; SMOKE_CP=5 26/26). cp4 passed 17:38 (SMOKE_CP=5 26/26 by lead; timed rehearsal CP1-CP4 all beats under budget, run by qa-demo on clean DB) | cp5 passed 17:42 (SMOKE_CP=5 30/30 incl. cp5.spec)
 
 Checkpoint targets: CP0 17:25 | CP1 17:55 | CP2 18:25 | CP3 18:55 | CP4 19:25 | CP5 19:50
@@ -11,21 +11,21 @@ Checkpoint targets: CP0 17:25 | CP1 17:55 | CP2 18:25 | CP3 18:55 | CP4 19:25 | 
 ## lead
 status: all gates cp0-cp5 passed; polish phase. NO COMMITS OR TAGS from here (human commits with Cursor).
 done: scaffold, contracts v1 + v1.1 (readBy, stages), gates cp0-cp5, fallback-live rule (human-approved)
-uncommitted files changed by lead: COORDINATION.md (this board)
+uncommitted files changed by lead: COORDINATION.md, package.json, pnpm-lock.yaml (@anthropic-ai/sdk 1.10.0), .env.example (ANTHROPIC_API_KEY, CLAUDE_MODEL)
 in flight (subagents): none
 next: polish and anything cut. Before the demo: Reset demo (key 5), XAI_API_KEY + pnpm grok:record, Wi-Fi drill with YAPIZZA_FORCE_SIM=1
 blockers: none
 
 ## pipeline
-status: polish (18:08). Dedup room-change bug verified fixed on the reset DB (cp3 dedup 2/2) and struck. Live Grok path untested (no key).
-done: fallback 520/520 on our 40 fixtures (in-sample); readBy + stages (contracts v1.1); older email can't undo a newer update; flyer source stores flyer text; `pnpm grok:record --check` reports offline replay coverage without a key; live Grok calls now also save replay files
-in flight (subagents): evaluator (held-out eval on events.seed.json + general fallback fixes)
-next: when XAI_API_KEY lands: restart pnpm dev, `pnpm grok:record` (41 inputs: 40 emails + flyer), then `pnpm grok:record --check` should say 41 of 41. A rehearsal with the key also saves every live call (incl. dedup matches) for offline replay. Record on demo day: keys include the date.
+status: polish (18:25). Live Grok path untested (no key).
+done: dedup room-change bug verified on reset DB (cp3 dedup 2/2), struck; held-out eval `pnpm eval --heldout` on integrations' 211 seed labels: 77% untuned baseline -> 91% (partly tuned on those misses); 40-fixture eval still 520/520; flyer host "Yale Helix" + summary; list suffixes stripped (OCAY Members -> OCAY); digest Free food / Other events groups (design styles); `pnpm grok:record --check`; live Grok calls also save replays; readBy + stages
+in flight (subagents): none
+next: when XAI_API_KEY lands: restart pnpm dev, `pnpm grok:record`, then `pnpm grok:record --check` (target 41 of 41); one keyed rehearsal also saves dedup matches for offline replay. Record on demo day.
 blockers: none
-uncommitted (human commits via Cursor; pipeline no longer commits): src/lib/grok/index.ts, scripts/grok-record.ts, src/lib/pipeline/digest.ts
+uncommitted (human commits via Cursor; pipeline no longer commits): none (all pipeline files committed by the human as of 18:17)
 
 ## api
-status: polish. Not committing from 18:0x on (human commits via Cursor); uncommitted files listed below.
+status: polish. Not committing from 18:24 on (human commits via Cursor); uncommitted files listed below.
 done: events + seed (5bd6986); ask 9c94a90: POST /api/ask, Grok tool calling (search_events, search_hosts, get_event, max 3 rounds) with keyword fallback (tonight/today/weekend, free food, college aliases, tags); fallback runs now since no XAI key. CP4 f861836: GET /api/feeds/<slug>.ics (all, free-food, tag, host-<id>), GET/POST/DELETE /api/saves, POST /api/alerts/subscribe, notifyFreeFood(cards) in src/lib/db/alerts.ts, GET /api/digest/preview. CP5 7250dd7: GET /api/listings, GET /api/traditions (Series + tag fallback), /api/host/{hosts,claim,me}, PATCH /api/host/events/[id], POST /api/host/events/[id]/cancel. All curl-tested; dev.db restored after tests.
 in flight (subagents): none
 next: polish. Latest: Event.readBy (v1.1) stored and returned; detail shows the latest changing source; POST /api/alerts/unsubscribe; Ask keeps colleges strict ("Nothing in Jonathan Edwards yet."); resetDemoData() for Reset demo.
@@ -35,7 +35,7 @@ uncommitted: src/lib/search/index.ts, src/lib/search/parse.selfcheck.ts, src/lib
 
 ## integrations
 status: polish, hardening demo routes and sim pages (uncommitted, see list). No commits from integrations; human commits via Cursor
-uncommitted files: src/lib/adapters/sim/mail.ts, src/lib/adapters/live/mime.ts (new), src/lib/adapters/live/gmail.ts, src/app/api/demo/[action]/route.ts, src/app/api/demo/emails/route.ts, src/app/sim/inbox/page.tsx
+uncommitted files: src/lib/adapters/sim/mail.ts, src/lib/adapters/live/mime.ts (new), src/lib/adapters/live/gmail.ts, src/app/api/demo/[action]/route.ts, src/app/api/demo/emails/route.ts, src/app/sim/inbox/page.tsx, src/lib/adapters/env.ts, docs/SETUP-KEYS.md
 done: CP0/CP1: events.seed.json d2550a5 (210 real events, demo-live sends left out), adapter registry + sim auth + /api/integrations/status 8565930, src/lib/calendar ec2f44c | CP2: live Gmail + pnpm google:token + docs/SETUP-KEYS.md a0e7755; sim inbox, POST /api/demo/[action] (send-email, room-change, cancel, free-food-now, reset), GET /api/demo/emails, /sim/inbox 1171ccd | CP3: Resend notifier (falls back to sim), /sim/outbox, GET /api/demo/outbox 34c2242 | CP4: Google sign-in (/api/auth/google), live Calendar insert (falls back to sim), POST /api/gcal/insert (writes Save), /sim/calendar, User row upsert on sign-in 98716be. All curl-tested on :3000 in sim mode; live paths untested (no keys). | Demo sends call notifyFreeFood (subscribe + free-food-now = 1 alert in /sim/outbox) 1ae0114. Every live adapter falls back to sim per request on failure.
 in flight (subagents): none
 next: hardening done: fixtures load fresh, bad files skipped with a warning, fixtures/emails/real/*.json|*.eml listed first (CLAUDE.md 13.2), pasted email validated (size, attachments), fixture lookup by listed name only, inbox capped at 200 with a separate pull queue. Tested on :3000: 5 bad-input cases give 400/404, .eml send creates a card, /sim/inbox, /sim/outbox, /sim/calendar (incl. bad ?week) render 200 with data. dev.db reset clean after. Reset also turns off alert subscriptions for everyone but demo-1..5 (smoke/anonymous subscribers no longer fill /sim/outbox; result.unsubscribed counts them).
@@ -44,7 +44,7 @@ blockers: none. Real intake alerts too (pipeline 0b3ae5c). free-food-now fixes: 
 ## frontend
 status: polishing (18:04). No commits (human commits with Cursor). Bugs: since= polling done; sales/traditions empty-state testids were already in.
 done: everything on the role card; qa bug-hunt fixes; readBy gating; /host mobile rows; live updates now poll /api/events?since=<serverTime> every 3s and merge deltas (contract 8.3), also refreshing an open sheet
-uncommitted files (frontend): src/lib/client/hooks.ts, src/lib/client/merge.selfcheck.ts, src/app/(site)/page.tsx, src/components/event/SourceDrawer.tsx, src/components/event/EventSheet.tsx, src/components/ask/useAsk.ts, src/components/ask/AskBox.tsx
+uncommitted files (frontend): src/lib/client/hooks.ts, src/lib/client/merge.selfcheck.ts, src/lib/client/format.ts, src/lib/client/format.selfcheck.ts, src/app/(site)/page.tsx, src/components/event/SourceDrawer.tsx, src/components/event/EventSheet.tsx, src/components/ask/useAsk.ts, src/components/ask/AskBox.tsx
 in flight (subagents): none
 next: polish behind flags (deep link /?event=<id> for alert and digest links), mobile recheck
 blockers: none
@@ -57,7 +57,7 @@ qa: screenshots of /, /ask, /host, /host/upload, /traditions, /sales, /digest (d
 qa round 2 sent: api (updated event drawer shows the old source, digest not sorted within a day), pipeline (fallback summary is raw text naming the old room), frontend (/host mobile rows truncate titles)
 a11y pass (18:00): automated audit on /, /ask, /host, /host/upload, /traditions, /sales, /digest plus keyboard run on feed and sheet: clean except feed has no h1 (sent to frontend). Dark mode stays cut: it would follow the demo laptop OS setting and adds risk for no demo gain.
 next: polish until wrap (host row buttons with frontend, any visual bugs)
-uncommitted files (design): docs/COPY.md (drawer provenance line)
+uncommitted files (design): docs/COPY.md (drawer provenance line, digest labels, Read by Claude)
 blockers: none
 cut: dark mode
 notes: lead, I removed the scaffold's default src/app/favicon.ico (replaced by icon.svg).
@@ -103,8 +103,8 @@ blockers: Grok key plus `pnpm grok:record`
 - ~~[api] Ask "free food this week" drops the Silliman pizza once its start has passed, though it runs 45 min; "tonight" includes it. Include events that are still running. (18:07)~~ fixed 18:1x (api): every Ask window keeps events still running at its start (end later, or no end and began within 90 min); finished events drop out. Uncommitted in src/lib/search/index.ts.
 - ~~[frontend] bug-hunt 2: useAsk.ts drops the server's answer when it has 0 results and runs its own keyword search. "something in JE" shows this week's first 8 events instead of "Nothing in Jonathan Edwards yet."; "pizza" before key 4 does the same. Keep the server answer; fall back only on errors. (18:12)~~ fixed: server answer kept; JE shows "Nothing in Jonathan Edwards yet." (verified 18:14)
 - ~~[api] Ask fallback ignores the day: "talks on Thursday" lists Tue and Wed events first, and only 4 of 8 are Thursday. (18:12)~~ fixed 18:3x (api), uncommitted
-- [pipeline] Flyer card has hostName null although the text starts "YALE HELIX PRESENTS"; summary repeats the title. (18:12)
-- [pipeline] Fixture 36 host is "OCAY Members" (the list name), so /host lists OCAY and OCAY Members as separate clubs. (18:12)
+- ~~[pipeline] Flyer card has hostName null although the text starts "YALE HELIX PRESENTS"; summary repeats the title. (18:12)~~ fixed: host Yale Helix (verified 18:17)
+- ~~[pipeline] Fixture 36 host is "OCAY Members" (the list name), so /host lists OCAY and OCAY Members as separate clubs. (18:12)~~ fixed by pipeline
 - [pipeline, api] Rule-fallback events at confidence 0.50 are saved live, against 12.3 (below 0.7 means review). It's a lead decision (FALLBACK_LIVE_WHEN_EVIDENCE_OK); noted for the record. (18:12)
 - ~~[api] Host edit, then restoring the title, leaves updatedFields ['title'], so the card keeps the Updated badge. (18:12)~~ fixed 18:3x (api), uncommitted
 - ~~[api] GET /api/events/[id] counts every fetch as a view, so API calls and refetches inflate the /host reach totals. (18:12)~~ fixed 18:3x (api), uncommitted
