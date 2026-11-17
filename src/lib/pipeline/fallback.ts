@@ -133,7 +133,7 @@ function blockToEvent(block: Block, anchor: Date, input: ExtractInput, hostName:
   const { date, time } = hit;
   const text = block.text;
 
-  const title = makeTitle(block, date, time) ?? cleanSubject(input.subject) ?? 'Untitled event';
+  const title = makeTitle(block, date, time, input.subject) ?? cleanSubject(input.subject) ?? 'Untitled event';
   const locationRaw = findLocation(text, date, time);
   const place = findPlace(locationRaw) ?? findPlace(text);
 
@@ -147,7 +147,8 @@ function blockToEvent(block: Block, anchor: Date, input: ExtractInput, hostName:
 
   const tagText = `${title}\n${text}`;
   const tags = TAGS.filter(function (t) { return TAG_WORDS[t].test(tagText); });
-  const foodMatch = text.match(FOOD);
+  // The title counts too: "Pizza Seminar: The Weil Conjectures" may come from the subject line.
+  const foodMatch = text.match(FOOD) ?? title.match(FOOD);
   const freeFood = !!foodMatch && !/\$\d/.test(text);
 
   return {
@@ -293,26 +294,54 @@ function toIso(date: DateHit, h: number, min: number, startMinutes?: number): st
 const LEAD = /^(?:(?:quick )?update:|reminder:|heads up:|unfortunately,|save the date:|new:|also|please join us for|join us for|celebrate with us at|come (?:out )?(?:to|for)|we(?:'re| are) hosting|we have|there(?:'s| is| will be)|our)\s+(?:an?\s+|the\s+)?/i;
 const TRAIL = /(?:[\s,:;\-–(]+|\s+(?:on|at|is|are|is back|this|from|in|tonight|today|tomorrow|next))$/i;
 
-function makeTitle(block: Block, date: DateHit, time: TimeHit): string | null {
+// "After October break: Painting Plant Pots" and "Gear sale before break": the timing is not the name.
+const TIME_LEAD = /^(?:after|before|during|over|this|next|later this|coming up)\b[^:]{0,30}:\s+/i;
+const TIME_TRAIL = /\s+(?:before|after|over|during|this|next)\s+(?:the\s+)?(?:(?:fall|october|winter|spring|thanksgiving|november)\s+)?(?:break|recess|weekend|week|finals)$/i;
+// "AT DWIGHT HALL THIS WEEKEND" over a paragraph is a section heading, not the event.
+const SECTION = /^(?:at|around|this|next|upcoming|coming up|also|in|on)\b|\bthis (?:week|weekend)\b/i;
+// "putnam problem sessions are wednesdays" -> "putnam problem sessions".
+const VERB = /\s+(?:is|are|will be|takes over|takes|returns|kicks off)\s+\S.*$/i;
+const GENERIC = /^(?:(?:mandatory|general|weekly|monthly|planning|board|body|info(?:rmation)?|first|next|last|short|quick|team|club|members?)\s+)*(meeting|session|gbm)s?$/i;
+const SPEAKER = /^(?:prof\.?|professor|dr\.?)\s/i;
+// Uppercase words that stay uppercase when a shouted title is title-cased.
+const ACRONYMS = new Map(['AASA', 'AACC', 'YCC', 'YUMS', 'WLH', 'LC', 'OCAY', 'FGLI', 'GA', 'HoC', 'REU', 'REUs', 'MMATHS', 'YASSS', 'SPS', 'WIP', 'YSO', 'YC3', 'YCT', 'DL', 'AKW', 'NACC', 'CEID', 'TEAL', 'PWG', 'JE', 'TD', 'STEM', 'YSS', 'AGPC', 'LGBTQ', 'PAE', 'WaMH', 'Q&A', 'GBM'].map(function (a) { return [a.toUpperCase(), a]; }));
+
+function makeTitle(block: Block, date: DateHit, time: TimeHit, subject?: string | null): string | null {
   const text = block.text;
+  let start = 0;
   const firstNl = text.indexOf('\n');
-  const firstLineEnd = firstNl === -1 ? text.length : firstNl;
-  let cut = firstLineEnd;
-  if (date.inBlock && date.index < cut) cut = date.index;
-  if (time.index < cut) cut = time.index;
-  let t = text.slice(0, cut).replace(BULLET, '');
+  const firstLine = text.slice(0, firstNl === -1 ? text.length : firstNl).trim();
+  if (firstNl !== -1 && firstLine === firstLine.toUpperCase() && SECTION.test(firstLine)) start = firstNl + 1;
+  const nl = text.indexOf('\n', start);
+  let cut = nl === -1 ? text.length : nl;
+  if (date.inBlock && date.index >= start && date.index < cut) cut = date.index;
+  if (time.index >= start && time.index < cut) cut = time.index;
+  let t = text.slice(start, cut).replace(BULLET, '');
   const sentence = t.search(/(?<!\b(?:Prof|Dr|Mr|Ms|Mrs|St|vs|Rm|Ave|No|[A-Z]))[.!?](?:\s|$)/);
   if (sentence !== -1) t = t.slice(0, sentence);
   t = tidyTitle(t);
+
+  // "Prof. Alexander Petrov" over "\"The Weil Conjectures\"": the talk is the title, not the speaker.
+  const quoted = text.slice(start).match(/["“]([^"”\n]{3,80})["”]/);
+  if (SPEAKER.test(t) && quoted) {
+    const subj = (cleanSubject(subject) ?? '').replace(new RegExp(`\\s+(?:(?:this|next)\\s+)?${WD}\\b`, 'gi'), '');
+    t = subj.toLowerCase().includes(quoted[1].toLowerCase()) ? tidyTitle(subj) : tidyTitle(quoted[1]);
+  }
+  // "Mandatory planning meeting" says nothing; the subject usually names which meeting.
+  const generic = t.match(GENERIC);
+  if (generic) {
+    const seg = (cleanSubject(subject) ?? '').split(/\s+[-|–]\s+/).find(function (s) { return s.toLowerCase().includes(generic[1].toLowerCase()); });
+    if (seg && seg.split(' ').length > t.split(' ').length - 1) t = tidyTitle(seg);
+  }
   if (t.length < 3) return block.heading ? tidyTitle(block.heading) || null : null;
   return t;
 }
 
 function tidyTitle(raw: string): string {
-  let t = raw.replace(/\s+/g, ' ').trim();
+  let t = raw.replace(/\s*—\s*/g, ': ').replace(/\s+/g, ' ').trim();
   for (let i = 0; i < 4; i++) {
     const before = t;
-    t = t.replace(LEAD, '').replace(TRAIL, '').trim();
+    t = t.replace(LEAD, '').replace(TIME_LEAD, '').replace(TRAIL, '').replace(TIME_TRAIL, '').trim();
     if (t === before) break;
   }
   // "If you signed up..., we have a mandatory planning meeting" -> the clause that names the event.
@@ -323,16 +352,43 @@ function tidyTitle(raw: string): string {
       break;
     }
   }
-  if (/[A-Z]/.test(t) && t === t.toUpperCase()) t = titleCase(t);
+  const verb = t.search(VERB);
+  if (verb > 0 && t.slice(0, verb).includes(' ')) {
+    t = t.slice(0, verb).replace(/^the\s+/i, '').replace(/\b(session|meeting|night|workshop)s$/i, '$1');
+  }
+  // "Kitchen Table Talks, a YC3 conversation series on ..." -> "Kitchen Table Talks".
+  t = t.replace(/,\s+an?\s+.*$/, '');
+
+  const label = t.match(/^([A-Z0-9][A-Z0-9 &'+-]*[A-Z0-9]):\s+(.+)$/);
+  if (label && /[A-Z]{2}/.test(label[1])) {
+    const head = titleCase(label[1]);
+    const rest = label[2];
+    const quote = rest.match(/["“]([^"”]{3,})["”]?/);
+    if (quote) t = `${head}: ${quote[1]}`; // "PIZZA SEMINAR: Prof. X on \"Talk\"" -> "Pizza Seminar: Talk"
+    else if (rest.toLowerCase().includes(label[1].toLowerCase())) t = rest; // "HALLOWEEN MIXER: ... Halloween Mixer"
+    else if (/^[a-z]/.test(rest) && rest.split(' ').length > 5) t = head; // label then a sentence about it
+    else t = `${head}: ${/^[a-z]/.test(rest) || rest === rest.toUpperCase() ? titleCase(rest) : rest}`;
+  } else if (/[A-Z]/.test(t) && t === t.toUpperCase()) {
+    t = titleCase(t);
+  }
+
   if (t.length > 80) t = t.slice(0, 80).replace(/\s+\S*$/, '');
+  // A cap or cut can leave "(South Asian Studies" or a lone quote behind.
+  if (t.lastIndexOf('(') > t.lastIndexOf(')')) t = t.slice(0, t.lastIndexOf('('));
+  if ((t.match(/"/g) ?? []).length % 2 === 1) t = t.replace(/"/g, '');
+  t = t.replace(/[\s,:;.!?\-–]+$/, '').replace(/\s+/g, ' ').trim();
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
 
 function titleCase(s: string): string {
-  const small = new Set(['a', 'an', 'and', 'at', 'for', 'from', 'in', 'of', 'on', 'the', 'to', 'with']);
-  return s.toLowerCase().split(' ').map(function (w, i) {
-    if (i > 0 && small.has(w)) return w;
-    return w.charAt(0).toUpperCase() + w.slice(1);
+  const small = new Set(['a', 'an', 'and', 'at', 'for', 'from', 'in', 'of', 'on', 'the', 'to', 'with', 'x', 'vs']);
+  return s.split(' ').map(function (w, i) {
+    const core = w.replace(/^[^A-Za-z0-9&]+|[^A-Za-z0-9&]+$/g, '');
+    const acr = ACRONYMS.get(core.toUpperCase());
+    if (acr) return w.replace(core, acr);
+    const lw = w.toLowerCase();
+    if (i > 0 && small.has(lw)) return lw;
+    return lw.replace(/(^|-)([a-z])/g, function (_m, p: string, c: string) { return p + c.toUpperCase(); });
   }).join(' ');
 }
 

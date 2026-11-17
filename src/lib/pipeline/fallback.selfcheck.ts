@@ -64,6 +64,27 @@ assert.equal(run('30-registrar-spring-registration.json').r.events.length, 0);
 assert.equal(run('36-ocay-trip-leaders-members-only.json').r.events[0].audience, 'members_only');
 assert.equal(run('39-yums-panel-room-change.json').r.events[0].locationRaw, 'LC 102');
 
+// Titles: no shouted labels, no timing lead-ins, no section headings, no speaker-as-title, acronyms kept.
+{
+  const titles = function (f: string): string[] { return run(f).r.events.map(function (ev) { return ev.title; }); };
+  assert.equal(titles('01-silliman-ga-goat-yoga.json')[1], 'Painting Plant Pots');
+  assert.deepEqual(titles('08-yums-weekly-oct-26.json').slice(1), ['Pizza Seminar: Gluing Polygons, Topology, and Gaussian Integrals', 'MMATHS Test-Solving']);
+  assert.equal(titles('10-yasss-stargazing-oct-29.json')[1], 'YASSS x SPS x WIP Astro + Physics Halloween Mixer');
+  assert.deepEqual(titles('20-yums-pizza-weil.json'), ['Pizza Seminar: The Weil Conjectures', 'Putnam problem session']);
+  assert.equal(run('20-yums-pizza-weil.json').r.events[0].freeFood, true);
+  assert.equal(titles('21-aasa-night-market-aacc.json')[0], 'AASA Night Market');
+  assert.equal(titles('22-aasa-night-market-dwight.json')[0], 'Asian American Students Alliance Night Market');
+  assert.equal(titles('34-yums-weekly-nov-16.json')[2], 'Math Research Panel: Thinking About REUs');
+  assert.equal(titles('36-ocay-trip-leaders-members-only.json')[0], 'Winter break trip meeting');
+  assert.equal(titles('37-ocay-gear-sale.json')[0], 'Gear sale');
+  for (const f of readdirSync(DIR).filter(function (x) { return x.endsWith('.json'); })) {
+    for (const t of titles(f)) {
+      assert.ok(t.length <= 80 && !t.includes('—') && !/[\s,:;.!?(-]$/.test(t), `${f}: title "${t}"`);
+      assert.ok(!(/[A-Z]{4}/.test(t) && t === t.toUpperCase()), `${f}: shouted title "${t}"`);
+    }
+  }
+}
+
 // Every fixture: evidence is quoted from the source, times are well formed.
 for (const file of readdirSync(DIR).filter(function (f) { return f.endsWith('.json'); })) {
   const { e, r } = run(file);

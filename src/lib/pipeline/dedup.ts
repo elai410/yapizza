@@ -58,6 +58,13 @@ export function titleSimilarity(a: string, b: string): number {
   return both / (A.size + B.size - both);
 }
 
+// "The Game" vs "The Game: Yale vs. Harvard": every word of the shorter title appears in the longer one.
+function titleContained(a: string, b: string): boolean {
+  const [A, B] = [words(a), words(b)];
+  const [small, big] = A.size <= B.size ? [A, B] : [B, A];
+  return small.size > 0 && [...small].every((w) => big.has(w));
+}
+
 const sameText = (a: string | null, b: string | null) => (a ?? '').trim().toLowerCase() === (b ?? '').trim().toLowerCase();
 const nyDay = (iso: string) => toNyIso(new Date(iso)).slice(0, 10);
 const sameInstant = (a: string, b: string) => new Date(a).getTime() === new Date(b).getTime();
@@ -86,7 +93,8 @@ export async function findCandidates(ev: CheckedEvent): Promise<Candidate[]> {
       const sameHost = Boolean(ev.hostName && r.host && sameText(ev.hostName, r.host.name));
       // Same event on two lists can carry different hosts and titles; same start and place still pins it.
       const samePlaceTime = r.start.getTime() === t && evPlace !== null && placeKey(r.placeId ?? r.locationRaw) === evPlace;
-      return { r, sim, keep: sameHost || sim >= 0.5 || samePlaceTime };
+      const sameTimeTitle = r.start.getTime() === t && titleContained(ev.title, r.title);
+      return { r, sim, keep: sameHost || sim >= 0.5 || samePlaceTime || sameTimeTitle };
     })
     .filter((x) => x.keep)
     .sort((a, b) => b.sim - a.sim || Math.abs(a.r.start.getTime() - t) - Math.abs(b.r.start.getTime() - t))
@@ -127,7 +135,8 @@ function ruleMatch(ev: CheckedEvent, candidates: Candidate[], sourceText: string
       const sameHostDay = Boolean(ev.hostName && sameText(ev.hostName, c.hostName) && ev.start && nyDay(ev.start) === nyDay(c.start));
       const np = placeKey(ev.placeId ?? ev.locationRaw);
       const samePlaceTime = Boolean(ev.start && sameInstant(ev.start, c.start) && np && np === placeKey(c.placeId ?? c.locationRaw));
-      return { c, sim, ok: sim >= 0.5 || sameHostDay || samePlaceTime };
+      const sameTimeTitle = Boolean(ev.start && sameInstant(ev.start, c.start) && titleContained(ev.title, c.title));
+      return { c, sim, ok: sim >= 0.5 || sameHostDay || samePlaceTime || sameTimeTitle };
     })
     .filter((x) => x.ok)
     .sort((a, b) => b.sim - a.sim)[0]?.c;
