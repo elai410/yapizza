@@ -53,9 +53,14 @@ test.describe('CP1 feed', () => {
     const dialog = page.getByRole('dialog');
     await expect(dialog).toBeVisible();
     // A button's children are presentational, so read the title from the sheet's heading instead.
-    const title = (await dialog.getByRole('heading').first().innerText()).trim();
-    expect(title.length).toBeGreaterThan(0);
-    expect(cardText).toContain(title);
+    // The heading is a hidden "Event" placeholder until the detail loads, so poll.
+    const heading = dialog.getByRole('heading').first();
+    await expect
+      .poll(async () => {
+        const title = (await heading.textContent())?.trim() ?? '';
+        return title.length > 0 && cardText.includes(title);
+      }, { timeout: 5_000 })
+      .toBe(true);
   });
 });
 
