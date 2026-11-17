@@ -20,7 +20,7 @@ function expectIngestResult(body: IngestResult) {
 
 test.describe('CP2 email ingest', () => {
   forCp(2, 'INGEST');
-  test.setTimeout(30_000); // Grok
+  test.setTimeout(30_000); // Claude
 
   test('POST /api/ingest/email turns a club email into events', async ({ request }) => {
     const email = JSON.parse(readFileSync(EMAIL_FIXTURE, 'utf8'));
@@ -41,7 +41,7 @@ test.describe('CP2 email ingest', () => {
 
 test.describe('CP2 flyer upload', () => {
   forCp(2, 'UPLOAD');
-  test.setTimeout(45_000); // page load plus up to 30s of Grok vision
+  test.setTimeout(45_000); // page load plus up to 30s of Claude vision
 
   test('uploading a flyer on /host/upload shows its event card', async ({ page }) => {
     await gotoApp(page, '/host/upload');

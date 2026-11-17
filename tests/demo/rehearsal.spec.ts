@@ -126,7 +126,7 @@ test('rehearsal: the 3-minute story, CP1 to CP4', async ({ context }) => {
         await expect(cards(feed).filter({ hasText: /silliman buttery/i }).first()).toBeVisible({ timeout: WAIT });
       } else {
         // Documented replay behavior (DEMO.md CP3 fallbacks): rule-based extractor, confidence 0.50, review, hidden from the feed.
-        expect.soft(pizzaLive, `free food now went to review (grok ${status.grok}); the beat falls back to Putnam`).toBe(true);
+        expect.soft(pizzaLive, `free food now went to review (claude ${status.grok}); the beat falls back to Putnam`).toBe(true);
       }
     });
 
@@ -164,7 +164,7 @@ test('rehearsal: the 3-minute story, CP1 to CP4', async ({ context }) => {
       await dialog.getByRole('button', { name: /how this was read/i }).click();
       await expect(dialog.locator('mark').first()).toBeVisible();
       const readBy = (await (await feed.request.get(`/api/events/${drawerId}`)).json()).readBy;
-      const grokLine = dialog.getByText(/Read by Grok/);
+      const grokLine = dialog.getByText(/Read by (Claude|Grok)/);
       if (readBy === 'grok') await expect(grokLine).toBeVisible();
       else await expect(grokLine).toHaveCount(0);
       await feed.keyboard.press('Escape');

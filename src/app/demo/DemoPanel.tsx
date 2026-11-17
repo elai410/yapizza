@@ -132,7 +132,7 @@ export function DemoPanel({ emails: diskEmails, flyers }: { emails: FixtureEmail
       run(5, 'Reset demo', function () { return post('/api/demo/reset', {}); });
     },
     6: function () {
-      run(6, 'Record Grok replay', async function () {
+      run(6, 'Record replay', async function () {
         const copied = await navigator.clipboard.writeText('pnpm grok:record').then(function () { return true; }, function () { return false; });
         return { ok: true, detail: `Run pnpm grok:record in a terminal${copied ? ' (copied)' : ''}` };
       });
@@ -175,7 +175,7 @@ export function DemoPanel({ emails: diskEmails, flyers }: { emails: FixtureEmail
 
   const services: [string, string][] =
     status && status !== 'error'
-      ? [['Grok', status.grok], ['Gmail', status.gmail], ['Calendar', status.gcal], ['Notify', status.notify], ['Auth', status.auth]]
+      ? [['Claude', status.grok], ['Gmail', status.gmail], ['Calendar', status.gcal], ['Notify', status.notify], ['Auth', status.auth]]
       : [];
 
   return (
@@ -260,7 +260,7 @@ export function DemoPanel({ emails: diskEmails, flyers }: { emails: FixtureEmail
         <div className="flex flex-wrap items-center gap-3 px-4 py-3">
           {actionButton(4, 'Free food now')}
           {actionButton(5, 'Reset demo')}
-          {actionButton(6, 'Record Grok replay')}
+          {actionButton(6, 'Record replay')}
         </div>
       </Card>
 

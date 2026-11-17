@@ -105,7 +105,7 @@ test.describe('CP4 saves', () => {
 
 test.describe('CP4 free food alerts', () => {
   forCp(4, 'ALERTS');
-  test.setTimeout(45_000); // Grok extraction plus the outbox wait
+  test.setTimeout(45_000); // Claude extraction plus the outbox wait
 
   test('a subscriber gets a free food alert in the outbox', async ({ page, request }) => {
     const target = 'smoke@example.com';

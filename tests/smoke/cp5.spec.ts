@@ -76,7 +76,7 @@ test.describe('CP5 traditions', () => {
 
 test.describe('CP5 host endpoints', () => {
   forCp(5, 'HOST');
-  test.setTimeout(60_000); // Grok extraction of fixture 36
+  test.setTimeout(60_000); // Claude extraction of fixture 36
 
   test('claim, list, edit and restore, cancel; reach is totals only', async ({ request }) => {
     expect((await request.get('/api/host/me')).status()).toBe(401);

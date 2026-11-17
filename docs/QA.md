@@ -26,8 +26,8 @@ Owners: keep these stable. Changing one breaks the gate.
 | Free food filter | button named "Free food" | frontend |
 | Empty state | `data-testid="empty-state"` (feed; also traditions and sales) | frontend |
 | How this was read | button named "How this was read" inside the dialog; evidence quotes are `mark` elements | frontend |
-| Grok line | text "Read by Grok" in the drawer only when `EventDetail.readBy` is `'grok'`; tests read `/api/events/[id]` and assert presence or absence | frontend |
-| Ask result | `data-testid="ask-result"` with `event-card` children; "Read by Grok" when `mode` is `grok`, "Showing keyword matches." when `fallback` | frontend |
+| Claude line | text "Read by Claude" in the drawer only when `EventDetail.readBy` is `'grok'`; tests read `/api/events/[id]` and assert presence or absence | frontend |
+| Ask result | `data-testid="ask-result"` with `event-card` children; "Read by Claude" when `mode` is `grok`, "Showing keyword matches." when `fallback` | frontend |
 | Upload | `data-testid="upload-input"`, `upload-submit`, `upload-result` on `/host/upload` | frontend |
 | Demo status | `data-testid="demo-status"` on `/demo` | qa-demo |
 | Events API | GET /api/events returns `{ events, serverTime }`; GET /api/events/[id] returns EventDetail with `gcalTemplateUrl` | api |
@@ -64,10 +64,10 @@ Run in a fresh window with `pnpm dev` up, after a reset with /demo key 5 (confir
 - [ ] Sending 34 again after 39 leaves the panel at LC 102.
 - [ ] Cancellation (40) marks Politics of the Purse canceled; its sheet has no Add to calendar or Save.
 - [ ] 21 then 22 leave one AASA Night Market card.
-- [ ] After key 4, "free food tonight" returns Free pizza (Silliman Buttery) with a short why; cards show day and time, sorted by start. With Grok down it still answers (`mode: 'fallback'`, "Showing keyword matches.").
+- [ ] After key 4, "free food tonight" returns Free pizza (Silliman Buttery) with a short why; cards show day and time, sorted by start. With Claude down it still answers (`mode: 'fallback'`, "Showing keyword matches.").
 - [ ] "career talk" matches career events; "something in JE" answers "Nothing in Jonathan Edwards yet."
 - [ ] "How this was read": heading follows source kind ("From the email", "From a flyer", "From the form" or "From <list>"), evidence quotes highlighted.
-- [ ] Drawer rule: "Read by Grok · confidence 0.xx" shows only when `readBy` is `'grok'`. With no `XAI_API_KEY` every card is `'rules'` and no drawer shows it. Rule reads of live sends (confidence 0.50) also show "Needs review".
+- [ ] Drawer rule: "Read by Claude · confidence 0.xx" shows only when `readBy` is `'grok'`. With no `ANTHROPIC_API_KEY` every card is `'rules'` and no drawer shows it. "Needs review" shows only when the event status is review.
 
 ### CP4
 - [ ] Add to calendar inserts live, or lands on `/sim/calendar` in sim.

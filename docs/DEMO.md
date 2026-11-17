@@ -15,13 +15,13 @@ Owner: qa-demo. One script per checkpoint. Whatever checkpoint we wrap at, run t
 
 Seed requirement (integrations, api): `fixtures/events.seed.json` must not already contain the events the demo sends in (the three events in `34-yums-weekly-nov-16.json` and the Helix Langer chat). Otherwise dedup marks them `same` and no card appears.
 
-### Demo day: Grok key
+### Demo day: Claude API key
 
-Today there is no `XAI_API_KEY`, so every card is read by rules (`readBy: 'rules'`) and no drawer shows the Grok line. Once the human adds the key to `.env` and restarts `pnpm dev`:
+Today there is no `ANTHROPIC_API_KEY`, so every card is read by rules (`readBy: 'rules'`) and no drawer shows the Claude line. Once the human adds the key to `.env` and restarts `pnpm dev`:
 
 1. `pnpm grok:record` records the 40 fixture emails and the flyer.
 2. `pnpm grok:record --check` needs no key and prints "N of 41 inputs replay offline today". The target is 41 of 41. (Without a key today it prints 0 of 41.)
-3. Run one full rehearsal with the key live. That also saves every live Grok call as replay, including the dedup match for the room change, so the `YAPIZZA_FORCE_SIM=1` drill afterwards replays the whole demo.
+3. Run one full rehearsal with the key live. That also saves every live Claude call as replay, including the dedup match for the room change, so the `YAPIZZA_FORCE_SIM=1` drill afterwards replays the whole demo.
 
 Key 4's email changes on every press, so offline it always runs on the rules. That's fine: it parses. Replays only work on the day they were recorded, so record on demo day.
 
@@ -48,12 +48,12 @@ Tab 1 is the feed, tab 2 is `/demo`, the phone is on the table. Keys are pressed
 | 2:50 | Close | Back to the feed. | "One address per club, and students never join another list." |
 
 **Ask beat (1:35)**
-- With Grok key: the answer is one or two sentences, the line under it reads "Read by Grok", and the Free pizza card comes first with a short why. Say: "Plain words in. Grok searches the events and we only show cards that exist."
+- With Claude key: the answer is one or two sentences, the line under it reads "Read by Claude", and the Free pizza card comes first with a short why. Say: "Plain words in. Claude searches the events and we only show cards that exist."
 - Without key: the line reads "Showing keyword matches." and the Free pizza card shows with "Free food: pizza · Tonight". Say: "Plain words in, events out. Offline it's keyword search, and the cards are the same."
 
 **Source beat (1:55)**
-- With Grok key: the drawer ends with "Read by Grok · confidence 0.9x". Say: "Every card keeps its source. The highlighted quotes are what Grok used, and code checks each one is really in the email."
-- Without key: no Grok line; the drawer shows "Needs review" because the rules read it at confidence 0.50. Say: "Grok reads these in production; offline it falls back to rules and still checks every quote." The drawer only says Grok read a card when Grok did.
+- With Claude key: the drawer ends with "Read by Claude · confidence 0.9x". Say: "Every card keeps its source. The highlighted quotes are what Claude used, and code checks each one is really in the email."
+- Without key: no Claude line and no review label (the rules read it, and the highlighted quotes passed the check). Say: "Claude reads these in production; offline it falls back to rules and still checks every quote." The drawer only says Claude read a card when Claude did.
 
 Cuts: if CP5 did not land, drop the host beat and give the time to the close. `/traditions` and `/sales` are extras, only if a beat ran short. Ask cards show the day and time, sorted by start.
 
@@ -160,7 +160,7 @@ Story: clubs get something back for adding one address. In the final script this
 ## Recovery
 
 - A card doesn't appear within 10 seconds: reload tab 1 once. If still missing, check the `/demo` log for the failed stage and move on. Don't retry live more than once.
-- Grok slow or erroring: set `YAPIZZA_FORCE_SIM=1`, restart `pnpm dev`, continue on replay (Wi-Fi drill below).
+- Claude slow or erroring: set `YAPIZZA_FORCE_SIM=1`, restart `pnpm dev`, continue on replay (Wi-Fi drill below).
 - Wrong state after a rehearsal: `/demo` key 5, confirm, reload both tabs.
 - Fixtures that make new cards after a reset: 34 (three cards), 31 (the Helix Langer email; matches the flyer if it was already uploaded), 36 (members only). Backup email beat: send 36. 39 after 34 is the room change. 40 cancels Politics of the Purse. Every other fixture matches a seeded card as `same` and adds nothing.
 - Calendar insert fails: use the Add to calendar link (no sign-in) or show `/sim/calendar`.
@@ -172,18 +172,18 @@ Story: clubs get something back for adding one address. In the final script this
 
 Status: not yet rehearsed. Result: ____ Time: ____
 
-Before: the "Demo day: Grok key" steps are done the same day, so `pnpm grok:record --check` prints 41 of 41.
+Before: the "Demo day: Claude API key" steps are done the same day, so `pnpm grok:record --check` prints 41 of 41.
 
 1. In `.env`, set `YAPIZZA_FORCE_SIM=1`.
 2. Stop `pnpm dev` (Ctrl+C) and start it again.
-3. `/demo` shows Gmail, calendar, notify and auth as sim and Grok as replay; `/api/integrations/status` shows `forcedSim: true`.
+3. `/demo` shows Gmail, calendar, notify and auth as sim and Claude as replay; `/api/integrations/status` shows `forcedSim: true`.
 4. Press 5, then run the final script once, start to finish.
 
 What changes on stage, in beat order:
 - Club email (34), flyer, room change: replay from `fixtures/grok-replay` if recorded today, so the cards and the room-change match come out as they did live. Without recordings the rules read them at confidence 0.50; the cards still go live when their quotes check out.
 - Free food now: its email holds the current time, so it never replays and always runs on the rules. The card still appears.
 - Ask: there is no replay for Ask, so it uses keyword search. Use the "Without key" Ask line.
-- Source: a recorded room change shows "Read by Grok · confidence 0.9x". A rule-read one shows no Grok line and "Needs review"; use the "Without key" Source line.
+- Source: a recorded room change shows "Read by Claude · confidence 0.9x". A rule-read one shows no Claude line; use the "Without key" Source line.
 - Calendar: the Add to calendar link works if the phone has data. Insert lands on `/sim/calendar`, alerts on `/sim/outbox`.
 
 Switch back: set `YAPIZZA_FORCE_SIM=0`, restart `pnpm dev`, confirm `/demo` shows the live services.
@@ -205,7 +205,7 @@ Short on time: a 30-second cut. Key 1 (three cards appear), key 2 (Updated badge
 
 ---
 
-## Grok replay inputs
+## Claude replay inputs
 
 `pnpm grok:record` covers 41 inputs: the 40 fixture emails and the flyer. `pnpm grok:record --check` reports how many replay offline today. Record on demo day; replays only work on the day they were recorded. The ones the script uses:
 

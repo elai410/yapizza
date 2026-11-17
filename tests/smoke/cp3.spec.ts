@@ -25,7 +25,7 @@ async function sendRoomChange(request: APIRequestContext): Promise<IngestResult>
 
 test.describe('CP3 ask API', () => {
   forCp(3, 'ASK');
-  test.setTimeout(30_000); // Grok tool calling
+  test.setTimeout(30_000); // Claude tool calling
 
   test('POST /api/ask answers with events that exist', async ({ request }) => {
     const res = await request.post('/api/ask', { data: { q: 'free food this week' }, timeout: 30_000 });
@@ -47,7 +47,7 @@ test.describe('CP3 ask page', () => {
   forCp(3, 'ASK');
   test.setTimeout(45_000);
 
-  test('/ask shows event cards, and the Grok line when Grok answered', async ({ page, request }) => {
+  test('/ask shows event cards, and the Claude line when Claude answered', async ({ page, request }) => {
     const status = await (await request.get('/api/integrations/status')).json();
     await gotoApp(page, '/ask');
     const box = page.getByLabel('Ask Yapizza');
@@ -60,16 +60,16 @@ test.describe('CP3 ask page', () => {
 
     const result = page.getByTestId('ask-result');
     await expect(result.getByTestId('event-card').first()).toBeVisible({ timeout: 30_000 });
-    // "Read by Grok" is hidden on purpose in fallback mode.
+    // "Read by Claude" is hidden on purpose in fallback mode.
     if (status.grok !== 'replay' && answer.mode === 'grok') {
-      await expect(page.getByText(/Read by Grok/).first()).toBeVisible();
+      await expect(page.getByText(/Read by (Claude|Grok)/).first()).toBeVisible();
     }
   });
 });
 
 test.describe('CP3 dedup', () => {
   forCp(3, 'DEDUP');
-  test.setTimeout(60_000); // two Grok extractions plus a match
+  test.setTimeout(60_000); // two Claude extractions plus a match
 
   test('a room change updates the existing card instead of adding one', async ({ request }) => {
     const result = await sendRoomChange(request);
@@ -116,8 +116,8 @@ test.describe('CP3 source drawer', () => {
     await expect(dialog).toBeVisible();
     await dialog.getByRole('button', { name: /how this was read/i }).click();
     await expect(dialog.locator('mark').first()).toBeVisible();
-    // v1.1: the Grok line shows only when Grok read it; rule-fallback and seed events must not claim it.
-    const grokLine = dialog.getByText(/Read by Grok/);
+    // v1.1: the Claude line shows only when Claude read it; rule-fallback and seed events must not claim it.
+    const grokLine = dialog.getByText(/Read by (Claude|Grok)/);
     if (detail.readBy === 'grok') await expect(grokLine).toBeVisible();
     else await expect(grokLine).toHaveCount(0);
     const shown = detail.source.subject ?? detail.source.sender;
