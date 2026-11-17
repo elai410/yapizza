@@ -7,6 +7,8 @@ import { EventSheet } from '@/components/event/EventSheet';
 import { Button, Card, EmptyState, Enter, EnterList, Skeleton, toast } from '@/components/ui';
 import { EventCard } from './EventCard';
 import { FilterBar } from './FilterBar';
+import { AlertsOptIn } from './AlertsOptIn';
+import { AskBox } from '@/components/ask/AskBox';
 
 function groupByDay(events: EventCardData[]): [string, EventCardData[]][] {
   const groups = new Map<string, EventCardData[]>();
@@ -91,8 +93,10 @@ export function Feed() {
 
   return (
     <>
+      <div className="mb-6"><AskBox onOpen={setOpenId} examples={false} /></div>
       <FilterBar filters={filters} onChange={setFilters} />
       <div className="mt-6">{body}</div>
+      <div className="mt-8"><AlertsOptIn /></div>
       <EventSheet id={openId} onClose={function () { setOpenId(null); }} />
     </>
   );

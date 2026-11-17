@@ -1,16 +1,39 @@
 'use client';
 
-import type { EventDetail } from '@/lib/contracts';
+import { useRef } from 'react';
+
+import { isOn, type EventDetail } from '@/lib/contracts';
 import { formatTime, formatWhen, useEvent } from '@/lib/client';
 import { Sheet, SheetContent, Skeleton, StatusBadge, TagChip, buttonClasses } from '@/components/ui';
 import { AddToCalendar } from './AddToCalendar';
+import { SourceDrawer } from './SourceDrawer';
+
+const FIELD_WORDS: Record<string, string> = {
+  placeId: 'room', placeName: 'room', locationRaw: 'room', start: 'time', end: 'time', title: 'title',
+};
+
+function changedLabel(fields: string[]): string {
+  return Array.from(new Set(fields.map(function (f) { return FIELD_WORDS[f] ?? f; }))).join(', ');
+}
 
 export function EventSheet({ id, onClose }: { id: string | null; onClose: () => void }) {
   const { event, error, isLoading } = useEvent(id);
+  // The sheet is controlled with no Trigger, so remember what opened it and hand focus back on close.
+  const returnTo = useRef<HTMLElement | null>(null);
+  if (id && !returnTo.current && typeof document !== 'undefined' && document.activeElement instanceof HTMLElement) {
+    returnTo.current = document.activeElement;
+  }
 
   return (
     <Sheet open={id !== null} onOpenChange={function (open) { if (!open) onClose(); }}>
-      <SheetContent title={event?.title ?? <span className="sr-only">Event</span>}>
+      <SheetContent
+        title={event?.title ?? <span className="sr-only">Event</span>}
+        onCloseAutoFocus={function (ev) {
+          const el = returnTo.current;
+          returnTo.current = null;
+          if (el && el.isConnected && el !== document.body) { ev.preventDefault(); el.focus(); }
+        }}
+      >
         {event ? (
           <Body event={event} />
         ) : error && !isLoading ? (
@@ -45,6 +68,10 @@ function Body({ event: e }: { event: EventDetail }) {
         {e.tags.map(function (t) { return <TagChip key={t} tag={t} />; })}
       </div>
 
+      {e.status !== 'canceled' && e.updatedFields.length > 0 && (
+        <p className="text-sm text-update">Changed: {changedLabel(e.updatedFields)}</p>
+      )}
+
       {e.food && <p className="text-sm text-food">Food: {e.food}</p>}
       {e.summary && <p className="text-[15px] leading-relaxed text-ink">{e.summary}</p>}
 
@@ -56,6 +83,8 @@ function Body({ event: e }: { event: EventDetail }) {
           </a>
         )}
       </div>
+
+      {isOn('SOURCE_DRAWER') && <SourceDrawer event={e} />}
     </div>
   );
 }

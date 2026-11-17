@@ -12,7 +12,8 @@ export function EventCard({ event, onOpen, arrived = false }: { event: EventCard
       type="button"
       data-testid="event-card"
       data-event-id={event.id}
-      onClick={function () { onOpen(event.id); }}
+      // Focus first so the sheet can return focus here on close (mouse clicks don't focus buttons in Safari).
+      onClick={function (e) { e.currentTarget.focus(); onOpen(event.id); }}
       className={cn('flex w-full gap-4 px-4 py-3 text-left transition-colors hover:bg-sunken', arrived && ARRIVE_CLASS)}
     >
       <span className="tnum w-20 shrink-0 pt-px text-sm text-muted">

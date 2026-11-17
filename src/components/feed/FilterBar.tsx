@@ -3,6 +3,7 @@
 import { isOn, TAGS, type Tag } from '@/lib/contracts';
 import { COLLEGES, DEFAULT_FILTERS, type FeedFilters } from '@/lib/client';
 import { Button, Chip, TAG_LABELS, cn } from '@/components/ui';
+import { SubscribeMenu } from './SubscribeMenu';
 
 export function FilterBar({ filters, onChange }: { filters: FeedFilters; onChange: (f: FeedFilters) => void }) {
   const active = filters.freeFood || filters.tags.length > 0 || filters.college !== null || Boolean(filters.q);
@@ -14,7 +15,8 @@ export function FilterBar({ filters, onChange }: { filters: FeedFilters; onChang
 
   return (
     <div className="flex flex-col gap-3">
-      <div role="group" aria-label="Range" className="inline-flex self-start rounded-md border border-line bg-surface p-0.5 text-sm">
+      <div className="flex items-center justify-between gap-3">
+      <div role="group" aria-label="Range" className="inline-flex rounded-md border border-line bg-surface p-0.5 text-sm">
         {(['today', 'week'] as const).map(function (r) {
           const on = filters.range === r;
           return (
@@ -29,6 +31,8 @@ export function FilterBar({ filters, onChange }: { filters: FeedFilters; onChang
             </button>
           );
         })}
+      </div>
+      <SubscribeMenu />
       </div>
 
       {isOn('FILTERS') && (
