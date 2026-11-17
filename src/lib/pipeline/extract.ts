@@ -5,7 +5,7 @@ import { formatInTimeZone } from 'date-fns-tz';
 import type { ExtractionResult, RawEmail } from '@/lib/contracts';
 import { grokJson, GrokReplayMiss } from '@/lib/grok';
 import { GLOSSARY, placesContext, findPlace, normalizeCollege } from '@/lib/yale';
-import { fallbackExtract } from '@/lib/pipeline/fallback';
+import { fallbackExtract, FALLBACK_LIVE_WHEN_EVIDENCE_OK } from '@/lib/pipeline/fallback';
 import { extractionSchema } from './schema';
 import { evidenceOk } from './evidence';
 import type { CheckedEvent, CheckedExtraction, ExtractInput } from './types';
@@ -107,7 +107,10 @@ export async function extractEvents(input: ExtractInput, now = new Date()): Prom
     if (!placeId && e.locationRaw) placeId = findPlace(e.locationRaw)?.id ?? null;
     const college = e.college ? normalizeCollege(e.college) : null;
     const evidenceFine = imageOnly || evidenceOk(e.evidence, sourceText);
-    const review = e.kind === 'event' && (mode === 'fallback' || e.confidence < 0.7 || !evidenceFine || !e.start);
+    const review =
+      e.kind === 'event' &&
+      (!evidenceFine || !e.start ||
+        (mode === 'fallback' ? !FALLBACK_LIVE_WHEN_EVIDENCE_OK : e.confidence < 0.7));
     return { ...e, placeId, college, status: review ? 'review' : 'live' };
   });
 

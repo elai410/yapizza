@@ -51,6 +51,10 @@ interface Block {
 interface DateHit { y: number; m: number; d: number; quote: string; index: number; end: number; inBlock: boolean }
 interface TimeHit { sh: number; sm: number; eh: number | null; em: number | null; quote: string; index: number; end: number }
 
+// Lead decision 17:25: with no Grok key, rule events whose evidence checks out go live so sim demos show cards.
+// Set false to restore CLAUDE.md 9 (every fallback event to review).
+export const FALLBACK_LIVE_WHEN_EVIDENCE_OK = true;
+
 export function fallbackExtract(input: ExtractInput, now?: Date): ExtractionResult {
   const anchor = parseAnchor(input.sentAt) ?? now ?? new Date();
   const body = stripFooter(input.text ?? '');

@@ -6,6 +6,7 @@ import type { RawEmail } from '@/lib/contracts';
 import { evidenceOk } from './evidence';
 import { extractionSchema } from './schema';
 import { extractEvents, rawEmailToInput } from './extract';
+import { FALLBACK_LIVE_WHEN_EVIDENCE_OK } from './fallback';
 
 const src = 'Saturday 10/17, 1:30-3:30pm on the HoC\n  Patio. It’s free.';
 assert.equal(evidenceOk(['saturday 10/17'], src), true, 'case-insensitive');
@@ -38,7 +39,7 @@ async function main() {
   if (!process.env.XAI_API_KEY) {
     assert.equal(r.mode, 'fallback', 'no key and no replay -> fallback');
     assert.ok(r.events.length >= 1, 'fallback finds at least one event');
-    assert.ok(r.events.every((e) => e.kind === 'listing' || e.status === 'review'), 'fallback events go to review');
+    assert.ok(r.events.every((e) => e.kind === 'listing' || e.status === (FALLBACK_LIVE_WHEN_EVIDENCE_OK ? 'live' : 'review')), 'fallback status follows FALLBACK_LIVE_WHEN_EVIDENCE_OK');
   } else {
     assert.ok(r.events.length >= 1);
   }
