@@ -277,6 +277,11 @@ export function DemoPanel({ emails, flyers }: { emails: FixtureEmail[]; flyers: 
                     )}
                     {r && row.detail && ' · '}
                     {row.detail}
+                    {r?.stages && (
+                      <span className="tnum block">
+                        {Object.entries(r.stages).map(([stage, ms]) => `${stage} ${ms} ms`).join(' · ')}
+                      </span>
+                    )}
                     {titles.length > 0 && <span className="block truncate">{titles.join(' / ')}</span>}
                   </span>
                 </li>
