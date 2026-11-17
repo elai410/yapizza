@@ -3,5 +3,10 @@ import { Feed } from '@/components/feed';
 
 // design's layout provides <main> and the page gutter.
 export default function Home() {
-  return <div className="mx-auto w-full max-w-3xl">{isOn('FEED') && <Feed />}</div>;
+  return (
+    <div className="mx-auto w-full max-w-3xl">
+      <h1 className="sr-only">Events</h1>
+      {isOn('FEED') && <Feed />}
+    </div>
+  );
 }
