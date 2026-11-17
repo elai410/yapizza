@@ -11,5 +11,6 @@ export function grokMode(): GrokMode {
   if (forcedSim()) return 'replay';
   const m = process.env.GROK_MODE;
   if (m === 'live' || m === 'record' || m === 'replay') return m;
-  return set('XAI_API_KEY') ? 'live' : 'replay';
+  // The status field is still called `grok` (frozen contract); the model is Claude via ANTHROPIC_API_KEY.
+  return set('ANTHROPIC_API_KEY') ? 'live' : 'replay';
 }

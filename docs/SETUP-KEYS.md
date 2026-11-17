@@ -8,21 +8,20 @@ If `.env` doesn't exist yet: `cp .env.example .env`.
 
 | Goal | Time | Keys | Steps |
 |---|---|---|---|
-| Grok reads emails and flyers | 2 min | `XAI_API_KEY` | Section 1 |
+| Claude reads emails and flyers | 2 min | `ANTHROPIC_API_KEY` | Section 1 |
 | Alert emails really send | 3 min | `RESEND_API_KEY`, `ALERT_FROM_EMAIL` | Section 3 |
 | Students sign in with Google, events land on their real calendar | 10 min | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | Section 2, steps 1 to 5 |
 | Forwarding to a real inbox creates cards | +5 min | `GMAIL_INTAKE_REFRESH_TOKEN` | Section 2, steps 6 to 8 |
 
 Each row works on its own. Do them in this order.
 
-## 1. Grok (xAI)
+## 1. Claude (Anthropic API)
 
-1. Create an API key at https://console.x.ai (API Keys).
-2. Set `XAI_API_KEY=...` in `.env`. Leave `GROK_MODE` blank (live with a key, replay without one).
-3. Restart `pnpm dev`. Status shows `"grok":"live"`.
-4. On demo day, run `pnpm grok:record` so every demo input also works offline. Replay files include the date, so record on the day you present.
-
-If calls fail on the model name, check https://docs.x.ai/docs/models and set `GROK_MODEL`.
+1. Sign in at https://platform.claude.com, open Settings, then API Keys, and create a key. Add credits under Billing if the account has none.
+2. Set `ANTHROPIC_API_KEY=...` in `.env`. Leave `GROK_MODE` blank (live with a key, replay without one).
+3. Optional: `CLAUDE_MODEL` picks the model. The default is `claude-opus-5-5`.
+4. Restart `pnpm dev`. `/api/integrations/status` shows `"grok":"live"` (the field keeps its old name).
+5. On demo day, run `pnpm grok:record` so every demo input also works offline. Replay files include the date, so record on the day you present.
 
 ## 2. Google Cloud (sign-in, Calendar insert, Gmail intake)
 
@@ -53,7 +52,7 @@ Yale Google accounts may block unverified apps. If they do, use a personal Gmail
 
 ## 4. Bad Wi-Fi
 
-Set `YAPIZZA_FORCE_SIM=1` to force every service, Grok included, to sim or replay. Set it back to `0` to go live again. Restart `pnpm dev` either way.
+Set `YAPIZZA_FORCE_SIM=1` to force every service, the model included, to sim or replay. Set it back to `0` to go live again. Restart `pnpm dev` either way.
 
 ## 5. When a live call fails
 
@@ -65,4 +64,4 @@ A failed live call never shows an error page. That request falls back to sim and
 | Calendar insert | Logs the error, adds the event to `/sim/calendar`, returns mode `sim` |
 | Alerts | Logs `[notify:live] send failed`, writes the alert to `/sim/outbox` as `sim` |
 | Google sign-in | Redirects to `/?signin=failed`; the demo students still work |
-| Grok | Falls back to the rule-based reader; low-confidence events go to review |
+| Claude (model) | Falls back to the rule-based reader; low-confidence events go to review |
