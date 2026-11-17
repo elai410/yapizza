@@ -77,8 +77,7 @@ export function AlertsOptIn({ onOpen }: { onOpen?: (id: string) => void } = {}) 
 
   async function turnOff() {
     if (onFor) {
-      const body: AlertsSubscribeRequest = { channel: 'email', target: onFor, freeFood: false };
-      await fetch('/api/alerts/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).catch(function () {});
+      await fetch('/api/alerts/unsubscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ target: onFor }) }).catch(function () {});
     }
     setOnFor(null);
     setEmail('');
