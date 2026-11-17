@@ -22,7 +22,8 @@
       "2026-10-17T11:00:00-04:00 - 13:30"
     ],
     "confidence": 0.95,
-    "rawText": "Fall Fest | 2026-10-17T11:00:00-04:00 - 13:30 | [Primary]"
+    "rawText": "Fall Fest | 2026-10-17T11:00:00-04:00 - 13:30 | [Primary]",
+    "listName": "Google Calendar"
   },
   {
     "kind": "event",
@@ -47,7 +48,9 @@
       "Sat Oct 17, 1-2pm, WLH 211"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Impact Expo (IMPEX) info sessions - Sat Oct 17, 1-2pm, WLH 211 and Sun Oct 18, 4-5pm, WLH 207 (team applications due Oct 19, 11:59pm)"
+    "rawText": "Yale Impact Expo (IMPEX) info sessions - Sat Oct 17, 1-2pm, WLH 211 and Sun Oct 18, 4-5pm, WLH 207 (team applications due Oct 19, 11:59pm)",
+    "sender": "Yale Impact Expo",
+    "listName": "Yale Impact Expo"
   },
   {
     "kind": "event",
@@ -74,7 +77,11 @@
       "HoC Patio (Silliman)"
     ],
     "confidence": 0.95,
-    "rawText": "Goat Yoga - Sat Oct 17, 1:30-3:30pm, HoC Patio (Silliman); bring your own mat"
+    "rawText": "Goat Yoga - Sat Oct 17, 1:30-3:30pm, HoC Patio (Silliman); bring your own mat",
+    "sender": "Silliman GA <silliman-ga@lists.yale.test>",
+    "listName": "Silliman GA",
+    "subject": "GOAT YOGA this Saturday + plant pots after break",
+    "sentAt": "2026-10-14T16:12:00-04:00"
   },
   {
     "kind": "event",
@@ -100,7 +107,9 @@
       "WLH 203"
     ],
     "confidence": 0.95,
-    "rawText": "YMC problem review sessions - Sat Oct 17, 7-10pm and Tue Oct 20, 6-9pm, WLH 203"
+    "rawText": "YMC problem review sessions - Sat Oct 17, 7-10pm and Tue Oct 20, 6-9pm, WLH 203",
+    "sender": "YMC",
+    "listName": "YMC"
   },
   {
     "kind": "event",
@@ -125,7 +134,9 @@
       "weekly Sundays 12:30pm, Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -153,7 +164,11 @@
       "free food"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Bulldog Block Party - Sun Oct 18, 4-7pm, Old Campus; free food, fall tote bag painting, live performances"
+    "rawText": "YCC Bulldog Block Party - Sun Oct 18, 4-7pm, Old Campus; free food, fall tote bag painting, live performances",
+    "sender": "YCC Weekly <ycc@lists.yale.test>",
+    "listName": "YCC Weekly",
+    "subject": "YCC Weekly: Bulldog Block Party Sunday, Twirl discount night",
+    "sentAt": "2026-10-15T09:30:00-04:00"
   },
   {
     "kind": "event",
@@ -178,7 +193,9 @@
       "Sun Oct 18, 4-5pm, WLH 207"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Impact Expo (IMPEX) info sessions - Sat Oct 17, 1-2pm, WLH 211 and Sun Oct 18, 4-5pm, WLH 207 (team applications due Oct 19, 11:59pm)"
+    "rawText": "Yale Impact Expo (IMPEX) info sessions - Sat Oct 17, 1-2pm, WLH 211 and Sun Oct 18, 4-5pm, WLH 207 (team applications due Oct 19, 11:59pm)",
+    "sender": "Yale Impact Expo",
+    "listName": "Yale Impact Expo"
   },
   {
     "kind": "event",
@@ -205,7 +222,11 @@
       "Cross Campus in front of Sterling"
     ],
     "confidence": 0.95,
-    "rawText": "YASSS Stargazing - Sun Oct 18, 8-9pm, Cross Campus in front of Sterling"
+    "rawText": "YASSS Stargazing - Sun Oct 18, 8-9pm, Cross Campus in front of Sterling",
+    "sender": "YASSS <yasss@lists.yale.test>",
+    "listName": "YASSS",
+    "subject": "Stargazing Thursday + Halloween mixer Friday",
+    "sentAt": "2026-10-26T20:00:00-04:00"
   },
   {
     "kind": "event",
@@ -231,7 +252,11 @@
       "Mon Oct 19, 10am-4pm, Silliman Acorn"
     ],
     "confidence": 0.95,
-    "rawText": "Accountability Cafe - Mon Oct 19, 10am-4pm, Silliman Acorn (YC3); pre-break coworking"
+    "rawText": "Accountability Cafe - Mon Oct 19, 10am-4pm, Silliman Acorn (YC3); pre-break coworking",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Craft et Veritas, Accountability Cafe, Friend Matching",
+    "sentAt": "2026-10-18T19:00:00-04:00"
   },
   {
     "kind": "event",
@@ -257,7 +282,11 @@
       "Oct 19 (visual roadmap)"
     ],
     "confidence": 0.95,
-    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Craft et Veritas, Accountability Cafe, Friend Matching",
+    "sentAt": "2026-10-18T19:00:00-04:00"
   },
   {
     "kind": "event",
@@ -283,7 +312,11 @@
       "(virtual)"
     ],
     "confidence": 0.95,
-    "rawText": "Putnam Investments Career Exploration Event (virtual) - Mon Oct 19, 5:00pm ET (CPI)"
+    "rawText": "Putnam Investments Career Exploration Event (virtual) - Mon Oct 19, 5:00pm ET (CPI)",
+    "sender": "Career Pathways (CPI) <cpi@lists.yale.test>",
+    "listName": "Career Pathways (CPI)",
+    "subject": "CPI Recruiting Digest: Putnam, Beacon Hill, Capital Group",
+    "sentAt": "2026-10-15T11:00:00-04:00"
   },
   {
     "kind": "event",
@@ -309,7 +342,8 @@
       "SOM Room 2210"
     ],
     "confidence": 0.95,
-    "rawText": "DANA WHITE FIRE SIDE CHAT | 2026-10-19T17:00:00-04:00 - 18:00 | SOM Room 2210 | [Primary]"
+    "rawText": "DANA WHITE FIRE SIDE CHAT | 2026-10-19T17:00:00-04:00 - 18:00 | SOM Room 2210 | [Primary]",
+    "listName": "Google Calendar"
   },
   {
     "kind": "event",
@@ -335,7 +369,11 @@
       "Oct 19 held in WLH 001"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, pizza seminar thurs, MMATHS test-solve",
+    "sentAt": "2026-10-25T21:15:00-04:00"
   },
   {
     "kind": "event",
@@ -360,7 +398,11 @@
       "Tue Oct 20, 5pm or 7pm slots, Twirl"
     ],
     "confidence": 0.95,
-    "rawText": "Twirl Student Discount Night (YCC) - Tue Oct 20, 5pm or 7pm slots, Twirl (New Haven); 20% off pasta bowls for Yale students, sign-up required, seats limited"
+    "rawText": "Twirl Student Discount Night (YCC) - Tue Oct 20, 5pm or 7pm slots, Twirl (New Haven); 20% off pasta bowls for Yale students, sign-up required, seats limited",
+    "sender": "YCC Weekly <ycc@lists.yale.test>",
+    "listName": "YCC Weekly",
+    "subject": "YCC Weekly: Bulldog Block Party Sunday, Twirl discount night",
+    "sentAt": "2026-10-15T09:30:00-04:00"
   },
   {
     "kind": "event",
@@ -386,7 +428,11 @@
       "(virtual)"
     ],
     "confidence": 0.95,
-    "rawText": "Beacon Hill Staffing Group overview (virtual) - Tue Oct 20, 5:00pm ET (CPI; recording shared after)"
+    "rawText": "Beacon Hill Staffing Group overview (virtual) - Tue Oct 20, 5:00pm ET (CPI; recording shared after)",
+    "sender": "Career Pathways (CPI) <cpi@lists.yale.test>",
+    "listName": "Career Pathways (CPI)",
+    "subject": "CPI Recruiting Digest: Putnam, Beacon Hill, Capital Group",
+    "sentAt": "2026-10-15T11:00:00-04:00"
   },
   {
     "kind": "event",
@@ -413,7 +459,11 @@
       "traditional food"
     ],
     "confidence": 0.95,
-    "rawText": "Central Asian Cultural Night - Tue Oct 20, 6pm (live dombra music, traditional food and games)"
+    "rawText": "Central Asian Cultural Night - Tue Oct 20, 6pm (live dombra music, traditional food and games)",
+    "sender": "Central Asian Students Association <csa@lists.yale.test>",
+    "listName": "Central Asian Students Association",
+    "subject": "Central Asian Cultural Night - Tuesday 6pm",
+    "sentAt": "2026-10-16T18:40:00-04:00"
   },
   {
     "kind": "event",
@@ -439,7 +489,9 @@
       "WLH 203"
     ],
     "confidence": 0.95,
-    "rawText": "YMC problem review sessions - Sat Oct 17, 7-10pm and Tue Oct 20, 6-9pm, WLH 203"
+    "rawText": "YMC problem review sessions - Sat Oct 17, 7-10pm and Tue Oct 20, 6-9pm, WLH 203",
+    "sender": "YMC",
+    "listName": "YMC"
   },
   {
     "kind": "event",
@@ -464,7 +516,9 @@
       "Wed Oct 21, departing campus 9:00am"
     ],
     "confidence": 0.95,
-    "rawText": "Chaplain's Office Fall Undergrad Retreat - Wed Oct 21, departing campus 9:00am"
+    "rawText": "Chaplain's Office Fall Undergrad Retreat - Wed Oct 21, departing campus 9:00am",
+    "sender": "Chaplain's Office",
+    "listName": "Chaplain's Office"
   },
   {
     "kind": "event",
@@ -490,7 +544,11 @@
       "weekly Wednesdays 6-7pm, AACC Game Room"
     ],
     "confidence": 0.95,
-    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -516,7 +574,9 @@
       "Thu Oct 22, 10:00-11:00am, Poorvu Center CTL 120A & B"
     ],
     "confidence": 0.95,
-    "rawText": "FGLI Thrive Pre-Shopping Bagel Brunch - Thu Oct 22, 10:00-11:00am, Poorvu Center CTL 120A & B"
+    "rawText": "FGLI Thrive Pre-Shopping Bagel Brunch - Thu Oct 22, 10:00-11:00am, Poorvu Center CTL 120A & B",
+    "sender": "FGLI Thrive",
+    "listName": "FGLI Thrive"
   },
   {
     "kind": "event",
@@ -541,7 +601,9 @@
       "Thu Oct 22, 11:00am-4:00pm, shuttles from Phelps Gate"
     ],
     "confidence": 0.95,
-    "rawText": "FGLI Thrive Fall Break Shopping Trip - Thu Oct 22, 11:00am-4:00pm, shuttles from Phelps Gate to CT Post Mall / Savers"
+    "rawText": "FGLI Thrive Fall Break Shopping Trip - Thu Oct 22, 11:00am-4:00pm, shuttles from Phelps Gate to CT Post Mall / Savers",
+    "sender": "FGLI Thrive",
+    "listName": "FGLI Thrive"
   },
   {
     "kind": "event",
@@ -566,7 +628,9 @@
       "Fri Oct 23, 7:30pm, Woolsey Hall"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Philharmonia: Bartok, Dvorak, Bresnick - Fri Oct 23, 7:30pm, Woolsey Hall (Peter Oundjian; tickets from $17)"
+    "rawText": "Yale Philharmonia: Bartok, Dvorak, Bresnick - Fri Oct 23, 7:30pm, Woolsey Hall (Peter Oundjian; tickets from $17)",
+    "sender": "Yale Philharmonia",
+    "listName": "Yale Philharmonia"
   },
   {
     "kind": "event",
@@ -592,7 +656,11 @@
       "Sat Oct 24, 6-8pm, Omni New Haven Hotel"
     ],
     "confidence": 0.95,
-    "rawText": "AACC 45th Anniversary Gala Dinner - Sat Oct 24, 6-8pm, Omni New Haven Hotel"
+    "rawText": "AACC 45th Anniversary Gala Dinner - Sat Oct 24, 6-8pm, Omni New Haven Hotel",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -617,7 +685,9 @@
       "Sun Oct 25, 9:00am-5:00pm, Beinecke Plaza Columns"
     ],
     "confidence": 0.95,
-    "rawText": "FGLI Thrive Professional Headshots - Sun Oct 25, 9:00am-5:00pm, Beinecke Plaza Columns"
+    "rawText": "FGLI Thrive Professional Headshots - Sun Oct 25, 9:00am-5:00pm, Beinecke Plaza Columns",
+    "sender": "FGLI Thrive",
+    "listName": "FGLI Thrive"
   },
   {
     "kind": "event",
@@ -642,7 +712,9 @@
       "weekly Sundays 12:30pm, Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -670,7 +742,11 @@
       "NACC / the House / AACC / La Casa / MENACC"
     ],
     "confidence": 0.95,
-    "rawText": "Intercultural Fall Festival Week - Oct 26-29, NACC / the House / AACC / La Casa / MENACC (movies, treats, haunted house, pumpkin painting)"
+    "rawText": "Intercultural Fall Festival Week - Oct 26-29, NACC / the House / AACC / La Casa / MENACC (movies, treats, haunted house, pumpkin painting)",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -696,7 +772,9 @@
       "Oct 26 (spooky lego)"
     ],
     "confidence": 0.95,
-    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -722,7 +800,11 @@
       "Oct 26"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -748,7 +830,11 @@
       "Mon Oct 26, 6:30-7:30pm, Silliman Acorn"
     ],
     "confidence": 0.95,
-    "rawText": "Painting Plant Pots (GA event) - Mon Oct 26, 6:30-7:30pm, Silliman Acorn"
+    "rawText": "Painting Plant Pots (GA event) - Mon Oct 26, 6:30-7:30pm, Silliman Acorn",
+    "sender": "Silliman GA <silliman-ga@lists.yale.test>",
+    "listName": "Silliman GA",
+    "subject": "GOAT YOGA this Saturday + plant pots after break",
+    "sentAt": "2026-10-14T16:12:00-04:00"
   },
   {
     "kind": "event",
@@ -774,7 +860,11 @@
       "WLH 011"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, pizza seminar thurs, MMATHS test-solve",
+    "sentAt": "2026-10-25T21:15:00-04:00"
   },
   {
     "kind": "event",
@@ -799,7 +889,9 @@
       "Tue Oct 27"
     ],
     "confidence": 0.95,
-    "rawText": "Explore Summer Internships with NTT DATA - Tue Oct 27"
+    "rawText": "Explore Summer Internships with NTT DATA - Tue Oct 27",
+    "sender": "NTT DATA",
+    "listName": "NTT DATA"
   },
   {
     "kind": "event",
@@ -824,7 +916,11 @@
       "Tue Oct 27, 11am-1pm, Battell Chapel"
     ],
     "confidence": 0.95,
-    "rawText": "Collective Breath (Chaplain's Office) - Tue Oct 27, 11am-1pm, Battell Chapel; open to all students, staff and faculty, come and go as you please"
+    "rawText": "Collective Breath (Chaplain's Office) - Tue Oct 27, 11am-1pm, Battell Chapel; open to all students, staff and faculty, come and go as you please",
+    "sender": "Chaplain's Office <chaplain@lists.yale.test>",
+    "listName": "Chaplain's Office",
+    "subject": "Collective Breath at Battell, Tuesday",
+    "sentAt": "2026-10-23T08:30:00-04:00"
   },
   {
     "kind": "event",
@@ -850,7 +946,9 @@
       "Oct 27 in GLC Lounge"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -876,7 +974,11 @@
       "Tue Oct 27, 7:00pm, Davenport Common Room"
     ],
     "confidence": 0.95,
-    "rawText": "CT Governor's Debate watch party (Lamont vs. Fazio) - Tue Oct 27, 7:00pm, Davenport Common Room"
+    "rawText": "CT Governor's Debate watch party (Lamont vs. Fazio) - Tue Oct 27, 7:00pm, Davenport Common Room",
+    "sender": "Davenport GA <davenport-ga@lists.yale.test>",
+    "listName": "Davenport GA",
+    "subject": "Governor's debate watch party tonight",
+    "sentAt": "2026-10-27T12:00:00-04:00"
   },
   {
     "kind": "event",
@@ -902,7 +1004,11 @@
       "Wed Oct 28, AACC"
     ],
     "confidence": 0.95,
-    "rawText": "AACC Halloween (\"Scary\") Movie Night - Wed Oct 28, AACC (first-year coordinators)"
+    "rawText": "AACC Halloween (\"Scary\") Movie Night - Wed Oct 28, AACC (first-year coordinators)",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -928,7 +1034,11 @@
       "Head of College House, 71 Wall St"
     ],
     "confidence": 0.95,
-    "rawText": "College Tea: Geoff Chatas (Yale COO) - Wed Oct 28, 5:00-6:30pm, Head of College House, 71 Wall St (Silliman)"
+    "rawText": "College Tea: Geoff Chatas (Yale COO) - Wed Oct 28, 5:00-6:30pm, Head of College House, 71 Wall St (Silliman)",
+    "sender": "Silliman HoC <silliman-hoc@lists.yale.test>",
+    "listName": "Silliman HoC",
+    "subject": "College Tea with Geoff Chatas, Yale COO",
+    "sentAt": "2026-10-22T10:05:00-04:00"
   },
   {
     "kind": "event",
@@ -954,7 +1064,11 @@
       "Wed Oct 28, 6pm"
     ],
     "confidence": 0.95,
-    "rawText": "AGPC (Asian Grad/Professional community) Kickoff - Wed Oct 28, 6pm"
+    "rawText": "AGPC (Asian Grad/Professional community) Kickoff - Wed Oct 28, 6pm",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -980,7 +1094,11 @@
       "weekly Wednesdays 6-7pm, AACC Game Room"
     ],
     "confidence": 0.95,
-    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -1005,7 +1123,11 @@
       "Wed Oct 28, 7-8pm, LC 103"
     ],
     "confidence": 0.95,
-    "rawText": "Link New Haven info session - Wed Oct 28, 7-8pm, LC 103 (project registration due Nov 1)"
+    "rawText": "Link New Haven info session - Wed Oct 28, 7-8pm, LC 103 (project registration due Nov 1)",
+    "sender": "YCC Weekly <ycc@lists.yale.test>",
+    "listName": "YCC Weekly",
+    "subject": "YCC Weekly: Bulldog Block Party Sunday, Twirl discount night",
+    "sentAt": "2026-10-15T09:30:00-04:00"
   },
   {
     "kind": "event",
@@ -1031,7 +1153,11 @@
       "Toad's Place of New Haven"
     ],
     "confidence": 0.95,
-    "rawText": "HALLOWOADS at Toad's Place - Wed Oct 28, 10:00pm, Toad's Place of New Haven (Yale ID required; GA $18.75 + fees)"
+    "rawText": "HALLOWOADS at Toad's Place - Wed Oct 28, 10:00pm, Toad's Place of New Haven (Yale ID required; GA $18.75 + fees)",
+    "sender": "Silliman Happenings <silliman-happenings@lists.yale.test>",
+    "listName": "Silliman Happenings",
+    "subject": "Silliman Happenings: Halloween week",
+    "sentAt": "2026-10-27T18:30:00-04:00"
   },
   {
     "kind": "event",
@@ -1057,7 +1183,11 @@
       "Thursdays 2-4pm, YSC Tea Room 208"
     ],
     "confidence": 0.95,
-    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)"
+    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -1083,7 +1213,11 @@
       "Thu Oct 29, 4:00-5:00pm Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A",
+    "sender": "Office of Fellowships <fellowships@lists.yale.test>",
+    "listName": "Office of Fellowships",
+    "subject": "Fellowships Weekly: Light info session, Imagining Your Summer, deadlines",
+    "sentAt": "2026-11-01T09:00:00-05:00"
   },
   {
     "kind": "event",
@@ -1109,7 +1243,9 @@
       "Oct 29"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -1136,7 +1272,11 @@
       "Watson Center A53"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS Pizza Seminar: Prof. Catherine Wolfram, \"Gluing Polygons, Topology, and Gaussian Integrals\" - Thu Oct 29, 7-8pm, Watson Center A53"
+    "rawText": "YUMS Pizza Seminar: Prof. Catherine Wolfram, \"Gluing Polygons, Topology, and Gaussian Integrals\" - Thu Oct 29, 7-8pm, Watson Center A53",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, pizza seminar thurs, MMATHS test-solve",
+    "sentAt": "2026-10-25T21:15:00-04:00"
   },
   {
     "kind": "event",
@@ -1162,7 +1302,11 @@
       "Thu Oct 29, 8-9pm, Cross Campus"
     ],
     "confidence": 0.95,
-    "rawText": "YASSS Stargazing - Thu Oct 29, 8-9pm, Cross Campus"
+    "rawText": "YASSS Stargazing - Thu Oct 29, 8-9pm, Cross Campus",
+    "sender": "YASSS <yasss@lists.yale.test>",
+    "listName": "YASSS",
+    "subject": "Stargazing Thursday + Halloween mixer Friday",
+    "sentAt": "2026-10-26T20:00:00-04:00"
   },
   {
     "kind": "event",
@@ -1188,7 +1332,9 @@
       "Thu Oct 29, 8:00-9:00pm"
     ],
     "confidence": 0.95,
-    "rawText": "STEM Summer Fellowships: Research Abroad info session - Thu Oct 29, 8:00-9:00pm"
+    "rawText": "STEM Summer Fellowships: Research Abroad info session - Thu Oct 29, 8:00-9:00pm",
+    "sender": "Office of Fellowships",
+    "listName": "Office of Fellowships"
   },
   {
     "kind": "event",
@@ -1213,7 +1359,9 @@
       "Thu Oct 29, 10:30pm, 373 Crown St"
     ],
     "confidence": 0.95,
-    "rawText": "HALLOWBDEEN (Baker's Dozen) - Thu Oct 29, 10:30pm, 373 Crown St (costumes)"
+    "rawText": "HALLOWBDEEN (Baker's Dozen) - Thu Oct 29, 10:30pm, 373 Crown St (costumes)",
+    "sender": "Baker's Dozen",
+    "listName": "Baker's Dozen"
   },
   {
     "kind": "event",
@@ -1238,7 +1386,9 @@
       "Fri Oct 30, 12:00-5:00pm, Beinecke Plaza"
     ],
     "confidence": 0.95,
-    "rawText": "Ask Cliffe (Pastor Cliffe Knechtle Q&A) - Fri Oct 30, 12:00-5:00pm, Beinecke Plaza (Christian Union)"
+    "rawText": "Ask Cliffe (Pastor Cliffe Knechtle Q&A) - Fri Oct 30, 12:00-5:00pm, Beinecke Plaza (Christian Union)",
+    "sender": "Christian Union",
+    "listName": "Christian Union"
   },
   {
     "kind": "event",
@@ -1264,7 +1414,11 @@
       "Oct 30"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -1289,7 +1443,11 @@
       "Fri Oct 30, 5:00-7:30pm, The Ballroom at 220 York St"
     ],
     "confidence": 0.95,
-    "rawText": "Jenn Colella (Tony nominee, \"Come From Away\") master class + reception - Fri Oct 30, 5:00-7:30pm, The Ballroom at 220 York St (free, open to all)"
+    "rawText": "Jenn Colella (Tony nominee, \"Come From Away\") master class + reception - Fri Oct 30, 5:00-7:30pm, The Ballroom at 220 York St (free, open to all)",
+    "sender": "Yale Arts Weekly <arts@lists.yale.test>",
+    "listName": "Yale Arts Weekly",
+    "subject": "Arts this weekend: Art School reception, Jenn Colella, YSO Halloween",
+    "sentAt": "2026-10-27T10:00:00-04:00"
   },
   {
     "kind": "event",
@@ -1314,7 +1472,11 @@
       "Fri Oct 30, 6-7pm, SPL 3rd floor lounge"
     ],
     "confidence": 0.95,
-    "rawText": "YASSS x SPS x WIP Astro + Physics Halloween Mixer - Fri Oct 30, 6-7pm, SPL 3rd floor lounge"
+    "rawText": "YASSS x SPS x WIP Astro + Physics Halloween Mixer - Fri Oct 30, 6-7pm, SPL 3rd floor lounge",
+    "sender": "YASSS <yasss@lists.yale.test>",
+    "listName": "YASSS",
+    "subject": "Stargazing Thursday + Halloween mixer Friday",
+    "sentAt": "2026-10-26T20:00:00-04:00"
   },
   {
     "kind": "event",
@@ -1340,7 +1502,11 @@
       "reception Fri Oct 30, 6-8pm"
     ],
     "confidence": 0.95,
-    "rawText": "Yale School of Art undergraduate exhibition - Green Gallery, 1156 Chapel St, through Sun Nov 1 (M-F 12-6pm, Sa/Su 12-4pm); reception Fri Oct 30, 6-8pm"
+    "rawText": "Yale School of Art undergraduate exhibition - Green Gallery, 1156 Chapel St, through Sun Nov 1 (M-F 12-6pm, Sa/Su 12-4pm); reception Fri Oct 30, 6-8pm",
+    "sender": "Yale Arts Weekly <arts@lists.yale.test>",
+    "listName": "Yale Arts Weekly",
+    "subject": "Arts this weekend: Art School reception, Jenn Colella, YSO Halloween",
+    "sentAt": "2026-10-27T10:00:00-04:00"
   },
   {
     "kind": "event",
@@ -1365,7 +1531,11 @@
       "Fri Oct 30, 6:30-9:30pm, DL 220"
     ],
     "confidence": 0.95,
-    "rawText": "MMATHS test-solving session - Fri Oct 30, 6:30-9:30pm, DL 220"
+    "rawText": "MMATHS test-solving session - Fri Oct 30, 6:30-9:30pm, DL 220",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, pizza seminar thurs, MMATHS test-solve",
+    "sentAt": "2026-10-25T21:15:00-04:00"
   },
   {
     "kind": "event",
@@ -1390,7 +1560,9 @@
       "Fri Oct 30, 7:30pm and 9:30pm"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Artists Cabaret Fall Mainstage: \"Deadly Sins\" - Fri Oct 30, 7:30pm and 9:30pm (registration sold out)"
+    "rawText": "Yale Artists Cabaret Fall Mainstage: \"Deadly Sins\" - Fri Oct 30, 7:30pm and 9:30pm (registration sold out)",
+    "sender": "Yale Artists Cabaret",
+    "listName": "Yale Artists Cabaret"
   },
   {
     "kind": "event",
@@ -1415,7 +1587,11 @@
       "Fri Oct 30, 8:00pm"
     ],
     "confidence": 0.95,
-    "rawText": "Good Show sketch comedy (original sketch by YCT's Polly) - Fri Oct 30, 8:00pm"
+    "rawText": "Good Show sketch comedy (original sketch by YCT's Polly) - Fri Oct 30, 8:00pm",
+    "sender": "Silliman Happenings <silliman-happenings@lists.yale.test>",
+    "listName": "Silliman Happenings",
+    "subject": "Silliman Happenings: Halloween week",
+    "sentAt": "2026-10-27T18:30:00-04:00"
   },
   {
     "kind": "event",
@@ -1441,7 +1617,11 @@
       "Fri Oct 30, 9:00-11:30pm, 135 Prospect St"
     ],
     "confidence": 0.95,
-    "rawText": "Monster Mash 2026: Camp Crystal Queer (Yale LGBTQ Center) - Fri Oct 30, 9:00-11:30pm, 135 Prospect St (GLC newsletter also lists YSC Tea Room 208); costume contest, volunteers wanted"
+    "rawText": "Monster Mash 2026: Camp Crystal Queer (Yale LGBTQ Center) - Fri Oct 30, 9:00-11:30pm, 135 Prospect St (GLC newsletter also lists YSC Tea Room 208); costume contest, volunteers wanted",
+    "sender": "Silliman Happenings <silliman-happenings@lists.yale.test>",
+    "listName": "Silliman Happenings",
+    "subject": "Silliman Happenings: Halloween week",
+    "sentAt": "2026-10-27T18:30:00-04:00"
   },
   {
     "kind": "event",
@@ -1466,7 +1646,9 @@
       "Fri Oct 30, 7:30pm and 9:30pm"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Artists Cabaret Fall Mainstage: \"Deadly Sins\" - Fri Oct 30, 7:30pm and 9:30pm (registration sold out)"
+    "rawText": "Yale Artists Cabaret Fall Mainstage: \"Deadly Sins\" - Fri Oct 30, 7:30pm and 9:30pm (registration sold out)",
+    "sender": "Yale Artists Cabaret",
+    "listName": "Yale Artists Cabaret"
   },
   {
     "kind": "event",
@@ -1493,7 +1675,11 @@
       "main show at midnight (Woolsey Hall)"
     ],
     "confidence": 0.95,
-    "rawText": "YSO Halloween Show - Sat Oct 31: pre-show by student band Flannel 11:30pm, main show at midnight (Woolsey Hall)"
+    "rawText": "YSO Halloween Show - Sat Oct 31: pre-show by student band Flannel 11:30pm, main show at midnight (Woolsey Hall)",
+    "sender": "Yale Arts Weekly <arts@lists.yale.test>",
+    "listName": "Yale Arts Weekly",
+    "subject": "Arts this weekend: Art School reception, Jenn Colella, YSO Halloween",
+    "sentAt": "2026-10-27T10:00:00-04:00"
   },
   {
     "kind": "event",
@@ -1518,7 +1704,9 @@
       "Sat Oct 31, 11:30pm, 397 Crown St"
     ],
     "confidence": 0.95,
-    "rawText": "AEPi CHALLAH-WEEN - Sat Oct 31, 11:30pm, 397 Crown St"
+    "rawText": "AEPi CHALLAH-WEEN - Sat Oct 31, 11:30pm, 397 Crown St",
+    "sender": "AEPi",
+    "listName": "AEPi"
   },
   {
     "kind": "event",
@@ -1543,7 +1731,9 @@
       "Nov 1-14"
     ],
     "confidence": 0.95,
-    "rawText": "New Haven Restaurant Week - Nov 1-14; about two dozen New Haven restaurants with discounted lunches/dinners, student deals highlighted by YCC"
+    "rawText": "New Haven Restaurant Week - Nov 1-14; about two dozen New Haven restaurants with discounted lunches/dinners, student deals highlighted by YCC",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -1569,7 +1759,11 @@
       "Dwight Hall or Silliman College"
     ],
     "confidence": 0.95,
-    "rawText": "Harvard-Yale Donation Drive (Dwight Hall + YCC) - Nov 1-20; drop off warm clothing and non-perishable food at Dwight Hall or Silliman College for the Women of the Village Food Pantry"
+    "rawText": "Harvard-Yale Donation Drive (Dwight Hall + YCC) - Nov 1-20; drop off warm clothing and non-perishable food at Dwight Hall or Silliman College for the Women of the Village Food Pantry",
+    "sender": "Dwight Hall Weekly <dwighthall@lists.yale.test>",
+    "listName": "Dwight Hall Weekly",
+    "subject": "Dwight Hall Weekly: Night Market, Harvard-Yale Donation Drive",
+    "sentAt": "2026-11-05T09:00:00-05:00"
   },
   {
     "kind": "event",
@@ -1594,7 +1788,9 @@
       "weekly Sundays 12:30pm, Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -1620,7 +1816,9 @@
       "Nov 1 (faux pumpkin painting)"
     ],
     "confidence": 0.95,
-    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)"
+    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -1645,7 +1843,9 @@
       "Mon Nov 2"
     ],
     "confidence": 0.95,
-    "rawText": "Wu Tsai Institute: Current Works in Human Neuroscience: Janice Chen, \"Studying memory for natural events across multiple timescales\" - Mon Nov 2"
+    "rawText": "Wu Tsai Institute: Current Works in Human Neuroscience: Janice Chen, \"Studying memory for natural events across multiple timescales\" - Mon Nov 2",
+    "sender": "Wu Tsai Institute",
+    "listName": "Wu Tsai Institute"
   },
   {
     "kind": "event",
@@ -1670,7 +1870,9 @@
       "Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave"
     ],
     "confidence": 0.95,
-    "rawText": "YSS Florence painting exhibit - Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave; info session Fri Nov 6, 10:00-11:00am"
+    "rawText": "YSS Florence painting exhibit - Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave; info session Fri Nov 6, 10:00-11:00am",
+    "sender": "Yale Summer Session",
+    "listName": "Yale Summer Session"
   },
   {
     "kind": "event",
@@ -1696,7 +1898,9 @@
       "Nov 2 (bookmarks)"
     ],
     "confidence": 0.95,
-    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -1721,7 +1925,9 @@
       "Mon Nov 2, 3:30-4:30pm, YSC Good Life Center Lounge"
     ],
     "confidence": 0.95,
-    "rawText": "Music as Medicine with Jamie Pabst (Spiritune) - Mon Nov 2, 3:30-4:30pm, YSC Good Life Center Lounge"
+    "rawText": "Music as Medicine with Jamie Pabst (Spiritune) - Mon Nov 2, 3:30-4:30pm, YSC Good Life Center Lounge",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -1746,7 +1952,9 @@
       "Hatha Yoga Mon Nov 2 5-6pm"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -1772,7 +1980,11 @@
       "Mon Nov 2, 5:00pm, Luce Hall 101"
     ],
     "confidence": 0.95,
-    "rawText": "Monsoon Table: Water and Cuisine with Chef Asma Khan (South Asian Studies Council) - Mon Nov 2, 5:00pm, Luce Hall 101 (registration required; reception follows); Asma Khan on campus Oct 28 - Nov 6 as Fall 2026 Yale Global Table Fellow"
+    "rawText": "Monsoon Table: Water and Cuisine with Chef Asma Khan (South Asian Studies Council) - Mon Nov 2, 5:00pm, Luce Hall 101 (registration required; reception follows); Asma Khan on campus Oct 28 - Nov 6 as Fall 2026 Yale Global Table Fellow",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Asma Khan on campus, Bollywood night, Roshni",
+    "sentAt": "2026-11-01T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -1797,7 +2009,11 @@
       "Mon Nov 2, 5:00-6:00pm, Poorvu Center 120A"
     ],
     "confidence": 0.95,
-    "rawText": "Study Abroad x STEM Navigators: Studying Abroad as a STEM Student - Mon Nov 2, 5:00-6:00pm, Poorvu Center 120A"
+    "rawText": "Study Abroad x STEM Navigators: Studying Abroad as a STEM Student - Mon Nov 2, 5:00-6:00pm, Poorvu Center 120A",
+    "sender": "Study Abroad <studyabroad@lists.yale.test>",
+    "listName": "Study Abroad",
+    "subject": "Study Abroad this week: STEM abroad, Germany, Lima, Quito",
+    "sentAt": "2026-11-01T10:30:00-05:00"
   },
   {
     "kind": "event",
@@ -1823,7 +2039,11 @@
       "WLH 011"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, pizza seminar thurs, MMATHS test-solve",
+    "sentAt": "2026-10-25T21:15:00-04:00"
   },
   {
     "kind": "event",
@@ -1848,7 +2068,9 @@
       "Election Day, Tue Nov 3"
     ],
     "confidence": 0.95,
-    "rawText": "Walks to the polls with Handsome Dan - Election Day, Tue Nov 3"
+    "rawText": "Walks to the polls with Handsome Dan - Election Day, Tue Nov 3",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -1874,7 +2096,11 @@
       "Tue Nov 3, 12:00-1:00pm, 55 Whitney Ave 3rd Floor Rm 369"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Richard U. Light Fellowship Info Session #5 - Tue Nov 3, 12:00-1:00pm, 55 Whitney Ave 3rd Floor Rm 369"
+    "rawText": "Office of Fellowships: Richard U. Light Fellowship Info Session #5 - Tue Nov 3, 12:00-1:00pm, 55 Whitney Ave 3rd Floor Rm 369",
+    "sender": "Office of Fellowships <fellowships@lists.yale.test>",
+    "listName": "Office of Fellowships",
+    "subject": "Fellowships Weekly: Light info session, Imagining Your Summer, deadlines",
+    "sentAt": "2026-11-01T09:00:00-05:00"
   },
   {
     "kind": "event",
@@ -1899,7 +2125,11 @@
       "Tue Nov 3, 1:00-2:00pm"
     ],
     "confidence": 0.95,
-    "rawText": "Study Abroad in Germany Information Session - Tue Nov 3, 1:00-2:00pm"
+    "rawText": "Study Abroad in Germany Information Session - Tue Nov 3, 1:00-2:00pm",
+    "sender": "Study Abroad <studyabroad@lists.yale.test>",
+    "listName": "Study Abroad",
+    "subject": "Study Abroad this week: STEM abroad, Germany, Lima, Quito",
+    "sentAt": "2026-11-01T10:30:00-05:00"
   },
   {
     "kind": "event",
@@ -1924,7 +2154,9 @@
       "Tue Nov 3, 2:00pm, HLH17 Room 402"
     ],
     "confidence": 0.95,
-    "rawText": "YQI Seminar: Thomas E. Roth (Purdue), \"Advanced Finite Element Methods and Multiphysics Modeling of Superconducting Quantum Devices\" - Tue Nov 3, 2:00pm, HLH17 Room 402 (+Zoom)"
+    "rawText": "YQI Seminar: Thomas E. Roth (Purdue), \"Advanced Finite Element Methods and Multiphysics Modeling of Superconducting Quantum Devices\" - Tue Nov 3, 2:00pm, HLH17 Room 402 (+Zoom)",
+    "sender": "YQI",
+    "listName": "YQI"
   },
   {
     "kind": "event",
@@ -1950,7 +2182,11 @@
       "(virtual)"
     ],
     "confidence": 0.95,
-    "rawText": "Goldman Sachs Recruiting Overview, Summer 2028 Program (virtual) - Tue Nov 3, 4:00-4:30pm EST (CPI)"
+    "rawText": "Goldman Sachs Recruiting Overview, Summer 2028 Program (virtual) - Tue Nov 3, 4:00-4:30pm EST (CPI)",
+    "sender": "Career Pathways (CPI) <cpi@lists.yale.test>",
+    "listName": "Career Pathways (CPI)",
+    "subject": "Goldman Sachs Recruiting Overview: Summer 2028 Program",
+    "sentAt": "2026-10-30T14:20:00-04:00"
   },
   {
     "kind": "event",
@@ -1975,7 +2211,9 @@
       "Tue Nov 3, 7:00-8:00pm ET, Zoom"
     ],
     "confidence": 0.95,
-    "rawText": "Y-DUSCR x YFPI virtual event: Tong Zhao (Carnegie Endowment) on Chinese nuclear security - Tue Nov 3, 7:00-8:00pm ET, Zoom (RSVP)"
+    "rawText": "Y-DUSCR x YFPI virtual event: Tong Zhao (Carnegie Endowment) on Chinese nuclear security - Tue Nov 3, 7:00-8:00pm ET, Zoom (RSVP)",
+    "sender": "Y-DUSCR",
+    "listName": "Y-DUSCR"
   },
   {
     "kind": "event",
@@ -2000,7 +2238,9 @@
       "Tue Nov 3, 8:00pm, Hopper Cabaret"
     ],
     "confidence": 0.95,
-    "rawText": "Purple Crayon Murder Mystery Show - Tue Nov 3, 8:00pm, Hopper Cabaret (Grace Hopper College)"
+    "rawText": "Purple Crayon Murder Mystery Show - Tue Nov 3, 8:00pm, Hopper Cabaret (Grace Hopper College)",
+    "sender": "Purple Crayon",
+    "listName": "Purple Crayon"
   },
   {
     "kind": "event",
@@ -2026,7 +2266,9 @@
       "Nov 4"
     ],
     "confidence": 0.95,
-    "rawText": "\"Talk STEM\" with Dean Alexia Belperron - first Wednesday of each month, 12-1pm, Commons, Schwarzman Center (Nov 4; next Dec 2)"
+    "rawText": "\"Talk STEM\" with Dean Alexia Belperron - first Wednesday of each month, 12-1pm, Commons, Schwarzman Center (Nov 4; next Dec 2)",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -2053,7 +2295,11 @@
       "YSC GLC Lounge"
     ],
     "confidence": 0.95,
-    "rawText": "Wellness Wednesday (physical wellness month) - Wed Nov 4, 2-4pm and Wed Nov 11, 2-3pm, YSC GLC Lounge"
+    "rawText": "Wellness Wednesday (physical wellness month) - Wed Nov 4, 2-4pm and Wed Nov 11, 2-3pm, YSC GLC Lounge",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2078,7 +2324,9 @@
       "Wed Nov 4, 4:00-5:00pm"
     ],
     "confidence": 0.95,
-    "rawText": "Presidential Lecture: Marilynne Robinson, \"What Now? Finding an American Future\" - Wed Nov 4, 4:00-5:00pm"
+    "rawText": "Presidential Lecture: Marilynne Robinson, \"What Now? Finding an American Future\" - Wed Nov 4, 4:00-5:00pm",
+    "sender": "Office of the President",
+    "listName": "Office of the President"
   },
   {
     "kind": "event",
@@ -2106,7 +2354,11 @@
       "Sanctuary Kitchen catering"
     ],
     "confidence": 0.95,
-    "rawText": "Dinner & Dialogue with Dr. Asma Khan - Wed Nov 4, 5-6:30pm, AACC (Sanctuary Kitchen catering; pre-registration)"
+    "rawText": "Dinner & Dialogue with Dr. Asma Khan - Wed Nov 4, 5-6:30pm, AACC (Sanctuary Kitchen catering; pre-registration)",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Asma Khan on campus, Bollywood night, Roshni",
+    "sentAt": "2026-11-01T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2132,7 +2384,9 @@
       "session Nov 4"
     ],
     "confidence": 0.95,
-    "rawText": "YBDIC PhD candidate seminar series - Wednesdays 5-6pm, Zoom (session Nov 4)"
+    "rawText": "YBDIC PhD candidate seminar series - Wednesdays 5-6pm, Zoom (session Nov 4)",
+    "sender": "YBDIC",
+    "listName": "YBDIC"
   },
   {
     "kind": "event",
@@ -2160,7 +2414,9 @@
       "dinner to follow"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Psychology Research/Academia Panel: How to Get into Graduate School - Wed Nov 4, 5-6:30pm, 100 College St, Room 180 (dinner to follow)"
+    "rawText": "Yale Psychology Research/Academia Panel: How to Get into Graduate School - Wed Nov 4, 5-6:30pm, 100 College St, Room 180 (dinner to follow)",
+    "sender": "Yale Psychology",
+    "listName": "Yale Psychology"
   },
   {
     "kind": "event",
@@ -2186,7 +2442,11 @@
       "weekly Wednesdays 6-7pm, AACC Game Room"
     ],
     "confidence": 0.95,
-    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -2212,7 +2472,9 @@
       "Wed Nov 4, 7-8pm, Silliman Acorn"
     ],
     "confidence": 0.95,
-    "rawText": "Stitch & Sip (GA event) - Wed Nov 4, 7-8pm, Silliman Acorn"
+    "rawText": "Stitch & Sip (GA event) - Wed Nov 4, 7-8pm, Silliman Acorn",
+    "sender": "Silliman GA",
+    "listName": "Silliman GA"
   },
   {
     "kind": "event",
@@ -2239,7 +2501,11 @@
       "Nov 4 DL 220"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS Putnam problem sessions - Wednesdays 7-9pm: Nov 4 DL 220, Nov 11 LC 211, Nov 18 DL 220 (pizza/snacks; Putnam exam Sat Dec 5)"
+    "rawText": "YUMS Putnam problem sessions - Wednesdays 7-9pm: Nov 4 DL 220, Nov 11 LC 211, Nov 18 DL 220 (pizza/snacks; Putnam exam Sat Dec 5)",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, putnam, research panel thurs",
+    "sentAt": "2026-11-15T21:30:00-05:00"
   },
   {
     "kind": "event",
@@ -2265,7 +2531,11 @@
       "Thursdays 2-4pm, YSC Tea Room 208"
     ],
     "confidence": 0.95,
-    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)"
+    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2290,7 +2560,9 @@
       "Thu Nov 5, 2:00pm (meet 1:45), Sally's Apizza"
     ],
     "confidence": 0.95,
-    "rawText": "Sally's Apizza x Yale Undergraduate Pizza Society tour - Thu Nov 5, 2:00pm (meet 1:45), Sally's Apizza (lottery; form due Wed Nov 4, 11am)"
+    "rawText": "Sally's Apizza x Yale Undergraduate Pizza Society tour - Thu Nov 5, 2:00pm (meet 1:45), Sally's Apizza (lottery; form due Wed Nov 4, 11am)",
+    "sender": "Yale Undergraduate Pizza Society",
+    "listName": "Yale Undergraduate Pizza Society"
   },
   {
     "kind": "event",
@@ -2315,7 +2587,11 @@
       "Thu Nov 5, 2:00-3:00pm, HQ 107"
     ],
     "confidence": 0.95,
-    "rawText": "YSS Lima Information Session - Thu Nov 5, 2:00-3:00pm, HQ 107"
+    "rawText": "YSS Lima Information Session - Thu Nov 5, 2:00-3:00pm, HQ 107",
+    "sender": "Study Abroad <studyabroad@lists.yale.test>",
+    "listName": "Study Abroad",
+    "subject": "Study Abroad this week: STEM abroad, Germany, Lima, Quito",
+    "sentAt": "2026-11-01T10:30:00-05:00"
   },
   {
     "kind": "event",
@@ -2340,7 +2616,9 @@
       "Thu Nov 5, 4:15pm, 87 Trumbull St Room B120"
     ],
     "confidence": 0.95,
-    "rawText": "Research in Motion Seminar: Cecilia Wood (Principles of Intelligence), \"Open Problems in AI Safety and How to Help\" - Thu Nov 5, 4:15pm, 87 Trumbull St Room B120"
+    "rawText": "Research in Motion Seminar: Cecilia Wood (Principles of Intelligence), \"Open Problems in AI Safety and How to Help\" - Thu Nov 5, 4:15pm, 87 Trumbull St Room B120",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -2365,7 +2643,9 @@
       "Thu Nov 5, 5:00-6:00pm, 55 Whitney Ave Fl 3 Rm 305"
     ],
     "confidence": 0.95,
-    "rawText": "Princeton in Beijing info session - Thu Nov 5, 5:00-6:00pm, 55 Whitney Ave Fl 3 Rm 305"
+    "rawText": "Princeton in Beijing info session - Thu Nov 5, 5:00-6:00pm, 55 Whitney Ave Fl 3 Rm 305",
+    "sender": "Study Abroad",
+    "listName": "Study Abroad"
   },
   {
     "kind": "event",
@@ -2391,7 +2671,11 @@
       "Thu Nov 5, 6-8pm, AACC MPR"
     ],
     "confidence": 0.95,
-    "rawText": "Unmasking Bollywood Stereotypes movie + discussion w/ Prof. Rohit De (AACC PAE) - Thu Nov 5, 6-8pm, AACC MPR"
+    "rawText": "Unmasking Bollywood Stereotypes movie + discussion w/ Prof. Rohit De (AACC PAE) - Thu Nov 5, 6-8pm, AACC MPR",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Asma Khan on campus, Bollywood night, Roshni",
+    "sentAt": "2026-11-01T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2416,7 +2700,9 @@
       "Thu Nov 5, 6:00pm, LC 101"
     ],
     "confidence": 0.95,
-    "rawText": "YUHA: A Conversation with Bloomberg's Matt Levine - Thu Nov 5, 6:00pm, LC 101 (registration required, first-come)"
+    "rawText": "YUHA: A Conversation with Bloomberg's Matt Levine - Thu Nov 5, 6:00pm, LC 101 (registration required, first-come)",
+    "sender": "YUHA",
+    "listName": "YUHA"
   },
   {
     "kind": "event",
@@ -2442,7 +2728,9 @@
       "Nov 5 also listed"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -2468,7 +2756,11 @@
       "Thu Nov 5, 7:00-8:00pm (Zoom)"
     ],
     "confidence": 0.95,
-    "rawText": "STEM Summer Fellowships: General Q&A - Thu Nov 5, 7:00-8:00pm (Zoom)"
+    "rawText": "STEM Summer Fellowships: General Q&A - Thu Nov 5, 7:00-8:00pm (Zoom)",
+    "sender": "Office of Fellowships <fellowships@lists.yale.test>",
+    "listName": "Office of Fellowships",
+    "subject": "Fellowships Weekly: Light info session, Imagining Your Summer, deadlines",
+    "sentAt": "2026-11-01T09:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2493,7 +2785,11 @@
       "Fri Nov 6 - Tue Nov 17, 10:00pm"
     ],
     "confidence": 0.95,
-    "rawText": "The Veritas Search III - campus-wide capsule hunt, Fri Nov 6 - Tue Nov 17, 10:00pm; 13 capsules hidden across campus with prizes for finders; open to all students"
+    "rawText": "The Veritas Search III - campus-wide capsule hunt, Fri Nov 6 - Tue Nov 17, 10:00pm; 13 capsules hidden across campus with prizes for finders; open to all students",
+    "sender": "YCC Weekly <ycc@lists.yale.test>",
+    "listName": "YCC Weekly",
+    "subject": "The Veritas Search finale: Weighing of Handsome Dan",
+    "sentAt": "2026-11-16T15:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2518,7 +2814,9 @@
       "HP College Tour - Fri Nov 6"
     ],
     "confidence": 0.95,
-    "rawText": "Jen Wong (Reddit COO), Dean's Invited Speaker Series - Fri Nov 13; HP College Tour - Fri Nov 6"
+    "rawText": "Jen Wong (Reddit COO), Dean's Invited Speaker Series - Fri Nov 13; HP College Tour - Fri Nov 6",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -2543,7 +2841,9 @@
       "info session Fri Nov 6, 10:00-11:00am"
     ],
     "confidence": 0.95,
-    "rawText": "YSS Florence painting exhibit - Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave; info session Fri Nov 6, 10:00-11:00am"
+    "rawText": "YSS Florence painting exhibit - Nov 2-6, 4:00-6:00pm, Art Gallery at 32 Edgewood Ave; info session Fri Nov 6, 10:00-11:00am",
+    "sender": "Yale Summer Session",
+    "listName": "Yale Summer Session"
   },
   {
     "kind": "event",
@@ -2570,7 +2870,9 @@
       "Rose Alumni House, 232 York St"
     ],
     "confidence": 0.95,
-    "rawText": "\"The Art of Public Speaking\" w/ Robert Russell '89 - Fri Nov 6, 12:30-3:00pm (check-in 12:30, pizza/salad), Rose Alumni House, 232 York St"
+    "rawText": "\"The Art of Public Speaking\" w/ Robert Russell '89 - Fri Nov 6, 12:30-3:00pm (check-in 12:30, pizza/salad), Rose Alumni House, 232 York St",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -2596,7 +2898,11 @@
       "Fri Nov 6, 2:00-3:00pm Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A",
+    "sender": "Office of Fellowships <fellowships@lists.yale.test>",
+    "listName": "Office of Fellowships",
+    "subject": "Fellowships Weekly: Light info session, Imagining Your Summer, deadlines",
+    "sentAt": "2026-11-01T09:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2621,7 +2927,11 @@
       "Fri Nov 6, 5:00-7:00pm, HQ 133"
     ],
     "confidence": 0.95,
-    "rawText": "YSS Quito (Ecuador) Information Session - Fri Nov 6, 5:00-7:00pm, HQ 133"
+    "rawText": "YSS Quito (Ecuador) Information Session - Fri Nov 6, 5:00-7:00pm, HQ 133",
+    "sender": "Study Abroad <studyabroad@lists.yale.test>",
+    "listName": "Study Abroad",
+    "subject": "Study Abroad this week: STEM abroad, Germany, Lima, Quito",
+    "sentAt": "2026-11-01T10:30:00-05:00"
   },
   {
     "kind": "event",
@@ -2648,7 +2958,11 @@
       "Popeyes, Shah's Halal, Basil"
     ],
     "confidence": 0.95,
-    "rawText": "National FGLI Week Dinner Extravaganza (OEO) - Fri Nov 6, 6-8pm, Afro-American Cultural Center (Popeyes, Shah's Halal, Basil)"
+    "rawText": "National FGLI Week Dinner Extravaganza (OEO) - Fri Nov 6, 6-8pm, Afro-American Cultural Center (Popeyes, Shah's Halal, Basil)",
+    "sender": "Office of Educational Opportunity <oeo@lists.yale.test>",
+    "listName": "Office of Educational Opportunity",
+    "subject": "National FGLI Week Dinner Extravaganza - Friday",
+    "sentAt": "2026-11-02T13:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2674,7 +2988,11 @@
       "Fri Nov 6, 7-9pm, Woolsey Hall"
     ],
     "confidence": 0.95,
-    "rawText": "Roshni (Yale's largest South Asian cultural showcase) - Fri Nov 6, 7-9pm, Woolsey Hall"
+    "rawText": "Roshni (Yale's largest South Asian cultural showcase) - Fri Nov 6, 7-9pm, Woolsey Hall",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Asma Khan on campus, Bollywood night, Roshni",
+    "sentAt": "2026-11-01T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2701,7 +3019,11 @@
       "WLH 113"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS Pizza Seminar: Prof. Alexander Petrov, \"The Weil Conjectures\" - Fri Nov 6, 7-8pm, WLH 113"
+    "rawText": "YUMS Pizza Seminar: Prof. Alexander Petrov, \"The Weil Conjectures\" - Fri Nov 6, 7-8pm, WLH 113",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] Pizza Seminar Friday: The Weil Conjectures",
+    "sentAt": "2026-11-04T12:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2726,7 +3048,9 @@
       "Sat Nov 7, 11:00am-3:00pm, West Rock State Park"
     ],
     "confidence": 0.95,
-    "rawText": "OCAY West Rock weekend trip - Sat Nov 7, 11:00am-3:00pm, West Rock State Park (sign-up deadline Wed Nov 4 midnight)"
+    "rawText": "OCAY West Rock weekend trip - Sat Nov 7, 11:00am-3:00pm, West Rock State Park (sign-up deadline Wed Nov 4 midnight)",
+    "sender": "OCAY",
+    "listName": "OCAY"
   },
   {
     "kind": "event",
@@ -2752,7 +3076,9 @@
       "Sat Nov 7, 7-9pm, The Underground"
     ],
     "confidence": 0.95,
-    "rawText": "Schwarzman Center x AACC 45th Anniversary Student Showcase - Sat Nov 7, 7-9pm, The Underground (Lower Level, 168 Grove St)"
+    "rawText": "Schwarzman Center x AACC 45th Anniversary Student Showcase - Sat Nov 7, 7-9pm, The Underground (Lower Level, 168 Grove St)",
+    "sender": "AACC",
+    "listName": "AACC"
   },
   {
     "kind": "event",
@@ -2777,7 +3103,11 @@
       "Sat Nov 7, 8:30pm, 53 Wall Street Auditorium"
     ],
     "confidence": 0.95,
-    "rawText": "WORD (spoken word/poetry) show - Sat Nov 7, 8:30pm, 53 Wall Street Auditorium (tickets $7.18)"
+    "rawText": "WORD (spoken word/poetry) show - Sat Nov 7, 8:30pm, 53 Wall Street Auditorium (tickets $7.18)",
+    "sender": "South Asian Society <sas@lists.yale.test>",
+    "listName": "South Asian Society",
+    "subject": "ROSHNI 2026 is this Friday",
+    "sentAt": "2026-11-03T20:45:00-05:00"
   },
   {
     "kind": "event",
@@ -2803,7 +3133,9 @@
       "Sat Nov 7, 9:00pm-11:59pm, Grace Hopper Buttery"
     ],
     "confidence": 0.95,
-    "rawText": "Christian Union Lux \"PPP: Pancakes, Prayer, Pizza\" - Sat Nov 7, 9:00pm-11:59pm, Grace Hopper Buttery"
+    "rawText": "Christian Union Lux \"PPP: Pancakes, Prayer, Pizza\" - Sat Nov 7, 9:00pm-11:59pm, Grace Hopper Buttery",
+    "sender": "Christian Union",
+    "listName": "Christian Union"
   },
   {
     "kind": "event",
@@ -2828,7 +3160,9 @@
       "weekly Sundays 12:30pm, Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -2854,7 +3188,9 @@
       "Nov 8 (sewing handwarmers)"
     ],
     "confidence": 0.95,
-    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)"
+    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -2879,7 +3215,9 @@
       "Sun Nov 8, 4:30-5:30pm, AACC rm 210"
     ],
     "confidence": 0.95,
-    "rawText": "AACC Spring Break Externship Info Session - Sun Nov 8, 4:30-5:30pm, AACC rm 210, 295 Crown St (application deadline Jan 17, 2027)"
+    "rawText": "AACC Spring Break Externship Info Session - Sun Nov 8, 4:30-5:30pm, AACC rm 210, 295 Crown St (application deadline Jan 17, 2027)",
+    "sender": "AACC",
+    "listName": "AACC"
   },
   {
     "kind": "event",
@@ -2905,7 +3243,11 @@
       "Sun Nov 8, 7-10pm, Dwight Hall"
     ],
     "confidence": 0.95,
-    "rawText": "AASA Night Market - Sun Nov 8, 7-10pm, Dwight Hall + surrounding outdoor area (org registration was due Oct 23; proceeds to local charity)"
+    "rawText": "AASA Night Market - Sun Nov 8, 7-10pm, Dwight Hall + surrounding outdoor area (org registration was due Oct 23; proceeds to local charity)",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AASA Night Market this Sunday",
+    "sentAt": "2026-11-04T16:00:00-05:00"
   },
   {
     "kind": "event",
@@ -2930,7 +3272,9 @@
       "Sun Nov 8, 8-10pm, Bass Cafe"
     ],
     "confidence": 0.95,
-    "rawText": "FOKE \"Fuel Your Study Night\" fundraiser - Sun Nov 8, 8-10pm, Bass Cafe (drinks, cookies, raffle)"
+    "rawText": "FOKE \"Fuel Your Study Night\" fundraiser - Sun Nov 8, 8-10pm, Bass Cafe (drinks, cookies, raffle)",
+    "sender": "FOKE",
+    "listName": "FOKE"
   },
   {
     "kind": "event",
@@ -2955,7 +3299,9 @@
       "Mon Nov 9, 9:00-10:00am EST"
     ],
     "confidence": 0.95,
-    "rawText": "Oxford colleges (St Anne's, Hertford, LMH, Worcester) virtual info session for 2027-28 - Mon Nov 9, 9:00-10:00am EST (MS Teams link to registrants)"
+    "rawText": "Oxford colleges (St Anne's, Hertford, LMH, Worcester) virtual info session for 2027-28 - Mon Nov 9, 9:00-10:00am EST (MS Teams link to registrants)",
+    "sender": "Study Abroad",
+    "listName": "Study Abroad"
   },
   {
     "kind": "event",
@@ -2981,7 +3327,9 @@
       "YCRC Auditorium, 160 St Ronan St"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine",
+    "sender": "YCRC",
+    "listName": "YCRC"
   },
   {
     "kind": "event",
@@ -3007,7 +3355,11 @@
       "Nov 9 (zines)"
     ],
     "confidence": 0.95,
-    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3034,7 +3386,11 @@
       "Chicken and Waffles"
     ],
     "confidence": 0.95,
-    "rawText": "K9 Kickback: Therapy Dogs (+ Chicken and Waffles) - Mon Nov 9, 4-6pm, Susman Hall (Purple Couch Room), Slifka Center"
+    "rawText": "K9 Kickback: Therapy Dogs (+ Chicken and Waffles) - Mon Nov 9, 4-6pm, Susman Hall (Purple Couch Room), Slifka Center",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3060,7 +3416,11 @@
       "Nov 9"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3086,7 +3446,11 @@
       "WLH 011"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)"
+    "rawText": "YUMS PSET Night - weekly Mondays 7-9pm, WLH 011 (Oct 19 held in WLH 001)",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, pizza seminar thurs, MMATHS test-solve",
+    "sentAt": "2026-10-25T21:15:00-04:00"
   },
   {
     "kind": "event",
@@ -3112,7 +3476,9 @@
       "Mon Nov 9, 7:30-9:00pm, Davenport College Common Room"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Liman Undergraduate Summer Fellowships info session - Mon Nov 9, 7:30-9:00pm, Davenport College Common Room"
+    "rawText": "Office of Fellowships: Liman Undergraduate Summer Fellowships info session - Mon Nov 9, 7:30-9:00pm, Davenport College Common Room",
+    "sender": "Office of Fellowships",
+    "listName": "Office of Fellowships"
   },
   {
     "kind": "event",
@@ -3139,7 +3505,9 @@
       "Tue Nov 10, 5-6:30pm, AACC"
     ],
     "confidence": 0.95,
-    "rawText": "Dinner & Dialogue with Michelle Phuong Ho '11 (\"Bone Symphony\", w/ Prof. Quan Tran) - Tue Nov 10, 5-6:30pm, AACC"
+    "rawText": "Dinner & Dialogue with Michelle Phuong Ho '11 (\"Bone Symphony\", w/ Prof. Quan Tran) - Tue Nov 10, 5-6:30pm, AACC",
+    "sender": "AACC",
+    "listName": "AACC"
   },
   {
     "kind": "event",
@@ -3165,7 +3533,9 @@
       "Nov 10"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -3193,7 +3563,11 @@
       "pizza provided"
     ],
     "confidence": 0.95,
-    "rawText": "YASSS Stargazing - Tue Nov 10, 8-9pm, Cross Campus (pizza provided)"
+    "rawText": "YASSS Stargazing - Tue Nov 10, 8-9pm, Cross Campus (pizza provided)",
+    "sender": "YASSS <yasss@lists.yale.test>",
+    "listName": "YASSS",
+    "subject": "Stargazing Thursday + Halloween mixer Friday",
+    "sentAt": "2026-10-26T20:00:00-04:00"
   },
   {
     "kind": "event",
@@ -3218,7 +3592,9 @@
       "Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine",
+    "sender": "Medical Library",
+    "listName": "Medical Library"
   },
   {
     "kind": "event",
@@ -3243,7 +3619,9 @@
       "Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine",
+    "sender": "YCRC",
+    "listName": "YCRC"
   },
   {
     "kind": "event",
@@ -3268,7 +3646,9 @@
       "Wed Nov 11, 12:00pm, Hewitt Quadrangle"
     ],
     "confidence": 0.95,
-    "rawText": "Veterans Day Ceremony - Wed Nov 11, 12:00pm, Hewitt Quadrangle"
+    "rawText": "Veterans Day Ceremony - Wed Nov 11, 12:00pm, Hewitt Quadrangle",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -3293,7 +3673,9 @@
       "Wed Nov 11, 1:00-2:00pm"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Projects for Peace Info Session - Wed Nov 11, 1:00-2:00pm (campus deadline Fri Jan 8, 1pm ET; $10,000 per project)"
+    "rawText": "Office of Fellowships: Projects for Peace Info Session - Wed Nov 11, 1:00-2:00pm (campus deadline Fri Jan 8, 1pm ET; $10,000 per project)",
+    "sender": "Office of Fellowships",
+    "listName": "Office of Fellowships"
   },
   {
     "kind": "event",
@@ -3320,7 +3702,11 @@
       "YSC GLC Lounge"
     ],
     "confidence": 0.95,
-    "rawText": "Wellness Wednesday (physical wellness month) - Wed Nov 4, 2-4pm and Wed Nov 11, 2-3pm, YSC GLC Lounge"
+    "rawText": "Wellness Wednesday (physical wellness month) - Wed Nov 4, 2-4pm and Wed Nov 11, 2-3pm, YSC GLC Lounge",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3346,7 +3732,9 @@
       "Wed Nov 11, 4-6pm"
     ],
     "confidence": 0.95,
-    "rawText": "Dim Sum Teahouse with Former Yale-China Fellows - Wed Nov 11, 4-6pm (RSVP education@yalechina.org)"
+    "rawText": "Dim Sum Teahouse with Former Yale-China Fellows - Wed Nov 11, 4-6pm (RSVP education@yalechina.org)",
+    "sender": "Yale-China",
+    "listName": "Yale-China"
   },
   {
     "kind": "event",
@@ -3371,7 +3759,11 @@
       "Wed Nov 11, 5:00pm, Silliman Common Room"
     ],
     "confidence": 0.95,
-    "rawText": "Live in Theater interactive production - Wed Nov 11, 5:00pm, Silliman Common Room; ~30 spots, walk-ins welcome"
+    "rawText": "Live in Theater interactive production - Wed Nov 11, 5:00pm, Silliman Common Room; ~30 spots, walk-ins welcome",
+    "sender": "Silliman GA <silliman-ga@lists.yale.test>",
+    "listName": "Silliman GA",
+    "subject": "Live theater, a study break, and Sunday tea",
+    "sentAt": "2026-11-09T17:20:00-05:00"
   },
   {
     "kind": "event",
@@ -3397,7 +3789,11 @@
       "weekly Wednesdays 6-7pm, AACC Game Room"
     ],
     "confidence": 0.95,
-    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -3422,7 +3818,9 @@
       "Wed Nov 11, 6-8:30pm"
     ],
     "confidence": 0.95,
-    "rawText": "Career Networking Mixer (11th annual, alumni-students) - Wed Nov 11, 6-8:30pm"
+    "rawText": "Career Networking Mixer (11th annual, alumni-students) - Wed Nov 11, 6-8:30pm",
+    "sender": "AACC",
+    "listName": "AACC"
   },
   {
     "kind": "event",
@@ -3449,7 +3847,9 @@
       "pizza at 6pm"
     ],
     "confidence": 0.95,
-    "rawText": "CCAM Wednesday Wisdom: Interactive Storytelling with Theresa Loong - Wed Nov 11, 6:30-8pm (pizza at 6pm), CCAM; free, open to public"
+    "rawText": "CCAM Wednesday Wisdom: Interactive Storytelling with Theresa Loong - Wed Nov 11, 6:30-8pm (pizza at 6pm), CCAM; free, open to public",
+    "sender": "CCAM",
+    "listName": "CCAM"
   },
   {
     "kind": "event",
@@ -3476,7 +3876,11 @@
       "Nov 11 LC 211"
     ],
     "confidence": 0.95,
-    "rawText": "YUMS Putnam problem sessions - Wednesdays 7-9pm: Nov 4 DL 220, Nov 11 LC 211, Nov 18 DL 220 (pizza/snacks; Putnam exam Sat Dec 5)"
+    "rawText": "YUMS Putnam problem sessions - Wednesdays 7-9pm: Nov 4 DL 220, Nov 11 LC 211, Nov 18 DL 220 (pizza/snacks; Putnam exam Sat Dec 5)",
+    "sender": "YUMS <yums@lists.yale.test>",
+    "listName": "YUMS",
+    "subject": "[YUMS] pset night, putnam, research panel thurs",
+    "sentAt": "2026-11-15T21:30:00-05:00"
   },
   {
     "kind": "event",
@@ -3501,7 +3905,11 @@
       "Wed Nov 11, 7:00pm (doors 6:30), HQ L02"
     ],
     "confidence": 0.95,
-    "rawText": "Advance screening of \"Paper Tiger\" (Adam Driver, Scarlett Johansson, Miles Teller; dir. James Gray) - Wed Nov 11, 7:00pm (doors 6:30), HQ L02 (NEON Advance Screening Series, Oct 7-Nov 19; no reservation)"
+    "rawText": "Advance screening of \"Paper Tiger\" (Adam Driver, Scarlett Johansson, Miles Teller; dir. James Gray) - Wed Nov 11, 7:00pm (doors 6:30), HQ L02 (NEON Advance Screening Series, Oct 7-Nov 19; no reservation)",
+    "sender": "Yale Film Society <film@lists.yale.test>",
+    "listName": "Yale Film Society",
+    "subject": "Advance screening: Paper Tiger, Wednesday",
+    "sentAt": "2026-11-08T13:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3527,7 +3935,11 @@
       "Wed Nov 11, 7:30-8:30pm, Silliman Buttery"
     ],
     "confidence": 0.95,
-    "rawText": "Sweet Treat Study Break & Admissions Advising (GA event, law/grad school) - Wed Nov 11, 7:30-8:30pm, Silliman Buttery"
+    "rawText": "Sweet Treat Study Break & Admissions Advising (GA event, law/grad school) - Wed Nov 11, 7:30-8:30pm, Silliman Buttery",
+    "sender": "Silliman GA <silliman-ga@lists.yale.test>",
+    "listName": "Silliman GA",
+    "subject": "Live theater, a study break, and Sunday tea",
+    "sentAt": "2026-11-09T17:20:00-05:00"
   },
   {
     "kind": "event",
@@ -3553,7 +3965,11 @@
       "Thursdays 2-4pm, YSC Tea Room 208"
     ],
     "confidence": 0.95,
-    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)"
+    "rawText": "Thursday Tea Time (with Gamelatron listening) - Thursdays 2-4pm, YSC Tea Room 208 (Oct 29, Nov 5, Nov 12)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3579,7 +3995,9 @@
       "Thu Nov 12, 4-6pm"
     ],
     "confidence": 0.95,
-    "rawText": "\"For God, for Country, and for Consulting?\" citizens' assembly (Politics of the Common Good) - Thu Nov 12, 4-6pm"
+    "rawText": "\"For God, for Country, and for Consulting?\" citizens' assembly (Politics of the Common Good) - Thu Nov 12, 4-6pm",
+    "sender": "Politics of the Common Good",
+    "listName": "Politics of the Common Good"
   },
   {
     "kind": "event",
@@ -3605,7 +4023,11 @@
       "Thu Nov 12, 4:00-5:00pm Poorvu 120B"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A",
+    "sender": "Office of Fellowships <fellowships@lists.yale.test>",
+    "listName": "Office of Fellowships",
+    "subject": "Fellowships Weekly: Light info session, Imagining Your Summer, deadlines",
+    "sentAt": "2026-11-01T09:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3632,7 +4054,9 @@
       "opening reception Thu Nov 12, 4:30pm"
     ],
     "confidence": 0.95,
-    "rawText": "Beinecke Library exhibition opening: \"Beauty Unadorned: 'Fire!!' and the Harlem Renaissance\" - opening reception Thu Nov 12, 4:30pm; on view through May 30, 2027"
+    "rawText": "Beinecke Library exhibition opening: \"Beauty Unadorned: 'Fire!!' and the Harlem Renaissance\" - opening reception Thu Nov 12, 4:30pm; on view through May 30, 2027",
+    "sender": "Beinecke Library",
+    "listName": "Beinecke Library"
   },
   {
     "kind": "event",
@@ -3658,7 +4082,9 @@
       "Nov 12"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -3684,7 +4110,11 @@
       "University Theatre"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)",
+    "sender": "Yale Dramat <dramat@lists.yale.test>",
+    "listName": "Yale Dramat",
+    "subject": "Come From Away opens next Thursday",
+    "sentAt": "2026-11-06T11:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3709,7 +4139,9 @@
       "Thu Nov 12, 8:00-9:00pm, Zoom"
     ],
     "confidence": 0.95,
-    "rawText": "International Chinese Language Program Alumni Panel - Thu Nov 12, 8:00-9:00pm, Zoom"
+    "rawText": "International Chinese Language Program Alumni Panel - Thu Nov 12, 8:00-9:00pm, Zoom",
+    "sender": "Study Abroad",
+    "listName": "Study Abroad"
   },
   {
     "kind": "event",
@@ -3736,7 +4168,9 @@
       "Thu Nov 12, 9-10:30pm, Yung Wing Living Room, AACC"
     ],
     "confidence": 0.95,
-    "rawText": "Students and Alumni Pizza Mixer (AACC x AAAYA) - Thu Nov 12, 9-10:30pm, Yung Wing Living Room, AACC"
+    "rawText": "Students and Alumni Pizza Mixer (AACC x AAAYA) - Thu Nov 12, 9-10:30pm, Yung Wing Living Room, AACC",
+    "sender": "AACC",
+    "listName": "AACC"
   },
   {
     "kind": "event",
@@ -3761,7 +4195,9 @@
       "Fri Nov 13"
     ],
     "confidence": 0.95,
-    "rawText": "Jen Wong (Reddit COO), Dean's Invited Speaker Series - Fri Nov 13; HP College Tour - Fri Nov 6"
+    "rawText": "Jen Wong (Reddit COO), Dean's Invited Speaker Series - Fri Nov 13; HP College Tour - Fri Nov 6",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -3786,7 +4222,11 @@
       "Fri Nov 13, 11-11:30am, YSC GLC Lounge"
     ],
     "confidence": 0.95,
-    "rawText": "Feel Good Friday: Mindful Movement - Fri Nov 13, 11-11:30am, YSC GLC Lounge"
+    "rawText": "Feel Good Friday: Mindful Movement - Fri Nov 13, 11-11:30am, YSC GLC Lounge",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3812,7 +4252,9 @@
       "Fri Nov 13, 1:30-2:30pm"
     ],
     "confidence": 0.95,
-    "rawText": "MacMillan Center: AY and Summer Funding info session - Fri Nov 13, 1:30-2:30pm"
+    "rawText": "MacMillan Center: AY and Summer Funding info session - Fri Nov 13, 1:30-2:30pm",
+    "sender": "MacMillan Center",
+    "listName": "MacMillan Center"
   },
   {
     "kind": "event",
@@ -3837,7 +4279,9 @@
       "Fri Nov 13, 2:00-3:00pm, WLH 207"
     ],
     "confidence": 0.95,
-    "rawText": "YSS Batumi Information Session - Fri Nov 13, 2:00-3:00pm, WLH 207"
+    "rawText": "YSS Batumi Information Session - Fri Nov 13, 2:00-3:00pm, WLH 207",
+    "sender": "Yale Summer Session",
+    "listName": "Yale Summer Session"
   },
   {
     "kind": "event",
@@ -3863,7 +4307,9 @@
       "YQI (17 Hillhouse Ave), 4th Floor"
     ],
     "confidence": 0.95,
-    "rawText": "YUQC speaker event: Prof. Puri on quantum error correction - Fri Nov 13, 3:30-4:30pm, YQI (17 Hillhouse Ave), 4th Floor"
+    "rawText": "YUQC speaker event: Prof. Puri on quantum error correction - Fri Nov 13, 3:30-4:30pm, YQI (17 Hillhouse Ave), 4th Floor",
+    "sender": "YUQC",
+    "listName": "YUQC"
   },
   {
     "kind": "event",
@@ -3889,7 +4335,11 @@
       "Nov 13"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3915,7 +4365,9 @@
       "Fri Nov 13, 6-8pm"
     ],
     "confidence": 0.95,
-    "rawText": "AACC x MENACC Multilingual Mukbang - Fri Nov 13, 6-8pm (register on Yale Connect)"
+    "rawText": "AACC x MENACC Multilingual Mukbang - Fri Nov 13, 6-8pm (register on Yale Connect)",
+    "sender": "AACC",
+    "listName": "AACC"
   },
   {
     "kind": "event",
@@ -3941,7 +4393,11 @@
       "Fri Nov 13, 6:00pm, Ascent, New Haven"
     ],
     "confidence": 0.95,
-    "rawText": "Ascent Annual Bonfire Boulder Bash comp - Fri Nov 13, 6:00pm, Ascent, New Haven ($35 presale / $40 door; bonfire, taco truck, raffle)"
+    "rawText": "Ascent Annual Bonfire Boulder Bash comp - Fri Nov 13, 6:00pm, Ascent, New Haven ($35 presale / $40 door; bonfire, taco truck, raffle)",
+    "sender": "Climbing at Yale <climbing@lists.yale.test>",
+    "listName": "Climbing at Yale",
+    "subject": "Fwd: Ascent Annual Bonfire Boulder Bash",
+    "sentAt": "2026-11-05T15:10:00-05:00"
   },
   {
     "kind": "event",
@@ -3967,7 +4423,11 @@
       "University Theatre"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)",
+    "sender": "Yale Dramat <dramat@lists.yale.test>",
+    "listName": "Yale Dramat",
+    "subject": "Come From Away opens next Thursday",
+    "sentAt": "2026-11-06T11:00:00-05:00"
   },
   {
     "kind": "event",
@@ -3992,7 +4452,9 @@
       "Fri Nov 13, 8:00-8:45pm, Nick Chapel Theatre, Trumbull College"
     ],
     "confidence": 0.95,
-    "rawText": "CPA Show: Marin Korenaga EP performance + string quartet - Fri Nov 13, 8:00-8:45pm, Nick Chapel Theatre, Trumbull College (free, RSVP; limited seating)"
+    "rawText": "CPA Show: Marin Korenaga EP performance + string quartet - Fri Nov 13, 8:00-8:45pm, Nick Chapel Theatre, Trumbull College (free, RSVP; limited seating)",
+    "sender": "CPA",
+    "listName": "CPA"
   },
   {
     "kind": "event",
@@ -4017,7 +4479,9 @@
       "Sat Nov 14, 1-2pm, AACC Wellness Lounge"
     ],
     "confidence": 0.95,
-    "rawText": "295 Magazine Interest Event - Sat Nov 14, 1-2pm, AACC Wellness Lounge"
+    "rawText": "295 Magazine Interest Event - Sat Nov 14, 1-2pm, AACC Wellness Lounge",
+    "sender": "295 Magazine",
+    "listName": "295 Magazine"
   },
   {
     "kind": "event",
@@ -4044,7 +4508,8 @@
       "AACC Multipurpose Room (MPR)"
     ],
     "confidence": 0.95,
-    "rawText": "30 Years of CASA: CASA Alumni & Careers Panel | 2026-11-14T13:00:00-05:00 - 14:30 | AACC Multipurpose Room (MPR) | [Yale CASA Community]"
+    "rawText": "30 Years of CASA: CASA Alumni & Careers Panel | 2026-11-14T13:00:00-05:00 - 14:30 | AACC Multipurpose Room (MPR) | [Yale CASA Community]",
+    "listName": "Google Calendar"
   },
   {
     "kind": "event",
@@ -4070,7 +4535,11 @@
       "University Theatre"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)",
+    "sender": "Yale Dramat <dramat@lists.yale.test>",
+    "listName": "Yale Dramat",
+    "subject": "Come From Away opens next Thursday",
+    "sentAt": "2026-11-06T11:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4096,7 +4565,9 @@
       "Sat Nov 14, 4-6pm, HQ L01 or Zoom"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Community Town Hall (YCC) - Sat Nov 14, 4-6pm, HQ L01 or Zoom; Q&A with Democratize Yale panelists plus open testimony; students, staff, faculty and alumni invited"
+    "rawText": "Yale Community Town Hall (YCC) - Sat Nov 14, 4-6pm, HQ L01 or Zoom; Q&A with Democratize Yale panelists plus open testimony; students, staff, faculty and alumni invited",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -4122,7 +4593,11 @@
       "University Theatre"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)"
+    "rawText": "Yale Dramat Fall Mainstage: \"Come From Away\" - Thu Nov 12 and Fri Nov 13 at 7:30pm, Sat Nov 14 at 1:30pm (pay what you can) and 7:30pm, University Theatre ($15 general / $7 college students / $3 HS and younger)",
+    "sender": "Yale Dramat <dramat@lists.yale.test>",
+    "listName": "Yale Dramat",
+    "subject": "Come From Away opens next Thursday",
+    "sentAt": "2026-11-06T11:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4147,7 +4622,9 @@
       "Sun Nov 15 (volunteer shifts all day"
     ],
     "confidence": 0.95,
-    "rawText": "MMATHS 2026 competition - Sun Nov 15 (volunteer shifts all day; ~500 participants)"
+    "rawText": "MMATHS 2026 competition - Sun Nov 15 (volunteer shifts all day; ~500 participants)",
+    "sender": "YUMS",
+    "listName": "YUMS"
   },
   {
     "kind": "event",
@@ -4174,7 +4651,9 @@
       "free boba + tshirt + lunch"
     ],
     "confidence": 0.95,
-    "rawText": "MMATHS volunteering - Sun Nov 15 (free boba + tshirt + lunch)"
+    "rawText": "MMATHS volunteering - Sun Nov 15 (free boba + tshirt + lunch)",
+    "sender": "MMATHS",
+    "listName": "MMATHS"
   },
   {
     "kind": "event",
@@ -4199,7 +4678,9 @@
       "Sun Nov 15, 12-3pm, AACC first floor"
     ],
     "confidence": 0.95,
-    "rawText": "Tastes of Taiwan (TAS annual event; student-made food) - Sun Nov 15, 12-3pm, AACC first floor (pre-order form for reduced pricing)"
+    "rawText": "Tastes of Taiwan (TAS annual event; student-made food) - Sun Nov 15, 12-3pm, AACC first floor (pre-order form for reduced pricing)",
+    "sender": "TAS",
+    "listName": "TAS"
   },
   {
     "kind": "event",
@@ -4224,7 +4705,9 @@
       "weekly Sundays 12:30pm, Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend"
+    "rawText": "YCC Senate Meetings - weekly Sundays 12:30pm, Poorvu 120A; newsletters invite all interested students to attend",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -4251,7 +4734,11 @@
       "HoC House"
     ],
     "confidence": 0.95,
-    "rawText": "Afternoon Tea & Mini Treats at the HoC House - Sun Nov 15, 2:30-4:00pm"
+    "rawText": "Afternoon Tea & Mini Treats at the HoC House - Sun Nov 15, 2:30-4:00pm",
+    "sender": "Silliman GA <silliman-ga@lists.yale.test>",
+    "listName": "Silliman GA",
+    "subject": "Live theater, a study break, and Sunday tea",
+    "sentAt": "2026-11-09T17:20:00-05:00"
   },
   {
     "kind": "event",
@@ -4279,7 +4766,9 @@
       "dinner"
     ],
     "confidence": 0.95,
-    "rawText": "UCW Interministry Soccer Game + dinner - Sun Nov 15, 2:30-4:30pm, Scantlebury Park"
+    "rawText": "UCW Interministry Soccer Game + dinner - Sun Nov 15, 2:30-4:30pm, Scantlebury Park",
+    "sender": "UCW",
+    "listName": "UCW"
   },
   {
     "kind": "event",
@@ -4304,7 +4793,9 @@
       "Sun Nov 15, 3:00pm, Woolsey Hall"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Wind Ensemble Sunday Matinee featuring Eighth Blackbird - Sun Nov 15, 3:00pm, Woolsey Hall"
+    "rawText": "Yale Wind Ensemble Sunday Matinee featuring Eighth Blackbird - Sun Nov 15, 3:00pm, Woolsey Hall",
+    "sender": "Yale Wind Ensemble",
+    "listName": "Yale Wind Ensemble"
   },
   {
     "kind": "event",
@@ -4329,7 +4820,9 @@
       "Mon Nov 16, 12:00-1:30pm, Steep Cafe, Kline Tower"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Drop-in Fellowship Advising with Dr. Fisher - Mon Nov 16, 12:00-1:30pm, Steep Cafe, Kline Tower"
+    "rawText": "Office of Fellowships: Drop-in Fellowship Advising with Dr. Fisher - Mon Nov 16, 12:00-1:30pm, Steep Cafe, Kline Tower",
+    "sender": "Office of Fellowships",
+    "listName": "Office of Fellowships"
   },
   {
     "kind": "event",
@@ -4354,7 +4847,9 @@
       "Mon Nov 16, 2:30-3:30pm, Rosenfeld Hall Lecture Hall, Room 101"
     ],
     "confidence": 0.95,
-    "rawText": "Materials Science Seminar: Frances Ross (MIT) - Mon Nov 16, 2:30-3:30pm, Rosenfeld Hall Lecture Hall, Room 101"
+    "rawText": "Materials Science Seminar: Frances Ross (MIT) - Mon Nov 16, 2:30-3:30pm, Rosenfeld Hall Lecture Hall, Room 101",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -4380,7 +4875,11 @@
       "Nov 16 (collages)"
     ],
     "confidence": 0.95,
-    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)"
+    "rawText": "Craft et Veritas (weekly craft drop-in) - Mondays 3-4pm, YSC Offline Oasis: Oct 19 (visual roadmap), Oct 26 (spooky lego), Nov 2 (bookmarks), Nov 9 (zines), Nov 16 (collages)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Take it Easy Tuesday, Kitchen Table Talks, wellness check-ins",
+    "sentAt": "2026-11-15T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4406,7 +4905,11 @@
       "Nov 16"
     ],
     "confidence": 0.95,
-    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)"
+    "rawText": "Yoga (YSC Dance Studio unless noted): Gentle Yoga Mon 5-6pm (Oct 26, Nov 9, Nov 16); Hatha Yoga Mon Nov 2 5-6pm; Hatha Yoga Tue 5:30-6:30pm (Oct 27 in GLC Lounge, Nov 10); Power Yoga Thu 6:30-7:30pm (Oct 29, Nov 12; Nov 5 also listed); Friday yoga 5-6pm (Oct 30, Nov 13)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Therapy Dogs, Wellness Wednesday, Feel Good Friday",
+    "sentAt": "2026-11-08T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4433,7 +4936,9 @@
       "Nice Day Chinese catering"
     ],
     "confidence": 0.95,
-    "rawText": "Applied Math DSAC Bluebooking Session - Mon Nov 16, 5-6pm, HQ 132 (Nice Day Chinese catering)"
+    "rawText": "Applied Math DSAC Bluebooking Session - Mon Nov 16, 5-6pm, HQ 132 (Nice Day Chinese catering)",
+    "sender": "Applied Math DSAC",
+    "listName": "Applied Math DSAC"
   },
   {
     "kind": "event",
@@ -4458,7 +4963,9 @@
       "Tue Nov 17"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Office of Strategic Analysis info session (Swensen Fellowship, full-time analyst roles Aug 2027 + 2027 summer internship) - Tue Nov 17"
+    "rawText": "Yale Office of Strategic Analysis info session (Swensen Fellowship, full-time analyst roles Aug 2027 + 2027 summer internship) - Tue Nov 17",
+    "sender": "Office of Strategic Analysis",
+    "listName": "Office of Strategic Analysis"
   },
   {
     "kind": "event",
@@ -4483,7 +4990,9 @@
       "Tue Nov 17, 11:00am-12:00pm EST"
     ],
     "confidence": 0.95,
-    "rawText": "YSS application webinar (tips + live Q&A) - Tue Nov 17, 11:00am-12:00pm EST (YSS application deadline Nov 16; programs deadline in January)"
+    "rawText": "YSS application webinar (tips + live Q&A) - Tue Nov 17, 11:00am-12:00pm EST (YSS application deadline Nov 16; programs deadline in January)",
+    "sender": "Yale Summer Session",
+    "listName": "Yale Summer Session"
   },
   {
     "kind": "event",
@@ -4508,7 +5017,11 @@
       "Tue Nov 17, 2-4pm, YSC Good Life Center Lounge"
     ],
     "confidence": 0.95,
-    "rawText": "Take it Easy Tuesday (YC3) - Tue Nov 17, 2-4pm, YSC Good Life Center Lounge"
+    "rawText": "Take it Easy Tuesday (YC3) - Tue Nov 17, 2-4pm, YSC Good Life Center Lounge",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Take it Easy Tuesday, Kitchen Table Talks, wellness check-ins",
+    "sentAt": "2026-11-15T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4534,7 +5047,9 @@
       "Tue Nov 17, 4:00-5:00pm, virtual"
     ],
     "confidence": 0.95,
-    "rawText": "NIH Summer Internship Program (SIP) webinar - Tue Nov 17, 4:00-5:00pm, virtual"
+    "rawText": "NIH Summer Internship Program (SIP) webinar - Tue Nov 17, 4:00-5:00pm, virtual",
+    "sender": "NIH",
+    "listName": "NIH"
   },
   {
     "kind": "event",
@@ -4560,7 +5075,11 @@
       "Tue Nov 17, 5-6pm, AACC MPR"
     ],
     "confidence": 0.95,
-    "rawText": "Senior Story: Kelly Dai and Jen Chen - Tue Nov 17, 5-6pm, AACC MPR"
+    "rawText": "Senior Story: Kelly Dai and Jen Chen - Tue Nov 17, 5-6pm, AACC MPR",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Senior Story, Politics of the Purse, WaMH Talk, Family Dinner",
+    "sentAt": "2026-11-15T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4586,7 +5105,11 @@
       "Tue Nov 17, 5:15pm, Pauli Murray Dining Hall"
     ],
     "confidence": 0.95,
-    "rawText": "YASSS Dinner with Dr. Frank van den Bosch - Tue Nov 17, 5:15pm, Pauli Murray Dining Hall"
+    "rawText": "YASSS Dinner with Dr. Frank van den Bosch - Tue Nov 17, 5:15pm, Pauli Murray Dining Hall",
+    "sender": "YASSS <yasss@lists.yale.test>",
+    "listName": "YASSS",
+    "subject": "Stargazing Tuesday (pizza!)",
+    "sentAt": "2026-11-08T21:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4612,7 +5135,11 @@
       "Tue Nov 17, 6-7pm, MENA Cultural Community"
     ],
     "confidence": 0.95,
-    "rawText": "Kitchen Table Talks (new YC3 series, Living Room Conversations model) - first session Tue Nov 17, 6-7pm, MENA Cultural Community, 305 Crown St"
+    "rawText": "Kitchen Table Talks (new YC3 series, Living Room Conversations model) - first session Tue Nov 17, 6-7pm, MENA Cultural Community, 305 Crown St",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Take it Easy Tuesday, Kitchen Table Talks, wellness check-ins",
+    "sentAt": "2026-11-15T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4637,7 +5164,11 @@
       "Tue Nov 17, 6:00-7:30pm, Zoom"
     ],
     "confidence": 0.95,
-    "rawText": "Jane Street \"Guide to Recruiting Effectively\" (Streetology) - Tue Nov 17, 6:00-7:30pm, Zoom (register by Fri Nov 13); Jane Street 2027 Summer Quantitative Trader Internship application deadline was Oct 28"
+    "rawText": "Jane Street \"Guide to Recruiting Effectively\" (Streetology) - Tue Nov 17, 6:00-7:30pm, Zoom (register by Fri Nov 13); Jane Street 2027 Summer Quantitative Trader Internship application deadline was Oct 28",
+    "sender": "Career Pathways (CPI) <cpi@lists.yale.test>",
+    "listName": "Career Pathways (CPI)",
+    "subject": "Jane Street: Guide to Recruiting Effectively",
+    "sentAt": "2026-11-10T10:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4663,7 +5194,9 @@
       "Tue Nov 17, 7:30-9:30pm, Davenport Auditorium"
     ],
     "confidence": 0.95,
-    "rawText": "Grave of the Fireflies screening & discussion - Tue Nov 17, 7:30-9:30pm, Davenport Auditorium"
+    "rawText": "Grave of the Fireflies screening & discussion - Tue Nov 17, 7:30-9:30pm, Davenport Auditorium",
+    "sender": "AACC",
+    "listName": "AACC"
   },
   {
     "kind": "event",
@@ -4689,7 +5222,11 @@
       "Tue Nov 17, 8:30pm, Beinecke Plaza"
     ],
     "confidence": 0.95,
-    "rawText": "Ceremonial Weighing of Handsome Dan (The Veritas Search) - Tue Nov 17, 8:30pm, Beinecke Plaza; guess his weight, closest guess wins a capsule (entry form closes 8:10pm, must be present)"
+    "rawText": "Ceremonial Weighing of Handsome Dan (The Veritas Search) - Tue Nov 17, 8:30pm, Beinecke Plaza; guess his weight, closest guess wins a capsule (entry form closes 8:10pm, must be present)",
+    "sender": "YCC Weekly <ycc@lists.yale.test>",
+    "listName": "YCC Weekly",
+    "subject": "The Veritas Search finale: Weighing of Handsome Dan",
+    "sentAt": "2026-11-16T15:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4714,7 +5251,11 @@
       "Wed Nov 18, 10:15am-5pm, YSC Offline Oasis"
     ],
     "confidence": 0.95,
-    "rawText": "GLC 10-minute wellness appointments - Wed Nov 18, 10:15am-5pm, YSC Offline Oasis (in-person sign-up from 10:15am)"
+    "rawText": "GLC 10-minute wellness appointments - Wed Nov 18, 10:15am-5pm, YSC Offline Oasis (in-person sign-up from 10:15am)",
+    "sender": "Good Life Center Weekly <goodlifecenter@lists.yale.test>",
+    "listName": "Good Life Center Weekly",
+    "subject": "GLC This Week: Take it Easy Tuesday, Kitchen Table Talks, wellness check-ins",
+    "sentAt": "2026-11-15T19:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4739,7 +5280,9 @@
       "Wed Nov 18, 1-2pm, Dunham 501"
     ],
     "confidence": 0.95,
-    "rawText": "Seminar: Many-body effects and nonlinear optical properties of quantum 2D materials - Wed Nov 18, 1-2pm, Dunham 501"
+    "rawText": "Seminar: Many-body effects and nonlinear optical properties of quantum 2D materials - Wed Nov 18, 1-2pm, Dunham 501",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -4765,7 +5308,9 @@
       "Wed Nov 18, 2:00pm, meet at College St Gate"
     ],
     "confidence": 0.95,
-    "rawText": "One Last Sweet Treat Before Thanksgiving Break (GA event) - Wed Nov 18, 2:00pm, meet at College St Gate"
+    "rawText": "One Last Sweet Treat Before Thanksgiving Break (GA event) - Wed Nov 18, 2:00pm, meet at College St Gate",
+    "sender": "Silliman GA",
+    "listName": "Silliman GA"
   },
   {
     "kind": "event",
@@ -4790,7 +5335,9 @@
       "Wed Nov 18, 2:30-3:30pm, Rosenfeld Hall, Room 101"
     ],
     "confidence": 0.95,
-    "rawText": "ME Seminar Series: Jacob Notbohm - Wed Nov 18, 2:30-3:30pm, Rosenfeld Hall, Room 101"
+    "rawText": "ME Seminar Series: Jacob Notbohm - Wed Nov 18, 2:30-3:30pm, Rosenfeld Hall, Room 101",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -4816,7 +5363,11 @@
       "weekly Wednesdays 6-7pm, AACC Game Room"
     ],
     "confidence": 0.95,
-    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room"
+    "rawText": "AACC Game Night - weekly Wednesdays 6-7pm, AACC Game Room",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Intercultural Fall Fest, Scary Movie Night, Game Night",
+    "sentAt": "2026-10-25T17:00:00-04:00"
   },
   {
     "kind": "event",
@@ -4841,7 +5392,11 @@
       "Wed Nov 18, 7-8pm, AACC MPR"
     ],
     "confidence": 0.95,
-    "rawText": "Politics of the Purse (fiscal policy simulation) - Wed Nov 18, 7-8pm, AACC MPR"
+    "rawText": "Politics of the Purse (fiscal policy simulation) - Wed Nov 18, 7-8pm, AACC MPR",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Senior Story, Politics of the Purse, WaMH Talk, Family Dinner",
+    "sentAt": "2026-11-15T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4866,7 +5421,9 @@
       "info session Wed Nov 18, 8:30-9:30pm, WTS A51"
     ],
     "confidence": 0.95,
-    "rawText": "YMUN China 2027 Secretariat (Class of 2028; 3-day conference in Shenzhen, flights/hotels covered) - info session Wed Nov 18, 8:30-9:30pm, WTS A51; application deadline Nov 29, 11:59pm"
+    "rawText": "YMUN China 2027 Secretariat (Class of 2028; 3-day conference in Shenzhen, flights/hotels covered) - info session Wed Nov 18, 8:30-9:30pm, WTS A51; application deadline Nov 29, 11:59pm",
+    "sender": "YMUN China",
+    "listName": "YMUN China"
   },
   {
     "kind": "event",
@@ -4892,7 +5449,11 @@
       "Thu Nov 19, 12-1:30pm, AACC MPR"
     ],
     "confidence": 0.95,
-    "rawText": "Grammars of Possibility: Poetry Workshop with Michelle Phuong Ho - Thu Nov 19, 12-1:30pm, AACC MPR (time per AACC newsletter ordering)"
+    "rawText": "Grammars of Possibility: Poetry Workshop with Michelle Phuong Ho - Thu Nov 19, 12-1:30pm, AACC MPR (time per AACC newsletter ordering)",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Senior Story, Politics of the Purse, WaMH Talk, Family Dinner",
+    "sentAt": "2026-11-15T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -4917,7 +5478,9 @@
       "Thu Nov 19, 12:00-1:00pm EST (virtual"
     ],
     "confidence": 0.95,
-    "rawText": "Arcadia Abroad STEM Summer Research info session - Thu Nov 19, 12:00-1:00pm EST (virtual, 2027 projects)"
+    "rawText": "Arcadia Abroad STEM Summer Research info session - Thu Nov 19, 12:00-1:00pm EST (virtual, 2027 projects)",
+    "sender": "Study Abroad",
+    "listName": "Study Abroad"
   },
   {
     "kind": "event",
@@ -4944,7 +5507,8 @@
       "Kline Tower, 13th Floor, Room 1327"
     ],
     "confidence": 0.95,
-    "rawText": "Jenna Wiens: Careers in Machine Learning and Healthcare | 2026-11-19T14:00:00-05:00 - 15:00 | Kline Tower, 13th Floor, Room 1327, New Haven, CT 06511 | [Primary]"
+    "rawText": "Jenna Wiens: Careers in Machine Learning and Healthcare | 2026-11-19T14:00:00-05:00 - 15:00 | Kline Tower, 13th Floor, Room 1327, New Haven, CT 06511 | [Primary]",
+    "listName": "Google Calendar"
   },
   {
     "kind": "event",
@@ -4970,7 +5534,8 @@
       "virtual (Zoom)"
     ],
     "confidence": 0.95,
-    "rawText": "Jenna Wiens: Career Chat | 2026-11-19T14:00:00-05:00 - 15:00 | virtual (Zoom) | [Primary]"
+    "rawText": "Jenna Wiens: Career Chat | 2026-11-19T14:00:00-05:00 - 15:00 | virtual (Zoom) | [Primary]",
+    "listName": "Google Calendar"
   },
   {
     "kind": "event",
@@ -4996,7 +5561,11 @@
       "Thu Nov 19, 4:00-5:00pm Poorvu 120A"
     ],
     "confidence": 0.95,
-    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A"
+    "rawText": "Office of Fellowships: Imagining Your Summer - Thu Oct 29, 4:00-5:00pm Poorvu 120A; Fri Nov 6, 2:00-3:00pm Poorvu 120A; Thu Nov 12, 4:00-5:00pm Poorvu 120B; Thu Nov 19, 4:00-5:00pm Poorvu 120A",
+    "sender": "Office of Fellowships <fellowships@lists.yale.test>",
+    "listName": "Office of Fellowships",
+    "subject": "Fellowships Weekly: Light info session, Imagining Your Summer, deadlines",
+    "sentAt": "2026-11-01T09:00:00-05:00"
   },
   {
     "kind": "event",
@@ -5024,7 +5593,11 @@
       "Hot Murga catering"
     ],
     "confidence": 0.95,
-    "rawText": "WaMH Talk: Culture, Consent, and Care (YC3 student-led affinity space) - Thu Nov 19, 4:30-6pm, AACC MPR (Hot Murga catering)"
+    "rawText": "WaMH Talk: Culture, Consent, and Care (YC3 student-led affinity space) - Thu Nov 19, 4:30-6pm, AACC MPR (Hot Murga catering)",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Senior Story, Politics of the Purse, WaMH Talk, Family Dinner",
+    "sentAt": "2026-11-15T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -5049,7 +5622,9 @@
       "Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine",
+    "sender": "Medical Library",
+    "listName": "Medical Library"
   },
   {
     "kind": "event",
@@ -5075,7 +5650,11 @@
       "Sat Nov 21, 3:30pm, Fenway Park"
     ],
     "confidence": 0.95,
-    "rawText": "Yale/Harvard Game (\"The Game\") - Sat Nov 21, 3:30pm, Fenway Park, Boston (televised ESPNU); Yale College buses, luggage storage at Sever Hall (25 Harvard Yard), return bus 8:30pm; overnight housing Fri Nov 20 via Harvard sister houses (Silliman students: Pforzheimer House sign-up, free dining hall swipes with Yale ID)"
+    "rawText": "Yale/Harvard Game (\"The Game\") - Sat Nov 21, 3:30pm, Fenway Park, Boston (televised ESPNU); Yale College buses, luggage storage at Sever Hall (25 Harvard Yard), return bus 8:30pm; overnight housing Fri Nov 20 via Harvard sister houses (Silliman students: Pforzheimer House sign-up, free dining hall swipes with Yale ID)",
+    "sender": "YCC Weekly <ycc@lists.yale.test>",
+    "listName": "YCC Weekly",
+    "subject": "YCC Weekly: The Game, Thanksgiving dinner, fall survey",
+    "sentAt": "2026-11-15T09:30:00-05:00"
   },
   {
     "kind": "event",
@@ -5102,7 +5681,11 @@
       "Mon Nov 23, 4-6pm, AACC"
     ],
     "confidence": 0.95,
-    "rawText": "Annual AACC November Recess Family Dinner - Mon Nov 23, 4-6pm, AACC"
+    "rawText": "Annual AACC November Recess Family Dinner - Mon Nov 23, 4-6pm, AACC",
+    "sender": "AACC Newsletter <aacc@lists.yale.test>",
+    "listName": "AACC Newsletter",
+    "subject": "AACC Weekly | Senior Story, Politics of the Purse, WaMH Talk, Family Dinner",
+    "sentAt": "2026-11-15T17:00:00-05:00"
   },
   {
     "kind": "event",
@@ -5129,7 +5712,11 @@
       "free for enrolled Yale College students"
     ],
     "confidence": 0.95,
-    "rawText": "Yale College Thanksgiving Dinner at the Omni - Thu Nov 26, 12:00-2:00pm buffet, free for enrolled Yale College students; registration extended to midnight Nov 16, then space-available until noon Nov 23"
+    "rawText": "Yale College Thanksgiving Dinner at the Omni - Thu Nov 26, 12:00-2:00pm buffet, free for enrolled Yale College students; registration extended to midnight Nov 16, then space-available until noon Nov 23",
+    "sender": "YCC Weekly <ycc@lists.yale.test>",
+    "listName": "YCC Weekly",
+    "subject": "YCC Weekly: The Game, Thanksgiving dinner, fall survey",
+    "sentAt": "2026-11-15T09:30:00-05:00"
   },
   {
     "kind": "event",
@@ -5155,7 +5742,9 @@
       "Nov 29 (take-home facial masks)"
     ],
     "confidence": 0.95,
-    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)"
+    "rawText": "SASsy Sunday (GLC at Student Accessibility Services, 35 Broadway rm 222) - Sundays: 2:30-3:30pm first-years only, 4-5pm open to all: Nov 1 (faux pumpkin painting), Nov 8 (sewing handwarmers), Nov 29 (take-home facial masks)",
+    "sender": "Good Life Center",
+    "listName": "Good Life Center"
   },
   {
     "kind": "event",
@@ -5181,7 +5770,9 @@
       "next Dec 2"
     ],
     "confidence": 0.95,
-    "rawText": "\"Talk STEM\" with Dean Alexia Belperron - first Wednesday of each month, 12-1pm, Commons, Schwarzman Center (Nov 4; next Dec 2)"
+    "rawText": "\"Talk STEM\" with Dean Alexia Belperron - first Wednesday of each month, 12-1pm, Commons, Schwarzman Center (Nov 4; next Dec 2)",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -5207,7 +5798,9 @@
       "location TBA"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -5232,7 +5825,9 @@
       "Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
     ],
     "confidence": 0.95,
-    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine"
+    "rawText": "Yale Center for Research Computing trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium, 160 St Ronan St; Biomedical Imaging and AI with Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103; Introduction to Python (Medical Library, virtual) - Wed Nov 11, 9-11am; Introduction to R (Medical Library) - Fri Nov 20 and Fri Dec 4, 10am-12pm, Sterling Hall of Medicine",
+    "sender": "Medical Library",
+    "listName": "Medical Library"
   },
   {
     "kind": "event",
@@ -5257,7 +5852,9 @@
       "Fri Dec 4, 11:00am ET"
     ],
     "confidence": 0.95,
-    "rawText": "FroCo Information Session (AY 27-28 applications) - Fri Dec 4, 11:00am ET"
+    "rawText": "FroCo Information Session (AY 27-28 applications) - Fri Dec 4, 11:00am ET",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -5283,7 +5880,9 @@
       "location TBA"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -5309,7 +5908,9 @@
       "Fri Dec 4, 5:00-7:00pm, residential college dining halls"
     ],
     "confidence": 0.95,
-    "rawText": "Holiday Dinner (Yale Hospitality, Sophomores/Juniors/Seniors) - Fri Dec 4, 5:00-7:00pm, residential college dining halls"
+    "rawText": "Holiday Dinner (Yale Hospitality, Sophomores/Juniors/Seniors) - Fri Dec 4, 5:00-7:00pm, residential college dining halls",
+    "sender": "Yale Hospitality",
+    "listName": "Yale Hospitality"
   },
   {
     "kind": "event",
@@ -5336,7 +5937,8 @@
       "LC Room 317"
     ],
     "confidence": 0.95,
-    "rawText": "Chinese Diaspora and U.S.-China Relations: CASA & YFPI x Yaqiu Wang | 2026-12-04T17:00:00-05:00 - 18:30 | LC Room 317 | [Yale CASA Community]"
+    "rawText": "Chinese Diaspora and U.S.-China Relations: CASA & YFPI x Yaqiu Wang | 2026-12-04T17:00:00-05:00 - 18:30 | LC Room 317 | [Yale CASA Community]",
+    "listName": "Google Calendar"
   },
   {
     "kind": "event",
@@ -5361,7 +5963,9 @@
       "Mon Dec 7, 4:00-6:00pm, SSS 410"
     ],
     "confidence": 0.95,
-    "rawText": "Retirement Celebration for Jackie Tanaka - Mon Dec 7, 4:00-6:00pm, SSS 410"
+    "rawText": "Retirement Celebration for Jackie Tanaka - Mon Dec 7, 4:00-6:00pm, SSS 410",
+    "sender": "Yale College",
+    "listName": "Yale College"
   },
   {
     "kind": "event",
@@ -5387,7 +5991,9 @@
       "location TBA"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "event",
@@ -5413,7 +6019,9 @@
       "location TBA"
     ],
     "confidence": 0.95,
-    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student"
+    "rawText": "YCC Season of Giving Drive (Augusta Lewis Troup School) - gift drop-offs Dec 3 5-10pm, Dec 4 2-7pm, Dec 10 5-10pm, Dec 11 2-7pm, location TBA; groups encouraged to sponsor a student",
+    "sender": "YCC",
+    "listName": "YCC"
   },
   {
     "kind": "listing",
