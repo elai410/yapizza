@@ -106,22 +106,28 @@ export async function getEvent(id: string): Promise<EventDetail | null> {
   const e = await prisma.event.findUnique({ where: { id }, include: { ...cardInclude, source: true } });
   if (!e) return null;
   const card = toCard(e);
+  // The drawer shows the email that last changed the event (a room change), not the first announcement.
+  const latestId = e.versions[0]?.fromSourceId;
+  const src = (latestId && latestId !== e.sourceId && (await prisma.source.findUnique({ where: { id: latestId } }))) || e.source;
+  // Only quotes found in that source, so the drawer never highlights text that isn't there.
+  const norm = (t: string) => t.toLowerCase().replace(/\s+/g, ' ').trim();
+  const evidence = parseJson<string[]>(e.evidence, []).filter((q) => norm(src.rawText).includes(norm(q)));
   return {
     ...card,
     summary: e.summary,
     locationRaw: e.locationRaw,
     rsvpUrl: e.rsvpUrl,
     confidence: e.confidence,
-    evidence: parseJson<string[]>(e.evidence, []),
+    evidence,
     gcalTemplateUrl: gcalTemplateUrl({ ...card, summary: e.summary, locationRaw: e.locationRaw, rsvpUrl: e.rsvpUrl }),
     source: {
-      id: e.source.id,
-      kind: e.source.kind as EventDetail['source']['kind'],
-      subject: e.source.subject,
-      sender: e.source.sender,
-      listName: e.source.listName,
-      receivedAt: e.source.receivedAt.toISOString(),
-      rawText: e.source.rawText,
+      id: src.id,
+      kind: src.kind as EventDetail['source']['kind'],
+      subject: src.subject,
+      sender: src.sender,
+      listName: src.listName,
+      receivedAt: src.receivedAt.toISOString(),
+      rawText: src.rawText,
     },
   };
 }
