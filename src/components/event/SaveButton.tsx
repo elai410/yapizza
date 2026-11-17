@@ -4,11 +4,11 @@ import { useState } from 'react';
 import useSWR from 'swr';
 import { isOn } from '@/lib/contracts';
 import { useSession } from '@/lib/client';
-import { Button } from '@/components/ui';
+import { Button, buttonClasses } from '@/components/ui';
 
 // Saves are per student (api gates them on GCAL_INSERT). Signed out, Save first asks who you are.
 export function SaveButton({ eventId }: { eventId: string }) {
-  const { user, students, signIn } = useSession();
+  const { user, students, googleAvailable, signIn } = useSession();
   const { data, mutate } = useSWR<{ eventIds: string[] }>(user ? '/api/saves' : null, async function (url: string) {
     const res = await fetch(url);
     if (!res.ok) throw new Error(String(res.status));
@@ -32,6 +32,8 @@ export function SaveButton({ eventId }: { eventId: string }) {
 
   if (!user && picking) {
     return (
+      <span className="inline-flex flex-wrap items-center gap-2">
+      {googleAvailable && <a href="/api/auth/google" className={buttonClasses()}>Sign in with Google</a>}
       <select
         aria-label="Student"
         defaultValue=""
@@ -41,6 +43,7 @@ export function SaveButton({ eventId }: { eventId: string }) {
         <option value="" disabled>Sign in as</option>
         {students.map(function (s) { return <option key={s.id} value={s.id}>{s.name}{s.college ? ` · ${s.college}` : ''}</option>; })}
       </select>
+      </span>
     );
   }
 
