@@ -54,10 +54,18 @@ test.describe('CP2 flyer upload', () => {
     // The processing state can be too quick to catch in replay mode, so this check is soft.
     await page.getByRole('status').waitFor({ timeout: 1_000 }).catch(() => {});
 
-    expect((await response).status()).toBe(200);
+    const res = await response;
+    expect(res.status()).toBe(200);
+    const body = (await res.json()) as { created: unknown[]; updated: unknown[] };
     const result = page.getByTestId('upload-result');
     await expect(result).toBeVisible({ timeout: 30_000 });
-    await expect(result.locator('[data-testid="event-card"]').first()).toBeVisible();
+    if (body.created.length + body.updated.length > 0) {
+      await expect(result.locator('[data-testid="event-card"]').first()).toBeVisible();
+    } else {
+      // A repeat upload is matched as `same` by dedup (CP3); the flyer's event must already be listed.
+      const list = await (await page.request.get('/api/events?q=Langer')).json();
+      expect(list.events.length).toBeGreaterThan(0);
+    }
   });
 });
 
