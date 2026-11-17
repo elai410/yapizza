@@ -9,7 +9,7 @@ Owner: qa-demo. Smoke tests gate every checkpoint. Bugs go to the Bugs list in C
 - One file: `pnpm exec playwright test tests/smoke/cp1.spec.ts`. Watch it: add `--headed`.
 - Each test calls `forCp(cp, flag)` from `tests/smoke/helpers.ts`, and `gotoApp(page, path)` to open a page with the intro already skipped.
 - Full gate: `pnpm demo:check` (typecheck, smoke, integration status).
-- Seed must be loaded first: `pnpm db:reset`. CP1 API tests expect at least one event.
+- Seed must be loaded first: `pnpm db:reset`, run by the human in a plain terminal (Prisma refuses `migrate reset` from Claude Code). CP1 API tests expect at least one event.
 
 ## Selectors the tests rely on
 
