@@ -17,6 +17,10 @@ const KIND_LABEL: Record<EventDetail['source']['kind'], string> = {
   form: 'Form',
 };
 
+const FROM_LABEL: Record<EventDetail['source']['kind'], string> = {
+  email: 'From the email', forward: 'From the email', demo: 'From the email', upload: 'From the flyer', form: 'From the form',
+};
+
 export function SourceDrawer({ event }: { event: EventDetail }) {
   const [open, setOpen] = useState(false);
   const contentId = useId();
@@ -48,7 +52,7 @@ export function SourceDrawer({ event }: { event: EventDetail }) {
             <p className="tnum">{KIND_LABEL[src.kind]} · {formatWhen(src.receivedAt)}</p>
           </div>
 
-          <p className="text-xs font-medium text-muted">From the email</p>
+          <p className="text-xs font-medium text-muted">{FROM_LABEL[src.kind]}</p>
           <pre className="-mt-2 max-h-80 overflow-y-auto whitespace-pre-wrap font-sans text-[13px] leading-relaxed text-ink">
             {highlightSegments(src.rawText, event.evidence).map(function (s, i) {
               return s.hit ? <mark key={i} className="rounded-sm bg-accent-soft px-0.5 text-ink">{s.text}</mark> : s.text;
@@ -66,9 +70,11 @@ export function SourceDrawer({ event }: { event: EventDetail }) {
 
           {(event.status === 'review' || event.confidence < 0.7) && <StatusBadge kind="review" />}
 
-          <p className="text-xs text-faint">
-            Read by Grok · confidence <span className="tnum">{event.confidence.toFixed(2)}</span>
-          </p>
+          {event.readBy === 'grok' && (
+            <p className="text-xs text-faint">
+              Read by Grok · confidence <span className="tnum">{event.confidence.toFixed(2)}</span>
+            </p>
+          )}
         </div>
       )}
     </div>

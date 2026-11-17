@@ -76,10 +76,10 @@ export function AskBox({ onOpen, autoFocus = false, initialQuery, examples = tru
             <EmptyState>No events match that.</EmptyState>
           ) : (
             <Card className="divide-y divide-line overflow-hidden">
-              {data.results.map(function (r) {
+              {[...data.results].sort(function (a, b) { return Date.parse(a.event.start) - Date.parse(b.event.start); }).map(function (r) {
                 return (
                   <div key={r.event.id}>
-                    <EventCard event={r.event} onOpen={onOpen} />
+                    <EventCard event={r.event} onOpen={onOpen} showDay />
                     {r.why && <p className="-mt-1 pb-3 pl-[7rem] pr-4 text-sm text-muted">{r.why}</p>}
                   </div>
                 );

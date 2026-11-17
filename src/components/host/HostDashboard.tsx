@@ -135,8 +135,8 @@ function ClaimClub({ onClaimed }: { onClaimed: () => void }) {
 }
 
 function HostSection({ host, onChange }: { host: MyHost; onChange: () => void }) {
-  const from = rangeFor('week').from;
-  const upcoming = host.events.filter((e) => e.event.start >= from || (e.event.end ?? '') >= from);
+  const from = Date.parse(rangeFor('week').from);
+  const upcoming = host.events.filter((e) => Date.parse(e.event.end ?? e.event.start) >= from);
   const { events, views, saves } = host.totals;
   const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
 

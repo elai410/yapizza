@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import useSWR from 'swr';
 import { isOn, type AlertsSubscribeRequest, type OkResponse } from '@/lib/contracts';
+import Link from 'next/link';
 import { Button, Card, Input, toast } from '@/components/ui';
 
 const KEY = 'yapizza.alerts';
@@ -74,7 +75,11 @@ export function AlertsOptIn({ onOpen }: { onOpen?: (id: string) => void } = {}) 
     }
   }
 
-  function undo() {
+  async function turnOff() {
+    if (onFor) {
+      const body: AlertsSubscribeRequest = { channel: 'email', target: onFor, freeFood: false };
+      await fetch('/api/alerts/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).catch(function () {});
+    }
     setOnFor(null);
     setEmail('');
     try {
@@ -84,14 +89,17 @@ export function AlertsOptIn({ onOpen }: { onOpen?: (id: string) => void } = {}) 
 
   return (
     <Card className="p-4">
-      <p className="text-sm font-medium text-ink">Free food alerts</p>
+      <div className="flex items-baseline justify-between gap-3">
+        <p className="text-sm font-medium text-ink">Free food alerts</p>
+        {isOn('DIGEST') && <Link href="/digest" className="text-sm text-accent hover:underline">Sunday digest</Link>}
+      </div>
       {onFor ? (
         <div className="mt-1 flex items-center justify-between gap-3">
           <p className="text-sm text-muted" role="status">
             Alerts on for {onFor}.
           </p>
-          <Button variant="ghost" size="sm" onClick={undo}>
-            Undo
+          <Button variant="ghost" size="sm" onClick={turnOff}>
+            Turn off
           </Button>
         </div>
       ) : (

@@ -60,7 +60,7 @@ function Body({ event: e }: { event: EventDetail }) {
       <div className="space-y-0.5 text-sm text-muted">
         <p className="tnum text-ink">{when}</p>
         {place && <p>{place}</p>}
-        {e.hostName && <p>{e.hostName}</p>}
+        {e.hostName && e.hostName !== place && <p>{e.hostName}</p>}
       </div>
 
       <div className="flex flex-wrap gap-1.5">
@@ -77,8 +77,8 @@ function Body({ event: e }: { event: EventDetail }) {
       {e.summary && <p className="text-[15px] leading-relaxed text-ink">{e.summary}</p>}
 
       <div className="flex flex-wrap items-center gap-2">
-        <AddToCalendar event={e} />
-        <SaveButton eventId={e.id} />
+        {e.status !== 'canceled' && <AddToCalendar event={e} />}
+        {e.status !== 'canceled' && <SaveButton eventId={e.id} />}
         {e.rsvpUrl && (
           <a href={e.rsvpUrl} target="_blank" rel="noopener noreferrer" className={buttonClasses()}>
             RSVP

@@ -37,7 +37,14 @@ export function SaveButton({ eventId }: { eventId: string }) {
       <select
         aria-label="Student"
         defaultValue=""
-        onChange={async function (e) { if (e.target.value) { await signIn(e.target.value); setPicking(false); } }}
+        onChange={async function (e) {
+          if (!e.target.value) return;
+          await signIn(e.target.value);
+          // The click that opened the picker meant "save", so save now instead of asking for a second click.
+          await fetch('/api/saves', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ eventId }) });
+          setPicking(false);
+          await mutate();
+        }}
         className="h-9 rounded-md border border-line-strong bg-surface px-3 text-sm text-ink"
       >
         <option value="" disabled>Sign in as</option>
