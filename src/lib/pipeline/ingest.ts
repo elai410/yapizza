@@ -1,4 +1,4 @@
-import { isOn, type EventCard, type IngestResult, type MatchDecision, type RawEmail } from '@/lib/contracts';
+import { isOn, type ReadBy, type EventCard, type IngestResult, type MatchDecision, type RawEmail } from '@/lib/contracts';
 import { prisma, saveExtraction, type SaveResult } from '@/lib/db';
 import { notifyFreeFood } from '@/lib/db/alerts';
 import { applyMatch, decideMatch, findCandidates } from './dedup';
@@ -38,11 +38,11 @@ async function match(x: CheckedExtraction, sourceText: string, sentAt?: string):
 }
 
 // After save, so EventVersion.fromSourceId points at a real Source.
-async function applyAll(matched: Matched[], saved: SaveResult): Promise<EventCard[]> {
+async function applyAll(matched: Matched[], saved: SaveResult, readBy?: ReadBy): Promise<EventCard[]> {
   if (saved.duplicateSource) return [];
   const cards: EventCard[] = [];
   for (const m of matched) {
-    const card = await applyMatch(m.ev, m.d, saved.sourceId);
+    const card = await applyMatch(m.ev, m.d, saved.sourceId, readBy);
     if (card) cards.push(card);
   }
   return cards;
@@ -99,7 +99,7 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
     },
     save,
   );
-  const result = toResult(saved, await applyAll(matched, saved), t0, extraction, { received, extracted, matched: matchedAt }); // duplicateSource: created is [] already, so the call is idempotent
+  const result = toResult(saved, await applyAll(matched, saved, extraction.readBy), t0, extraction, { received, extracted, matched: matchedAt }); // duplicateSource: created is [] already, so the call is idempotent
   await alertFreeFood(result);
   log(email.subject, extraction, result, saved.duplicateSource);
   return result;
@@ -136,7 +136,7 @@ export async function ingestFile(
     },
     save,
   );
-  const result = toResult(saved, await applyAll(matched, saved), t0, extraction, { received, extracted, matched: matchedAt });
+  const result = toResult(saved, await applyAll(matched, saved, extraction.readBy), t0, extraction, { received, extracted, matched: matchedAt });
   await alertFreeFood(result);
   log(file.filename, extraction, result);
   return result;

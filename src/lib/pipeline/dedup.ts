@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { z } from 'zod';
-import type { EventCard, MatchDecision } from '@/lib/contracts';
+import type { EventCard, MatchDecision, ReadBy } from '@/lib/contracts';
 import { getEvent, prisma, toNyIso } from '@/lib/db';
 import { grokJson, GrokReplayMiss } from '@/lib/grok';
 import { findPlace, placeName } from '@/lib/yale';
@@ -188,7 +188,7 @@ export async function decideMatch(ev: CheckedEvent, candidates: Candidate[], sou
 
 // ---------- apply ----------
 
-export async function applyMatch(ev: CheckedEvent, d: MatchDecision, sourceId: string): Promise<EventCard | null> {
+export async function applyMatch(ev: CheckedEvent, d: MatchDecision, sourceId: string, readBy?: ReadBy): Promise<EventCard | null> {
   if (!d.matchId || (d.action !== 'update' && d.action !== 'cancel')) return null;
   const id = d.matchId;
   if (d.action === 'cancel') {
@@ -213,6 +213,11 @@ export async function applyMatch(ev: CheckedEvent, d: MatchDecision, sourceId: s
         status: ev.status === 'review' ? cur.status : 'live',
       },
     });
+  }
+  // The drawer shows the update email's quotes, so it should say who read that email.
+  // Raw SQL: the running dev server's Prisma client predates the readBy column.
+  if (d.action === 'update' && readBy && ev.evidence.length) {
+    await prisma.$executeRaw`UPDATE "Event" SET "readBy" = ${readBy} WHERE "id" = ${id}`;
   }
   await prisma.eventVersion.create({
     data: { eventId: id, changedFields: JSON.stringify(d.changedFields), fromSourceId: sourceId },
