@@ -5,6 +5,7 @@ import { adapters } from '@/lib/adapters';
 import { fixtureEmails, resetSimMail } from '@/lib/adapters/sim/mail';
 import { resetSimCalendar } from '@/lib/adapters/sim/calendar';
 import { ingestEmail } from '@/lib/pipeline/ingest';
+import { notifyFreeFood } from '@/lib/db/alerts';
 
 const TZ = 'America/New_York';
 
@@ -64,7 +65,9 @@ function freeFoodNow(): RawEmail {
 async function send(label: string, email: RawEmail) {
   await adapters.mail().inject(email);
   const result = await ingestEmail(email, 'demo');
-  const detail = `${label}: ${result.created.length} created, ${result.updated.length} updated, ${result.inReview} in review`;
+  // Safe to repeat: notifyFreeFood skips subscribers already alerted for an event.
+  const alerts = isOn('ALERTS') ? await notifyFreeFood([...result.created, ...result.updated]) : 0;
+  const detail = `${label}: ${result.created.length} created, ${result.updated.length} updated, ${result.inReview} in review${alerts ? `, ${alerts} alerts` : ''}`;
   return NextResponse.json({ ok: true, detail, result });
 }
 
