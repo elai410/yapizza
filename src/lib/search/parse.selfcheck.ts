@@ -18,7 +18,7 @@ assert.equal(p.to?.toISOString(), '2026-11-23T05:00:00.000Z'); // Mon 00:00 NY
 assert.deepEqual(p.keywords, []);
 
 p = parseQuery('career talks with pizza tomorrow', now);
-assert.deepEqual(p.tags, ['professional', 'academic']);
+assert.deepEqual(p.tags, ['professional']); // 'career talks' is one phrase
 assert.deepEqual(p.keywords, ['pizza']);
 assert.equal(p.when, 'Tomorrow');
 assert.equal(p.freeFood, false);

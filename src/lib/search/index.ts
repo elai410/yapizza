@@ -28,6 +28,8 @@ const PHRASES: [string, string][] = [
   ['study break', 'break'],
   ['study abroad', 'abroad'],
   ['career fair', 'career'],
+  ['career talks', 'career'],
+  ['career talk', 'career'],
   ['computer science', 'cs'],
 ];
 
@@ -151,7 +153,10 @@ export async function searchEvents(f: EventQuery, limit = 15): Promise<SearchRow
       // All-day events sit at midnight; keep the ones on the first day of the window.
       OR: [{ start: { gte: f.from ?? new Date() } }, { allDay: true, start: { gte: nyMidnight(f.from ?? new Date(), 0) } }],
       ...(f.to ? { start: { lte: f.to } } : {}),
-      ...(f.college ? { college: f.college } : {}),
+      // College events are tagged, or held at a place that names the college ("Silliman Buttery").
+      ...(f.college
+        ? { AND: [{ OR: [{ college: f.college }, { locationRaw: { contains: f.college } }, { placeId: { contains: f.college } }] }] }
+        : {}),
       ...(f.freeFood ? { freeFood: true } : {}),
     },
     include: cardInclude,
@@ -214,17 +219,17 @@ export async function keywordAsk(q: string, now = new Date()): Promise<AskRespon
   const p = parseQuery(q, now);
   let rows = await searchEvents(p, 8);
   // Nothing matched everything: relax one filter at a time rather than answer empty.
-  let relaxed = 'none' as 'none' | 'close' | 'later'; // widened: assigned inside relax()
-  let q2: ParsedQuery = p;
-  const relax = async (next: ParsedQuery, kind: 'close' | 'later', limit = 8) => {
+  // A college is never dropped on its own: "something in JE" with nothing in JE says so plainly.
+  let relaxed = 'none' as 'none' | 'close' | 'later' | 'elsewhere'; // widened: assigned inside relax()
+  const relax = async (next: ParsedQuery, kind: 'close' | 'later' | 'elsewhere', limit = 8) => {
     if (rows.length) return;
-    q2 = next;
     rows = await searchEvents(next, limit);
     if (rows.length) relaxed = kind;
   };
-  if ((p.keywords.length || p.tags.length) && (p.when || p.freeFood || p.college)) await relax({ ...p, keywords: [], tags: [] }, 'close');
-  if (p.college) await relax({ ...q2, college: null }, 'close');
+  const topical = p.keywords.length > 0 || p.tags.length > 0;
+  if (topical && (p.when || p.freeFood || p.college)) await relax({ ...p, keywords: [], tags: [] }, 'close');
   if (p.when) await relax({ ...p, from: now, to: null }, 'later', 3);
+  if (p.college && (p.freeFood || topical)) await relax({ ...p, college: null }, 'elsewhere');
   const later = relaxed === 'later';
 
   // The card already shows the time, so the why says only what matched.
@@ -242,13 +247,20 @@ export async function keywordAsk(q: string, now = new Date()): Promise<AskRespon
     return { event: card, why: why || 'Coming up' };
   });
   const n = results.length;
-  const answer = later
-    ? `Nothing ${p.when!.toLowerCase()}. ${n === 1 ? 'This is the next one.' : 'These are the next ones.'}`
-    : relaxed === 'close'
-      ? `Nothing matches all of that. ${n === 1 ? 'This is close.' : 'These are close.'}`
-      : n
-      ? `${n} ${n === 1 ? 'event matches' : 'events match'}.`
-      : 'Nothing matches that yet.';
+  const one = n === 1;
+  const inCollege = p.college ? ` in ${p.college}` : '';
+  const answer =
+    relaxed === 'later'
+      ? `Nothing${inCollege} ${p.when!.toLowerCase()}. ${one ? 'This is the next one.' : 'These are the next ones.'}`
+      : relaxed === 'elsewhere'
+        ? `Nothing${inCollege}. ${one ? 'This one is elsewhere.' : 'These are elsewhere.'}`
+        : relaxed === 'close'
+          ? `Nothing matches all of that. ${one ? 'This is close.' : 'These are close.'}`
+          : n
+            ? `${n} ${one ? 'event matches' : 'events match'}.`
+            : p.college
+              ? `Nothing${inCollege}${p.when ? ` ${p.when.toLowerCase()}` : ''} yet.`
+              : 'Nothing matches that yet.';
   return { answer, results, mode: 'fallback' };
 }
 
