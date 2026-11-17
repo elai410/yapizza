@@ -18,4 +18,5 @@ export interface CheckedExtraction {
   flagReason: string | null;
   mode: 'grok' | 'replay' | 'fallback';
   ms: number;
+  readText?: string;               // text the extraction read, incl. a known flyer's transcription
 }

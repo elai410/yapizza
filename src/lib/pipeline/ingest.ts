@@ -9,7 +9,15 @@ import type { CheckedEvent, CheckedExtraction } from './types';
 type Matched = { ev: CheckedEvent; d: MatchDecision };
 
 // Before save: events matching an existing one leave the save list; 'same' just drops.
-async function match(x: CheckedExtraction, sourceText: string): Promise<{ save: CheckedExtraction; matched: Matched[] }> {
+// An email older than the one behind a card's latest update must not undo it (re-sending 34 after 39).
+async function newerUpdateExists(eventId: string, sentAt: string): Promise<boolean> {
+  const v = await prisma.eventVersion.findFirst({ where: { eventId }, orderBy: { changedAt: 'desc' }, select: { fromSourceId: true } });
+  if (!v?.fromSourceId) return false;
+  const src = await prisma.source.findUnique({ where: { id: v.fromSourceId }, select: { receivedAt: true } });
+  return Boolean(src && src.receivedAt.getTime() > new Date(sentAt).getTime());
+}
+
+async function match(x: CheckedExtraction, sourceText: string, sentAt?: string): Promise<{ save: CheckedExtraction; matched: Matched[] }> {
   if (!isOn('DEDUP') || x.flagged) return { save: x, matched: [] };
   const keep: CheckedEvent[] = [];
   const matched: Matched[] = [];
@@ -18,7 +26,10 @@ async function match(x: CheckedExtraction, sourceText: string): Promise<{ save: 
       keep.push(ev);
       continue;
     }
-    const d = await decideMatch(ev, await findCandidates(ev), sourceText);
+    let d = await decideMatch(ev, await findCandidates(ev), sourceText);
+    if (sentAt && d.matchId && d.action !== 'same' && (await newerUpdateExists(d.matchId, sentAt))) {
+      d = { action: 'same', matchId: d.matchId, changedFields: [] };
+    }
     console.log(`[dedup] ${ev.title} -> ${d.action}${d.matchId ? ` ${d.matchId}` : ''}${d.changedFields.length ? ` [${d.changedFields.join(',')}]` : ''}`);
     if (d.action === 'new') keep.push(ev);
     else matched.push({ ev, d });
@@ -66,7 +77,7 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
   if (seen) return { sourceId: seen.id, created: [], updated: [], listings: 0, inReview: 0, ms: Date.now() - t0 };
   const input = rawEmailToInput(email);
   const extraction = await extractEvents(input);
-  const { save, matched } = await match(extraction, `${email.subject}\n${input.text}`);
+  const { save, matched } = await match(extraction, `${email.subject}\n${extraction.readText ?? input.text}`, email.sentAt);
   const saved = await saveExtraction(
     {
       kind,
@@ -74,7 +85,7 @@ export async function ingestEmail(email: RawEmail, kind: 'email' | 'forward' | '
       sender: email.from,
       listName: email.listName ?? null,
       subject: email.subject,
-      rawText: email.text,
+      rawText: extraction.readText ?? email.text, // includes a flyer's text so the drawer can highlight its quotes
       receivedAt: email.sentAt,
     },
     save,
@@ -101,7 +112,7 @@ export async function ingestFile(
       ? await extractEvents(read.input)
       : { events: read.events.map((e) => ({ ...e, status: 'live' as const })), flagged: false, flagReason: null, mode: 'grok', ms: 0 }; // ICS is already structured
   if (hostName) for (const e of extraction.events) e.hostName ??= hostName;
-  const rawText = read.kind === 'input' && read.input.text.trim() ? read.input.text : `[${file.mimeType.startsWith('image/') ? 'image' : 'file'}] ${file.filename}`;
+  const rawText = extraction.readText?.trim() ? extraction.readText : read.kind === 'input' && read.input.text.trim() ? read.input.text : `[${file.mimeType.startsWith('image/') ? 'image' : 'file'}] ${file.filename}`;
   const { save, matched } = await match(extraction, `${file.filename}\n${rawText}`);
   const saved = await saveExtraction(
     {

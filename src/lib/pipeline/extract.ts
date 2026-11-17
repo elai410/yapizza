@@ -131,5 +131,5 @@ export async function extractEvents(input: ExtractInput, now = new Date()): Prom
     return { ...e, placeId, college, status: review ? 'review' : 'live' };
   });
 
-  return { events, flagged: result.flagged, flagReason: result.flagReason, mode, ms: Date.now() - t0 };
+  return { events, flagged: result.flagged, flagReason: result.flagReason, mode, ms: Date.now() - t0, readText: input.text };
 }
