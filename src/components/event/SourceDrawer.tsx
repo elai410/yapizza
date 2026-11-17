@@ -13,12 +13,12 @@ const KIND_LABEL: Record<EventDetail['source']['kind'], string> = {
   email: 'Email',
   forward: 'Email',
   demo: 'Email',
-  upload: 'Uploaded flyer',
+  upload: 'Upload',
   form: 'Form',
 };
 
 const FROM_LABEL: Record<EventDetail['source']['kind'], string> = {
-  email: 'From the email', forward: 'From the email', demo: 'From the email', upload: 'From a flyer', form: 'From the form',
+  email: 'From the email', forward: 'From the email', demo: 'From the email', upload: 'From an upload', form: 'From the form',
 };
 
 export function SourceDrawer({ event }: { event: EventDetail }) {
@@ -68,13 +68,15 @@ export function SourceDrawer({ event }: { event: EventDetail }) {
             </div>
           )}
 
-          {(event.status === 'review' || event.confidence < 0.7) && <StatusBadge kind="review" />}
+          {event.status === 'review' && <StatusBadge kind="review" />}
 
-          {event.readBy === 'grok' && (
+          {event.readBy === 'grok' ? (
             <p className="text-xs text-faint">
               Read by Grok · confidence <span className="tnum">{event.confidence.toFixed(2)}</span>
             </p>
-          )}
+          ) : event.evidence.length > 0 ? (
+            <p className="text-xs text-faint">Quotes checked against the {src.kind === 'upload' ? 'file' : src.kind === 'form' ? 'listing' : 'email'}</p>
+          ) : null}
         </div>
       )}
     </div>

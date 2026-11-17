@@ -73,7 +73,7 @@ export function AskBox({ onOpen, autoFocus = false, initialQuery, examples = tru
             </div>
           )}
           {data.results.length === 0 ? (
-            <EmptyState>No events match that.</EmptyState>
+            <EmptyState>{data.answer || 'No events match that.'}</EmptyState>
           ) : (
             <Card className="divide-y divide-line overflow-hidden">
               {[...data.results].sort(function (a, b) { return Date.parse(a.event.start) - Date.parse(b.event.start); }).map(function (r) {

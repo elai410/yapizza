@@ -64,8 +64,6 @@ export function useAsk() {
     let result: AskResponse | null = null;
     try {
       result = await askApi(query);
-      // The server's keyword mode can miss what the client parser understands ("career talk" -> Career tag).
-      if (result.mode === 'fallback' && result.results.length === 0) result = await searchEvents(query).catch(function () { return result; });
     } catch {
       try {
         result = await searchEvents(query);

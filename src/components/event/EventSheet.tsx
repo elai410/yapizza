@@ -67,6 +67,8 @@ function Body({ event: e }: { event: EventDetail }) {
         {e.status === 'canceled' && <StatusBadge kind="canceled" />}
         {e.status !== 'canceled' && e.updatedFields.length > 0 && <StatusBadge kind="updated" />}
         {e.tags.map(function (t) { return <TagChip key={t} tag={t} />; })}
+        {e.audience === 'members_only' && <span className="self-center text-xs text-muted">Members only</span>}
+        {e.audience === 'college_only' && <span className="self-center text-xs text-muted">{e.college ?? 'College'} only</span>}
       </div>
 
       {e.status !== 'canceled' && e.updatedFields.length > 0 && (
