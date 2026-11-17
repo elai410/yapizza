@@ -6,7 +6,7 @@ import { prisma } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 
-// Same identity rules as subscribe: the signed-in user, and/or the email the alert went to.
+// The email the alert went to when given, otherwise the signed-in user.
 const Body = z.object({ target: z.string().trim().min(1).max(200).optional() });
 
 export async function POST(req: Request) {
@@ -18,7 +18,8 @@ export async function POST(req: Request) {
   if (!u && !target) return NextResponse.json({ error: 'target required' }, { status: 400 });
 
   await prisma.user.updateMany({
-    where: { OR: [...(u ? [{ netid: u.netid }] : []), ...(target ? [{ alertEmail: target }, { netid: `alert:${target}` }] : [])] },
+    // A given target is exact: it never also turns off the signed-in user's own alerts.
+    where: target ? { OR: [{ alertEmail: target }, { netid: `alert:${target}` }] } : { netid: u!.netid },
     data: { alertFreeFood: false },
   });
   return NextResponse.json({ ok: true } satisfies OkResponse);

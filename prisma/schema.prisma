@@ -55,6 +55,7 @@ model Event {
   confidence  Float
   evidence    String         // JSON string[]
   readBy      String         @default("rules") // v1.1: grok | rules
+  hostOriginal String?       // JSON snapshot of host-editable fields before the first host edit
   status      String         @default("live") // live | review | canceled
   seriesId    String?
   views       Int            @default(0)

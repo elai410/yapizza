@@ -30,7 +30,7 @@ done: events + seed (5bd6986); ask 9c94a90: POST /api/ask, Grok tool calling (se
 in flight (subagents): none
 next: polish. Latest: Event.readBy (v1.1) stored and returned; detail shows the latest changing source; POST /api/alerts/unsubscribe; Ask keeps colleges strict ("Nothing in Jonathan Edwards yet."); resetDemoData() for Reset demo.
 blockers: none. Prisma refuses `migrate reset` from Claude Code: `pnpm db:reset` / `demo:reset` run from the human's terminal.
-uncommitted: src/lib/search/index.ts, src/lib/search/parse.selfcheck.ts, src/lib/db/host.ts, src/app/api/ask/route.ts (18:2x: Ask past-match fallback + phrases, host edit place ids, host list upcoming first, 8s Grok Ask deadline; smoke 29/30 pass, 1 skipped)
+uncommitted: src/lib/search/index.ts, src/lib/search/parse.selfcheck.ts, src/lib/db/host.ts, src/app/api/ask/route.ts, src/app/api/alerts/unsubscribe/route.ts, src/app/api/events/[id]/route.ts, src/app/api/events/[id]/view/route.ts (new), prisma/schema.prisma, prisma/migrations/20261117231427_event_host_original/ (new). Smoke 30/30.
 
 
 ## integrations
@@ -102,12 +102,12 @@ blockers: Grok key plus `pnpm grok:record`
 - ~~[frontend, design] SourceDrawer shows "Needs review" whenever confidence < 0.7, even on live cards. Every demo send is rule-read at 0.50 until there's a key, so the room-change, flyer and pizza drawers all say "Needs review" on stage. Decide whether a live rules card shows it (readBy now tells rules from grok). (18:07)~~ fixed by frontend: "Needs review" only when status is review; no line for non-Grok reads
 - ~~[api] Ask "free food this week" drops the Silliman pizza once its start has passed, though it runs 45 min; "tonight" includes it. Include events that are still running. (18:07)~~ fixed 18:1x (api): every Ask window keeps events still running at its start (end later, or no end and began within 90 min); finished events drop out. Uncommitted in src/lib/search/index.ts.
 - ~~[frontend] bug-hunt 2: useAsk.ts drops the server's answer when it has 0 results and runs its own keyword search. "something in JE" shows this week's first 8 events instead of "Nothing in Jonathan Edwards yet."; "pizza" before key 4 does the same. Keep the server answer; fall back only on errors. (18:12)~~ fixed: server answer kept; JE shows "Nothing in Jonathan Edwards yet." (verified 18:14)
-- [api] Ask fallback ignores the day: "talks on Thursday" lists Tue and Wed events first, and only 4 of 8 are Thursday. (18:12)
+- ~~[api] Ask fallback ignores the day: "talks on Thursday" lists Tue and Wed events first, and only 4 of 8 are Thursday. (18:12)~~ fixed 18:3x (api), uncommitted
 - [pipeline] Flyer card has hostName null although the text starts "YALE HELIX PRESENTS"; summary repeats the title. (18:12)
 - [pipeline] Fixture 36 host is "OCAY Members" (the list name), so /host lists OCAY and OCAY Members as separate clubs. (18:12)
 - [pipeline, api] Rule-fallback events at confidence 0.50 are saved live, against 12.3 (below 0.7 means review). It's a lead decision (FALLBACK_LIVE_WHEN_EVIDENCE_OK); noted for the record. (18:12)
-- [api] Host edit, then restoring the title, leaves updatedFields ['title'], so the card keeps the Updated badge. (18:12)
-- [api] GET /api/events/[id] counts every fetch as a view, so API calls and refetches inflate the /host reach totals. (18:12)
+- ~~[api] Host edit, then restoring the title, leaves updatedFields ['title'], so the card keeps the Updated badge. (18:12)~~ fixed 18:3x (api), uncommitted
+- ~~[api] GET /api/events/[id] counts every fetch as a view, so API calls and refetches inflate the /host reach totals. (18:12)~~ fixed 18:3x (api), uncommitted
 - ~~[integrations] Reset keeps alert subscriptions, so each key-4 press also alerts the test addresses (smoke@example.com, late-subscriber@yapizza.test) and clutters /sim/outbox. Reset could drop subscriptions for non-demo-student addresses. (18:12)~~ fixed: reset turns off non-demo-student subscriptions
-- [api] /api/alerts/unsubscribe also turns off the signed-in user's alerts when only a target is given; the client ignores a failed unsubscribe. (18:12)
+- ~~[api] /api/alerts/unsubscribe also turns off the signed-in user's alerts when only a target is given; the client ignores a failed unsubscribe. (18:12)~~ fixed 18:3x (api), uncommitted
 - ~~[frontend] SourceDrawer labels every upload (CSV, PDF, .ics) "From a flyer"; the members-only marker is on the card but not in the sheet. (18:12)~~ fixed: "From an upload"; marker in sheet

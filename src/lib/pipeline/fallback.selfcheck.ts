@@ -116,4 +116,30 @@ for (const file of readdirSync(DIR).filter(function (f) { return f.endsWith('.js
   }
 }
 
+// Hosts: list suffixes dropped; a flyer's "X PRESENTS" line names the host.
+assert.equal(run('36-ocay-trip-leaders-members-only.json').r.events[0].hostName, 'OCAY');
+{
+  const flyer = fallbackExtract({ text: 'YALE HELIX PRESENTS\n\nFireside Chat with Robert Langer\nFRIDAY, NOV 20\n1:15 PM\nLC 101', listName: null, sentAt: '2026-11-17T12:00:00-05:00' }).events[0];
+  assert.equal(flyer.hostName, 'Yale Helix');
+  assert.equal(flyer.summary, 'Yale Helix presents Fireside Chat with Robert Langer.');
+}
+
+// Line formats from calendar exports and listings (held-out set, pnpm eval --heldout).
+{
+  const one = function (text: string, sentAt = '2026-11-01T12:00:00-05:00') { return fallbackExtract({ text, sentAt }).events; };
+  const iso = one('Fall Fest | 2026-10-17T11:00:00-04:00 - 13:30 | SOM Room 2210 | [Primary]', '2026-10-14T12:00:00-04:00');
+  assert.deepEqual([iso[0].title, iso[0].start, iso[0].end, iso[0].placeId], ['Fall Fest', '2026-10-17T11:00:00-04:00', '2026-10-17T13:30:00-04:00', 'som']);
+  const two = one('Info sessions - Sat Nov 7, 1-2pm, WLH 211 and Sun Nov 8, 4-5pm, LC 207 (applications due Nov 9, 11:59pm)');
+  assert.deepEqual(two.map(function (e) { return [e.start, e.placeId]; }), [['2026-11-07T13:00:00-05:00', 'wlh'], ['2026-11-08T16:00:00-05:00', 'lc']]);
+  const listed = one('Putnam sessions - Wednesdays 7-9pm: Nov 4 DL 220, Nov 11 LC 211 (exam Sat Dec 5)');
+  assert.deepEqual(listed.map(function (e) { return [e.start, e.placeId]; }), [['2026-11-04T19:00:00-05:00', 'dl'], ['2026-11-11T19:00:00-05:00', 'lc']]);
+  const parts = one('Trainings: Intermediate HPC - Mon Nov 9, 1-4pm, YCRC Auditorium; Matlab - Wed Nov 11, 10am-12pm, Sterling Hall of Medicine C-103');
+  assert.deepEqual(parts.map(function (e) { return e.title; }), ['Trainings: Intermediate HPC', 'Matlab']);
+  const allDay = one('Restaurant Week - Nov 2-14; discounted lunches');
+  assert.deepEqual([allDay[0].allDay, allDay[0].start, allDay[0].end], [true, '2026-11-02T00:00:00-05:00', '2026-11-14T23:59:00-05:00']);
+  assert.equal(one('Roshni 2026, Fri Nov 6.').length, 0); // a date in prose with no time stays skipped
+  assert.equal(one('Game Night - weekly Wednesdays 6-7pm, AACC Game Room').length, 0); // weekly with no date stays skipped
+  for (const e of [...iso, ...two, ...listed, ...parts, ...allDay]) assert.ok(e.evidence.length > 0);
+}
+
 console.log('fallback selfcheck ok');
