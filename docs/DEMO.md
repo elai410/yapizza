@@ -8,6 +8,7 @@ Owner: qa-demo. One script per checkpoint. Whatever checkpoint we wrap at, run t
 - [ ] `pnpm demo:reset` (database back to the seed, sim inbox and outbox cleared). Run it with `pnpm dev` up so the sim reset reaches the app. Run it in a plain terminal, not from a Claude session: Prisma refuses `migrate reset` when Claude Code invokes it.
 - [ ] Browser tab 1: `http://localhost:3000/` in a fresh window, so the intro plays once.
 - [ ] Browser tab 2: `http://localhost:3000/demo` (CP2 and later). Check the status row: which services are live, which are sim.
+- [ ] CP4 and later: after the reset and before the run, opt the demo student in to free food alerts. An alert goes out only when key 4 makes or changes a card, and only the first press of the day does. So the opt-in has to come before CP3's press of 4.
 - [ ] CP4 and later: phone on the same Wi-Fi, signed in to the demo Google account, Google Calendar app open.
 - [ ] Bad Wi-Fi: set `YAPIZZA_FORCE_SIM=1` in .env, restart `pnpm dev`, confirm `/demo` shows every service as sim and Grok as replay.
 - [ ] Before the final run: `pnpm grok:record` has been run on every input in "Grok replay inputs" below, so replay mode answers them all.
@@ -111,8 +112,8 @@ Story: students don't have to come back to the site to stay in the loop. Adds 0:
 Inputs: free food alert opt-in for a demo student, `/demo` key 4 (Free food now), one event to add (Fireside Chat with Robert Langer).
 
 1. (0:00) On the phone, open the Langer card, tap Add to calendar. Live: it lands in Google Calendar on the phone. Sim: open `/sim/calendar`, the event sits on Fri Nov 20 at 1:15 PM.
-2. (0:15) On tab 1, opt in to free food alerts as the demo student.
-3. (0:20) Tab 2, press 4 (Free food now). A toast appears on tab 1. Live: the alert email arrives. Sim: `/sim/outbox` lists the message.
+2. (0:15) On tab 1, show the free food alert opt-in, already on (done in setup).
+3. (0:20) The CP3 press of 4 already sent the alert. Live: show the alert email. Sim: open `/sim/outbox`, which lists the Silliman Buttery pizza message. Don't press 4 again: a repeat press is matched as the same event and sends nothing.
 4. (0:30) Show the calendar feed subscribe option for Free food (`/api/feeds/free-food.ics`).
 5. (0:40) Show the Sunday digest preview: this week's events in one plain email.
 
