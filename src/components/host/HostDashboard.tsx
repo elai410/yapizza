@@ -194,15 +194,15 @@ function EventRow({ event, onChange }: { event: EventCard; onChange: () => void 
   if (editing) return <EditForm event={event} onDone={(saved) => { setEditing(false); if (saved) onChange(); }} />;
 
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3">
+    <div className="flex flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
       <div className="min-w-0 flex-1">
         <p className="tnum text-[13px] text-muted">{formatWhen(event.start, event.allDay)}</p>
-        <p className="truncate text-[15px] font-medium text-ink">{event.title}</p>
-        {event.placeName ? <p className="truncate text-sm text-muted">{event.placeName}</p> : null}
+        <p className="text-[15px] font-medium text-ink">{event.title}</p>
+        {event.placeName ? <p className="text-sm text-muted">{event.placeName}</p> : null}
       </div>
-      {badge ? <StatusBadge kind={badge} /> : null}
+      {badge ? <StatusBadge kind={badge} className="self-start sm:self-center" /> : null}
       {event.status !== 'canceled' ? (
-        <div className="flex gap-1">
+        <div className="-ml-2 flex gap-1 sm:ml-0">
           <Button variant="ghost" size="sm" onClick={() => setEditing(true)}>
             Edit
           </Button>
