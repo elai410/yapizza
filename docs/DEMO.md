@@ -40,10 +40,10 @@ Inputs: seeded events only. No sends.
 1. (0:00) Tab 1 on `/`, intro skipped or finished. Feed is on This week. Say: "This is everything open to Yale students this week, read from club and office emails."
 2. (0:10) Point at three real cards for today and this week:
    - Ceremonial Weighing of Handsome Dan (The Veritas Search). Tue, Nov 17 · 8:30 PM. Beinecke Plaza. YCC.
-   - YASSS Dinner with Dr. Frank van den Bosch. Tue, Nov 17 · 5:15 PM. Pauli Murray Dining Hall. Free food marker.
+   - YASSS Dinner with Dr. Frank van den Bosch. Tue, Nov 17 · 5:15 PM. Pauli Murray Dining Hall.
    - WaMH Talk: Culture, Consent, and Care. Thu, Nov 19 · 4:30 PM. AACC MPR. Free food marker (Hot Murga catering).
 3. (0:20) Click Today. Only Nov 17 events remain (Take it Easy Tuesday, Senior Story, Kitchen Table Talks, Grave of the Fireflies, the Weighing). Click This week again.
-4. (0:25) Click the Free food chip. The feed narrows to events whose email mentions food: YASSS Dinner and WaMH Talk, plus any other seeded free food this week. Say: "Free food is the first filter students asked for."
+4. (0:25) Click the Free food chip. The feed narrows to events whose email mentions food: One Last Sweet Treat Before Thanksgiving Break (Wed, Nov 18) and WaMH Talk (Thu, Nov 19), plus Applied Math DSAC Bluebooking Session (Mon, Nov 16) if the week view includes past days. Say: "Free food is the first filter students asked for."
 5. (0:35) Click the WaMH Talk card. The detail sheet opens: summary, AACC MPR, the catering note, Add to calendar.
 6. (0:45) Click Add to calendar. A new tab opens Google Calendar with the title, Thu Nov 19 4:30 to 6:00 PM, and AACC MPR filled in. Say: "One tap, and it's in the calendar Yale students already use." Close the Google tab without saving.
 7. (0:55) Press Escape. The sheet closes and focus returns to the card.
@@ -77,15 +77,30 @@ Known at CP2: in replay mode with no recording, the flyer returns no events (log
 
 Story: the feed stays correct when plans change, and students can ask in plain words. Adds 1:00 to CP2.
 
-Inputs: `fixtures/emails/39-yums-panel-room-change.json`, Ask query "free food tonight". Optional: `40-aacc-politics-purse-canceled.json`, `21-aasa-night-market-aacc.json` then `22-aasa-night-market-dwight.json`.
+Starting state: CP2 just ran, so 34 has been sent and the three YUMS cards are on the feed, including Math Research Panel, Thu, Nov 19 · 4:00 PM, WLH 120. If you start at CP3 cold, press 1 with `34` selected first.
 
-1. (0:00) Tab 2, press 2 (Send room change). This sends 39: "the Math Research Panel on Thursday 11/19 (4:00-5:30pm) has moved from WLH 120 to LC 102."
-2. (0:10) Tab 1. The same Math Research Panel card now reads LC 102 with an Updated badge. No second card. Say: "Same event, new room, no duplicate."
-3. (0:20) Type "free food tonight" in the Ask box (or go to `/ask`). The answer is two sentences or fewer and cards come back with a short why. Before 6 PM expect the YASSS Dinner; later in the evening, press 4 (Free food now) on `/demo` first so tonight has a result. If the demo is on another day, ask "free food this week".
-4. (0:40) Open a result, then open "How this was read". The source email shows with Grok's evidence quotes highlighted for time and place, and one small "Read by Grok" line.
-5. (0:50) Optional: send 40 from `/demo`. Politics of the Purse (Wed, Nov 18 · 7:00 PM, AACC MPR) shows as canceled.
+Inputs: `fixtures/emails/39-yums-panel-room-change.json` (key 2), the free food now email (key 4), Ask query "free food tonight". Optional: `40-aacc-politics-purse-canceled.json` (key 1 with `40` selected).
 
-Backup beat (not in the 3 minutes): send 21 then 22. Both carry the AASA Night Market; the feed shows one card.
+What key 4 sends (built at the moment you press it, from `src/app/api/demo/[action]/route.ts`): from `AACC <aacc@lists.yale.test>`, subject "Leftover pizza in the AACC MPR now", body "We have a lot of pizza left over from Senior Story. Come grab some in the AACC MPR, Tuesday 11/17, <now> to <now + 45 min>. Open to everyone, first come first served."
+
+1. (0:00) Tab 2, `/demo`, press 2 (Send room change). It sends 39, subject "ROOM CHANGE: Math Research Panel now in LC 102": "the Math Research Panel on Thursday 11/19 (4:00-5:30pm) has moved from WLH 120 to LC 102." The log row reads `room change: 0 created, 1 updated, 0 in review`.
+2. (0:10) Tab 1, This week. Within 3 seconds the Math Research Panel card reads Thu, Nov 19 · 4:00 PM, LC 102, with an Updated badge. There is still exactly one Math Research Panel card. Say: "Same event, new room, no duplicate."
+3. (0:20) Tab 2, press 4 (Free food now). The log row reads `free food now: 1 created`. Tab 1 gets a new AACC card at the current time, place AACC, with the free food marker.
+4. (0:25) Tab 1, go to `/ask` (or use the Ask box on the feed). Type "free food tonight" and press Enter. Expect a short answer and the AACC leftover pizza card with a one-line why. No seeded event on Nov 17 has free food, so this card is the only expected result. Say: "Plain words in, events out, each one from a real email."
+5. (0:40) Open the leftover pizza card, then click "How this was read". The drawer shows the subject, the sender (AACC), and the email text, with Grok's evidence quotes highlighted (the day and time, "Tuesday 11/17, ..."; the place, "AACC MPR"). Below it, one line: "Read by Grok · confidence 0.xx". Say: "Every card keeps its source. The highlighted quotes are what Grok used, and code checks they are really in the email."
+6. (0:55) Optional: `/demo`, select `40` in the fixture list, press 1. Politics of the Purse (Wed, Nov 18 · 7:00 PM, AACC MPR) shows as canceled.
+
+Fallbacks:
+- Ask returns nothing for "free food tonight" (the clock or the parser read "tonight" narrowly): ask "free food this week". Expect the leftover pizza plus seeded free food: One Last Sweet Treat Before Thanksgiving Break (Wed, Nov 18 · 2:00 PM) and WaMH Talk: Culture, Consent, and Care (Thu, Nov 19 · 4:30 PM, AACC MPR, Hot Murga).
+- Ask shows no "Read by Grok" line: it answered in keyword fallback (`mode: 'fallback'`). The cards are still right; keep going.
+- Grok in replay (no key, or `YAPIZZA_FORCE_SIM=1`): the free food now email can never hit a recording, because its text carries the current time. It runs through the rule-based extractor, gets confidence 0.50, and the drawer shows a Review badge. For beat 5, open Putnam problem session (Wed, Nov 18 · 7:00 PM, DL 220) from the feed instead; it comes from the recorded 34. Avoid the Math Research Panel drawer: it shows the original email 34 with WLH 120 highlighted, since the update keeps the first source.
+- Replay with no recording of 34: the rule-based extractor titles the panel "MATH RESEARCH PANEL: thinking about REUs". The room change still matches it (same host, same day). Record 34 before the final run so the title reads Math Research Panel.
+
+Checks before calling CP3 passed (qa-demo):
+- Free food now does not update Senior Story: Kelly Dai and Jen Chen (seeded, AACC, Tue Nov 17 · 5:00 PM, AACC MPR). Both are AACC on the same day at the same place, and the rule-based matcher in `src/lib/pipeline/dedup.ts` treats same host and same day as a match. If Senior Story gets an Updated badge and no pizza card appears, log it for pipeline and integrations.
+- If CP4 is in the run, opt the demo student in to free food alerts before beat 3, so one press of 4 also shows the alert.
+
+Backup beat (not in the 3 minutes): send 21 then 22. Both carry the AASA Night Market; the feed shows one card. It is also in the seed, so both sends should come back as same.
 
 ---
 
@@ -135,15 +150,15 @@ Inputs: `fixtures/emails/37-ocay-gear-sale.json`, `fixtures/emails/36-ocay-trip-
 
 ## Grok replay inputs
 
-Run `pnpm grok:record` on every one of these before the final run.
+Run `pnpm grok:record` on every one of these before the final run. Each one is a Grok call in CP2 or CP3.
 
-- `fixtures/emails/34-yums-weekly-nov-16.json` (send, CP2)
-- `fixtures/flyers/helix-langer-flyer.png` (upload, CP2; same flyer as `31-helix-langer-flyer.json`)
+- `fixtures/emails/34-yums-weekly-nov-16.json` (key 1, CP2; also the CP3 starting state)
+- `fixtures/flyers/helix-langer-flyer.png` (key 3 or `/host/upload`, CP2; same flyer as `31-helix-langer-flyer.json`)
 - `fixtures/emails/31-helix-langer-flyer.json` (email with the flyer attached)
-- `fixtures/emails/39-yums-panel-room-change.json` (room change and dedup, CP3)
-- `fixtures/emails/40-aacc-politics-purse-canceled.json` (cancellation, CP3)
-- `fixtures/emails/21-aasa-night-market-aacc.json`, `22-aasa-night-market-dwight.json` (same event, two lists, CP3)
-- Ask queries: "free food tonight", "free food this week" (CP3)
-- Free food now demo action payload (CP3, CP4)
+- `fixtures/emails/39-yums-panel-room-change.json` (key 2, CP3: extraction and the dedup match against the 34 panel)
+- `fixtures/emails/40-aacc-politics-purse-canceled.json` (key 1 with `40`, CP3: extraction and the cancel match)
+- Free food now email (key 4, CP3 and CP4). It cannot be replayed: its text holds the current time, so the replay key changes on every press. Offline it always uses the rule-based extractor.
+- Ask queries: "free food tonight", "free food this week" (CP3). Answers depend on the database, so a recording only helps if the state matches the run.
+- `fixtures/emails/21-aasa-night-market-aacc.json`, `22-aasa-night-market-dwight.json` (same event, two lists, CP3 backup beat)
 - `fixtures/emails/37-ocay-gear-sale.json` (listing, CP5)
 - `fixtures/emails/36-ocay-trip-leaders-members-only.json` (members only, CP5)
