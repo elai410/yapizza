@@ -5,7 +5,7 @@ Owner: qa-demo. One script per checkpoint. Whatever checkpoint we wrap at, run t
 ## Setup checklist (5 minutes before)
 
 - [ ] `pnpm dev` running on port 3000 in its own terminal. If .env changed since it started, restart it.
-- [ ] `pnpm demo:reset` (database back to the seed, sim inbox and outbox cleared). Run it with `pnpm dev` up so the sim reset reaches the app.
+- [ ] `pnpm demo:reset` (database back to the seed, sim inbox and outbox cleared). Run it with `pnpm dev` up so the sim reset reaches the app. Run it in a plain terminal, not from a Claude session: Prisma refuses `migrate reset` when Claude Code invokes it.
 - [ ] Browser tab 1: `http://localhost:3000/` in a fresh window, so the intro plays once.
 - [ ] Browser tab 2: `http://localhost:3000/demo` (CP2 and later). Check the status row: which services are live, which are sim.
 - [ ] CP4 and later: phone on the same Wi-Fi, signed in to the demo Google account, Google Calendar app open.
