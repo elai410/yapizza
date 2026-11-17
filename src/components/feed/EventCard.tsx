@@ -17,7 +17,7 @@ export function EventCard({ event, onOpen, arrived = false, showDay = false }: {
       onClick={function (e) { e.currentTarget.focus(); onOpen(event.id); }}
       className={cn('flex w-full gap-4 px-4 py-3 text-left transition-colors hover:bg-sunken', arrived && ARRIVE_CLASS)}
     >
-      <span className="tnum w-20 shrink-0 pt-px text-sm text-muted">
+      <span className={cn('tnum shrink-0 pt-px text-sm text-muted', showDay ? 'w-24' : 'w-20')}>
         {showDay && <span className="block text-ink">{formatWhen(event.start).split(' · ')[0]}</span>}
         {formatTime(event.start, null, event.allDay)}
       </span>

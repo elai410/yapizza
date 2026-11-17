@@ -80,7 +80,7 @@ export function AskBox({ onOpen, autoFocus = false, initialQuery, examples = tru
                 return (
                   <div key={r.event.id}>
                     <EventCard event={r.event} onOpen={onOpen} showDay />
-                    {r.why && <p className="-mt-1 pb-3 pl-[7rem] pr-4 text-sm text-muted">{r.why}</p>}
+                    {r.why && <p className="-mt-1 pb-3 pl-[8rem] pr-4 text-sm text-muted">{r.why}</p>}
                   </div>
                 );
               })}
