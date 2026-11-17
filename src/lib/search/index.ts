@@ -2,6 +2,7 @@
 import { formatInTimeZone, fromZonedTime } from 'date-fns-tz';
 import type { AskResponse, EventCard, Tag } from '@/lib/contracts';
 import { getEvent, listEvents, prisma } from '@/lib/db';
+import { TAG_LABELS } from '@/components/ui/TagChip';
 import { COLLEGE_ALIASES } from '@/lib/yale';
 
 const TZ = 'America/New_York';
@@ -129,7 +130,7 @@ export async function keywordAsk(q: string, now = new Date()): Promise<AskRespon
   // The card already shows the time, so the why says only what matched.
   const results = rows.map(({ card, hits, tagHits }) => {
     const food = card.food ? `Free food: ${card.food.split(/\s+/).slice(0, 4).join(' ')}` : 'Free food';
-    const matched = [...hits.filter((h) => !(card.freeFood && card.food?.toLowerCase().includes(h))), ...tagHits.map((t) => t.replace('_', ' '))];
+    const matched = [...hits.filter((h) => !(card.freeFood && card.food?.toLowerCase().includes(h))), ...tagHits.map((t) => TAG_LABELS[t].toLowerCase())];
     const why = [
       card.freeFood ? food : null,
       p.college && card.college === p.college ? card.college : null,
