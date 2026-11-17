@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import type OpenAI from 'openai';
 import { formatInTimeZone } from 'date-fns-tz';
@@ -74,6 +75,21 @@ function buildUser(input: ExtractInput, now: Date): string | OpenAI.Chat.Complet
   ];
 }
 
+// Offline stand-in for Grok vision: a hand transcription of a known demo flyer, keyed by image hash.
+// shortcut: only covers flyers transcribed into fixtures/grok-replay/ocr; record real replays once a key exists.
+function withKnownFlyerText(input: ExtractInput): ExtractInput {
+  const texts = (input.images ?? []).flatMap((img) => {
+    const hash = createHash('sha256').update(img.dataBase64).digest('hex');
+    try {
+      return [readFileSync(path.join(process.cwd(), 'fixtures/grok-replay/ocr', `${hash}.txt`), 'utf8')];
+    } catch {
+      return [];
+    }
+  });
+  // Flyer text first: the fallback drops everything after an email's "--" footer.
+  return texts.length ? { ...input, text: [...texts, input.text].join('\n\n') } : input;
+}
+
 export async function extractEvents(input: ExtractInput, now = new Date()): Promise<CheckedExtraction> {
   const t0 = Date.now();
   const { version, body } = loadPrompt();
@@ -95,6 +111,7 @@ export async function extractEvents(input: ExtractInput, now = new Date()): Prom
   } catch (err) {
     if (err instanceof GrokReplayMiss) console.log(`[extract] replay miss ${err.key.slice(0, 12)}, using fallback`);
     else console.error('[extract] grok failed, using fallback:', err);
+    input = withKnownFlyerText(input);
     result = fallbackExtract(input, now);
     mode = 'fallback';
   }

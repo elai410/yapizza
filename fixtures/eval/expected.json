@@ -1,0 +1,39 @@
+[
+  { "file": "04-central-asian-cultural-night.json", "case": "cultural night", "events": [
+    { "title": "Central Asian Cultural Night", "start": "2026-10-20T18:00:00-04:00", "placeId": null, "freeFood": true, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "06-silliman-hoc-tea-chatas.json", "case": "college tea", "events": [
+    { "title": "College Tea with Geoff Chatas", "start": "2026-10-28T17:00:00-04:00", "placeId": "silliman-hoc-house", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "18-oeo-fgli-dinner.json", "case": "free food", "events": [
+    { "title": "FGLI Week Dinner Extravaganza", "start": "2026-11-06T18:00:00-05:00", "placeId": "af-am-house", "freeFood": true, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "20-yums-pizza-weil.json", "case": "lecture + free food", "events": [
+    { "title": "Pizza Seminar: The Weil Conjectures", "start": "2026-11-06T19:00:00-05:00", "placeId": "wlh", "freeFood": true, "audience": "open_to_all", "kind": "event" },
+    { "title": "Putnam problem session", "start": "2026-11-04T19:00:00-05:00", "placeId": "dl", "freeFood": true, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "29-jane-street-streetology.json", "case": "career talk", "events": [
+    { "title": "Jane Street Guide to Recruiting Effectively", "start": "2026-11-17T18:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "30-registrar-spring-registration.json", "case": "newsletter, zero events", "events": [] },
+  { "file": "31-helix-langer-flyer.json", "case": "flyer image attachment", "events": [
+    { "title": "Fireside Chat with Robert Langer", "start": "2026-11-20T13:15:00-05:00", "placeId": "lc", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "34-yums-weekly-nov-16.json", "case": "one email, three events", "events": [
+    { "title": "Pset night", "start": "2026-11-16T19:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "open_to_all", "kind": "event" },
+    { "title": "Putnam problem session", "start": "2026-11-18T19:00:00-05:00", "placeId": "dl", "freeFood": false, "audience": "open_to_all", "kind": "event" },
+    { "title": "Math Research Panel", "start": "2026-11-19T16:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "36-ocay-trip-leaders-members-only.json", "case": "members-only meeting", "events": [
+    { "title": "OCAY winter break trip planning meeting", "start": "2026-11-19T20:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "members_only", "kind": "event" }
+  ] },
+  { "file": "37-ocay-gear-sale.json", "case": "sale listing", "events": [
+    { "title": "OCAY gear sale", "start": null, "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "listing" }
+  ] },
+  { "file": "39-yums-panel-room-change.json", "case": "room change", "events": [
+    { "title": "Math Research Panel", "start": "2026-11-19T16:00:00-05:00", "placeId": "lc", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+  ] },
+  { "file": "40-aacc-politics-purse-canceled.json", "case": "cancellation", "events": [
+    { "title": "Politics of the Purse", "start": "2026-11-18T19:00:00-05:00", "placeId": "aacc", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+  ] }
+]
