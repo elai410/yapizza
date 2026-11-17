@@ -1,39 +1,161 @@
 [
+  { "file": "01-silliman-ga-goat-yoga.json", "case": "two events, college GA", "events": [
+    {"title": "Goat Yoga", "start": "2026-10-17T13:30:00-04:00", "placeId": "silliman-hoc-house", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Painting Plant Pots", "start": "2026-10-26T18:30:00-04:00", "placeId": "silliman-acorn", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "02-ycc-block-party.json", "case": "numbered newsletter, recurring item skipped", "events": [
+    {"title": "Bulldog Block Party", "start": "2026-10-18T16:00:00-04:00", "placeId": "old-campus", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "Twirl Student Discount Night", "start": "2026-10-20T17:00:00-04:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "03-cpi-recruiting-oct-19.json", "case": "career digest, deadline skipped", "events": [
+    {"title": "Putnam Investments Career Exploration Event", "start": "2026-10-19T17:00:00-04:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Beacon Hill Staffing Group overview", "start": "2026-10-20T17:00:00-04:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
   { "file": "04-central-asian-cultural-night.json", "case": "cultural night", "events": [
-    { "title": "Central Asian Cultural Night", "start": "2026-10-20T18:00:00-04:00", "placeId": null, "freeFood": true, "audience": "open_to_all", "kind": "event" }
+    {"title": "Central Asian Cultural Night", "start": "2026-10-20T18:00:00-04:00", "placeId": null, "freeFood": true, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "05-glc-weekly-oct-19.json", "case": "weekly, recurring with this-week date", "events": [
+    {"title": "Craft et Veritas", "start": "2026-10-19T15:00:00-04:00", "placeId": "commons", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Accountability Cafe", "start": "2026-10-19T10:00:00-04:00", "placeId": "silliman-acorn", "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "06-silliman-hoc-tea-chatas.json", "case": "college tea", "events": [
-    { "title": "College Tea with Geoff Chatas", "start": "2026-10-28T17:00:00-04:00", "placeId": "silliman-hoc-house", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+    {"title": "College Tea with Geoff Chatas", "start": "2026-10-28T17:00:00-04:00", "placeId": "silliman-hoc-house", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "07-chaplain-collective-breath.json", "case": "date, time, place on own lines", "events": [
+    {"title": "Collective Breath", "start": "2026-10-27T11:00:00-04:00", "placeId": "battell-chapel", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "08-yums-weekly-oct-26.json", "case": "three bullets", "events": [
+    {"title": "Pset night", "start": "2026-10-26T19:00:00-04:00", "placeId": "wlh", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Pizza Seminar: Gluing Polygons, Topology, and Gaussian Integrals", "start": "2026-10-29T19:00:00-04:00", "placeId": "watson-center", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "MMATHS Test-Solving", "start": "2026-10-30T18:30:00-04:00", "placeId": "dl", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "09-aacc-newsletter-oct-26.json", "case": "newsletter, untimed and recurring skipped", "events": [
+    {"title": "AGPC Kickoff", "start": "2026-10-28T18:00:00-04:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "10-yasss-stargazing-oct-29.json", "case": "two labeled events", "events": [
+    {"title": "Stargazing", "start": "2026-10-29T20:00:00-04:00", "placeId": "cross-campus", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "YASSS x SPS x WIP Astro + Physics Halloween Mixer", "start": "2026-10-30T18:00:00-04:00", "placeId": "spl", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "11-davenport-debate-watch.json", "case": "tonight, college common room", "events": [
+    {"title": "CT Governor's Debate watch party", "start": "2026-10-27T19:00:00-04:00", "placeId": "davenport-common-room", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "12-silliman-happenings-halloween.json", "case": "three campus events", "events": [
+    {"title": "Hallowoads", "start": "2026-10-28T22:00:00-04:00", "placeId": "toads-place", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Monster Mash 2026: Camp Crystal Queer", "start": "2026-10-30T21:00:00-04:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Good Show sketch comedy", "start": "2026-10-30T20:00:00-04:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "13-arts-weekly-oct-30.json", "case": "arts, reception and midnight show", "events": [
+    {"title": "Yale School of Art undergraduate exhibition reception", "start": "2026-10-30T18:00:00-04:00", "placeId": "green-gallery", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Jenn Colella master class + reception", "start": "2026-10-30T17:00:00-04:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "YSO Halloween Show", "start": "2026-11-01T00:00:00-04:00", "placeId": "woolsey-hall", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "14-goldman-recruiting-overview.json", "case": "virtual career talk", "events": [
+    {"title": "Goldman Sachs Recruiting Overview", "start": "2026-11-03T16:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "15-fellowships-newsletter-nov-2.json", "case": "info sessions, deadlines skipped", "events": [
+    {"title": "Richard U. Light Fellowship Info Session #5", "start": "2026-11-03T12:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "STEM Summer Fellowships General Q&A", "start": "2026-11-05T19:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Imagining Your Summer", "start": "2026-11-06T14:00:00-05:00", "placeId": "poorvu", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "16-study-abroad-nov-2.json", "case": "four info sessions", "events": [
+    {"title": "Studying Abroad as a STEM Student", "start": "2026-11-02T17:00:00-05:00", "placeId": "poorvu", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Study Abroad in Germany Information Session", "start": "2026-11-03T13:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "YSS Lima Information Session", "start": "2026-11-05T14:00:00-05:00", "placeId": "hq", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "YSS Quito (Ecuador) Information Session", "start": "2026-11-06T17:00:00-05:00", "placeId": "hq", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "17-aacc-newsletter-nov-2.json", "case": "newsletter bullets, untimed skipped", "events": [
+    {"title": "Monsoon Table: Water and Cuisine with Chef Asma Khan", "start": "2026-11-02T17:00:00-05:00", "placeId": "luce-hall", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Dinner & Dialogue with Dr. Asma Khan", "start": "2026-11-04T17:00:00-05:00", "placeId": "aacc", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "Unmasking Bollywood Stereotypes", "start": "2026-11-05T18:00:00-05:00", "placeId": "aacc", "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "18-oeo-fgli-dinner.json", "case": "free food", "events": [
-    { "title": "FGLI Week Dinner Extravaganza", "start": "2026-11-06T18:00:00-05:00", "placeId": "af-am-house", "freeFood": true, "audience": "open_to_all", "kind": "event" }
+    {"title": "FGLI Week Dinner Extravaganza", "start": "2026-11-06T18:00:00-05:00", "placeId": "af-am-house", "freeFood": true, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "19-roshni-2026.json", "case": "cultural show, lines", "events": [
+    {"title": "Roshni 2026", "start": "2026-11-06T19:00:00-05:00", "placeId": "woolsey-hall", "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "20-yums-pizza-weil.json", "case": "lecture + free food", "events": [
-    { "title": "Pizza Seminar: The Weil Conjectures", "start": "2026-11-06T19:00:00-05:00", "placeId": "wlh", "freeFood": true, "audience": "open_to_all", "kind": "event" },
-    { "title": "Putnam problem session", "start": "2026-11-04T19:00:00-05:00", "placeId": "dl", "freeFood": true, "audience": "open_to_all", "kind": "event" }
+    {"title": "Pizza Seminar: The Weil Conjectures", "start": "2026-11-06T19:00:00-05:00", "placeId": "wlh", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "Putnam problem session", "start": "2026-11-04T19:00:00-05:00", "placeId": "dl", "freeFood": true, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "21-aasa-night-market-aacc.json", "case": "same event, list one", "events": [
+    {"title": "AASA Night Market", "start": "2026-11-08T19:00:00-05:00", "placeId": "dwight-hall", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "22-aasa-night-market-dwight.json", "case": "same event, list two", "events": [
+    {"title": "Asian American Students Alliance Night Market", "start": "2026-11-08T19:00:00-05:00", "placeId": "dwight-hall", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "23-ascent-boulder-bash-fwd.json", "case": "forwarded, paid", "events": [
+    {"title": "Bonfire Boulder Bash", "start": "2026-11-13T18:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "24-dramat-come-from-away.json", "case": "four showtimes, one place", "events": [
+    {"title": "Come From Away", "start": "2026-11-12T19:30:00-05:00", "placeId": "university-theatre", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Come From Away", "start": "2026-11-13T19:30:00-05:00", "placeId": "university-theatre", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Come From Away", "start": "2026-11-14T13:30:00-05:00", "placeId": "university-theatre", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Come From Away", "start": "2026-11-14T19:30:00-05:00", "placeId": "university-theatre", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "25-glc-weekly-nov-9.json", "case": "dated headers over bullets", "events": [
+    {"title": "Craft et Veritas: zines", "start": "2026-11-09T15:00:00-05:00", "placeId": "commons", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "K9 Kickback: Therapy Dogs", "start": "2026-11-09T16:00:00-05:00", "placeId": "slifka-center", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "Gentle Yoga", "start": "2026-11-09T17:00:00-05:00", "placeId": "commons", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Wellness Wednesday", "start": "2026-11-11T14:00:00-05:00", "placeId": "good-life-center", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Thursday Tea Time with Gamelatron listening", "start": "2026-11-12T14:00:00-05:00", "placeId": "good-life-center", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Feel Good Friday: Mindful Movement", "start": "2026-11-13T11:00:00-05:00", "placeId": "good-life-center", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "26-yasss-stargazing-nov-10.json", "case": "pizza, save the date dinner", "events": [
+    {"title": "Stargazing", "start": "2026-11-10T20:00:00-05:00", "placeId": "cross-campus", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "Dinner with Dr. Frank van den Bosch", "start": "2026-11-17T17:15:00-05:00", "placeId": "pauli-murray-dining-hall", "freeFood": true, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "27-neon-paper-tiger.json", "case": "screening, doors note", "events": [
+    {"title": "Paper Tiger", "start": "2026-11-11T19:00:00-05:00", "placeId": "hq", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "28-silliman-weekly-nov-11.json", "case": "dated headers, treats", "events": [
+    {"title": "Live in Theater interactive production", "start": "2026-11-11T17:00:00-05:00", "placeId": "silliman-common-room", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Sweet Treat Study Break & Admissions Advising", "start": "2026-11-11T19:30:00-05:00", "placeId": "silliman-buttery", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "Afternoon Tea & Mini Treats", "start": "2026-11-15T14:30:00-05:00", "placeId": "silliman-hoc-house", "freeFood": true, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "29-jane-street-streetology.json", "case": "career talk", "events": [
-    { "title": "Jane Street Guide to Recruiting Effectively", "start": "2026-11-17T18:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event" }
+    {"title": "Jane Street Guide to Recruiting Effectively", "start": "2026-11-17T18:00:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "30-registrar-spring-registration.json", "case": "newsletter, zero events", "events": [] },
   { "file": "31-helix-langer-flyer.json", "case": "flyer image attachment", "events": [
-    { "title": "Fireside Chat with Robert Langer", "start": "2026-11-20T13:15:00-05:00", "placeId": "lc", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+    {"title": "Fireside Chat with Robert Langer", "start": "2026-11-20T13:15:00-05:00", "placeId": "lc", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "32-ycc-harvard-yale-weekend.json", "case": "The Game, dinner, surveys skipped", "events": [
+    {"title": "The Game", "start": "2026-11-21T15:30:00-05:00", "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Yale College Thanksgiving Dinner at the Omni", "start": "2026-11-26T12:00:00-05:00", "placeId": "omni", "freeFood": true, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "33-aacc-newsletter-nov-16.json", "case": "five bullets, closure skipped", "events": [
+    {"title": "Senior Story: Kelly Dai and Jen Chen", "start": "2026-11-17T17:00:00-05:00", "placeId": "aacc", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Politics of the Purse", "start": "2026-11-18T19:00:00-05:00", "placeId": "aacc", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Grammars of Possibility: Poetry Workshop with Michelle Phuong Ho", "start": "2026-11-19T12:00:00-05:00", "placeId": "aacc", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "WaMH Talk: Culture, Consent, and Care", "start": "2026-11-19T16:30:00-05:00", "placeId": "aacc", "freeFood": true, "audience": "open_to_all", "kind": "event"},
+    {"title": "Annual AACC November Recess Family Dinner", "start": "2026-11-23T16:00:00-05:00", "placeId": "aacc", "freeFood": true, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "34-yums-weekly-nov-16.json", "case": "one email, three events", "events": [
-    { "title": "Pset night", "start": "2026-11-16T19:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "open_to_all", "kind": "event" },
-    { "title": "Putnam problem session", "start": "2026-11-18T19:00:00-05:00", "placeId": "dl", "freeFood": false, "audience": "open_to_all", "kind": "event" },
-    { "title": "Math Research Panel", "start": "2026-11-19T16:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+    {"title": "Pset night", "start": "2026-11-16T19:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Putnam problem session", "start": "2026-11-18T19:00:00-05:00", "placeId": "dl", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Math Research Panel", "start": "2026-11-19T16:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "open_to_all", "kind": "event"}
+  ] },
+  { "file": "35-veritas-search-weighing.json", "case": "tradition, deadline skipped", "events": [
+    {"title": "Ceremonial Weighing of Handsome Dan", "start": "2026-11-17T20:30:00-05:00", "placeId": "beinecke-plaza", "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "36-ocay-trip-leaders-members-only.json", "case": "members-only meeting", "events": [
-    { "title": "OCAY winter break trip planning meeting", "start": "2026-11-19T20:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "members_only", "kind": "event" }
+    {"title": "OCAY winter break trip planning meeting", "start": "2026-11-19T20:00:00-05:00", "placeId": "wlh", "freeFood": false, "audience": "members_only", "kind": "event"}
   ] },
   { "file": "37-ocay-gear-sale.json", "case": "sale listing", "events": [
-    { "title": "OCAY gear sale", "start": null, "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "listing" }
+    {"title": "OCAY gear sale", "start": null, "placeId": null, "freeFood": false, "audience": "open_to_all", "kind": "listing"}
+  ] },
+  { "file": "38-glc-weekly-nov-16.json", "case": "dated headers, closure skipped", "events": [
+    {"title": "Craft et Veritas: collages", "start": "2026-11-16T15:00:00-05:00", "placeId": "commons", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Gentle Yoga", "start": "2026-11-16T17:00:00-05:00", "placeId": "commons", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Take it Easy Tuesday", "start": "2026-11-17T14:00:00-05:00", "placeId": "good-life-center", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "Kitchen Table Talks", "start": "2026-11-17T18:00:00-05:00", "placeId": "menacc", "freeFood": false, "audience": "open_to_all", "kind": "event"},
+    {"title": "10-minute wellness appointments", "start": "2026-11-18T10:15:00-05:00", "placeId": "commons", "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "39-yums-panel-room-change.json", "case": "room change", "events": [
-    { "title": "Math Research Panel", "start": "2026-11-19T16:00:00-05:00", "placeId": "lc", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+    {"title": "Math Research Panel", "start": "2026-11-19T16:00:00-05:00", "placeId": "lc", "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] },
   { "file": "40-aacc-politics-purse-canceled.json", "case": "cancellation", "events": [
-    { "title": "Politics of the Purse", "start": "2026-11-18T19:00:00-05:00", "placeId": "aacc", "freeFood": false, "audience": "open_to_all", "kind": "event" }
+    {"title": "Politics of the Purse", "start": "2026-11-18T19:00:00-05:00", "placeId": "aacc", "freeFood": false, "audience": "open_to_all", "kind": "event"}
   ] }
 ]

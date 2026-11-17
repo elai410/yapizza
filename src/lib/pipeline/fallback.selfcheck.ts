@@ -85,6 +85,24 @@ assert.equal(run('39-yums-panel-room-change.json').r.events[0].locationRaw, 'LC 
   }
 }
 
+// Times and places: time before the date, midnight shows, showtimes sharing one venue, teas are not food.
+{
+  const craft = run('05-glc-weekly-oct-19.json').r.events.find(function (ev) { return ev.title === 'Craft et Veritas'; });
+  assert.equal(craft?.start, '2026-10-19T15:00:00-04:00');
+  assert.equal(craft?.placeId, 'commons');
+  const yso = run('13-arts-weekly-oct-30.json').r.events.find(function (ev) { return /YSO/.test(ev.title); });
+  assert.equal(yso?.start, '2026-11-01T00:00:00-04:00');
+  const shows = run('24-dramat-come-from-away.json').r.events;
+  assert.deepEqual(shows.map(function (ev) { return ev.start; }), ['2026-11-12T19:30:00-05:00', '2026-11-13T19:30:00-05:00', '2026-11-14T13:30:00-05:00', '2026-11-14T19:30:00-05:00']);
+  assert.ok(shows.every(function (ev) { return ev.placeId === 'university-theatre'; }));
+  assert.equal(run('06-silliman-hoc-tea-chatas.json').r.events[0].freeFood, false);
+}
+
+// Summaries leave out the date, time, and place the sheet shows.
+assert.equal(run('34-yums-weekly-nov-16.json').r.events[2].summary, 'Come hear from students who did them, with Prof. Ian Adelstein.');
+assert.equal(run('40-aacc-politics-purse-canceled.json').r.events[0].summary, 'Unfortunately, Politics of the Purse is canceled. We hope to reschedule in the spring.');
+assert.equal(run('39-yums-panel-room-change.json').r.events[0].summary, 'Quick update: the Math Research Panel has moved from WLH 120 to LC 102. Same time, same panel.');
+
 // Every fixture: evidence is quoted from the source, times are well formed.
 for (const file of readdirSync(DIR).filter(function (f) { return f.endsWith('.json'); })) {
   const { e, r } = run(file);

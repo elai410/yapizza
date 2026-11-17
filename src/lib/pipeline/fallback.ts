@@ -21,7 +21,9 @@ const EXPLICIT_DATE = new RegExp(
 );
 // Bare weekday ("Monday", "this Friday") or relative day; plural weekdays and "every X" are recurring, not dates.
 const RELATIVE_DATE = new RegExp(`(?<!every\\s)\\b(?:(?:this|next)\\s+)?(${WD})\\b(?!s)|\\b(today|tonight|tomorrow)\\b`, 'gi');
-const TIME = /\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:-|–|to)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b|\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b|\b(noon)\b/gi;
+const TIME = /\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:-|–|to)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b|\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b|\b(noon)\b|\b(midnight)\b/gi;
+// "Pre-show by Flannel at 11:30pm, main show at midnight": a time for the warm-up is not the start.
+const PRESHOW = /\b(?:pre-?show|doors(?:\s+open)?|check-in)\b[^.,;()]*$/i;
 
 const BULLET = /^\s*(?:[-*•]|\d+[.)])\s+/;
 const NOT_AN_EVENT_PREFIX = /\b(deadlines?|due|closes?|closing|last day|before|until|through|ends|opens|reopens|survey)\b/i;
@@ -30,7 +32,8 @@ const GREETING = /^(hi|hello|hey|dear|love|best|warmly|cheers|thanks|see you|be 
 const SALE = /\b(for sale|selling|gear sale|sale)\b/i;
 const PRICE = /\$\d+(?:\.\d{2})?(?:\s*(?:each|a pair|per \w+))?/;
 
-const FOOD = /\b(free food|pizza|food|dinner|lunch|breakfast|brunch|snacks|boba|refreshments|treats|dessert|catered|catering|tea|chicken and waffles|reception)\b/i;
+// Food only where the text names food (CLAUDE.md 13.1): "tea" and "reception" alone don't count.
+const FOOD = /\b(free food|pizza|food|dinner|lunch|breakfast|brunch|snacks|boba|refreshments|treats?|dessert|catered|catering|chicken and waffles)\b/i;
 const TAG_WORDS: Record<Tag, RegExp> = {
   free_food: FOOD,
   cultural: /\b(cultur\w*|heritage|showcase|night market|bollywood|dombra|south asian|central asian|aacc|la casa|nacc|af-am|mena\w*|diwali|lunar new year|fgli)\b/i,
@@ -46,6 +49,8 @@ interface Block {
   text: string;        // verbatim slice of the email
   context: string;     // header lines above a bullet list (may carry the date)
   heading: string | null;
+  nth?: number;        // which time on the line ("1:30pm and 7:30pm" is two shows)
+  placeHint?: string;  // place stated once for a run of showtimes
 }
 
 interface DateHit { y: number; m: number; d: number; quote: string; index: number; end: number; inBlock: boolean }
@@ -98,7 +103,9 @@ function hasDateAndTime(line: string): boolean {
 function splitBlocks(body: string): Block[] {
   const out: Block[] = [];
   let heading: string | null = null;
-  for (const para of body.split(/\n\s*\n/)) {
+  const paras = body.split(/\n\s*\n/);
+  for (let pi = 0; pi < paras.length; pi++) {
+    const para = paras[pi];
     const lines = para.split('\n').filter(function (l) { return l.trim() !== ''; });
     if (lines.length === 0) continue;
     const bullets = lines.filter(function (l) { return BULLET.test(l); });
@@ -113,10 +120,19 @@ function splitBlocks(body: string): Block[] {
     } else if (lines.filter(hasDateAndTime).length >= 2) {
       // Several showtimes in one paragraph ("Thu Nov 12, 7:30pm" / "Fri Nov 13, 7:30pm"): one event per line.
       let local = heading;
-      for (const l of lines) {
-        if (hasDateAndTime(l)) out.push({ text: l.trim(), context: '', heading: local });
-        else if (isHeading(l)) local = l.trim();
-      }
+      let last = 0;
+      const shows: Block[] = [];
+      lines.forEach(function (l, i) {
+        if (hasDateAndTime(l)) {
+          last = i;
+          const n = allMatches(TIME, l).length;
+          for (let k = 0; k < n; k++) shows.push({ text: l.trim(), context: '', heading: local, nth: k });
+        } else if (isHeading(l)) local = l.trim();
+      });
+      // The venue is often stated once, on the line after the showtimes ("University Theatre").
+      const next = [...lines.slice(last + 1), ...(paras[pi + 1] ?? '').split('\n')].map(function (l) { return l.trim(); }).find(Boolean);
+      const placeHint = next && next.length <= 60 && findPlace(next) && !firstMatch(TIME, next) && !firstMatch(EXPLICIT_DATE, next) ? next : undefined;
+      for (const b of shows) out.push({ ...b, placeHint });
     } else {
       out.push({ text: lines.join('\n'), context: '', heading });
     }
@@ -134,7 +150,7 @@ function blockToEvent(block: Block, anchor: Date, input: ExtractInput, hostName:
   const text = block.text;
 
   const title = makeTitle(block, date, time, input.subject) ?? cleanSubject(input.subject) ?? 'Untitled event';
-  const locationRaw = findLocation(text, date, time);
+  const locationRaw = findLocation(text, date, time) ?? block.placeHint ?? null;
   const place = findPlace(locationRaw) ?? findPlace(text);
 
   const evidence: string[] = [];
@@ -160,7 +176,7 @@ function blockToEvent(block: Block, anchor: Date, input: ExtractInput, hostName:
     locationRaw,
     placeId: place?.id ?? null,
     hostName,
-    summary: squash(text).slice(0, 240),
+    summary: makeSummary(block, evidence.filter(function (q) { return q !== locationRaw; }), locationRaw, title),
     tags: freeFood ? tags : tags.filter(function (t) { return t !== 'free_food'; }),
     freeFood,
     food: freeFood && foodMatch ? foodMatch[0] : null,
@@ -175,7 +191,10 @@ function blockToEvent(block: Block, anchor: Date, input: ExtractInput, hostName:
 
 function findDateTime(block: Block, anchor: Date): { date: DateHit; time: TimeHit } | null {
   const text = block.text;
-  const times = allMatches(TIME, text).map(parseTime).filter(function (t): t is TimeHit { return t !== null; });
+  let times = allMatches(TIME, text).map(parseTime).filter(function (t): t is TimeHit { return t !== null; });
+  if (block.nth) times = times.slice(block.nth);
+  const main = times.filter(function (t) { return !PRESHOW.test(text.slice(Math.max(0, t.index - 60), t.index)); });
+  if (main.length > 0) times = main;
   if (times.length === 0 || /\bdeadlines?\b/i.test(block.context)) return null;
 
   const explicit = allMatches(EXPLICIT_DATE, text)
@@ -192,14 +211,18 @@ function findDateTime(block: Block, anchor: Date): { date: DateHit; time: TimeHi
   const relative = allMatches(RELATIVE_DATE, text)
     .map(function (m) { return relativeDate(m, anchor); })
     .filter(function (d): d is DateHit { return d !== null; });
-  return pairDateTime(text, relative, times);
+  const rel = pairDateTime(text, relative, times);
+  if (rel) return rel;
+  // "Mondays 3-4pm, YSC Offline Oasis. This week (10/19): ..." : the one date in the block takes the block's time.
+  const dated = explicit.filter(function (d) { return !nonEventDate(text, d); });
+  return dated.length === 1 && explicit.length === 1 ? { date: dated[0], time: times[0] } : null;
 }
 
 function pairDateTime(text: string, dates: DateHit[], times: TimeHit[]): { date: DateHit; time: TimeHit } | null {
   for (const d of dates) {
     // Skip "survey closes Tue 10/20", "GLC closes Thu 11/19 at 3pm and reopens Mon 11/30", "UPCOMING DEADLINES ... Nov 4 (1pm)".
     const sentenceStart = lastBoundary(text, d.index);
-    if (NOT_AN_EVENT_PREFIX.test(text.slice(sentenceStart, d.index)) || /\bdeadlines?\b/i.test(text.slice(0, d.index))) continue;
+    if (nonEventDate(text, d)) continue;
     const nl = text.indexOf('\n', d.end);
     const nextNl = nl === -1 ? -1 : text.indexOf('\n', nl + 1);
     const windowEnd = nl === -1 || nextNl === -1 ? text.length : nextNl;
@@ -210,6 +233,10 @@ function pairDateTime(text: string, dates: DateHit[], times: TimeHit[]): { date:
     if (time) return { date: d, time };
   }
   return null;
+}
+
+function nonEventDate(text: string, d: DateHit): boolean {
+  return NOT_AN_EVENT_PREFIX.test(text.slice(lastBoundary(text, d.index), d.index)) || /\bdeadlines?\b/i.test(text.slice(0, d.index));
 }
 
 function lastBoundary(text: string, index: number): number {
@@ -259,6 +286,7 @@ function relativeDate(m: RegExpExecArray, anchor: Date): DateHit | null {
 function parseTime(m: RegExpExecArray): TimeHit | null {
   const base = { quote: m[0], index: m.index, end: m.index + m[0].length };
   if (m[10]) return { sh: 12, sm: 0, eh: null, em: null, ...base };
+  if (m[11]) return { sh: 24, sm: 0, eh: null, em: null, ...base }; // midnight ends the named day
   if (m[7]) {
     const h = to24(Number(m[7]), m[9]);
     return h === null ? null : { sh: h, sm: Number(m[8] ?? 0), eh: null, em: null, ...base };
@@ -281,8 +309,13 @@ function to24(h: number, mer: string): number | null {
   return (h % 12) + (mer.toLowerCase() === 'pm' ? 12 : 0);
 }
 
-function toIso(date: DateHit, h: number, min: number, startMinutes?: number): string {
+function toIso(date: DateHit, hour: number, min: number, startMinutes?: number): string {
   let day = new Date(Date.UTC(date.y, date.m - 1, date.d));
+  let h = hour;
+  if (h >= 24) {
+    h -= 24;
+    day = new Date(day.getTime() + 86400000);
+  }
   // An end before the start ("11pm-1am") rolls to the next day.
   if (startMinutes !== undefined && h * 60 + min <= startMinutes) day = new Date(day.getTime() + 86400000);
   const local = `${day.getUTCFullYear()}-${pad(day.getUTCMonth() + 1)}-${pad(day.getUTCDate())}T${pad(h)}:${pad(min)}:00`;
@@ -338,7 +371,8 @@ function makeTitle(block: Block, date: DateHit, time: TimeHit, subject?: string 
 }
 
 function tidyTitle(raw: string): string {
-  let t = raw.replace(/\s*—\s*/g, ': ').replace(/\s+/g, ' ').trim();
+  // "AGPC (Asian Grad/Professional community) Kickoff": asides are not part of the name.
+  let t = raw.replace(/\s*—\s*/g, ': ').replace(/\s*\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
   for (let i = 0; i < 4; i++) {
     const before = t;
     t = t.replace(LEAD, '').replace(TIME_LEAD, '').replace(TRAIL, '').replace(TIME_TRAIL, '').trim();
@@ -358,6 +392,9 @@ function tidyTitle(raw: string): string {
   }
   // "Kitchen Table Talks, a YC3 conversation series on ..." -> "Kitchen Table Talks".
   t = t.replace(/,\s+an?\s+.*$/, '');
+  // "HALLOWOADS at Toad's Place": the card shows the place on its own.
+  const atPlace = t.match(/^(.{3,}?)\s+(?:at|in)\s+(?:the\s+)?(.+)$/i);
+  if (atPlace && findPlace(atPlace[2]) && findPlace(atPlace[2]) !== findPlace(atPlace[1])) t = atPlace[1];
 
   const label = t.match(/^([A-Z0-9][A-Z0-9 &'+-]*[A-Z0-9]):\s+(.+)$/);
   if (label && /[A-Z]{2}/.test(label[1])) {
@@ -370,6 +407,10 @@ function tidyTitle(raw: string): string {
     else t = `${head}: ${/^[a-z]/.test(rest) || rest === rest.toUpperCase() ? titleCase(rest) : rest}`;
   } else if (/[A-Z]/.test(t) && t === t.toUpperCase()) {
     t = titleCase(t);
+  } else {
+    // "Unmasking Bollywood Stereotypes: movie + discussion with Prof. Rohit De" -> the name before the description.
+    const desc = t.match(/^([A-Z][^:]{2,}):\s+([a-z].*)$/);
+    if (desc && desc[2].split(' ').length > 5) t = desc[1];
   }
 
   if (t.length > 80) t = t.slice(0, 80).replace(/\s+\S*$/, '');
@@ -399,7 +440,7 @@ function findLocation(text: string, date: DateHit, time: TimeHit): string | null
   };
   const tryAfter = function (from: number): string | null {
     const seg = text.slice(from, lineEnd(from)).replace(/^\s*(?:ET|EST|EDT)\b/, '');
-    const m = seg.match(/^\s*(?:,\s*(?:(?:in|at|on)\s+)?|\s+(?:in|at|on)\s+)(?:the\s+)?([^.;()\n]+)/i);
+    const m = seg.match(/^\s*(?:,\s*(?:(?:in|at|on|@)\s+)?|\s+(?:in|at|on|@)\s+)(?:the\s+)?([^.;()\n]+)/i);
     return m ? cleanPlace(m[1]) : null;
   };
   const between = function (): string | null {
@@ -420,7 +461,51 @@ function findLocation(text: string, date: DateHit, time: TimeHit): string | null
   // Room-change notes name the new room: "has moved from WLH 120 to LC 102".
   const moved = text.match(/\bmoved\s+(?:from\s+.+?\s+)?to\s+(?:the\s+)?([A-Z][^.;,()\n]*)/);
   if (moved) return cleanPlace(moved[1]);
+  const labeled = text.match(/^\s*(?:location|where|place|venue)\s*:\s*(.+)$/im);
+  if (labeled) return cleanPlace(labeled[1]);
   return tryAfter(time.end) ?? (date.inBlock && date.end > time.end ? tryAfter(date.end) : null) ?? between() ?? nextLine();
+}
+
+// Card summary: the block minus the date, time, and place the sheet already shows.
+function makeSummary(block: Block, shown: string[], place: string | null, title: string): string {
+  if (block.nth !== undefined) return title; // a showtime line has nothing but times
+  const lines = block.text.split('\n').map(function (l) { return l.replace(BULLET, '').trim(); });
+  // A shouted heading line ("THE GAME", "AT DWIGHT HALL THIS WEEKEND") is the title or a section, not prose.
+  if (lines.length > 1 && /[A-Z]{2}/.test(lines[0]) && lines[0] === lines[0].toUpperCase()) lines.shift();
+  let s = lines.join('\n');
+  const cut = function (q: string, toLineEnd: boolean): void {
+    const i = s.lastIndexOf(q);
+    if (i === -1) return;
+    let j = i + q.length;
+    const tz = s.slice(j).match(/^\s*(?:ET|EST|EDT)\b/);
+    if (tz) j += tz[0].length;
+    // "Susman Hall (Purple Couch Room), Slifka Center": the rest of a place line is more place.
+    const nl = s.indexOf('\n', j);
+    const rest = s.slice(j, nl === -1 ? s.length : nl);
+    if (toLineEnd && rest.length < 40 && !/[.!?]/.test(rest)) j += rest.length;
+    s = s.slice(0, i) + ' ' + s.slice(j);
+  };
+  for (const q of [...shown].sort(function (a, b) { return b.length - a.length; })) cut(q, false);
+  // A room change should still say where it moved.
+  if (place && !/\bmoved\b/i.test(s)) cut(place, true);
+  s = s.replace(/\n/g, ' ').replace(/\s*—\s*/g, ', ').replace(/\(\s*[,;:\s]*\)/g, ' ').replace(/\s+/g, ' ');
+  // Words left pointing at nothing: "courtyard on from ." / "comp is ." / "Panel on has moved".
+  for (let k = 0; k < 3; k++) {
+    s = s.replace(/\s+(?:on|at|in|from|is|are|the|and|or|by)(?=\s*(?:[.,;:)]|$))/gi, '');
+    s = s.replace(/\s+(?:on|at|in)(?=\s+(?:has|have|is|are|was|will)\b)/gi, '');
+  }
+  s = s.replace(/\s+([.,;:!?])/g, '$1').replace(/([,;:])(?:\s*[,;:])+/g, '$1').replace(/[,;:]\s*([.!?])/g, '$1');
+  s = s.replace(/([.!?]["”]?)(?:\s*[.,;:])+/g, '$1');
+  s = s.replace(/^[\s.,;:!?-]+/, '').replace(/[\s,;:-]+$/, '').trim();
+  // Drop a leading "GOAT YOGA." / "MATH RESEARCH PANEL:" / the title itself, unless an aside follows it.
+  const words = title.split(/\s+/).map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
+  const lead = s.match(new RegExp(`^${words.join('(?:\\s*\\([^)]*\\))?\\s+')}(?![\\w(])[\\s.,:;!?-]*`, 'i')) ?? s.match(/^([^.:!?]{2,60})[.:!?]\s+/);
+  if (lead && (lead[1] === undefined || lead[1] === lead[1].toUpperCase()) && !/^\s*\(/.test(s.slice(lead[0].length))) s = s.slice(lead[0].length);
+  // What the cuts leave of the first sentence: "Is back." / "At Toad's Place." / "(on ESPNU)."
+  s = s.replace(/^(?:(?:at|in|on|is|are)\s|\()[^.!?]{0,40}[.!?](?:\s+|$)/i, '');
+  s = s.replace(/(^|[.?!]\s+)([a-z])/g, function (_m, p: string, c: string) { return p + c.toUpperCase(); });
+  if (s.length > 240) s = s.slice(0, 240).replace(/\s+\S*$/, '');
+  return s.split(/\s+/).filter(Boolean).length < 2 ? title : s;
 }
 
 function cleanPlace(raw: string): string | null {
@@ -450,7 +535,8 @@ function saleListing(body: string, input: ExtractInput, hostName: string | null,
     locationRaw: null,
     placeId: findPlace(body)?.id ?? null,
     hostName,
-    summary: squash(body).slice(0, 240),
+    // "- Crash pads, $40 each" lines read as sentences, not one run-on.
+    summary: squash(body.split('\n').map(function (l) { const t = l.replace(BULLET, '').trim(); return t && !/[.:!?]$/.test(t) ? t + '.' : t; }).join(' ')).slice(0, 240).replace(/\s+\S*$/, ''),
     tags: [],
     freeFood: false,
     food: null,
