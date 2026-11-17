@@ -47,7 +47,7 @@ async function main() {
   assert.ok(!d.html.includes('—') && !d.text.includes('—') && !d.text.includes('!'));
   if (!process.env.XAI_API_KEY) {
     assert.equal(d.mode, 'fallback');
-    assert.equal(d.subject, `This week at Yale: ${cards.length} events`);
+    assert.equal(d.subject, `This week at Yale: ${d.eventIds.length} events`);
     assert.match(d.text, /\d{1,2}:\d{2} [AP]M · /);
   }
 
