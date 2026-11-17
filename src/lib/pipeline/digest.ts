@@ -127,7 +127,7 @@ export async function writeDigest(
       .slice(0, MAX_PICKS)
       .map((p) => ({ event: byId.get(p.id)!, line: clean(p.line).split(' ').slice(0, 12).join(' ') }));
     if (picks.length || pool.length === 0) {
-      const subject = clean(data.subject) || `This week at Yale: ${pool.length} events`;
+      const subject = clean(data.subject) || `This week at Yale: ${picks.length} events`;
       const intro = clean(data.intro);
       return { subject, ...render(subject, intro, picks), eventIds: picks.map((p) => p.event.id), mode: 'grok' };
     }
@@ -141,7 +141,7 @@ export async function writeDigest(
     .sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))
     .slice(0, MAX_PICKS)
     .map((event) => ({ event, line: fallbackLine(event) }));
-  const subject = `This week at Yale: ${pool.length} ${pool.length === 1 ? 'event' : 'events'}`;
+  const subject = `This week at Yale: ${picks.length} ${picks.length === 1 ? 'event' : 'events'}`; // count what the body shows
   const intro = pool.length ? `Here is what is happening at Yale this week.` : `Nothing is on the calendar this week yet.`;
   return { subject, ...render(subject, intro, picks), eventIds: picks.map((p) => p.event.id), mode: 'fallback' };
 }
