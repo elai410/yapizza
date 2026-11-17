@@ -41,23 +41,25 @@ function fromPaste(p: Record<string, unknown>): RawEmail {
   };
 }
 
+// Silliman GA in the Buttery: a real host and venue with nothing seeded today, so dedup creates a new card.
 function freeFoodNow(): RawEmail {
   const now = new Date();
   const until = new Date(now.getTime() + 45 * 60_000);
   const t = (d: Date) => formatInTimeZone(d, TZ, 'h:mm a');
   return {
-    messageId: `aacc-leftover-pizza.${now.getTime()}`,
-    from: 'AACC <aacc@lists.yale.test>',
+    messageId: `silliman-ga-buttery-pizza.${now.getTime()}`,
+    from: 'Silliman GA <silliman-ga@lists.yale.test>',
     to: ['yapizza@intake.test'],
-    subject: 'Leftover pizza in the AACC MPR now',
+    subject: 'Free pizza in the Buttery right now',
     text: [
-      'Hi all,',
+      'Hi Silliman!',
       '',
-      `We have a lot of pizza left over from Senior Story. Come grab some in the AACC MPR, ${formatInTimeZone(now, TZ, 'EEEE M/d')}, ${t(now)} to ${t(until)}. Open to everyone, first come first served.`,
+      `Free pizza in the Silliman Buttery, ${formatInTimeZone(now, TZ, 'EEEE M/d')}, ${t(now)} to ${t(until)}. Open to all Yalies, first come first served.`,
       '',
-      'AACC',
+      'Love,',
+      'Silliman GA',
     ].join('\n'),
-    listName: 'AACC',
+    listName: 'Silliman GA',
     sentAt: now.toISOString(),
   };
 }
