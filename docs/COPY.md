@@ -37,7 +37,7 @@ A calm list of what is happening at Yale this week. It reads like CourseTable or
 | Card marker | Free food (with the food, e.g. "Free food · Pizza") |
 | Badges | Updated · Canceled · Needs review |
 | Detail actions | Add to calendar · Save · Saved · RSVP |
-| Source drawer | How this was read · Read by Grok (only when readBy is grok; fallback events show no line, their Needs review badge says enough) |
+| Source drawer | How this was read · "Read by Grok · confidence 0.xx" when readBy is grok · otherwise "Quotes checked against the email / flyer / listing" (noun follows the source), shown only when the event has evidence quotes |
 | Evidence label | From the email |
 | Ask placeholder | Free food tonight, career talks this week |
 | Ask button | Ask |
@@ -55,7 +55,7 @@ A calm list of what is happening at Yale this week. It reads like CourseTable or
 | Retry button | Try again |
 | Calendar feeds | Subscribe · Copy link |
 | Alerts | Free food alerts · Turn on · Turn off |
-| Digest | Sunday digest |
+| Digest | Sunday digest · day groups "Free food" then "Other events" (labels only when a day has both) |
 | Hosts | Claim club · Your events · Edit · Cancel event |
 | Sales | Sales board |
 | Skip link | Skip to content |
