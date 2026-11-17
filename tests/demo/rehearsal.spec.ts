@@ -163,7 +163,10 @@ test('rehearsal: the 3-minute story, CP1 to CP4', async ({ context }) => {
       await expect(dialog).toBeVisible();
       await dialog.getByRole('button', { name: /how this was read/i }).click();
       await expect(dialog.locator('mark').first()).toBeVisible();
-      await expect(dialog.getByText(/Read by Grok/)).toBeVisible();
+      const readBy = (await (await feed.request.get(`/api/events/${drawerId}`)).json()).readBy;
+      const grokLine = dialog.getByText(/Read by Grok/);
+      if (readBy === 'grok') await expect(grokLine).toBeVisible();
+      else await expect(grokLine).toHaveCount(0);
       await feed.keyboard.press('Escape');
     });
 

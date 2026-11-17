@@ -115,8 +115,11 @@ test.describe('CP3 source drawer', () => {
     const dialog = page.getByRole('dialog');
     await expect(dialog).toBeVisible();
     await dialog.getByRole('button', { name: /how this was read/i }).click();
-    await expect(dialog.getByText(/Read by Grok/)).toBeVisible();
     await expect(dialog.locator('mark').first()).toBeVisible();
+    // v1.1: the Grok line shows only when Grok read it; rule-fallback and seed events must not claim it.
+    const grokLine = dialog.getByText(/Read by Grok/);
+    if (detail.readBy === 'grok') await expect(grokLine).toBeVisible();
+    else await expect(grokLine).toHaveCount(0);
     const shown = detail.source.subject ?? detail.source.sender;
     if (shown) await expect(dialog).toContainText(shown);
   });

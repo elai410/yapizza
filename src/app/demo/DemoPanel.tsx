@@ -50,7 +50,9 @@ function post(url: string, body: unknown): Promise<Outcome> {
   return fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).then(toOutcome);
 }
 
-export function DemoPanel({ emails, flyers }: { emails: FixtureEmail[]; flyers: string[] }) {
+export function DemoPanel({ emails: diskEmails, flyers }: { emails: FixtureEmail[]; flyers: string[] }) {
+  // The disk list is a fallback; /api/demo/emails also includes the human's real emails (fixtures/emails/real).
+  const [emails, setEmails] = useState(diskEmails);
   const [status, setStatus] = useState<IntegrationStatus | null | 'error'>(null);
   const [log, setLog] = useState<LogRow[]>([]);
   const [busy, setBusy] = useState<Record<number, boolean>>({});
@@ -72,6 +74,13 @@ export function DemoPanel({ emails, flyers }: { emails: FixtureEmail[]; flyers: 
     load();
     const t = setInterval(load, 10_000);
     return function () { alive = false; clearInterval(t); };
+  }, []);
+
+  useEffect(function () {
+    fetch('/api/demo/emails', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? (r.json() as Promise<{ emails: FixtureEmail[] }>) : Promise.reject(r.status); })
+      .then(function (b) { if (b.emails.length > 0) setEmails(b.emails); })
+      .catch(function () {});
   }, []);
 
   async function run(n: number, action: string, fn: () => Promise<Outcome | null>) {
@@ -211,7 +220,7 @@ export function DemoPanel({ emails, flyers }: { emails: FixtureEmail[]; flyers: 
                 <span className="sr-only">Fixture email</span>
                 <select className={SELECT} value={fixture} onChange={function (e) { setFixture(e.target.value); }}>
                   {emails.map(function (e) {
-                    return <option key={e.file} value={e.file}>{e.file.slice(0, 2)} {e.subject}</option>;
+                    return <option key={e.file} value={e.file}>{e.file.startsWith('real/') ? 'Real' : e.file.slice(0, 2)} {e.subject}</option>;
                   })}
                 </select>
               </label>

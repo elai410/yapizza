@@ -74,14 +74,13 @@ test.describe('CP2 live updates', () => {
 
   test('the feed polls /api/events', async ({ page }) => {
     test.skip(process.env.NEXT_PUBLIC_DATA === 'fixtures', 'the feed does not poll with NEXT_PUBLIC_DATA=fixtures');
-    // The feed refetches its range every 3s rather than sending ?since= (see src/lib/client/hooks.ts),
-    // so pass when the same /api/events URL is requested twice.
-    const seen = new Map<string, number>();
+    // Contract 8.3: after one full load the feed polls /api/events?...&since=<serverTime> every 3s.
+    let sincePolls = 0;
     page.on('request', (r) => {
-      if (r.url().includes('/api/events?')) seen.set(r.url(), (seen.get(r.url()) ?? 0) + 1);
+      if (r.url().includes('/api/events?') && r.url().includes('since=')) sincePolls++;
     });
     await gotoApp(page, '/');
-    await expect.poll(() => Math.max(0, ...seen.values()), { timeout: 10_000 }).toBeGreaterThanOrEqual(2);
+    await expect.poll(() => sincePolls, { timeout: 10_000 }).toBeGreaterThanOrEqual(2);
   });
 });
 
