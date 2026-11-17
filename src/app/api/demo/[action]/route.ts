@@ -14,8 +14,9 @@ const TZ = 'America/New_York';
 
 class BadRequest extends Error {}
 
-function fromFixture(file: unknown): RawEmail {
-  const hit = fixtureEmails().find((f) => f.file === file);
+async function fromFixture(file: unknown): Promise<RawEmail> {
+  // Lookup by listed name only, so a crafted path can't read outside fixtures/emails.
+  const hit = (await fixtureEmails()).find((f) => f.file === file);
   if (!hit) throw new BadRequest(`unknown fixture: ${String(file)}`);
   // Fresh messageId so a repeat send creates a new Source; dedup decides same or update.
   const id = hit.email.messageId.replace(/^<|>$/g, '');
@@ -25,11 +26,28 @@ function fromFixture(file: unknown): RawEmail {
 
 const str = (v: unknown) => (typeof v === 'string' && v ? v : undefined);
 
+const MAX_TEXT = 200_000;
+const MAX_ATTACHMENT_B64 = 27_000_000; // about 20 MiB decoded, Grok's image limit
+
+function attachments(v: unknown): RawEmail['attachments'] {
+  if (v === undefined || v === null) return undefined;
+  if (!Array.isArray(v)) throw new BadRequest('attachments must be an array');
+  return v.map((a: unknown, i) => {
+    const x = a as Record<string, unknown> | null;
+    if (!x || typeof x.filename !== 'string' || typeof x.mimeType !== 'string' || typeof x.dataBase64 !== 'string') {
+      throw new BadRequest(`attachment ${i} needs filename, mimeType, dataBase64`);
+    }
+    if (x.dataBase64.length > MAX_ATTACHMENT_B64) throw new BadRequest(`attachment ${x.filename} is over 20 MB`);
+    return { filename: x.filename, mimeType: x.mimeType, dataBase64: x.dataBase64 };
+  });
+}
+
 // Pasted text or a full RawEmail; subject and text are required, the rest falls back to defaults.
 function fromPaste(p: Record<string, unknown>): RawEmail {
   if (typeof p.subject !== 'string' || typeof p.text !== 'string' || !p.text.trim()) {
     throw new BadRequest('email needs subject and text');
   }
+  if (p.text.length > MAX_TEXT) throw new BadRequest(`email text over ${MAX_TEXT} characters`);
   const to = Array.isArray(p.to) && p.to.every((x) => typeof x === 'string') ? (p.to as string[]) : ['yapizza@intake.test'];
   return {
     messageId: str(p.messageId) ?? `paste-${crypto.randomUUID()}`,
@@ -40,7 +58,7 @@ function fromPaste(p: Record<string, unknown>): RawEmail {
     html: str(p.html),
     listName: str(p.listName),
     sentAt: str(p.sentAt) ?? new Date().toISOString(),
-    attachments: Array.isArray(p.attachments) ? (p.attachments as RawEmail['attachments']) : undefined,
+    attachments: attachments(p.attachments),
   };
 }
 
@@ -96,12 +114,13 @@ export async function POST(req: Request, { params }: { params: Promise<{ action:
           const email = fromPaste(b.email as Record<string, unknown>);
           return await send(email.subject, email);
         }
-        return await send(String(b.fixture), fromFixture(b.fixture));
+        if (typeof b.fixture !== 'string') throw new BadRequest('send-email needs a fixture name or an email');
+        return await send(b.fixture, await fromFixture(b.fixture));
       }
       case 'room-change':
-        return await send('room change', fromFixture('39-yums-panel-room-change.json'));
+        return await send('room change', await fromFixture('39-yums-panel-room-change.json'));
       case 'cancel':
-        return await send('cancel', fromFixture('40-aacc-politics-purse-canceled.json'));
+        return await send('cancel', await fromFixture('40-aacc-politics-purse-canceled.json'));
       case 'free-food-now':
         // A repeat press dedups to `same`; still alert anyone who subscribed since on today's Buttery card.
         return await send('free food now', freeFoodNow(), async () =>

@@ -12,8 +12,9 @@ const time = (iso: string) =>
     second: '2-digit',
   });
 
-export default function SimInboxPage() {
+export default async function SimInboxPage() {
   const received = simInbox();
+  const fixtures = await fixtureEmails();
   return (
     <div className="space-y-8">
       <h1 className="text-xl font-semibold text-ink">Simulated inbox</h1>
@@ -43,7 +44,7 @@ export default function SimInboxPage() {
       <section className="space-y-3">
         <h2 className="text-sm font-medium text-muted">Fixtures</h2>
         <ul className="divide-y divide-line rounded-lg border border-line bg-surface text-sm">
-          {fixtureEmails().map(({ file, email }) => (
+          {fixtures.map(({ file, email }) => (
             <li key={file} className="flex flex-wrap items-center gap-x-4 gap-y-1 px-3 py-2">
               <span className="w-48 truncate text-muted">{email.from}</span>
               <span className="min-w-0 flex-1 truncate text-ink" title={file}>

@@ -2,9 +2,11 @@ import { NextResponse } from 'next/server';
 import { isOn } from '@/lib/contracts';
 import { fixtureEmails } from '@/lib/adapters/sim/mail';
 
-export function GET() {
+export const dynamic = 'force-dynamic';
+
+export async function GET() {
   if (!isOn('DEMO_PANEL')) return new NextResponse('Not found', { status: 404 });
-  const emails = fixtureEmails().map(({ file, email }) => ({
+  const emails = (await fixtureEmails()).map(({ file, email }) => ({
     file,
     subject: email.subject,
     from: email.from,
