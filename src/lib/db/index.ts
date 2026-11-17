@@ -21,7 +21,7 @@ export function toNyIso(d: Date): string {
   return formatInTimeZone(d, TZ, "yyyy-MM-dd'T'HH:mm:ssXXX");
 }
 
-function parseJson<T>(s: string | null | undefined, fallback: T): T {
+export function parseJson<T>(s: string | null | undefined, fallback: T): T {
   if (!s) return fallback;
   try {
     return JSON.parse(s) as T;
@@ -30,13 +30,13 @@ function parseJson<T>(s: string | null | undefined, fallback: T): T {
   }
 }
 
-const cardInclude = {
+export const cardInclude = {
   host: true,
   versions: { orderBy: { changedAt: 'desc' }, take: 1 },
 } satisfies Prisma.EventInclude;
-type EventRow = Prisma.EventGetPayload<{ include: typeof cardInclude }>;
+export type EventRow = Prisma.EventGetPayload<{ include: typeof cardInclude }>;
 
-function toCard(e: EventRow): EventCard {
+export function toCard(e: EventRow): EventCard {
   return {
     id: e.id,
     title: e.title,
@@ -124,6 +124,16 @@ export async function getEvent(id: string): Promise<EventDetail | null> {
       rawText: e.source.rawText,
     },
   };
+}
+
+// Cards by id in the given order; unknown and in-review ids are dropped.
+export async function getCards(ids: string[]): Promise<EventCard[]> {
+  const rows = await prisma.event.findMany({ where: { id: { in: ids }, status: { not: 'review' } }, include: cardInclude });
+  const byId = new Map(rows.map((r) => [r.id, r]));
+  return ids.flatMap((id) => {
+    const r = byId.get(id);
+    return r ? [toCard(r)] : [];
+  });
 }
 
 export interface SourceInput {
