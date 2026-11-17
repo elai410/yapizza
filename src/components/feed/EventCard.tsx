@@ -15,8 +15,8 @@ export function EventCard({ event, onOpen, arrived = false }: { event: EventCard
       onClick={function () { onOpen(event.id); }}
       className={cn('flex w-full gap-4 px-4 py-3 text-left transition-colors hover:bg-sunken', arrived && ARRIVE_CLASS)}
     >
-      <span className="tnum w-28 shrink-0 pt-px text-sm text-muted">
-        {formatTime(event.start, event.end, event.allDay)}
+      <span className="tnum w-20 shrink-0 pt-px text-sm text-muted">
+        {formatTime(event.start, null, event.allDay)}
       </span>
       <span className="min-w-0 flex-1">
         <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
