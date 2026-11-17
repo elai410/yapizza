@@ -46,7 +46,7 @@ export function Feed() {
     const msg = filtered
       ? 'No events match these filters.'
       : filters.range === 'today' ? 'Nothing on the calendar today.' : 'Nothing on the calendar this week.';
-    body = <div data-testid="empty-state"><EmptyState>{msg}</EmptyState></div>;
+    body = <EmptyState data-testid="empty-state">{msg}</EmptyState>;
   } else {
     body = groupByDay(events).map(function ([key, group]) {
       return (
