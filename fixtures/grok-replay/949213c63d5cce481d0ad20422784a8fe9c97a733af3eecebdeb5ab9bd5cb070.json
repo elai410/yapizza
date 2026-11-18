@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "digest-v1",
+  "name": "digest",
+  "createdAt": "2026-11-18T00:43:51.660Z",
+  "response": {
+    "subject": "This week at Yale: sweet treats, game night, dinner",
+    "intro": "Here are the events worth your week, with free food and open-to-all picks up top.",
+    "picks": [
+      {
+        "id": "cmwleb8dy0s8b1fhusr2d094k",
+        "line": "Free sweet treats from the Silliman GA, but you need to be Silliman."
+      },
+      {
+        "id": "cmwleb8ec0s9c1fhukstp6e6j",
+        "line": "Hot Murga and a talk on culture, consent, and care."
+      },
+      {
+        "id": "cmwleb8ei0s9o1fhumv8kdd3t",
+        "line": "Free family-style dinner at AACC before November Recess."
+      },
+      {
+        "id": "cmwleb8e10s8i1fhuzy8u9yfg",
+        "line": "Casual game night at AACC, no sign-up needed."
+      },
+      {
+        "id": "cmwleb8dq0s801fhu5ihhthde",
+        "line": "The Veritas Search weighs Handsome Dan at Beinecke Plaza, a classic Tuesday night tradition."
+      },
+      {
+        "id": "cmwleb8dr0s841fhu5b9gzkqg",
+        "line": "Quick wellness check-ins at the GLC booth in YSC, ten minutes each."
+      },
+      {
+        "id": "cmwleb8e00s8e1fhudwlattfw",
+        "line": "Mechanical engineering seminar with Jacob Notbohm in Rosenfeld 101."
+      }
+    ]
+  }
+}

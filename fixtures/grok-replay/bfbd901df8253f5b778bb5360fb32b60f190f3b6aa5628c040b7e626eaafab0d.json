@@ -1,0 +1,37 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "digest-v1",
+  "name": "digest",
+  "createdAt": "2026-11-18T00:35:14.826Z",
+  "response": {
+    "subject": "This week at Yale: Silliman treats, Hot Murga, game night",
+    "intro": "Here are the events worth a look this week, with free food first and a few other picks mixed in.",
+    "picks": [
+      {
+        "id": "cmwle2nam0qy21fhu2emw3jx6",
+        "line": "Silliman sweet treats at the College St Gate before break, for Silliman students only."
+      },
+      {
+        "id": "cmwle2nb40qz31fhu0qszehwq",
+        "line": "A talk on culture, consent, and care, with hot food from Murga afterward."
+      },
+      {
+        "id": "cmwle2nb80qzf1fhu5axd8gph",
+        "line": "Free family-style dinner at AACC for the November recess, open to everyone."
+      },
+      {
+        "id": "cmwle2nap0qy91fhu3gvbr3zl",
+        "line": "Casual game night at AACC on Wednesday evening, no sign-up needed."
+      },
+      {
+        "id": "cmwle2nah0qxr1fhukj42qlw5",
+        "line": "The Handsome Dan weighing is a classic Yale tradition worth seeing once."
+      },
+      {
+        "id": "cmwle2naj0qxv1fhuep3rbefh",
+        "line": "Short wellness check-ins at the YSC Offline Oasis, good for a quick break."
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v1",
+  "name": "extraction",
+  "createdAt": "2026-11-18T00:23:28.476Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "JAM 2026",
+        "start": "2026-02-06T19:30:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Sudler Hall, 100 Wall St.",
+        "placeId": "sudler-hall",
+        "hostName": "The Whiffenpoofs",
+        "summary": "The Whiffenpoofs perform their JAM 2026 concert in Sudler Hall. The flyer's February 6 date is before today's date, so the year should be confirmed.",
+        "tags": [
+          "arts",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Friday, Febuary 6th",
+          "7:30 PM",
+          "Sudler Hall",
+          "100 Wall St."
+        ],
+        "confidence": 0.5
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

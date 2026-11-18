@@ -1,0 +1,38 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v1",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:59:14.089Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Winter break trip planning meeting",
+        "start": "2026-11-19T20:00:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "WLH 208",
+        "placeId": "wlh",
+        "hostName": "OCAY",
+        "summary": "Mandatory planning meeting for people on the winter break trip roster (Red Rocks NV and/or Joshua Tree). Gear, carpools, and permits will be covered.",
+        "tags": [
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "members_only",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "we have a mandatory planning meeting Thursday 11/19 at 8pm in WLH 208",
+          "This one is members only, for people on the trip roster."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

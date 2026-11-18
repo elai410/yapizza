@@ -16,10 +16,10 @@ export const Chip = forwardRef<HTMLButtonElement, ChipProps>(function Chip(
       type={type}
       aria-pressed={selected}
       className={cn(
-        'inline-flex h-8 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 text-[13px] font-medium transition-colors',
+        'press inline-flex h-9 items-center gap-1.5 whitespace-nowrap rounded-full border-2 px-3.5 text-[13px] font-semibold',
         selected
-          ? 'border-accent bg-accent text-accent-ink'
-          : 'border-line bg-surface text-ink hover:border-line-strong',
+          ? 'border-ink bg-ink text-bg shadow-pop-sm'
+          : 'border-line-strong bg-surface text-ink hover:-translate-y-px hover:border-ink',
         className,
       )}
       {...props}

@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Yapizza video stage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf7ef; --surface: #fff; --ink: #0f1b2d; --muted: #545e6b; --line: #e7decd; --line-strong: #cbbfa8;
+    --accent: #00356b; --accent-soft: #e2ebf6; --food: #1d6b3a; --crust: #e9a23b;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1536px; height: 864px; overflow: hidden; background: var(--bg); color: var(--ink);
+    font-family: Geist, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  #app { position: absolute; border: 0; background: var(--bg); }
+  .full #app { left: 0; top: 0; width: 1536px; height: 864px; }
+  .split #app { left: 616px; top: 0; width: 920px; height: 864px; border-left: 1px solid var(--line); }
+  .phone #app { left: 580px; top: 30px; width: 376px; height: 724px; border-radius: 36px; }
+  #bezel { display: none; position: absolute; left: 566px; top: 16px; width: 404px; height: 752px; border-radius: 50px; background: #11161f; box-shadow: 0 30px 60px rgba(15,27,45,.18); }
+  .phone #bezel { display: block; }
+  #left { position: absolute; left: 32px; top: 32px; width: 552px; height: 720px; display: none; }
+  .split #left { display: block; }
+  #scene { position: absolute; inset: 0; display: none; }
+  .none #scene { display: block; }
+  .none #app { display: none; }
+
+  #cursor { position: absolute; left: 0; top: 0; width: 28px; height: 28px; z-index: 50; pointer-events: none; opacity: 0;
+    transition: transform 600ms cubic-bezier(.3,.1,.2,1), opacity 200ms; filter: drop-shadow(0 2px 3px rgba(0,0,0,.25)); }
+  .ripple { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 2px solid var(--accent);
+    z-index: 49; pointer-events: none; animation: ripple 450ms ease-out forwards; }
+  @keyframes ripple { from { transform: scale(.3); opacity: .9 } to { transform: scale(1.4); opacity: 0 } }
+
+  #caption { position: absolute; left: 50%; bottom: 26px; transform: translate(-50%, 8px); z-index: 60; max-width: 1180px;
+    background: var(--ink); color: #fff; font-size: 27px; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em;
+    padding: 12px 26px 13px; border-radius: 16px; text-align: center; opacity: 0; transition: opacity 220ms, transform 220ms; }
+  #caption.on { opacity: 1; transform: translate(-50%, 0); }
+
+  /* Windows on the left: mail and the flyer folder. Plain, no brand. */
+  .win { background: var(--surface); border: 1px solid var(--line-strong); border-radius: 18px; box-shadow: 0 2px 0 var(--line-strong), 0 18px 40px rgba(15,27,45,.08); overflow: hidden; }
+  .win-bar { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 15px; font-weight: 600; }
+  .dots { display: flex; gap: 7px; } .dots i { width: 12px; height: 12px; border-radius: 50%; background: var(--line-strong); display: block; }
+  .mail { height: 100%; display: flex; flex-direction: column; transition: transform 700ms cubic-bezier(.5,0,.2,1), opacity 700ms; }
+  .mail.sent { transform: translate(700px, -40px) scale(.2); opacity: 0; }
+  .mail-head { padding: 18px 22px 12px; border-bottom: 1px solid var(--line); }
+  .mail-subj { font-size: 21px; font-weight: 600; line-height: 1.25; }
+  .mail-from { margin-top: 8px; font-size: 14px; color: var(--muted); }
+  .mail-from b { color: var(--ink); font-weight: 600; }
+  .mail-to { display: none; align-items: center; gap: 8px; padding: 12px 22px; border-bottom: 1px solid var(--line); font-size: 15px; position: relative; }
+  .mail-to.on { display: flex; }
+  .mail-to .lbl { color: var(--muted); width: 28px; }
+  .typed { font-size: 15px; } .caret { width: 1.5px; height: 18px; background: var(--ink); animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0 } }
+  .chip { display: none; align-items: center; gap: 7px; padding: 4px 12px 4px 5px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 14px; }
+  .chip img { width: 22px; height: 22px; }
+  .suggest { display: none; position: absolute; left: 60px; top: 46px; z-index: 5; background: #fff; border: 1px solid var(--line-strong); border-radius: 12px; box-shadow: 0 10px 24px rgba(15,27,45,.12); padding: 6px; width: 300px; }
+  .suggest div { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); font-size: 15px; font-weight: 600; }
+  .suggest img { width: 26px; height: 26px; }
+  .mail-body { flex: 1; padding: 18px 22px; font-size: 16px; line-height: 1.55; white-space: pre-wrap; color: var(--ink); overflow: hidden; }
+  .mail-actions { display: flex; gap: 10px; padding: 14px 22px; border-top: 1px solid var(--line); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 600;
+    border: 1.5px solid var(--ink); background: #fff; color: var(--ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.hide { display: none; }
+  .sent-note { position: absolute; left: 0; right: 0; top: 330px; text-align: center; font-size: 20px; font-weight: 600; color: var(--muted); opacity: 0; transition: opacity 300ms; }
+  .sent-note.on { opacity: 1; }
+
+  .folder { height: 100%; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 16px; padding: 22px; position: relative; }
+  .file { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 8px; border-radius: 12px; border: 2px solid transparent; }
+  .file img { width: 140px; height: 170px; object-fit: cover; border-radius: 6px; box-shadow: 0 1px 0 var(--line-strong), 0 4px 10px rgba(15,27,45,.10); }
+  .file span { font-size: 12.5px; color: var(--muted); max-width: 150px; text-align: center; word-break: break-all; line-height: 1.25; }
+  .file.sel { background: var(--accent-soft); border-color: var(--accent); }
+  .file.sel span { color: var(--accent); font-weight: 600; }
+  .band { position: absolute; border: 1.5px solid var(--accent); background: rgba(0,53,107,.08); border-radius: 4px; pointer-events: none; display: none; }
+  .stack { position: absolute; z-index: 45; pointer-events: none; width: 120px; height: 146px; display: none; }
+  .stack img { position: absolute; width: 120px; height: 146px; object-fit: cover; border-radius: 6px; box-shadow: 0 8px 20px rgba(15,27,45,.25); border: 2px solid #fff; }
+  .stack b { position: absolute; right: -10px; top: -10px; z-index: 9; background: var(--accent); color: #fff; font-size: 14px; font-weight: 700; border-radius: 999px; padding: 3px 9px; }
+
+  /* Scene 1: the problem. */
+  .prob { position: absolute; left: 48px; right: 48px; top: 40px; bottom: 120px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 32px; }
+  .kicker { font-size: 15px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin: 0 0 12px 4px; }
+  .inbox, .sentbox { height: calc(100% - 34px); }
+  .inbox .win-bar span, .sentbox .win-bar span { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .rows { position: relative; height: calc(100% - 52px); overflow: hidden; }
+  .row { display: grid; grid-template-columns: 12px 210px 1fr; align-items: center; gap: 12px; padding: 0 18px; height: 46px; border-bottom: 1px solid var(--line); font-size: 15px; animation: drop 260ms ease-out; background: #fff; }
+  .row i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .row b { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row em { font-style: normal; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @keyframes drop { from { transform: translateY(-46px); opacity: 0 } to { transform: none; opacity: 1 } }
+  .srow { display: flex; justify-content: space-between; align-items: center; padding: 0 18px; height: 58px; border-bottom: 1px solid var(--line); font-size: 15px; animation: drop 260ms ease-out; }
+  .srow b { font-weight: 600; } .srow span { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .room { margin: 26px 18px 0; padding: 18px; border: 1.5px dashed var(--line-strong); border-radius: 14px; text-align: center; color: var(--muted); font-size: 17px; opacity: 0; transition: opacity 400ms; }
+  .room.on { opacity: 1; }
+  .chairs { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 14px; }
+  .chairs i { height: 26px; border-radius: 6px; background: var(--line); }
+  .chairs i.f { background: var(--accent); }
+
+  /* Scene 11: the close. */
+  .close { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding: 48px 48px 130px; transition: opacity 500ms; }
+  .close figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+  .close figcaption { font-size: 22px; font-weight: 600; }
+  .close img { width: 100%; height: 560px; object-fit: cover; object-position: top; border-radius: 16px; border: 1.5px solid var(--line-strong); box-shadow: 0 2px 0 var(--line-strong); }
+  .final { position: absolute; inset: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; opacity: 0; transition: opacity 600ms; }
+  .final.on { opacity: 1; }
+  .mark { display: flex; align-items: center; gap: 14px; font-size: 44px; font-weight: 700; letter-spacing: -0.03em; color: var(--accent); }
+  .mark img { width: 52px; height: 52px; }
+  .final p { margin: 0; font-size: 58px; font-weight: 600; letter-spacing: -0.03em; }
+  .zoom { transition: transform 1600ms cubic-bezier(.3,.1,.2,1); transform-origin: 70% 60%; }
+</style>
+</head>
+<body class="none">
+  <div id="bezel"></div>
+  <iframe id="app" name="app"></iframe>
+  <div id="left"></div>
+  <div id="scene"></div>
+  <svg id="cursor" viewBox="0 0 28 28"><path d="M5 3 L5 22 L10 17.5 L13.5 25 L17 23.5 L13.6 16.2 L20 16 Z" fill="#0f1b2d" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  <div id="caption"></div>
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+let cx = 768, cy = 600;
+
+window.S = {
+  layout(kind, src) {
+    document.body.className = kind;
+    if (src) $('#app').src = src;
+  },
+  caption(text) {
+    const c = $('#caption');
+    if (!text) { c.classList.remove('on'); return; }
+    c.textContent = text; c.classList.add('on');
+  },
+  async show(x, y) { cx = x; cy = y; const c = $('#cursor'); c.style.transition = 'none'; c.style.transform = `translate(${x - 5}px, ${y - 3}px)`; c.getBoundingClientRect(); c.style.transition = ''; c.style.opacity = 1; },
+  hide() { $('#cursor').style.opacity = 0; },
+  async move(x, y, ms = 650) {
+    const c = $('#cursor'); c.style.transitionDuration = ms + 'ms, 200ms';
+    c.style.transform = `translate(${x - 5}px, ${y - 3}px)`; cx = x; cy = y; await sleep(ms);
+  },
+  ripple(x = cx, y = cy) { const r = document.createElement('div'); r.className = 'ripple'; r.style.left = x + 'px'; r.style.top = y + 'px'; document.body.appendChild(r); setTimeout(() => r.remove(), 500); },
+  box(sel) { const r = $(sel).getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; },
+
+  // A mail window showing a club email, ready to forward to Yapizza.
+  mail({ subject, from, date, body, mark }) {
+    $('#left').innerHTML = `
+      <div class="win mail">
+        <div class="win-bar"><div class="dots"><i></i><i></i><i></i></div><span style="margin-left:8px">Inbox</span></div>
+        <div class="mail-head"><div class="mail-subj"></div><div class="mail-from"><b></b> · <span class="d"></span></div></div>
+        <div class="mail-to"><span class="lbl">To</span><span class="chip"><img src="${mark}" alt="">Yapizza</span><span class="typed"></span><span class="caret"></span>
+          <div class="suggest"><div><img src="${mark}" alt="">Yapizza</div></div></div>
+        <div class="mail-body"></div>
+        <div class="mail-actions"><span class="btn" id="fwd">Forward</span><span class="btn primary hide" id="send">Send</span></div>
+      </div><div class="sent-note">Sent to Yapizza</div>`;
+    $('.mail-subj').textContent = subject; $('.mail-from b').textContent = from; $('.mail-from .d').textContent = date; $('.mail-body').textContent = body;
+  },
+  async forward() {
+    $('.mail-to').classList.add('on'); $('#fwd').classList.add('hide'); $('#send').classList.remove('hide');
+    for (const ch of 'yap') { $('.typed').textContent += ch; await sleep(150); }
+    $('.suggest').style.display = 'block';
+  },
+  pick() { $('.suggest').style.display = 'none'; $('.typed').textContent = ''; $('.chip').style.display = 'inline-flex'; },
+  async send() { $('.mail').classList.add('sent'); await sleep(500); $('.sent-note').classList.add('on'); },
+
+  // A plain folder of flyer images.
+  folder(files) {
+    $('#left').innerHTML = `<div class="win folder"><div class="win-bar"><div class="dots"><i></i><i></i><i></i></div><span style="margin-left:8px">Flyers</span></div>
+      <div class="grid">${files.map((f) => `<div class="file"><img src="${f.url}" alt=""><span>${f.name}</span></div>`).join('')}<div class="band"></div></div></div>
+      <div class="stack">${files.slice(0, 4).map((f, i) => `<img src="${f.url}" style="transform:translate(${i * 6}px,${i * 6}px) rotate(${(i - 1.5) * 4}deg)">`).join('')}<b>${files.length}</b></div>`;
+  },
+  async band(x0, y0, x1, y1, ms = 900) {
+    const g = $('.grid').getBoundingClientRect(), b = $('.band');
+    b.style.display = 'block'; const files = [...document.querySelectorAll('.file')];
+    const t0 = performance.now();
+    while (true) {
+      const k = Math.min(1, (performance.now() - t0) / ms), x = x0 + (x1 - x0) * k, y = y0 + (y1 - y0) * k;
+      b.style.left = (x0 - g.left) + 'px'; b.style.top = (y0 - g.top) + 'px'; b.style.width = (x - x0) + 'px'; b.style.height = (y - y0) + 'px';
+      $('#cursor').style.transition = 'none'; $('#cursor').style.transform = `translate(${x - 5}px, ${y - 3}px)`; cx = x; cy = y;
+      for (const f of files) { const r = f.getBoundingClientRect(); f.classList.toggle('sel', r.left < x && r.top < y); }
+      if (k === 1) break; await sleep(16);
+    }
+    $('#cursor').style.transition = ''; b.style.display = 'none';
+  },
+  async drag(x, y, ms = 1100) {
+    const s = $('.stack'); s.style.display = 'block'; s.style.transition = 'none';
+    s.style.transform = `translate(${cx - 40}px, ${cy - 40}px)`; s.getBoundingClientRect();
+    s.style.transition = `transform ${ms}ms cubic-bezier(.3,.1,.2,1)`; s.style.transform = `translate(${x - 40}px, ${y - 40}px)`;
+    document.querySelectorAll('.file').forEach((f) => (f.style.opacity = 0.35));
+    await S.move(x, y, ms);
+  },
+  async dropFiles(files) {
+    const w = $('#app').contentWindow, d = w.document;
+    const zone = d.querySelector('[data-testid=upload-input]').closest('label');
+    const dt = new w.DataTransfer();
+    for (const f of files) { const blob = await (await fetch(f.url)).blob(); dt.items.add(new w.File([blob], f.name, { type: 'image/png' })); }
+    zone.dispatchEvent(new w.DragEvent('dragover', { bubbles: true, cancelable: true, dataTransfer: dt }));
+    await sleep(350);
+    zone.dispatchEvent(new w.DragEvent('drop', { bubbles: true, cancelable: true, dataTransfer: dt }));
+    $('.stack').style.display = 'none';
+  },
+
+  // Scene 1: a student's inbox floods while a club keeps sending into it.
+  async problem(subjects, sent) {
+    $('#scene').innerHTML = `<div class="prob">
+      <div><p class="kicker">A student's inbox</p><div class="win inbox"><div class="win-bar">Inbox<span id="unread">0 unread</span></div><div class="rows" id="rows"></div></div></div>
+      <div><p class="kicker">A club's sent folder</p><div class="win sentbox"><div class="win-bar">Sent<span></span></div><div id="srows"></div>
+        <div class="room" id="room">Thursday's panel<div class="chairs">${Array.from({ length: 24 }, (_, i) => `<i class="${[3, 9, 17].includes(i) ? 'f' : ''}"></i>`).join('')}</div></div></div></div>
+    </div>`;
+    const rows = $('#rows'), srows = $('#srows');
+    let n = 0, si = 0;
+    for (let i = 0; i < subjects.length; i++) {
+      const r = document.createElement('div'); r.className = 'row';
+      r.innerHTML = '<i></i><b></b><em></em>'; r.querySelector('b').textContent = subjects[i][0]; r.querySelector('em').textContent = subjects[i][1];
+      rows.prepend(r); n++; $('#unread').textContent = n + ' unread';
+      if (i % 6 === 2 && si < sent.length) {
+        const s = document.createElement('div'); s.className = 'srow'; s.innerHTML = '<b></b><span></span>';
+        s.querySelector('b').textContent = sent[si][0]; s.querySelector('span').textContent = sent[si][1]; srows.prepend(s); si++;
+      }
+      if (i === 26) $('#room').classList.add('on');
+      await sleep(i < 8 ? 160 : 95);
+    }
+  },
+
+  closeCard({ left, right, mark }) {
+    $('#scene').innerHTML = `<div class="close" id="pair">
+      <figure><figcaption>for students</figcaption><img src="${left}" alt=""></figure>
+      <figure><figcaption>for clubs</figcaption><img src="${right}" alt=""></figure></div>
+      <div class="final" id="final"><div class="mark"><img src="${mark}" alt="">Yapizza</div><p>The perfect app for Yale students.</p></div>`;
+  },
+  final() { $('#final').classList.add('on'); },
+};
+</script>
+</body>
+</html>

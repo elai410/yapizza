@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v1",
+  "name": "extraction",
+  "createdAt": "2026-11-18T00:23:28.901Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Family Weekend Concert",
+        "start": "2026-10-10T17:30:00-04:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "230 Temple St.",
+        "placeId": null,
+        "hostName": "The Gentlemen of the Baker's Dozen",
+        "summary": "The Gentlemen of the Baker's Dozen perform a concert for Family Weekend at 230 Temple St. The flyer lists Saturday 10/10, which has already passed as of today, so the date may be outdated.",
+        "tags": [
+          "arts",
+          "traditions"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "SATURDAY 10/10",
+          "5:30 PM",
+          "230 Temple St.",
+          "OUR FAMILY WEEKEND CONCERT."
+        ],
+        "confidence": 0.5
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

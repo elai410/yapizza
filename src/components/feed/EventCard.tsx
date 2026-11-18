@@ -1,12 +1,15 @@
 import type { EventCard as EventCardData } from '@/lib/contracts';
 import { formatTime, formatWhen } from '@/lib/client';
-import { ARRIVE_CLASS, StatusBadge, TagChip, cn } from '@/components/ui';
+import { ARRIVE_CLASS, StatusBadge, TAG_STYLES, TagChip, cn } from '@/components/ui';
+import { Slice } from '@/components/brand/Slice';
 
 export function EventCard({ event, onOpen, arrived = false, showDay = false }: { event: EventCardData; onOpen: (id: string) => void; arrived?: boolean; showDay?: boolean }) {
   const canceled = event.status === 'canceled';
   const meta = [...new Set([event.placeName, event.hostName].filter(Boolean))].join(' · ');
   const audience = event.audience === 'members_only' ? 'Members only' : event.audience === 'college_only' ? `${event.college ?? 'College'} only` : null;
   const chips = event.tags.filter(function (t) { return t !== 'free_food'; }).slice(0, 2);
+  // The time tile carries the event's color: free food is crust, otherwise its first tag.
+  const tile = event.freeFood ? 'bg-crust text-ink' : chips[0] ? TAG_STYLES[chips[0]] : 'bg-sunken text-ink';
 
   return (
     <button
@@ -15,10 +18,11 @@ export function EventCard({ event, onOpen, arrived = false, showDay = false }: {
       data-event-id={event.id}
       // Focus first so the sheet can return focus here on close (mouse clicks don't focus buttons in Safari).
       onClick={function (e) { e.currentTarget.focus(); onOpen(event.id); }}
-      className={cn('flex w-full gap-4 px-4 py-3 text-left transition-colors hover:bg-sunken', arrived && ARRIVE_CLASS)}
+      className={cn('flex w-full items-start gap-4 rounded-[inherit] px-4 py-3 text-left focus-visible:outline-offset-[-5px]', arrived && ARRIVE_CLASS)}
     >
-      <span className={cn('tnum shrink-0 pt-px text-sm text-muted', showDay ? 'w-24' : 'w-20')}>
-        {showDay && <span className="block text-ink">{formatWhen(event.start).split(' · ')[0]}</span>}
+      <span className={cn('tnum flex shrink-0 flex-col items-center justify-center gap-0.5 rounded-md px-2 py-2 text-center text-[13px] font-semibold leading-tight', showDay ? 'w-24' : 'w-20', tile)}>
+        {event.freeFood && <Slice className="size-5" />}
+        {showDay && <span className="block font-medium">{formatWhen(event.start).split(' · ')[0]}</span>}
         {formatTime(event.start, null, event.allDay)}
       </span>
       <span className="min-w-0 flex-1">

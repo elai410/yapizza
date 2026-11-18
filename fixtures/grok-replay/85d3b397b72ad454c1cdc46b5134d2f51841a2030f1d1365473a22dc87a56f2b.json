@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v1",
+  "name": "extraction",
+  "createdAt": "2026-11-18T00:23:29.471Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Tastes of Taiwan",
+        "start": "2026-11-16T12:30:00-05:00",
+        "end": "2026-11-16T14:30:00-05:00",
+        "allDay": false,
+        "locationRaw": "AACC",
+        "placeId": "aacc",
+        "hostName": "YTSA",
+        "summary": "A Taiwanese food event at the AACC, with preorders through the host's account. The flyer says Sunday 11/16, but 11/16 falls on a Monday in 2026, so the date may be wrong.",
+        "tags": [
+          "cultural",
+          "social"
+        ],
+        "freeFood": false,
+        "food": null,
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "SUN 11/16",
+          "12:30–2:30",
+          "AACC",
+          "PREORDER IN BIO"
+        ],
+        "confidence": 0.5
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

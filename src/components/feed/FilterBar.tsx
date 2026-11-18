@@ -16,7 +16,7 @@ export function FilterBar({ filters, onChange }: { filters: FeedFilters; onChang
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between gap-3">
-      <div role="group" aria-label="Range" className="inline-flex rounded-md border border-line bg-surface p-0.5 text-sm">
+      <div role="group" aria-label="Range" className="inline-flex rounded-full border-2 border-ink bg-surface p-0.5 text-[13px] font-semibold">
         {(['today', 'week'] as const).map(function (r) {
           const on = filters.range === r;
           return (
@@ -25,7 +25,7 @@ export function FilterBar({ filters, onChange }: { filters: FeedFilters; onChang
               type="button"
               aria-pressed={on}
               onClick={function () { onChange({ ...filters, range: r }); }}
-              className={cn('rounded-sm px-3 py-1 transition-colors', on ? 'bg-sunken font-medium text-ink' : 'text-muted hover:text-ink')}
+              className={cn('press rounded-full px-3.5 py-1.5 transition-colors', on ? 'bg-ink text-bg' : 'text-muted hover:text-ink')}
             >
               {r === 'today' ? 'Today' : 'This week'}
             </button>
@@ -47,7 +47,7 @@ export function FilterBar({ filters, onChange }: { filters: FeedFilters; onChang
             aria-label="Residential college"
             value={filters.college ?? ''}
             onChange={function (e) { onChange({ ...filters, college: e.target.value || null }); }}
-            className="h-8 shrink-0 rounded-full border border-line bg-surface px-3 text-[13px] font-medium text-ink hover:border-line-strong"
+            className="h-9 shrink-0 rounded-full border-2 border-line-strong bg-surface px-3.5 text-[13px] font-semibold text-ink hover:border-ink"
           >
             <option value="">All colleges</option>
             {COLLEGES.map(function (c) { return <option key={c} value={c}>{c}</option>; })}

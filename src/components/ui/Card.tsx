@@ -12,9 +12,10 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(function Card(
   return (
     <div
       ref={ref}
+      data-spot={interactive ? '' : undefined}
       className={cn(
-        'rounded-lg border border-line bg-surface shadow-card',
-        interactive && 'cursor-pointer transition-[border-color,box-shadow] hover:border-line-strong hover:shadow-raised',
+        'rounded-lg border-2 border-ink bg-surface shadow-pop',
+        interactive && 'lift cursor-pointer',
         className,
       )}
       {...props}

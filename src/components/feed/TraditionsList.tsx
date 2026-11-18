@@ -33,15 +33,17 @@ function Row({ t, onOpen }: { t: TraditionItem; onOpen: (id: string) => void }) 
     </>
   );
   const next = t.next;
-  if (!next) return <div className="px-4 py-3">{body}</div>;
+  if (!next) return <Card className="px-4 py-3">{body}</Card>;
   return (
-    <button
-      type="button"
-      onClick={function () { onOpen(next.id); }}
-      className="block w-full px-4 py-3 text-left transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-sunken"
-    >
-      {body}
-    </button>
+    <Card className="lift overflow-hidden" data-spot>
+      <button
+        type="button"
+        onClick={function () { onOpen(next.id); }}
+        className="block w-full rounded-[inherit] px-4 py-3 text-left focus-visible:outline-offset-[-5px]"
+      >
+        {body}
+      </button>
+    </Card>
   );
 }
 
@@ -79,12 +81,12 @@ export function TraditionsList() {
       {months.map(function (m) {
         return (
           <section key={m}>
-            <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">{monthName(m === 13 ? null : m)}</h2>
-            <Card className="divide-y divide-line">
+            <h2 className="mb-2 inline-block rounded-full bg-ink px-3 py-1 text-xs font-semibold uppercase tracking-wide text-bg">{monthName(m === 13 ? null : m)}</h2>
+            <div className="space-y-2">
               {groups.get(m)!.map(function (t) {
                 return <Row key={t.id} t={t} onOpen={setOpenId} />;
               })}
-            </Card>
+            </div>
           </section>
         );
       })}

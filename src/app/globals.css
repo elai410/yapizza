@@ -7,36 +7,48 @@
   bg-accent, text-accent, bg-accent-soft, bg-food-soft text-food, etc.
 */
 @theme {
-  --color-bg: #f7f7f5;
+  /* Elm City apizza: dough ground, Yale Blue lead, tomato and crust as pops. */
+  --color-bg: #fbf7ef;
   --color-surface: #ffffff;
-  --color-sunken: #f0f0ed;
-  --color-ink: #14171c;
-  --color-muted: #59616c;
-  --color-faint: #656c76; /* AA (4.6:1+) on bg, surface and sunken */
-  --color-line: #e4e4e0;
-  --color-line-strong: #cfcfca;
+  --color-sunken: #f3ecdf;
+  --color-ink: #0f1b2d;
+  --color-muted: #545e6b;
+  --color-faint: #5f6873; /* AA on bg, surface and sunken */
+  --color-line: #e7decd;
+  --color-line-strong: #cbbfa8;
 
   --color-accent: #00356b;
   --color-accent-hover: #00284f;
-  --color-accent-soft: #e6edf5;
+  --color-accent-soft: #e2ebf6;
   --color-accent-ink: #ffffff;
 
+  --color-sauce: #c8381f;
+  --color-sauce-soft: #fde6e0;
+  --color-crust: #f2b544;
+  --color-crust-soft: #fff1d2;
+  --color-crust-ink: #6b4500;
+
   --color-food: #1d6b3a;
-  --color-food-soft: #e5f2e9;
+  --color-food-soft: #e1f2e6;
   --color-cancel: #a8231a;
   --color-cancel-soft: #fbeae8;
   --color-update: #7a4f00;
   --color-update-soft: #fdf1d6;
 
   --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-display-face), var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
 
-  --shadow-card: 0 1px 2px rgb(20 23 28 / 0.04);
-  --shadow-raised: 0 2px 6px rgb(20 23 28 / 0.06), 0 1px 2px rgb(20 23 28 / 0.04);
-  --shadow-sheet: 0 -8px 32px rgb(20 23 28 / 0.12);
+  --shadow-card: 0 1px 0 rgb(15 27 45 / 0.04);
+  --shadow-raised: 0 6px 20px rgb(15 27 45 / 0.08), 0 1px 2px rgb(15 27 45 / 0.06);
+  --shadow-sheet: 0 -8px 32px rgb(15 27 45 / 0.14);
+  /* Sticker look: hard offset in ink. */
+  --shadow-pop: 3px 3px 0 var(--color-ink);
+  --shadow-pop-sm: 2px 2px 0 var(--color-ink);
+  --shadow-pop-lg: 5px 5px 0 var(--color-ink);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -45,8 +57,8 @@
   /* A card that just arrived from live intake: accent-soft wash that fades out. */
   --animate-arrive: arrive 1.6s var(--ease-out) both;
   @keyframes arrive {
-    0%, 30% { background-color: var(--color-accent-soft); border-color: var(--color-accent); }
-    100% { background-color: var(--color-surface); border-color: var(--color-line); }
+    0%, 30% { background-color: var(--color-crust-soft); }
+    100% { background-color: var(--color-surface); }
   }
   /* Sheet: bottom sheet on mobile, right panel from md. Radix waits for the closed-state animation. */
   --animate-fade-in: fade-in 180ms var(--ease-out) both;
@@ -68,7 +80,7 @@
 }
 
 :root {
-  --header-h: 56px;
+  --header-h: 72px;
   color-scheme: light;
 }
 
@@ -92,6 +104,13 @@ body {
   display: none;
 }
 
+/* Pizzeria tablecloth: tomato and crust checks. Decorative strips only. */
+.checker {
+  background-color: var(--color-crust);
+  background-image: repeating-conic-gradient(var(--color-sauce) 0 25%, transparent 0 50%);
+  background-size: 12px 12px;
+}
+
 /* Times and counts line up. Apply to any element showing a time or number. */
 .tnum {
   font-variant-numeric: tabular-nums;
@@ -106,10 +125,68 @@ body {
 }
 
 ::selection {
-  background: var(--color-accent-soft);
+  background: var(--color-crust);
+  color: var(--color-ink);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/*
+  Pointer layer. [data-spot]: a soft light follows the cursor (PointerFx sets --mx/--my).
+  .lift: rises 2px on hover, presses on click. .press: presses on click.
+*/
+@layer components {
+  [data-spot] {
+    position: relative;
+    isolation: isolate;
+  }
+  [data-spot]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 220ms var(--ease-out);
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgb(242 181 68 / 0.16), transparent 70%);
+  }
+  [data-spot]:hover::after {
+    opacity: 1;
+  }
+  .lift {
+    transition: transform 180ms var(--ease-out), box-shadow 180ms var(--ease-out), background-color 150ms;
+  }
+  .lift:hover {
+    transform: translate(-1px, -2px);
+    box-shadow: var(--shadow-pop-lg);
+  }
+  .lift:active {
+    transform: translate(1px, 1px);
+    box-shadow: var(--shadow-pop-sm);
+    transition-duration: 60ms;
+  }
+  .press {
+    transition: transform 140ms var(--ease-out), box-shadow 140ms var(--ease-out), background-color 150ms, color 150ms, border-color 150ms;
+  }
+  .press:active {
+    transform: translateY(1px) scale(0.97);
+    transition-duration: 60ms;
+  }
+  .draw {
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat;
+    transition: background-size 220ms var(--ease-out);
+  }
+  .draw:hover {
+    background-size: 100% 1.5px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .lift:hover, .lift:active, .press:active { transform: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

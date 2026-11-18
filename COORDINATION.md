@@ -42,11 +42,11 @@ next: hardening done: fixtures load fresh, bad files skipped with a warning, fix
 blockers: none. Real intake alerts too (pipeline 0b3ae5c). free-food-now fixes: 1855d5e (own card), ad7610d (late subscribers).
 
 ## frontend
-status: polishing (18:04). No commits (human commits with Cursor). Bugs: since= polling done; sales/traditions empty-state testids were already in.
-done: everything on the role card; qa bug-hunt fixes; readBy gating; /host mobile rows; live updates now poll /api/events?since=<serverTime> every 3s and merge deltas (contract 8.3), also refreshing an open sheet
-uncommitted files (frontend): src/lib/client/hooks.ts, src/lib/client/merge.selfcheck.ts, src/lib/client/format.ts, src/lib/client/format.selfcheck.ts, src/app/(site)/page.tsx, src/components/event/SourceDrawer.tsx, src/components/event/EventSheet.tsx, src/components/ask/useAsk.ts, src/components/ask/AskBox.tsx
+status: revamp done (19:03). No commits (human commits with Cursor). Typecheck green; SMOKE_CP=5 29 passed, 1 skipped.
+done: feed hero h1 "What's on at Yale" with live counts + Slice + checker strip; sticker cards (Card interactive: lift + data-spot) with tag-colored time tile (free food = crust + Slice); sticky day pills (Today blue, Tomorrow tomato, later ink); pill toolbar (range + college select); Ask results, traditions as separate lift cards; sales price pills; earlier: since= polling, qa fixes, Read by Claude, view ping, all-day ranges
+uncommitted files (frontend): src/app/(site)/page.tsx, src/components/ask/AskBox.tsx, src/components/feed/EventCard.tsx, src/components/feed/Feed.tsx, src/components/feed/FilterBar.tsx, src/components/feed/SalesBoard.tsx, src/components/feed/TraditionsList.tsx
 in flight (subagents): none
-next: polish behind flags (deep link /?event=<id> for alert and digest links), mobile recheck
+next: polish on request until WRAP
 blockers: none
 
 ## design
@@ -58,6 +58,8 @@ qa round 2 sent: api (updated event drawer shows the old source, digest not sort
 a11y pass (18:00): automated audit on /, /ask, /host, /host/upload, /traditions, /sales, /digest plus keyboard run on feed and sheet: clean except feed has no h1 (sent to frontend). Dark mode stays cut: it would follow the demo laptop OS setting and adds risk for no demo gain.
 next: polish until wrap (host row buttons with frontend, any visual bugs)
 uncommitted files (design): docs/COPY.md (drawer provenance line, digest labels, Read by Claude)
+revamp 18:56 (human request, done by a separate design-lane session): Elm City apizza look. Uncommitted: src/app/globals.css (dough/Yale Blue/sauce/crust tokens, font-display, shadow-pop, lift/press/data-spot/draw motion, .checker, header-h 72px), src/app/layout.tsx (Bricolage Grotesque, PointerFx), src/app/icon.svg, public/brand/mark.svg, src/components/brand/{Header,Slice,PointerFx,index}.tsx, src/components/ui/{Button,Card,Chip,TagChip,EmptyState,Input,Sheet,Toast}.tsx, src/components/intro/Intro.tsx (wordmark font). Restarted, verified at 375 and desktop, smoke 30/30.
+club 19:22 (human request, replaces the 19:15 /admin page, which is deleted): /club "For clubs" demo page. Drop a flyer or paste an email (3 real fixture samples: 34, 39, 01), watch 5 pipeline steps fill with real stage timings, then the email with evidence highlighted beside the student cards it became; Recent mail log below (click a row for email + extracted events). Nav: Hosts replaced by For clubs (/host still linked from /club). Files: src/app/club/{page,ClubConsole}.tsx (new), src/app/api/club/recent/route.ts (new), src/components/brand/Header.tsx. Calls existing /api/upload, /api/ingest/email, /api/events/[id]. Typecheck green. Note for api: the dev server's Prisma client rejected `select: { readBy }`; readBy may read as missing at runtime until `pnpm prisma generate` + dev restart.
 blockers: none
 cut: dark mode
 notes: lead, I removed the scaffold's default src/app/favicon.ico (replaced by icon.svg).
@@ -75,6 +77,9 @@ blockers: ANTHROPIC_API_KEY plus `pnpm grok:record`; typecheck currently fails i
 - ~~qa-demo to frontend: put `data-testid="event-card"` on every feed event card; smoke tests also look for a dialog for the detail sheet, an "Add to calendar" link, and a "Free food" filter button.~~ done 07b5b47
 - ~~qa-demo to design: intro root gets `data-testid="intro"`; skip the intro when sessionStorage `yapizza:intro-seen` is '1' and set it on finish or skip.~~ done b4a91a5
 - qa-demo to integrations: keep demo send-in events out of events.seed.json (3 YUMS events in emails/34, Helix Langer chat in 31), or CP2 sends dedupe to `same`.
+
+- [pipeline] Flyers with a weekday and a date but no year get the wrong year (human test 19:25, fixtures/flyers/ Instagram set): "Wednesday, April 29th" became Thu Apr 29 2027, "Feb 8th" (a Sunday in 2026) became Mon Feb 8 2027, "SUN 11/16" became Mon Nov 16 2026. Pick the year where the weekday matches. Also "YSB Marsh" read as "Vsb Marsh"; "Sudler Hall, 100 Wall St." shows as "Sudler Hall 100". (19:25)
+- [frontend, design] /host/upload now takes many flyers in one drop and reads them in parallel (UploadForm.tsx, edited 19:22 at the human's request). On that page an EventCard shows a time but no date, which misleads for past or far-off flyers; a flyer matched as `same` says "No new events in this file." where "Already on Yapizza." would be accurate. (19:25)
 
 ## Bugs (qa-demo logs; owner fixes and strikes through)
 - 

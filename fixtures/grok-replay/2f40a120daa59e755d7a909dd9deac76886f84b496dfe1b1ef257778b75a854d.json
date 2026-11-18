@@ -1,0 +1,251 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "series-v1",
+  "name": "series",
+  "createdAt": "2026-11-18T00:44:09.328Z",
+  "response": {
+    "series": [
+      {
+        "groups": [
+          163
+        ],
+        "title": "The Game",
+        "isTradition": true
+      },
+      {
+        "groups": [
+          150
+        ],
+        "title": "Ceremonial Weighing of Handsome Dan",
+        "isTradition": true
+      },
+      {
+        "groups": [
+          165
+        ],
+        "title": "Yale College Thanksgiving Dinner",
+        "isTradition": true
+      },
+      {
+        "groups": [
+          169
+        ],
+        "title": "Holiday Dinner",
+        "isTradition": true
+      },
+      {
+        "groups": [
+          1
+        ],
+        "title": "Yale Impact Expo Info Session",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          3
+        ],
+        "title": "YMC Problem Review Session",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          4
+        ],
+        "title": "YCC Senate Meeting",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          6
+        ],
+        "title": "YASSS Stargazing",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          11,
+          172
+        ],
+        "title": "YUMS PSET Night",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          16
+        ],
+        "title": "AACC Game Night",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          24
+        ],
+        "title": "Gentle Yoga",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          28
+        ],
+        "title": "Hatha Yoga",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          37
+        ],
+        "title": "Power Yoga",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          42
+        ],
+        "title": "Friday Yoga",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          35
+        ],
+        "title": "Thursday Tea Time",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          36
+        ],
+        "title": "Imagining Your Summer",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          47
+        ],
+        "title": "Yale Artists Cabaret Fall Mainstage",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          117
+        ],
+        "title": "Yale Dramat Fall Mainstage",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          8,
+          23,
+          57,
+          101,
+          139
+        ],
+        "title": "Craft et Veritas",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          54,
+          95,
+          166
+        ],
+        "title": "SASsy Sunday",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          38,
+          90
+        ],
+        "title": "YUMS Pizza Seminar",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          46,
+          131,
+          132
+        ],
+        "title": "MMATHS",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          75,
+          173
+        ],
+        "title": "YUMS Putnam Problem Session",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          39,
+          82
+        ],
+        "title": "STEM Summer Fellowships",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          68
+        ],
+        "title": "Talk STEM with Dean Alexia Belperron",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          69
+        ],
+        "title": "Wellness Wednesday",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          71,
+          104
+        ],
+        "title": "Dinner & Dialogue",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          100,
+          106
+        ],
+        "title": "YCRC Training",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          162
+        ],
+        "title": "Introduction to R",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          31,
+          134
+        ],
+        "title": "Silliman College Tea",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          114,
+          153
+        ],
+        "title": "Sweet Treat Study Break",
+        "isTradition": false
+      },
+      {
+        "groups": [
+          167
+        ],
+        "title": "Season of Giving Drive",
+        "isTradition": false
+      }
+    ]
+  }
+}

@@ -26,9 +26,9 @@ function Row({ l }: { l: ListingItem }) {
       <div className="flex items-baseline justify-between gap-4">
         <p className="font-medium text-ink">{l.title}</p>
         {isFree(l.price) ? (
-          <span className="shrink-0 text-sm font-medium text-food">Free</span>
+          <span className="shrink-0 rounded-full bg-food-soft px-2.5 py-0.5 text-sm font-medium text-food">Free</span>
         ) : (
-          <span className="tnum shrink-0 text-sm text-ink">{l.price}</span>
+          <span className="tnum shrink-0 rounded-full bg-crust-soft px-2.5 py-0.5 text-sm font-medium text-crust-ink">{l.price}</span>
         )}
       </div>
       {l.details ? <p className={cn('mt-1 text-sm text-muted', !open && 'line-clamp-2')}>{l.details}</p> : null}

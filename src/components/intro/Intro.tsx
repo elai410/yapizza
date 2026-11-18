@@ -114,7 +114,7 @@ export function Intro() {
         animate={{ opacity: 0 }}
         transition={{ duration: 0.2, ease: 'linear' }}
       >
-        <span className="text-5xl font-semibold tracking-tight text-ink">Yapizza</span>
+        <span className="text-5xl font-display font-extrabold tracking-tight text-ink">Yapizza</span>
       </motion.div>
     );
   }
@@ -191,7 +191,7 @@ export function Intro() {
           transition={{ delay: T.word, duration: 0.4, ease: EASE }}
           className="text-5xl"
         >
-          <motion.span layoutId="wordmark" className="font-semibold tracking-tight text-ink">
+          <motion.span layoutId="wordmark" className="font-display font-extrabold tracking-tight text-ink">
             Yapizza
           </motion.span>
         </motion.div>

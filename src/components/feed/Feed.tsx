@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import type { EventCard as EventCardData } from '@/lib/contracts';
 import { dayKey, dayLabel, DEFAULT_FILTERS, useEvents, type FeedFilters } from '@/lib/client';
 import { EventSheet } from '@/components/event/EventSheet';
-import { Button, Card, EmptyState, Enter, EnterList, Skeleton, toast } from '@/components/ui';
+import { Button, Card, EmptyState, Enter, EnterList, Skeleton, cn, toast } from '@/components/ui';
+import { Slice } from '@/components/brand/Slice';
 import { EventCard } from './EventCard';
 import { FilterBar } from './FilterBar';
 import { AlertsOptIn } from './AlertsOptIn';
@@ -76,23 +77,47 @@ export function Feed() {
     body = <EmptyState data-testid="empty-state">{msg}</EmptyState>;
   } else {
     body = groupByDay(events).map(function ([key, group]) {
+      const label = dayLabel(key);
       return (
-        <section key={key} className="mt-6 first:mt-0">
-          <h2 className="pb-2 text-xs font-semibold uppercase tracking-wide text-muted">{dayLabel(key)}</h2>
-          <Card className="divide-y divide-line overflow-hidden">
+        <section key={key} className="mt-8 first:mt-0">
+          {/* Sticky under the header; Today blue, the next day tomato, later days ink. */}
+          <h2 className="sticky top-[var(--header-h)] z-10 -mx-1 bg-bg px-1 py-2">
+            <span className={cn('inline-block rounded-full px-3 py-1 font-display text-sm font-semibold', label === 'Today' ? 'bg-accent text-white' : label === 'Tomorrow' ? 'bg-sauce text-white' : 'bg-ink text-bg')}>
+              {label}
+            </span>
+          </h2>
+          <div className="mt-2 space-y-3">
             <EnterList>
               {group.map(function (e, i) {
-                return <Enter key={e.id} index={i}><EventCard event={e} onOpen={setOpenId} arrived={arrived.has(e.id)} /></Enter>;
+                return (
+                  <Enter key={e.id} index={i}>
+                    <Card interactive><EventCard event={e} onOpen={setOpenId} arrived={arrived.has(e.id)} /></Card>
+                  </Enter>
+                );
               })}
             </EnterList>
-          </Card>
+          </div>
         </section>
       );
     });
   }
 
+  const food = events ? events.filter(function (e) { return e.freeFood && e.status !== 'canceled'; }).length : null;
+
   return (
     <>
+      <div className="mb-6 overflow-hidden rounded-lg border-2 border-ink bg-surface shadow-pop">
+        <div className="flex items-center gap-4 p-5">
+          <div className="min-w-0 flex-1">
+            <h1 className="text-2xl font-semibold text-ink sm:text-3xl">What&apos;s on at Yale</h1>
+            <p className="tnum mt-1 text-sm text-muted">
+              {events ? `${events.length} ${filters.range === 'today' ? 'today' : 'this week'} · ${food} with free food` : '\u00a0'}
+            </p>
+          </div>
+          <Slice className="size-14 shrink-0 sm:size-16" />
+        </div>
+        <div aria-hidden className="checker h-2" />
+      </div>
       <div className="mb-6"><AskBox onOpen={setOpenId} examples={false} /></div>
       <FilterBar filters={filters} onChange={setFilters} />
       <div className="mt-6">{body}</div>

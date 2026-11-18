@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "digest-v1",
+  "name": "digest",
+  "createdAt": "2026-11-18T00:55:49.278Z",
+  "response": {
+    "subject": "This week at Yale: sweet treats, game night, dinner",
+    "intro": "Reader and college are unknown, so this week's picks lean toward free food and open events.",
+    "picks": [
+      {
+        "id": "cmwlerxor0ua41fhud9l7h6fp",
+        "line": "Free sweets from Silliman GA before break, but it's Silliman students only."
+      },
+      {
+        "id": "cmwlerxp70ub51fhuvss38lu1",
+        "line": "Free Hot Murga after a talk on culture, consent, and care."
+      },
+      {
+        "id": "cmwlerxpb0ubh1fhuqbjq9ejo",
+        "line": "Free dinner for the AACC November recess, open to everyone."
+      },
+      {
+        "id": "cmwlerxot0uab1fhukrl7n9zw",
+        "line": "Casual game night at AACC, a good low-key way to meet people."
+      },
+      {
+        "id": "cmwlerxon0u9x1fhuck4a4c2q",
+        "line": "Short wellness check-ins with the Good Life Center, no prep needed."
+      },
+      {
+        "id": "cmwlerxop0ua01fhux3zbzycb",
+        "line": "Physics seminar on quantum 2D materials, for anyone curious about the science."
+      },
+      {
+        "id": "cmwlerxol0u9t1fhutwrlj2x5",
+        "line": "Handsome Dan weighing tradition at Beinecke Plaza, a fun Yale ritual to see."
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "digest-v1",
+  "name": "digest",
+  "createdAt": "2026-11-18T00:53:34.832Z",
+  "response": {
+    "subject": "This week at Yale: free treats, a game night, a weighing",
+    "intro": "Here are the events worth your time this week, with free food first and a mix of kinds of things to do.",
+    "picks": [
+      {
+        "id": "cmwlep5g80tlg1fhumlg838l0",
+        "line": "Free sweet treats before break, handed out at the College Street gate."
+      },
+      {
+        "id": "cmwlep5gn0tmh1fhu57311fcg",
+        "line": "Free hot murga and a talk on culture, consent, and care."
+      },
+      {
+        "id": "cmwlep5gr0tmt1fhukpedh6kw",
+        "line": "A free sit-down dinner for the week before Thanksgiving break."
+      },
+      {
+        "id": "cmwlep5gb0tln1fhu4vbrnadg",
+        "line": "Board games and a relaxed night at AACC, open to anyone."
+      },
+      {
+        "id": "cmwlep5g40tl51fhu66eii7ld",
+        "line": "A Yale tradition on Beinecke Plaza, so go see the bulldog weighed."
+      },
+      {
+        "id": "cmwlep5g60tl91fhu7pxp7rmn",
+        "line": "Quick ten-minute wellness check-ins at the YSC Offline Oasis."
+      },
+      {
+        "id": "cmwlep5ga0tlj1fhuro1k0oy1",
+        "line": "Mechanical engineering seminar with Jacob Notbohm, open to all."
+      }
+    ]
+  }
+}

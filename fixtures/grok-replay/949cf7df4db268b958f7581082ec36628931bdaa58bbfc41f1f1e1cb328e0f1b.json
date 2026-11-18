@@ -1,0 +1,37 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "digest-v1",
+  "name": "digest",
+  "createdAt": "2026-11-17T23:59:14.577Z",
+  "response": {
+    "subject": "This week at Yale: free sweets, Handsome Dan, a Ghibli screening",
+    "intro": "Here are the events worth your week, with free food up front and a few open-to-all picks mixed in.",
+    "picks": [
+      {
+        "id": "cmwlbm5pk0pl21fhuq2kmidx5",
+        "line": "Free sweets before break, but it's for Silliman folks only."
+      },
+      {
+        "id": "cmwlbm5qs0pm31fhubtkgmqcy",
+        "line": "Hot Murga and a talk on culture, consent, and care. Open to all."
+      },
+      {
+        "id": "cmwlbm5r70pmf1fhuidktqnmt",
+        "line": "A family-style dinner after the week, free and open to everyone."
+      },
+      {
+        "id": "cmwlbm5p60pkn1fhu8sl8c5u6",
+        "line": "A Ghibli film followed by discussion. Good one for a Tuesday night."
+      },
+      {
+        "id": "cmwlbm5pa0pkr1fhuc3ze9hy4",
+        "line": "The Handsome Dan weighing tradition, a quick outdoor thing before dark."
+      },
+      {
+        "id": "cmwlbm5pd0pkv1fhuboewff42",
+        "line": "Short one-on-one wellness check-ins at the YSC Offline Oasis, no sign-up needed."
+      }
+    ]
+  }
+}

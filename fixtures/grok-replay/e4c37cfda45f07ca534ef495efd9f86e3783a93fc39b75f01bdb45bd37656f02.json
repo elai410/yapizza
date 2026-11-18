@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v1",
+  "name": "extraction",
+  "createdAt": "2026-11-17T23:58:42.597Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Free pizza in the Silliman Buttery",
+        "start": "2026-11-17T18:58:00-05:00",
+        "end": "2026-11-17T19:43:00-05:00",
+        "allDay": false,
+        "locationRaw": "Silliman Buttery",
+        "placeId": "silliman-buttery",
+        "hostName": "Silliman GA",
+        "summary": "Free pizza is served in the Silliman Buttery, first come first served, open to all Yalies.",
+        "tags": [
+          "free_food",
+          "social"
+        ],
+        "freeFood": true,
+        "food": "pizza",
+        "audience": "college_only",
+        "college": "Silliman",
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Free pizza in the Silliman Buttery, Tuesday 11/17, 6:58 PM to 7:43 PM.",
+          "Open to all Yalies, first come first served."
+        ],
+        "confidence": 0.9
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

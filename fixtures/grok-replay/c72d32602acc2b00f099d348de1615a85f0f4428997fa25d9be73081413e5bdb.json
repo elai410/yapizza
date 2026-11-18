@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "servedBy": "claude-haiku-5-5",
+  "promptVersion": "extract-v1",
+  "name": "extraction",
+  "createdAt": "2026-11-18T00:23:28.123Z",
+  "response": {
+    "events": [
+      {
+        "kind": "event",
+        "title": "Super Bowl LX",
+        "start": "2027-02-08T18:00:00-05:00",
+        "end": null,
+        "allDay": false,
+        "locationRaw": "Vsb Marsh",
+        "placeId": null,
+        "hostName": "La Casa",
+        "summary": "La Casa, Despierta Boricua, and La Unidad Latina host a Super Bowl LX party with 100 Fujifilm cameras, a Polaroid photobooth, food and drinks, and a limited edition Sapo Concho giveaway.",
+        "tags": [
+          "free_food",
+          "cultural",
+          "social"
+        ],
+        "freeFood": true,
+        "food": "Food & Drinks",
+        "audience": "open_to_all",
+        "college": null,
+        "rsvpUrl": null,
+        "price": null,
+        "evidence": [
+          "Vsb Marsh · Feb 8th · 6pm",
+          "Food & Drinks",
+          "100 Fujifilm Cameras!!!"
+        ],
+        "confidence": 0.6
+      }
+    ],
+    "flagged": false,
+    "flagReason": null
+  }
+}

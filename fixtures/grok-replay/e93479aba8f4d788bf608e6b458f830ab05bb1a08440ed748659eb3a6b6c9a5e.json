@@ -3,7 +3,7 @@
   "servedBy": "claude-haiku-5-5",
   "promptVersion": "extract-v3",
   "name": "extraction",
-  "createdAt": "2026-11-17T23:37:17.830Z",
+  "createdAt": "2026-11-18T00:55:01.389Z",
   "response": {
     "events": [
       {
@@ -15,7 +15,7 @@
         "locationRaw": "LC 102",
         "placeId": "lc",
         "hostName": "YUMS",
-        "summary": "Moved to LC 102. Same time, same panel on Thursday 11/19 from 4:00 to 5:30pm.",
+        "summary": "Moved to LC 102 from WLH 120. Same time and panel as previously announced.",
         "tags": [
           "academic"
         ],
@@ -29,7 +29,7 @@
           "the Math Research Panel on Thursday 11/19 (4:00-5:30pm) has moved from WLH 120 to LC 102",
           "same time, same panel."
         ],
-        "confidence": 0.95
+        "confidence": 0.9
       }
     ],
     "flagged": false,

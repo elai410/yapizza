@@ -68,23 +68,23 @@ export function AskBox({ onOpen, autoFocus = false, initialQuery, examples = tru
         <div data-testid="ask-result" className="space-y-3">
           {data.results.length > 0 && (
             <div className="space-y-1">
-              {data.answer && <p className="text-[15px] text-ink">{data.answer}</p>}
+              {data.answer && <p className="font-display text-[15px] text-ink">{data.answer}</p>}
               <p className="text-xs text-faint">{data.mode === 'grok' ? 'Read by Claude' : 'Showing keyword matches.'}</p>
             </div>
           )}
           {data.results.length === 0 ? (
             <EmptyState>{data.answer || 'No events match that.'}</EmptyState>
           ) : (
-            <Card className="divide-y divide-line overflow-hidden">
+            <div className="space-y-2">
               {[...data.results].sort(function (a, b) { return Date.parse(a.event.start) - Date.parse(b.event.start); }).map(function (r) {
                 return (
-                  <div key={r.event.id}>
+                  <Card key={r.event.id} className="lift overflow-hidden" data-spot>
                     <EventCard event={r.event} onOpen={onOpen} showDay />
                     {r.why && <p className="-mt-1 pb-3 pl-[8rem] pr-4 text-sm text-muted">{r.why}</p>}
-                  </div>
+                  </Card>
                 );
               })}
-            </Card>
+            </div>
           )}
         </div>
       ) : null}

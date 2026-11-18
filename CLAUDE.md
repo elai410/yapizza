@@ -6,7 +6,7 @@ Read this whole file before doing anything, then read your role card in Section 
 
 ## 1. What we're building
 
-Yapizza is one place to see everything happening at Yale, built from the emails and flyers clubs already send. A club adds one address to its mailing list, forwards an email, or uploads a flyer. Grok turns each message into a clean event. Students browse, filter, ask in plain words, and add events to Google Calendar in one tap.
+Yapizza is one place to see everything happening at Yale, built from the emails and flyers clubs already send. A club adds one address to its mailing list, forwards an email, or uploads a flyer. Claude (Haiku 5.5 by default) turns each message into a clean event. Students browse, filter, ask in plain words, and add events to Google Calendar in one tap.
 
 **Demo goal:** in 3 minutes, a real club email or flyer becomes a correct event card in seconds, a student finds it, and it lands on their calendar.
 
@@ -37,7 +37,7 @@ Each checkpoint stacks on the last. Whatever checkpoint we stop at, the app at t
 |---|---|---|---|---|
 | CP0 | T+0:15 | Foundation | App boots, intro plays, empty shell | INTRO |
 | CP1 | T+0:45 | Static feed | This week's events from seed data, filters, event detail, Add to Google Calendar | FEED, FILTERS, GCAL_LINK |
-| CP2 | T+1:15 | Live intake | Send a club email or upload a flyer; Grok turns it into a card in seconds | INGEST, UPLOAD, LIVE_UPDATES, DEMO_PANEL |
+| CP2 | T+1:15 | Live intake | Send a club email or upload a flyer; Claude turns it into a card in seconds | INGEST, UPLOAD, LIVE_UPDATES, DEMO_PANEL |
 | CP3 | T+1:45 | Ask and updates | "free food tonight" works; a room-change email updates the existing card; "How this was read" drawer | ASK, DEDUP, SOURCE_DRAWER |
 | CP4 | T+2:15 | Calendar and alerts | Calendar feeds, Google Calendar insert (live or sim), free food alerts, Sunday digest preview | CAL_FEEDS, GCAL_INSERT, ALERTS, DIGEST |
 | CP5 | T+2:40 | Hosts and polish | Host page, traditions, sales board, final motion and copy pass | HOST, TRADITIONS, SALES |
@@ -81,7 +81,7 @@ Start each session with its exact name so the sessions can message each other: `
 | Session | Senior role | Owns (summary) |
 |---|---|---|
 | `lead` | Staff Engineer, Tech Lead and Integrator | Scaffold, dependencies, contracts, flags, checkpoint gates, wrap-up |
-| `pipeline` | Senior Backend Engineer, Ingestion and AI | Grok client, extraction, file reading, dedup, evals |
+| `pipeline` | Senior Backend Engineer, Ingestion and AI | Model client (Claude), extraction, file reading, dedup, evals |
 | `api` | Senior Backend Engineer, Data and API | Database, event API, Ask Yapizza, feeds, alerts, digest, host endpoints |
 | `integrations` | Senior Platform Engineer, Integrations and Simulation | Gmail, Google Calendar, notifications, auth, sim pages, fixtures |
 | `frontend` | Senior Frontend Engineer | Every student and host page, data hooks |
@@ -112,15 +112,15 @@ You build no features. You make seven sessions behave like one team.
 
 ### 5.2 `pipeline`: Senior Backend Engineer, Ingestion and AI
 
-You turn emails and files into correct events with Grok. Accuracy is your product.
+You turn emails and files into correct events with Claude. Accuracy is your product.
 
 **Owns:** `src/lib/grok/**`, `src/lib/pipeline/**`, `src/lib/yale/**`, `src/app/api/ingest/**`, `src/app/api/upload/**`, `fixtures/grok-replay/**`, `scripts/extract.ts`, `scripts/eval.ts`, `scripts/worker.ts`, `scripts/grok-record.ts`.
 
 | CP | Deliver |
 |---|---|
-| CP0 | Grok client with live, record, and replay modes (Section 12.2). Yale glossary and places list in `src/lib/yale` (Section 12.3). |
+| CP0 | Model client (Claude, in `src/lib/grok`) with live, record, and replay modes (Section 12.2). Yale glossary and places list in `src/lib/yale` (Section 12.3). |
 | CP1 | `extractEvents(raw)` with the JSON schema, evidence check, and confidence rule. `pnpm extract <fixture>` prints the events for any fixture email. |
-| CP2 | POST /api/ingest/email and POST /api/upload end to end: images through Grok vision, PDF through unpdf, CSV through papaparse, .ics through node-ical. Tagging. Event or listing. `pnpm worker` polls the MailSource adapter. |
+| CP2 | POST /api/ingest/email and POST /api/upload end to end: images through Claude vision, PDF through unpdf, CSV through papaparse, .ics through node-ical. Tagging. Event or listing. `pnpm worker` polls the MailSource adapter. |
 | CP3 | Duplicate and update matching (Section 12.4), EventVersion rows, cancellations, review status. |
 | CP4 | `writeDigest(events)` and `detectSeries(events)` for `api` to call. |
 | CP5 | `pnpm eval` prints field accuracy on the test set. `pnpm grok:record` saves replay for every input in docs/DEMO.md. |
@@ -138,7 +138,7 @@ You own the data and every read path. The frontend should never wonder what shap
 | CP0 | Repository in `src/lib/db`: `listEvents(filters)`, `getEvent(id)`, `saveExtraction(source, result)`. Seed loader `prisma/seed.ts` reads `fixtures/events.seed.json` and keeps the real dates as written (Section 13.1). |
 | CP1 | GET /api/events (filters and `since`), GET /api/events/[id] with `gcalTemplateUrl`. |
 | CP2 | The write path `pipeline` calls is solid. `since` returns new and updated events for live polling. |
-| CP3 | POST /api/ask with Grok tool calling and a keyword fallback (Section 12.5). |
+| CP3 | POST /api/ask with Claude tool calling and a keyword fallback (Section 12.5). |
 | CP4 | GET /api/feeds/[slug].ics, saves, POST /api/alerts/subscribe plus the free food trigger (calls Notifier), GET /api/digest/preview. |
 | CP5 | Listings, traditions, host endpoints (claim club, my events, edit, cancel), reach counts (totals only). |
 
@@ -176,7 +176,7 @@ Load the taste skill before UI work (Section 11.1). Build only with design's tok
 | CP0 | Data hooks in `src/lib/client` with a fixture fallback (`NEXT_PUBLIC_DATA=fixtures`) so pages never wait on `api`. |
 | CP1 | Feed (Today, This week), filter chips (tags, free food, residential college), event card, event detail sheet, Add to Google Calendar button, loading and empty states. |
 | CP2 | Live updates (poll `/api/events?since=` every 3 seconds), new-card highlight, host upload page `/host/upload` with a processing state. |
-| CP3 | Ask Yapizza (`/ask` plus the inline box), "How this was read" drawer (source email with Grok's evidence quotes highlighted), Updated badge. |
+| CP3 | Ask Yapizza (`/ask` plus the inline box), "How this was read" drawer (source email with the model's evidence quotes highlighted), Updated badge. |
 | CP4 | Calendar feed subscribe UI, save button, free food alert opt-in, digest preview page. |
 | CP5 | Host page `/host`, traditions `/traditions`, sales board `/sales`, mobile pass with `design`. |
 
@@ -683,7 +683,7 @@ export interface AdapterRegistry {
 
 | Service | Live when these are set | Sim behavior | Owner |
 |---|---|---|---|
-| Grok | `XAI_API_KEY` | Replay from `fixtures/grok-replay`. On a replay miss, a small rule-based extractor runs and its events go to review. | pipeline |
+| Model (Claude) | `ANTHROPIC_API_KEY` | Replay from `fixtures/grok-replay`. On a replay miss, the rule-based extractor runs (Section 12.3). | pipeline |
 | Gmail intake | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GMAIL_INTAKE_REFRESH_TOKEN` | `/sim/inbox`: fixture emails, plus anything sent from the demo panel or pasted | integrations |
 | Add to Google Calendar link | Always live, no key needed | Not needed | integrations |
 | Google Calendar insert | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, and the student signs in with Google | `/sim/calendar`: a plain week view labeled Simulated, no Google branding | integrations |
@@ -692,7 +692,7 @@ export interface AdapterRegistry {
 
 **Rules**
 - Each adapter picks its mode at startup. Modes show at `/api/integrations/status` and on `/demo`.
-- `YAPIZZA_FORCE_SIM=1` forces every adapter, Grok included, to sim or replay. This is demo insurance for bad Wi-Fi.
+- `YAPIZZA_FORCE_SIM=1` forces every adapter, the model included, to sim or replay. This is demo insurance for bad Wi-Fi.
 - A live call that fails falls back to sim for that request, logs the error, and never shows an error page.
 - The student-facing UI never says "simulated". Only `/sim/*` and `/demo` do.
 
@@ -701,9 +701,9 @@ export interface AdapterRegistry {
 ```bash
 DATABASE_URL="file:./dev.db"
 
-# Grok (xAI)
-XAI_API_KEY=
-GROK_MODEL=grok-4.7
+# Model (Claude via the Anthropic API; the code still calls this layer "grok")
+ANTHROPIC_API_KEY=
+CLAUDE_MODEL=claude-haiku-5-5   # fast and cheap for the demo; claude-sonnet-5-5 or claude-opus-5-5 if accuracy needs it
 GROK_MODE=            # blank = live if key present, else replay. Or: live | record | replay
 
 # Google (Gmail intake, Calendar insert, sign-in)
@@ -725,7 +725,7 @@ NEXT_PUBLIC_DATA=api  # or fixtures, while api is not ready
 ```
 
 **Turning on live keys** (human, any time; `integrations` writes full steps in docs/SETUP-KEYS.md):
-1. xAI: create an API key in the xAI console and set `XAI_API_KEY`.
+1. Anthropic: create an API key in the Claude Console and set `ANTHROPIC_API_KEY`.
 2. Google Cloud: create a project, enable the Gmail API and Google Calendar API, set up the OAuth consent screen in Testing with your own accounts as test users, and create a Web OAuth client with the redirect URI above.
 3. Run `pnpm google:token`, sign in as the intake inbox, and paste the printed refresh token into `GMAIL_INTAKE_REFRESH_TOKEN`.
 4. Scopes: `gmail.readonly` for the intake inbox, `calendar.events` for students.
@@ -740,7 +740,7 @@ NEXT_PUBLIC_DATA=api  # or fixtures, while api is not ready
 
 - Next.js (App Router), TypeScript, Tailwind CSS v4, pnpm.
 - Prisma 6 with SQLite (`dev.db`). Pinned to v6 to avoid v7 setup changes during a 3-hour build.
-- `openai` SDK pointed at `https://api.x.ai/v1` for Grok.
+- `@anthropic-ai/sdk` for Claude (extraction, dedup, digest, series, Ask).
 - `googleapis` for Gmail and Calendar.
 - `motion` for animation, SWR for polling.
 - Playwright for smoke tests and screenshots.
@@ -749,7 +749,7 @@ NEXT_PUBLIC_DATA=api  # or fixtures, while api is not ready
 ### 10.2 Dependencies (lead installs at CP0, in one command each)
 
 ```bash
-pnpm add prisma@6 @prisma/client@6 zod openai googleapis motion swr date-fns date-fns-tz ics node-ical unpdf papaparse mailparser resend clsx tailwind-merge lucide-react sonner @radix-ui/react-dialog @radix-ui/react-popover
+pnpm add prisma@6 @prisma/client@6 zod @anthropic-ai/sdk googleapis motion swr date-fns date-fns-tz ics node-ical unpdf papaparse mailparser resend clsx tailwind-merge lucide-react sonner @radix-ui/react-dialog @radix-ui/react-popover
 pnpm add -D tsx @playwright/test @types/papaparse @types/mailparser
 ```
 
@@ -777,7 +777,7 @@ Scaffold with `pnpm create next-app@latest . --ts --tailwind --app --src-dir --u
 
 ### 11.1 Taste skill
 
-The human installs it in pre-flight (Section 15). `design`, `frontend`, and every UI subagent load `design-taste-frontend` before UI work, with `minimalist-ui` as the overall register. Where the skill and this section disagree, this section wins.
+The human installs it in pre-flight (Section 15). `design`, `frontend`, and every UI subagent load `design-taste-frontend` before UI work, (`minimalist-ui` isn't available; skip it). Where the skill and this section disagree, this section wins.
 
 ### 11.2 Direction
 
@@ -785,7 +785,7 @@ The human installs it in pre-flight (Section 15). `design`, `frontend`, and ever
 - **Color:** one accent, Yale Blue `#00356B`. Neutral background, near-black text. Other colors only when they mean something: free food, canceled, updated.
 - **Type:** one sans-serif family, with tabular numerals for times. The wordmark is the one place for personality.
 - **Never:** gradients, glass effects, glow, emoji, sparkle or robot icons, "AI-powered" labels, confetti.
-- **Grok shows where it does the work:** the Ask box and the "How this was read" drawer, each with one small "Read by Grok" line. Nowhere else.
+- **Claude shows where it does the work:** the Ask box and the "How this was read" drawer, each with one small "Read by Claude" line, and only when `readBy` is `grok` (the model read it). Nowhere else.
 
 ### 11.3 Copy rules (design owns every string in docs/COPY.md)
 
@@ -811,37 +811,40 @@ The human installs it in pre-flight (Section 15). `design`, `frontend`, and ever
 
 ---
 
-## 12. Grok usage (pipeline and api)
+## 12. Model usage: Claude (pipeline and api)
+
+The model was switched from Grok to Claude at 18:24 (human decision). Code names stay as they were: `src/lib/grok`, `GrokMode`, `GROK_MODE`, `fixtures/grok-replay`, `pnpm grok:record`, and `readBy`/`mode` value `'grok'` all mean "the model". Don't rename them. Student-facing copy says Claude.
 
 ### 12.1 Model and client
 
-- `GROK_MODEL` defaults to `grok-4.7`, xAI's flagship text model. Recheck the xAI models page if a call fails on the model name.
-- OpenAI SDK with `baseURL: 'https://api.x.ai/v1'`.
-- Structured outputs: `response_format: { type: 'json_schema', json_schema: { name, schema, strict: true } }`. Validate every response with zod anyway; derive the JSON schema from zod with `z.toJSONSchema`.
-- `reasoning_effort`: `low` for extract, tag, digest, and ask; `medium` for dedup and series.
-- Images: base64 data URLs, JPEG or PNG, up to 20 MiB each.
-- 25-second timeout, one retry, then fall back (Section 12.2).
+- `@anthropic-ai/sdk`, one shared client in `src/lib/grok/index.ts`; `api` uses its exported client, never its own.
+- Model from `CLAUDE_MODEL`, default `claude-haiku-5-5` everywhere (cards in seconds, about $0.05 per full demo pass). Switch to `claude-sonnet-5-5` only if accuracy needs it, then rerun `pnpm grok:record`, since replays are keyed by model.
+- Structured outputs: `output_config: { format: { type: 'json_schema', schema } }`, schema from zod. Validate every response with zod anyway.
+- Effort through `output_config.effort`: `low` for extract, tag, digest, and ask; `medium` for dedup and series. Leave `thinking` unset.
+- On non-Haiku models, server-side refusal fallbacks are on (`fallbacks: 'default'`).
+- Images: base64, JPEG or PNG.
+- 25-second timeout, one retry, then fall back (Section 12.2). Ask has a 12-second route deadline, then keyword fallback.
 
 ### 12.2 Modes
 
-- **live:** call xAI.
-- **record:** call xAI and save each response to `fixtures/grok-replay/<sha256 of model + promptVersion + input>.json`.
-- **replay:** read saved responses. On a miss, run the rule-based fallback and mark the events review.
-- Default is live when `XAI_API_KEY` is set, otherwise replay. Before the demo, run `pnpm grok:record` so every demo input also works offline.
+- **live:** call Claude. Live calls are also saved to replay, so a rehearsal with the key makes every input work offline.
+- **record:** call Claude and save each response to `fixtures/grok-replay/<sha256 of model + promptVersion + input>.json`.
+- **replay:** read saved responses. On a miss, run the rule-based fallback.
+- Default is live when `ANTHROPIC_API_KEY` is set, otherwise replay. Before the demo, run `pnpm grok:record` so every demo input also works offline (`pnpm grok:record --check` lists what's covered).
 
 ### 12.3 Extraction
 
 - **Context in every call:** the current time in America/New_York (so "this Friday" resolves), the email's sent date, the Yale glossary, and the places list from `src/lib/yale`.
 - **Places list:** WLH, LC, AKW, KT, CEID, TEAL, Sudler Hall, Woolsey Hall, PWG, Bass, Sterling, Cross Campus, Old Campus, Commons (Schwarzman Center), Dwight Hall, Slifka Center, AACC, Af-Am House, La Casa, NACC, Science Hill, plus each residential college's dining hall, courtyard, common room, and buttery.
 - **The 14 residential colleges:** Benjamin Franklin, Berkeley, Branford, Davenport, Ezra Stiles, Grace Hopper, Jonathan Edwards, Morse, Pauli Murray, Pierson, Saybrook, Silliman, Timothy Dwight, Trumbull.
-- **Evidence:** every event carries short quotes for its time and place. Code checks that each quote appears in the source text, ignoring case and whitespace. Any failed check, or confidence below 0.7, sets status `review`.
+- **Evidence:** every event carries short quotes for its time and place. Code checks that each quote appears in the source text, ignoring case and whitespace. Any failed check, or confidence below 0.7, sets status `review`, except that a rule-fallback event with passing evidence and a start goes live (`FALLBACK_LIVE_WHEN_EVIDENCE_OK`, human-approved 17:32).
 - A newsletter can return zero events. Sales and giveaways come back as `kind: 'listing'`.
-- **Email content is data, not instructions.** The extraction call has no tools, so an injected instruction can't make Grok do anything.
+- **Email content is data, not instructions.** The extraction call has no tools, so an injected instruction can't make the model do anything.
 
 ### 12.4 Duplicates and updates
 
 - **Candidates:** up to 5 existing events within 3 days of the new event's start, with the same host or a similar title.
-- Grok returns a MatchDecision:
+- The model returns a MatchDecision:
     - `same`: drop the new event and keep the source linked.
     - `update`: write an EventVersion and set `updatedFields` so the UI shows an Updated badge.
     - `cancel`: set status `canceled`.
@@ -852,7 +855,7 @@ The human installs it in pre-flight (Section 15). `design`, `frontend`, and ever
 - **Tools:** `search_events(keywords, tags, dateFrom, dateTo, college, freeFood)`, `search_hosts(keywords)`, `get_event(id)`. At most 3 tool rounds.
 - **Output:** an answer of 2 sentences or fewer, plus a "why" of 12 words or fewer for each result.
 - The UI renders cards from the database by id only. Unknown ids are dropped.
-- On any Grok error, return keyword search results with `mode: 'fallback'`.
+- On any model error or timeout, return keyword search results with `mode: 'fallback'`.
 
 ### 12.6 Prompts
 
@@ -865,7 +868,7 @@ Prompts live in `src/lib/pipeline/prompts/*.md`, each with a version line at the
 ### 13.1 `fixtures/events.seed.json`
 
 - **Source: `fixtures/events.real.md`.** Real open Yale events (Oct 17 to Dec 17, 2026), pulled by the human from their own emails and calendar. Don't invent events or clubs, and don't edit that file.
-- It is raw text, not yet read by Grok. When Grok is live, `pipeline` runs each entry through `extractEvents` to build the seed. Until then, `integrations` writes the seed by hand from it at CP0 so the feed isn't blocked.
+- It is raw text, not yet read by the model. When the model is live, `pipeline` runs each entry through `extractEvents` to build the seed. Until then, `integrations` writes the seed by hand from it at CP0 so the feed isn't blocked.
 - Keep the real dates. Don't shift them into the current week.
 - Skip entries with no date, and pure deadlines (academic dates, application due dates) unless they are an event someone can attend.
 - Tag every event from the 8 tags; free food only where the text says food.
@@ -906,7 +909,7 @@ Must include:
     3. Upload flyer (from `fixtures/flyers`)
     4. Free food now
     5. Reset demo
-    6. Record Grok replay
+    6. Record replay
 - A live log of each ingest with timings: received, extracted, checked, matched, saved.
 - Not linked anywhere in the app.
 
@@ -918,13 +921,13 @@ docs/DEMO.md is the living version, with one script per checkpoint so every wrap
 2. Send a real club email to Yapizza: forwarded from a phone if Gmail is live, from the demo panel if not. The card appears in seconds.
 3. Upload a photo of a real flyer. Another card appears.
 4. Send the room change. The same card updates, with no duplicate.
-5. Ask "free food tonight". Open "How this was read" to show Grok's evidence.
+5. Ask "free food tonight". Open "How this was read" to show Claude's evidence.
 6. Add an event to the calendar on a phone.
 7. **Close:** one address per club, and students never join another list.
 
 ### 14.3 Pitch: docs/PITCH.md
 
-- Five slides: Problem, Demo, How Grok reads Yale (pipeline and guardrails), Why only at Yale, What's next.
+- Five slides: Problem, Demo, How Claude reads Yale (pipeline and guardrails), Why only at Yale, What's next.
 - Judge Q&A prep: accuracy, privacy, getting clubs to adopt it, overlap with YaleClubs, cost per email.
 
 ### 14.4 Insurance
@@ -995,9 +998,9 @@ docs/DEMO.md is the living version, with one script per checkpoint so every wrap
 
 ## 16. References
 
-- xAI models: https://docs.x.ai/docs/models
-- xAI structured outputs: https://docs.x.ai/docs/guides/structured-outputs
-- xAI image understanding: https://docs.x.ai/docs/guides/image-understanding
+- Claude models: https://platform.claude.com/docs/en/about-claude/models/overview
+- Claude structured outputs: https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+- Claude vision: https://platform.claude.com/docs/en/build-with-claude/vision
 - Claude Code subagents: https://code.claude.com/docs/en/sub-agents
 - Claude Code cross-session messaging: https://code.claude.com/docs/en/cross-session-messaging
 - Taste skill: https://github.com/Leonxlnx/taste-skill

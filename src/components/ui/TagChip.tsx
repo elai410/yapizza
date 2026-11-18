@@ -13,7 +13,19 @@ export const TAG_LABELS: Record<Tag, string> = {
   traditions: 'Traditions',
 };
 
-const BASE = 'inline-flex h-6 items-center whitespace-nowrap rounded-sm px-2 text-xs font-medium';
+const BASE = 'inline-flex h-6 items-center whitespace-nowrap rounded-full px-2.5 text-xs font-semibold';
+
+// Each tag has its own color so a day reads at a glance.
+export const TAG_STYLES: Record<Tag, string> = {
+  free_food: 'bg-food-soft text-food',
+  cultural: 'bg-sauce-soft text-sauce',
+  professional: 'bg-accent-soft text-accent',
+  academic: 'bg-[#dcf0ed] text-[#0b6158]',
+  social: 'bg-crust-soft text-crust-ink',
+  arts: 'bg-[#fce3ee] text-[#9c2257]',
+  athletics: 'bg-[#e4eaf1] text-[#2c4560]',
+  traditions: 'bg-accent text-accent-ink',
+};
 
 export interface TagChipProps extends HTMLAttributes<HTMLSpanElement> {
   tag: Tag;
@@ -22,7 +34,7 @@ export interface TagChipProps extends HTMLAttributes<HTMLSpanElement> {
 export function TagChip({ tag, className, ...props }: TagChipProps) {
   return (
     <span
-      className={cn(BASE, tag === 'free_food' ? 'bg-food-soft text-food' : 'bg-sunken text-muted', className)}
+      className={cn(BASE, TAG_STYLES[tag], className)}
       {...props}
     >
       {TAG_LABELS[tag]}
